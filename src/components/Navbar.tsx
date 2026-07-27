@@ -13,7 +13,8 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
-  // { name: "Gallery", href: "/gallery" },
+  { name: "Industries", href: "/industries" },
+  { name: "Pricing", href: "/pricing" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -63,7 +64,8 @@ const Navbar = () => {
     };
   }, [isMenuOpen]);
 
-  const hamburgerColor = isMenuOpen || isScrolled ? "bg-[#0c2e2d]" : "bg-white";
+  // const hamburgerColor = isMenuOpen || isScrolled ? "bg-[#0c2e2d]" : "bg-white";
+  const hamburgerColor = "bg-[#0c2e2d]";
 
   return (
     <>
@@ -75,7 +77,6 @@ const Navbar = () => {
         <Link href="/" className="relative z-50 group">
           <Image
             src={"/images/logo.png"}
-            // src={`${isScrolled ? "/images/newLogo.png" : "/images/leon-logo-gold.png"}`}
             width={100}
             height={0}
             className="object-cover object-center"
@@ -91,7 +92,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-black nav-link-text relative group font-medium text-[12px] uppercase tracking-[0.2em] transition-colors duration-300 pb-1`}
+                className={`${isActive ? "text-sky-700 font-extrabold" : "text-black font-medium"} nav-link-text relative group text-[12px] uppercase tracking-[0.2em] transition-colors duration-300 pb-1`}
               >
                 {link.name}
                 <span
@@ -130,36 +131,31 @@ const Navbar = () => {
       <nav>
         <div
           className={`fixed inset-0 h-screen bg-white/60 backdrop-blur-xl z-40 transform transition-all duration-700 md:hidden flex flex-col justify-center items-center ${
-            isMenuOpen
-              ? "translate-y-0 opacity-100"
-              : "-translate-y-full opacity-0"
+            isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
           }`}
         >
           <div className="flex flex-col items-center gap-8">
-            {navLinks.map((link, idx) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                className={`text-green text-4xl font-semibold uppercase tracking-[0.25em] transition-all duration-700 ${
-                  isMenuOpen
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-10 opacity-0"
-                }`}
-                style={{ transitionDelay: `${idx * 100}ms` }}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link, idx) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={` ${isActive ? "text-sky-700 font-black" : "text-black font-semibold"} text-green text-4xl uppercase tracking-[0.25em] transition-all duration-700 ${
+                    isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                  }`}
+                  style={{ transitionDelay: `${idx * 100}ms` }}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
 
-          <div
+          {/* <div
             className={`absolute bottom-16 left-0 w-full text-center transition-all duration-1000 delay-500 ${isMenuOpen ? "opacity-70" : "opacity-0"}`}
-          >
-            {/* <p className="text-md uppercase tracking-widest font-sans text-green">
-              Architecture • Interiors • Design
-            </p> */}
-          </div>
+          ></div> */}
         </div>
       </nav>
     </>
