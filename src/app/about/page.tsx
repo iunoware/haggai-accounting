@@ -4,6 +4,7 @@ import Hero from "./(components)/Hero";
 import MissionSection from "./(components)/MissionSection";
 import VisionSection from "./(components)/VisionSection";
 import WhyChooseUsSection from "./(components)/WhyChooseUs";
+import FinancialDashboardCTA from "@/src/components/FinancialDashboardCTA";
 
 export default function AboutPage() {
   return (
@@ -14,7 +15,7 @@ export default function AboutPage() {
       <MissionSection />
       <VisionSection />
       <WhyChooseUsSection />
-      {/* <CTA /> */}
+      <FinancialDashboardCTA />
     </>
   );
 }

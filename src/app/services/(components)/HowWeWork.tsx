@@ -231,12 +231,12 @@ export default function HowWeWork() {
       {/* Background decorations */}
       <div
         aria-hidden="true"
-        className="absolute -left-52 top-8 h-128 w-lg rounded-full bg-[#D7F3FF]/70 blur-3xl"
+        className="absolute -left-52 top-8 h-128 w-lg rounded-full bg-soft/70 blur-3xl"
       />
 
       <div
         aria-hidden="true"
-        className="absolute -right-48 bottom-0 h-112 w-md rounded-full bg-[#508BC0]/10 blur-3xl"
+        className="absolute -right-48 bottom-0 h-112 w-md rounded-full bg-secondary/10 blur-3xl"
       />
 
       <div
@@ -247,26 +247,26 @@ export default function HowWeWork() {
       {/* Rotating decorative circle */}
       <div
         aria-hidden="true"
-        className="process-decoration pointer-events-none absolute -right-36 top-20 h-72 w-72 rounded-full border border-[#00598A]/10"
+        className="process-decoration pointer-events-none absolute -right-36 top-20 h-72 w-72 rounded-full border border-primary/10"
       >
-        {/* <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E29E21]" /> */}
+        {/* <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent" /> */}
 
-        <div className="absolute inset-10 rounded-full border border-[#508BC0]/10" />
+        <div className="absolute inset-10 rounded-full border border-secondary/10" />
 
-        <div className="absolute inset-20 rounded-full border border-[#00598A]/5" />
+        <div className="absolute inset-20 rounded-full border border-primary/5" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         {/* Section heading */}
         <div className="mx-auto max-w-4xl text-center">
           <div className="process-eyebrow mb-6 flex items-center justify-center gap-3">
-            <span className="h-px w-9 bg-[#E29E21]" />
+            <span className="h-px w-9 bg-accent" />
 
-            <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-[#00598A]">
+            <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-primary">
               How We Work
             </span>
 
-            <span className="h-px w-9 bg-[#E29E21]" />
+            <span className="h-px w-9 bg-accent" />
           </div>
 
           <h2 className="font-cormorant text-[3.3rem] font-medium leading-[0.92] tracking-tighter text-[#0c2e2d] sm:text-6xl lg:text-[5.5rem]">
@@ -275,7 +275,7 @@ export default function HowWeWork() {
             </span>
 
             <span className="block overflow-hidden pb-3">
-              <span className="process-title-line block italic text-[#00598A]">
+              <span className="process-title-line block italic text-primary">
                 From day one.
               </span>
             </span>
@@ -293,9 +293,9 @@ export default function HowWeWork() {
           {/* Desktop connecting line */}
           <div
             aria-hidden="true"
-            className="absolute left-[12.5%] right-[12.5%] top-10 hidden h-px bg-[#00598A]/10 lg:block"
+            className="absolute left-[12.5%] right-[12.5%] top-10 hidden h-px bg-primary/10 lg:block"
           >
-            <span className="process-line block h-full w-full origin-left bg-linear-to-r from-[#00598A] via-[#508BC0] to-[#E29E21]" />
+            <span className="process-line block h-full w-full origin-left bg-linear-to-r from-primary via-secondary to-accent" />
           </div>
 
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -306,21 +306,21 @@ export default function HowWeWork() {
                 <article key={step.number} className="process-step group relative">
                   {/* Step marker */}
                   <div className="relative z-10 mx-auto flex h-20 w-20 items-center justify-center">
-                    <span className="process-dot absolute inset-0 rounded-full bg-[#D7F3FF]" />
+                    <span className="process-dot absolute inset-0 rounded-full bg-soft" />
 
-                    <span className="relative flex h-16 w-16 items-center justify-center rounded-full border border-[#00598A]/15 bg-white text-[#00598A] shadow-[0_12px_30px_-18px_rgba(0,89,138,0.5)] transition-all duration-300 group-hover:border-[#00598A] group-hover:bg-[#00598A] group-hover:text-white">
+                    <span className="relative flex h-16 w-16 items-center justify-center rounded-full border border-primary/15 bg-white text-primary shadow-[0_12px_30px_-18px_rgba(0,89,138,0.5)] transition-all duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-white">
                       <Icon aria-hidden="true" className="h-7 w-7" />
                     </span>
                   </div>
 
                   {/* Card */}
-                  <div className="mt-5 h-[calc(100%-6.25rem)] rounded-[1.75rem] border border-[#00598A]/10 bg-white/90 p-6 shadow-[0_20px_60px_-38px_rgba(0,89,138,0.45)] backdrop-blur-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#508BC0]/30 group-hover:shadow-[0_28px_65px_-35px_rgba(0,89,138,0.5)] sm:p-7">
+                  <div className="mt-5 h-[calc(100%-6.25rem)] rounded-[1.75rem] border border-primary/10 bg-white/90 p-6 shadow-[0_20px_60px_-38px_rgba(0,89,138,0.45)] backdrop-blur-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:border-secondary/30 group-hover:shadow-[0_28px_65px_-35px_rgba(0,89,138,0.5)] sm:p-7">
                     <div className="flex items-center justify-between gap-4">
-                      <span className="font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-[#508BC0]">
+                      <span className="font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary">
                         Step {step.number}
                       </span>
 
-                      <span className="rounded-full bg-[#D7F3FF] px-3 py-1 font-manrope text-[9px] font-semibold uppercase tracking-[0.15em] text-[#00598A]">
+                      <span className="rounded-full bg-soft px-3 py-1 font-manrope text-[9px] font-semibold uppercase tracking-[0.15em] text-primary">
                         {step.label}
                       </span>
                     </div>
@@ -333,12 +333,12 @@ export default function HowWeWork() {
                       {step.description}
                     </p>
 
-                    <div className="mt-7 flex items-center gap-3 border-t border-[#00598A]/10 pt-5">
-                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#E29E21]/15 text-[#E29E21]">
+                    <div className="mt-7 flex items-center gap-3 border-t border-primary/10 pt-5">
+                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent/15 text-accent">
                         <CheckCircleIcon aria-hidden="true" className="h-4 w-4" />
                       </span>
 
-                      <span className="font-manrope text-xs font-semibold text-[#00598A]">
+                      <span className="font-manrope text-xs font-semibold text-primary">
                         Clear and transparent
                       </span>
                     </div>
@@ -348,7 +348,7 @@ export default function HowWeWork() {
                   {index < processSteps.length - 1 && (
                     <div
                       aria-hidden="true"
-                      className="mx-auto h-8 w-px bg-linear-to-b from-[#00598A]/30 to-transparent md:hidden"
+                      className="mx-auto h-8 w-px bg-linear-to-b from-primary/30 to-transparent md:hidden"
                     />
                   )}
                 </article>
@@ -358,7 +358,7 @@ export default function HowWeWork() {
         </div>
 
         {/* Benefits strip */}
-        <div className="mt-14 rounded-4xl border border-[#00598A]/10 bg-[#D7F3FF]/55 p-5 sm:p-6 lg:mt-16">
+        <div className="mt-14 rounded-4xl border border-primary/10 bg-soft/55 p-5 sm:p-6 lg:mt-16">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {processBenefits.map((benefit) => (
               <div
@@ -367,7 +367,7 @@ export default function HowWeWork() {
               >
                 <CheckCircleIcon
                   aria-hidden="true"
-                  className="h-5 w-5 shrink-0 text-[#E29E21]"
+                  className="h-5 w-5 shrink-0 text-accent"
                 />
 
                 <span className="font-manrope text-xs font-semibold uppercase tracking-widest text-[#0c2e2d]">
@@ -379,9 +379,9 @@ export default function HowWeWork() {
         </div>
 
         {/* CTA */}
-        {/* <div className="process-action mt-12 flex flex-col items-center justify-between gap-6 rounded-[2rem] bg-[#00598A] px-6 py-7 text-white sm:flex-row sm:px-8 lg:px-10">
+        {/* <div className="process-action mt-12 flex flex-col items-center justify-between gap-6 rounded-[2rem] bg-primary px-6 py-7 text-white sm:flex-row sm:px-8 lg:px-10">
           <div>
-            <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-[#D7F3FF]/65">
+            <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-soft/65">
               Ready to get started?
             </p>
 
@@ -392,7 +392,7 @@ export default function HowWeWork() {
 
           <Link
             href="/contact"
-            className="group inline-flex shrink-0 items-center justify-center gap-3 rounded-full bg-[#E29E21] px-7 py-3.5 font-manrope text-sm font-semibold text-white shadow-xl shadow-black/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d5901b]"
+            className="group inline-flex shrink-0 items-center justify-center gap-3 rounded-full bg-accent px-7 py-3.5 font-manrope text-sm font-semibold text-white shadow-xl shadow-black/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d5901b]"
           >
             Start a Conversation
             <ArrowRightIcon

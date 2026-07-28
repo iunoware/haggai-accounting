@@ -246,12 +246,12 @@ export default function WhyChooseUsSection() {
       {/* Background decorations */}
       <div
         aria-hidden="true"
-        className="why-glow absolute -left-48 top-20 h-120 w-120 rounded-full bg-[#D7F3FF]/80 blur-3xl"
+        className="why-glow absolute -left-48 top-20 h-120 w-120 rounded-full bg-soft/80 blur-3xl"
       />
 
       <div
         aria-hidden="true"
-        className="absolute -right-48 bottom-0 h-112 w-md rounded-full bg-[#508BC0]/10 blur-3xl"
+        className="absolute -right-48 bottom-0 h-112 w-md rounded-full bg-secondary/10 blur-3xl"
       />
 
       <div
@@ -264,9 +264,9 @@ export default function WhyChooseUsSection() {
         <div className="grid items-end gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div>
             <div className="why-eyebrow mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#E29E21]" />
+              <span className="h-px w-10 bg-accent" />
 
-              <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-[#00598A]">
+              <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-primary">
                 Why Choose Haggai
               </span>
             </div>
@@ -277,7 +277,7 @@ export default function WhyChooseUsSection() {
               </span>
 
               <span className="block overflow-hidden pb-2">
-                <span className="why-heading-line block italic text-[#00598A]">
+                <span className="why-heading-line block italic text-primary">
                   trust Haggai.
                 </span>
               </span>
@@ -300,24 +300,24 @@ export default function WhyChooseUsSection() {
 
         {/* Comparison panel */}
         <div className="why-comparison relative mt-14 lg:mt-20">
-          <div className="relative overflow-hidden rounded-4xl border border-[#00598A]/10 bg-white shadow-[0_30px_90px_-45px_rgba(0,89,138,0.35)]">
+          <div className="relative overflow-hidden rounded-4xl border border-primary/10 bg-white shadow-[0_30px_90px_-45px_rgba(0,89,138,0.35)]">
             {/* Decorative orbit */}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-28 -top-28 h-64 w-64"
             >
-              <div className="why-orbit absolute inset-0 rounded-full border border-[#508BC0]/20">
-                <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E29E21] shadow-[0_0_0_5px_rgba(226,158,33,0.16)]" />
+              <div className="why-orbit absolute inset-0 rounded-full border border-secondary/20">
+                <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_0_5px_rgba(226,158,33,0.16)]" />
               </div>
 
-              <div className="absolute inset-9 rounded-full border border-[#508BC0]/15" />
+              <div className="absolute inset-9 rounded-full border border-secondary/15" />
 
-              <div className="absolute inset-18 rounded-full bg-[#D7F3FF]/50" />
+              <div className="absolute inset-18 rounded-full bg-soft/50" />
             </div>
 
             {/* Comparison heading */}
-            <div className="relative grid border-b border-[#00598A]/10 md:grid-cols-2">
-              <div className="border-b border-[#00598A]/10 bg-slate-50 px-5 py-6 sm:px-8 md:border-b-0 md:border-r">
+            <div className="relative grid border-b border-primary/10 md:grid-cols-2">
+              <div className="border-b border-primary/10 bg-slate-50 px-5 py-6 sm:px-8 md:border-b-0 md:border-r">
                 <div className="flex items-center gap-3">
                   <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-200 text-slate-500">
                     <XMarkIcon aria-hidden="true" className="h-5 w-5" />
@@ -335,9 +335,9 @@ export default function WhyChooseUsSection() {
                 </div>
               </div>
 
-              <div className="relative bg-[#00598A] px-5 py-6 text-white sm:px-8">
+              <div className="relative bg-primary px-5 py-6 text-white sm:px-8">
                 <div className="flex items-center gap-3">
-                  <span className="why-floating-icon flex h-10 w-10 items-center justify-center rounded-xl bg-[#E29E21] text-white shadow-lg shadow-black/10">
+                  <span className="why-floating-icon flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-white shadow-lg shadow-black/10">
                     <SparklesIcon aria-hidden="true" className="h-5 w-5" />
                   </span>
 
@@ -346,7 +346,7 @@ export default function WhyChooseUsSection() {
                       Haggai Accounting
                     </p>
 
-                    <p className="mt-1 font-manrope text-xs uppercase tracking-[0.16em] text-[#D7F3FF]">
+                    <p className="mt-1 font-manrope text-xs uppercase tracking-[0.16em] text-soft">
                       A dedicated partnership
                     </p>
                   </div>
@@ -361,11 +361,11 @@ export default function WhyChooseUsSection() {
                   key={point.traditional}
                   className={`why-comparison-row grid md:grid-cols-2 ${
                     index !== comparisonPoints.length - 1
-                      ? "border-b border-[#00598A]/10"
+                      ? "border-b border-primary/10"
                       : ""
                   }`}
                 >
-                  <div className="flex items-start gap-4 border-b border-[#00598A]/10 bg-white px-5 py-5 sm:px-8 md:border-b-0 md:border-r">
+                  <div className="flex items-start gap-4 border-b border-primary/10 bg-white px-5 py-5 sm:px-8 md:border-b-0 md:border-r">
                     <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-400">
                       <XMarkIcon aria-hidden="true" className="h-4 w-4" />
                     </span>
@@ -375,8 +375,8 @@ export default function WhyChooseUsSection() {
                     </p>
                   </div>
 
-                  <div className="flex items-start gap-4 bg-[#D7F3FF]/30 px-5 py-5 sm:px-8">
-                    <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#E29E21]/15 text-[#E29E21] ring-1 ring-[#E29E21]/30">
+                  <div className="flex items-start gap-4 bg-soft/30 px-5 py-5 sm:px-8">
+                    <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent ring-1 ring-accent/30">
                       <CheckCircleIcon aria-hidden="true" className="h-4 w-4" />
                     </span>
 
@@ -391,7 +391,7 @@ export default function WhyChooseUsSection() {
 
           <div
             aria-hidden="true"
-            className="absolute -bottom-4 -left-4 -z-10 h-full w-full rounded-4xl border border-[#508BC0]/20"
+            className="absolute -bottom-4 -left-4 -z-10 h-full w-full rounded-4xl border border-secondary/20"
           />
         </div>
 
@@ -400,16 +400,16 @@ export default function WhyChooseUsSection() {
           <div className="grid items-end gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
             <div>
               <div className="flex items-center gap-3">
-                <span className="h-px w-10 bg-[#E29E21]" />
+                <span className="h-px w-10 bg-accent" />
 
-                <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-[#00598A]">
+                <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-primary">
                   What Sets Us Apart
                 </span>
               </div>
 
-              <h3 className="mt-5 max-w-xl font-cormorant text-4xl font-medium leading-[1] tracking-[-0.035em] text-[#0c2e2d] sm:text-5xl lg:text-6xl">
+              <h3 className="mt-5 max-w-xl font-cormorant text-4xl font-medium leading-none tracking-[-0.035em] text-[#0c2e2d] sm:text-5xl lg:text-6xl">
                 Built around the needs of
-                <span className="italic text-[#00598A]"> growing businesses.</span>
+                <span className="italic text-primary"> growing businesses.</span>
               </h3>
             </div>
 
@@ -419,7 +419,7 @@ export default function WhyChooseUsSection() {
             </p>
           </div>
 
-          <div className="why-divider mt-10 h-px w-full bg-[#00598A]/10 lg:mt-12" />
+          <div className="why-divider mt-10 h-px w-full bg-primary/10 lg:mt-12" />
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:mt-10 lg:grid-cols-3">
             {strengths.map((strength) => {
@@ -428,14 +428,14 @@ export default function WhyChooseUsSection() {
               return (
                 <article
                   key={strength.title}
-                  className="why-strength group relative overflow-hidden rounded-2xl border border-[#00598A]/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#508BC0]/30 hover:shadow-xl hover:shadow-[#00598A]/5 sm:p-7"
+                  className="why-strength group relative overflow-hidden rounded-2xl border border-primary/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-secondary/30 hover:shadow-xl hover:shadow-primary/5 sm:p-7"
                 >
                   <span
                     aria-hidden="true"
-                    className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#E29E21] transition-all duration-500 group-hover:w-full"
+                    className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-500 group-hover:w-full"
                   />
 
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#D7F3FF] text-[#00598A] transition-all duration-300 group-hover:bg-[#00598A] group-hover:text-white">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
                     <Icon aria-hidden="true" className="h-6 w-6" />
                   </div>
 
@@ -453,7 +453,7 @@ export default function WhyChooseUsSection() {
         </div>
 
         {/* CTA */}
-        <div className="why-cta relative mt-16 overflow-hidden rounded-[2rem] bg-[#00598A] px-6 py-10 text-white shadow-[0_30px_80px_-40px_rgba(0,89,138,0.55)] sm:px-9 sm:py-12 lg:mt-24 lg:px-12 lg:py-14">
+        <div className="why-cta relative mt-16 overflow-hidden rounded-4xl bg-primary px-6 py-10 text-white shadow-[0_30px_80px_-40px_rgba(0,89,138,0.55)] sm:px-9 sm:py-12 lg:mt-24 lg:px-12 lg:py-14">
           <div
             aria-hidden="true"
             className="absolute -right-24 -top-24 h-64 w-64 rounded-full border border-white/15"
@@ -461,20 +461,20 @@ export default function WhyChooseUsSection() {
 
           <div
             aria-hidden="true"
-            className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-[#508BC0]/25 blur-2xl"
+            className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-secondary/25 blur-2xl"
           />
 
           <div
             aria-hidden="true"
-            className="absolute -bottom-24 -left-20 h-64 w-64 rounded-full bg-[#D7F3FF]/10 blur-3xl"
+            className="absolute -bottom-24 -left-20 h-64 w-64 rounded-full bg-soft/10 blur-3xl"
           />
 
           <div className="relative grid items-center gap-8 lg:grid-cols-[1fr_auto] lg:gap-14">
             <div>
               <div className="mb-4 flex items-center gap-3">
-                <span className="h-px w-10 bg-[#E29E21]" />
+                <span className="h-px w-10 bg-accent" />
 
-                <span className="font-manrope text-xs font-semibold uppercase tracking-[0.2em] text-[#D7F3FF]">
+                <span className="font-manrope text-xs font-semibold uppercase tracking-[0.2em] text-soft">
                   Ready to Work Together?
                 </span>
               </div>
@@ -483,7 +483,7 @@ export default function WhyChooseUsSection() {
                 Build a stronger financial foundation with a partner you can trust.
               </h3>
 
-              <p className="mt-5 max-w-2xl font-manrope text-sm leading-7 text-[#D7F3FF]/85 sm:text-base sm:leading-8">
+              <p className="mt-5 max-w-2xl font-manrope text-sm leading-7 text-soft/85 sm:text-base sm:leading-8">
                 Discover how Haggai can support your accounting operations with clearer
                 processes, reliable reporting, and dedicated financial support.
               </p>
@@ -491,7 +491,7 @@ export default function WhyChooseUsSection() {
 
             <a
               href="/contact"
-              className="group inline-flex w-fit items-center justify-center gap-3 rounded-full bg-[#E29E21] px-6 py-3.5 font-manrope text-sm font-semibold text-white shadow-lg shadow-black/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d18e16] hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#00598A]"
+              className="group inline-flex w-fit items-center justify-center gap-3 rounded-full bg-accent px-6 py-3.5 font-manrope text-sm font-semibold text-white shadow-lg shadow-black/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d18e16] hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
             >
               Schedule a Consultation
               <ArrowRightIcon
