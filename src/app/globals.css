@@ -3,6 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-primary: #00598a;
+  --color-secondary: #508bc0;
+  --color-soft: #d7f3ff;
+  --color-accent: #e29e21;
 }
 
 @theme inline {
@@ -10,6 +14,10 @@
   --font-heading: var(--font-cormorant-garamond);
   --font-geist: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-primary: #00598a;
+  --color-secondary: #508bc0;
+  --color-soft: #d7f3ff;
+  --color-accent: #e29e21;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,4 +40,45 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Infinite Marquee Animations for Testimonials */
+@keyframes marqueeLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  animation: marqueeLeft 42s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-right {
+  animation: marqueeRight 42s linear infinite;
+  will-change: transform;
+}
+
+.pause-on-hover:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-left,
+  .animate-marquee-right {
+    animation: none !important;
+    transform: none !important;
+  }
 }

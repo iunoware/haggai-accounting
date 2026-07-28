@@ -11,7 +11,6 @@ import {
   ArrowRightIcon,
   RocketLaunchIcon,
   BuildingOffice2Icon,
-  UserGroupIcon,
 } from "@heroicons/react/24/outline";
 
 if (typeof window !== "undefined") {
@@ -126,7 +125,6 @@ export default function PricingPreview() {
         );
       }
 
-      // Featured center card rises first
       if (featuredCardRef.current) {
         tl.fromTo(
           featuredCardRef.current,
@@ -136,7 +134,6 @@ export default function PricingPreview() {
         );
       }
 
-      // Side cards slide in
       if (leftCardRef.current) {
         tl.fromTo(
           leftCardRef.current,
@@ -163,7 +160,6 @@ export default function PricingPreview() {
         );
       }
 
-      // Gentle floating animation on featured card
       if (featuredCardRef.current) {
         gsap.to(featuredCardRef.current, {
           y: -8,
@@ -188,12 +184,7 @@ export default function PricingPreview() {
       {/* Radial Blue Spotlight Background Effect */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[550px] w-[550px] sm:h-[700px] sm:w-[700px] rounded-full bg-blue-600/12 blur-3xl"
-      />
-
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-32 top-10 h-80 w-80 rounded-full bg-sky-500/10 blur-3xl"
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[550px] w-[550px] sm:h-[700px] sm:w-[700px] rounded-full bg-primary/15 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -201,9 +192,9 @@ export default function PricingPreview() {
         <div className="mx-auto max-w-3xl text-center">
           {/* Small Badge */}
           <div ref={badgeRef} className="mb-5 inline-block">
-            <span className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-950/60 px-4 py-1.5 text-xs font-semibold text-blue-400 shadow-sm backdrop-blur-md sm:text-sm">
+            <span className="inline-flex items-center gap-2 rounded-full border border-secondary/40 bg-secondary/10 px-4 py-1.5 text-xs font-semibold text-secondary shadow-sm backdrop-blur-md sm:text-sm">
               <CheckIcon
-                className="h-4 w-4 stroke-[2.5] text-blue-400"
+                className="h-4 w-4 stroke-[2.5] text-secondary"
                 aria-hidden="true"
               />
               Transparent Pricing
@@ -217,9 +208,7 @@ export default function PricingPreview() {
             className="font-heading text-3xl font-medium tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1]"
           >
             Simple pricing built around{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-blue-500 bg-clip-text text-transparent">
-              your business.
-            </span>
+            <span className="text-secondary">your business.</span>
           </h2>
 
           {/* Supporting Paragraph */}
@@ -227,30 +216,34 @@ export default function PricingPreview() {
             ref={paragraphRef}
             className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg"
           >
-            Haggai offers flexible accounting solutions designed for businesses of different
-            sizes, with transparent pricing and zero hidden complexity.
+            Haggai offers flexible accounting solutions designed for businesses
+            of different sizes, with transparent pricing and zero hidden
+            complexity.
           </p>
         </div>
 
-        {/* MAIN EXPERIENCE: SPOTLIGHT PRICING CARDS SHOWCASE */}
+        {/* PRICING CARDS SHOWCASE */}
         <div className="mt-14 sm:mt-16 grid grid-cols-1 items-center gap-6 lg:grid-cols-3 lg:gap-8 max-w-6xl mx-auto">
-          {/* PLAN 1: STARTER (Left Card) */}
+          {/* PLAN 1: STARTER */}
           <div
             ref={leftCardRef}
-            className="group relative overflow-hidden rounded-3xl border border-slate-800 bg-[#111827] p-7 lg:p-8 shadow-xl transition-all duration-300 hover:border-slate-700 hover:shadow-2xl hover:shadow-blue-950/20 hover:-translate-y-1"
+            className="group relative overflow-hidden rounded-3xl border border-slate-800 bg-[#111827] p-7 lg:p-8 shadow-xl transition-all duration-300 hover:border-slate-700 hover:shadow-2xl hover:-translate-y-1"
           >
             <div className="flex items-center justify-between mb-4">
               <span className="text-xs font-bold tracking-widest text-slate-400 uppercase">
                 {plans[0].bestFor}
               </span>
-              <RocketLaunchIcon className="h-5 w-5 text-slate-400" aria-hidden="true" />
+              <RocketLaunchIcon
+                className="h-5 w-5 text-slate-400"
+                aria-hidden="true"
+              />
             </div>
 
             <h3 className="font-heading text-2xl font-semibold text-white">
               {plans[0].name}
             </h3>
 
-            <p className="mt-2 text-xs sm:text-sm text-slate-400 leading-relaxed min-h-[40px]">
+            <p className="mt-2 text-xs sm:text-sm text-slate-400 leading-relaxed min-h-10">
               {plans[0].description}
             </p>
 
@@ -259,8 +252,11 @@ export default function PricingPreview() {
                 What&apos;s Included:
               </span>
               {plans[0].features.map((feature) => (
-                <div key={feature} className="flex items-center gap-2.5 text-xs text-slate-300">
-                  <CheckCircleIcon className="h-4 w-4 text-blue-400 shrink-0" />
+                <div
+                  key={feature}
+                  className="flex items-center gap-2.5 text-xs text-slate-300"
+                >
+                  <CheckCircleIcon className="h-4 w-4 text-secondary shrink-0" />
                   <span>{feature}</span>
                 </div>
               ))}
@@ -269,32 +265,35 @@ export default function PricingPreview() {
             <div className="mt-8">
               <Link
                 href={plans[0].ctaHref}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/80 px-6 py-3 text-sm font-semibold text-slate-200 transition-all duration-300 hover:border-blue-500 hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/80 px-6 py-3 text-sm font-semibold text-slate-200 transition-all duration-300 hover:border-primary hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-primary"
               >
                 <span>{plans[0].ctaText}</span>
-                <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+                <ArrowRightIcon
+                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
               </Link>
             </div>
           </div>
 
-          {/* PLAN 2: GROWTH (CENTER FEATURED SPOTLIGHT CARD) */}
+          {/* PLAN 2: GROWTH (CENTER FEATURED CARD) */}
           <div
             ref={featuredCardRef}
-            className="group relative overflow-hidden rounded-3xl border-2 border-blue-500 bg-[#111827] p-8 lg:p-9 shadow-2xl shadow-blue-600/25 transition-all duration-300 lg:scale-[1.05] z-20 hover:shadow-blue-600/40 hover:scale-[1.07]"
+            className="group relative overflow-hidden rounded-3xl border-2 border-primary bg-[#111827] p-8 lg:p-9 shadow-2xl shadow-primary/25 transition-all duration-300 lg:scale-[1.05] z-20 hover:shadow-primary/40 hover:scale-[1.07]"
           >
             {/* Glowing Spotlight Overlay */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-blue-600/20 blur-2xl group-hover:bg-blue-600/30 transition-all duration-500"
+              className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-primary/20 blur-2xl group-hover:bg-primary/30 transition-all duration-500"
             />
 
-            {/* "Most Popular" Floating Badge */}
+            {/* "Most Popular" Accent Gold Badge */}
             <div className="flex items-center justify-between mb-4">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-blue-600 to-sky-500 px-3 py-1 text-xs font-bold text-white shadow-md shadow-blue-600/30">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1 text-xs font-bold text-white shadow-md shadow-accent/25">
                 <SparklesIcon className="h-3.5 w-3.5" aria-hidden="true" />
                 {plans[1].badge}
               </span>
-              <span className="text-xs font-bold tracking-widest text-blue-400 uppercase">
+              <span className="text-xs font-bold tracking-widest text-secondary uppercase">
                 {plans[1].bestFor}
               </span>
             </div>
@@ -303,17 +302,20 @@ export default function PricingPreview() {
               {plans[1].name}
             </h3>
 
-            <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed min-h-[40px]">
+            <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed min-h-10">
               {plans[1].description}
             </p>
 
             <div className="mt-6 border-t border-slate-800 pt-6 space-y-3">
-              <span className="text-xs font-semibold text-blue-300 block mb-2">
+              <span className="text-xs font-semibold text-secondary block mb-2">
                 Everything in Starter, plus:
               </span>
               {plans[1].features.map((feature) => (
-                <div key={feature} className="flex items-center gap-2.5 text-xs font-medium text-slate-100">
-                  <CheckCircleIcon className="h-4 w-4 text-blue-400 shrink-0" />
+                <div
+                  key={feature}
+                  className="flex items-center gap-2.5 text-xs font-medium text-slate-100"
+                >
+                  <CheckCircleIcon className="h-4 w-4 text-secondary shrink-0" />
                   <span>{feature}</span>
                 </div>
               ))}
@@ -322,31 +324,37 @@ export default function PricingPreview() {
             <div className="mt-8">
               <Link
                 href={plans[1].ctaHref}
-                className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 transition-all duration-300 hover:bg-blue-500 hover:shadow-blue-600/50 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:bg-[#004870] hover:shadow-primary/50 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary"
               >
                 <span>{plans[1].ctaText}</span>
-                <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" aria-hidden="true" />
+                <ArrowRightIcon
+                  className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1"
+                  aria-hidden="true"
+                />
               </Link>
             </div>
           </div>
 
-          {/* PLAN 3: ENTERPRISE (Right Card) */}
+          {/* PLAN 3: ENTERPRISE */}
           <div
             ref={rightCardRef}
-            className="group relative overflow-hidden rounded-3xl border border-slate-800 bg-[#111827] p-7 lg:p-8 shadow-xl transition-all duration-300 hover:border-slate-700 hover:shadow-2xl hover:shadow-blue-950/20 hover:-translate-y-1"
+            className="group relative overflow-hidden rounded-3xl border border-slate-800 bg-[#111827] p-7 lg:p-8 shadow-xl transition-all duration-300 hover:border-slate-700 hover:shadow-2xl hover:-translate-y-1"
           >
             <div className="flex items-center justify-between mb-4">
               <span className="text-xs font-bold tracking-widest text-slate-400 uppercase">
                 {plans[2].bestFor}
               </span>
-              <BuildingOffice2Icon className="h-5 w-5 text-slate-400" aria-hidden="true" />
+              <BuildingOffice2Icon
+                className="h-5 w-5 text-slate-400"
+                aria-hidden="true"
+              />
             </div>
 
             <h3 className="font-heading text-2xl font-semibold text-white">
               {plans[2].name}
             </h3>
 
-            <p className="mt-2 text-xs sm:text-sm text-slate-400 leading-relaxed min-h-[40px]">
+            <p className="mt-2 text-xs sm:text-sm text-slate-400 leading-relaxed min-h-10">
               {plans[2].description}
             </p>
 
@@ -355,8 +363,11 @@ export default function PricingPreview() {
                 Tailored Enterprise Features:
               </span>
               {plans[2].features.map((feature) => (
-                <div key={feature} className="flex items-center gap-2.5 text-xs text-slate-300">
-                  <CheckCircleIcon className="h-4 w-4 text-blue-400 shrink-0" />
+                <div
+                  key={feature}
+                  className="flex items-center gap-2.5 text-xs text-slate-300"
+                >
+                  <CheckCircleIcon className="h-4 w-4 text-secondary shrink-0" />
                   <span>{feature}</span>
                 </div>
               ))}
@@ -365,10 +376,13 @@ export default function PricingPreview() {
             <div className="mt-8">
               <Link
                 href={plans[2].ctaHref}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/80 px-6 py-3 text-sm font-semibold text-slate-200 transition-all duration-300 hover:border-blue-500 hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/80 px-6 py-3 text-sm font-semibold text-slate-200 transition-all duration-300 hover:border-primary hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-primary"
               >
                 <span>{plans[2].ctaText}</span>
-                <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+                <ArrowRightIcon
+                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
               </Link>
             </div>
           </div>
@@ -381,13 +395,14 @@ export default function PricingPreview() {
           </h3>
 
           <p className="mx-auto text-sm text-slate-400 max-w-xl mb-6">
-            Every business is unique. Let&apos;s build a pricing plan that fits your exact accounting needs and scale.
+            Every business is unique. Let&apos;s build a pricing plan that fits
+            your exact accounting needs and scale.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="/contact"
-              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-blue-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 transition-all duration-300 hover:bg-blue-500 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:bg-[#004870] hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary"
             >
               <span>View Full Pricing</span>
               <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
@@ -395,7 +410,7 @@ export default function PricingPreview() {
 
             <Link
               href="/contact"
-              className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl border border-slate-700 bg-slate-900/60 px-7 py-3.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-slate-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl border border-slate-700 bg-slate-900/60 px-7 py-3.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-slate-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary"
             >
               Contact Our Team
             </Link>
