@@ -175,12 +175,14 @@ export default function MissionSection() {
     <section
       ref={sectionRef}
       id="mission"
-      className="relative overflow-hidden bg-sky-700 py-20 text-white sm:py-24 lg:py-32"
+      // className="relative overflow-hidden bg-sky-700 py-20 text-white sm:py-24 lg:py-32"
+      className="relative overflow-hidden bg-[#00598A] py-20 text-white sm:py-24 lg:py-32"
     >
       {/* Decorative background */}
       <div
         aria-hidden="true"
-        className="mission-glow absolute -left-40 top-0 h-112 w-md rounded-full bg-sky-400/20 blur-3xl"
+        // className="mission-glow absolute -left-40 top-0 h-112 w-md rounded-full bg-sky-400/20 blur-3xl"
+        className="mission-glow absolute -left-40 top-0 h-112 w-md rounded-full bg-[#508BC0]/30 blur-3xl"
       />
 
       <div
@@ -198,7 +200,8 @@ export default function MissionSection() {
           {/* Left content */}
           <div>
             <div className="mission-eyebrow mb-7 flex items-center gap-3">
-              <span className="h-px w-10 bg-white/80" />
+              {/* <span className="h-px w-10 bg-white/80" /> */}
+              <span className="h-px w-10 bg-[#E29E21]" />
 
               <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-sky-100">
                 Our Mission
@@ -236,8 +239,11 @@ export default function MissionSection() {
                   key={commitment}
                   className="mission-commitment flex items-start gap-4"
                 >
-                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/20">
-                    <CheckCircleIcon aria-hidden="true" className="h-5 w-5 text-white" />
+                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E29E21]/15 ring-1 ring-[#E29E21]/45">
+                    <CheckCircleIcon
+                      aria-hidden="true"
+                      className="h-5 w-5 text-[#E29E21]"
+                    />
                   </span>
 
                   <p className="max-w-lg font-manrope text-sm leading-7 text-sky-50 sm:text-[15px]">
@@ -256,7 +262,8 @@ export default function MissionSection() {
                 className="pointer-events-none absolute -right-24 -top-24 h-64 w-64"
               >
                 <div className="mission-orbit absolute inset-0 rounded-full border border-white/15">
-                  <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" />
+                  {/* <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" /> */}
+                  <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E29E21] shadow-[0_0_0_5px_rgba(226,158,33,0.18)]" />
                 </div>
 
                 <div className="absolute inset-9 rounded-full border border-white/10" />
@@ -264,7 +271,8 @@ export default function MissionSection() {
                 <div className="absolute inset-18 rounded-full bg-white/10" />
               </div>
 
-              <div className="mission-icon mission-floating-icon relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-sky-700 shadow-xl shadow-sky-950/15">
+              {/* <div className="mission-icon mission-floating-icon relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-sky-700 shadow-xl shadow-sky-950/15"> */}
+              <div className="mission-icon mission-floating-icon relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#E29E21] text-white shadow-xl shadow-[#E29E21]/20">
                 <SparklesIcon aria-hidden="true" className="h-7 w-7" />
               </div>
 
@@ -293,7 +301,8 @@ export default function MissionSection() {
                 <a
                   href="#vision"
                   aria-label="Continue to our vision"
-                  className="group flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white/10 transition-all duration-300 hover:bg-white hover:text-sky-700"
+                  // className="group flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white/10 transition-all duration-300 hover:bg-white hover:text-sky-700"
+                  className="group flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white/10 transition-all duration-300 hover:border-[#E29E21] hover:bg-[#E29E21] hover:text-white"
                 >
                   <ArrowDownRightIcon
                     aria-hidden="true"
