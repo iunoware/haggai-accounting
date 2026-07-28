@@ -3,18 +3,13 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Industries", href: "/industries" },
-  { name: "why offshore", href: "/why-offshore" },
   { name: "Pricing", href: "/pricing" },
   { name: "Contact", href: "/contact" },
 ];
@@ -25,28 +20,21 @@ const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const navRef = useRef<HTMLElement>(null);
-  // const logoRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
-  // scroll effect
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Background transformation threshold
       setIsScrolled(currentScrollY > 50);
 
-      // Hide/Show logic with threshold
       if (currentScrollY > 100) {
         if (currentScrollY > lastScrollY) {
-          // Scrolling down
           setIsVisible(false);
         } else {
-          // Scrolling up
           setIsVisible(true);
         }
       } else {
-        // Always show at top
         setIsVisible(true);
       }
 
@@ -65,102 +53,138 @@ const Navbar = () => {
     };
   }, [isMenuOpen]);
 
-  // const hamburgerColor = isMenuOpen || isScrolled ? "bg-[#0c2e2d]" : "bg-white";
-  const hamburgerColor = "bg-[#0c2e2d]";
+  const hamburgerColor = "bg-slate-900";
 
   return (
     <>
       <nav
         ref={navRef}
-        className={`${isScrolled ? "bg-white/30 backdrop-blur-lg shadow-lg" : "bg-transparent shadow-none"} ${isVisible ? "translate-y-0" : "-translate-y-full"} fixed top-0 left-0 w-full z-50 flex items-center justify-between px-8 md:px-14 lg:px-20 h-20 pointer-events-auto transition-all duration-700`}
+        className={`${
+          isScrolled
+            ? "bg-white/90 backdrop-blur-md shadow-xs border-b border-slate-200/80"
+            : "bg-transparent shadow-none"
+        } ${
+          isVisible ? "translate-y-0" : "-translate-y-full"
+        } fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 sm:px-10 lg:px-16 h-20 pointer-events-auto transition-all duration-500 font-manrope`}
       >
         {/* Brand Logo */}
-        <Link href="/" className="relative z-50 group">
+        <Link href="/" className="relative z-50 group flex items-center gap-2">
           <Image
-            src={"/images/haggai-logo.png"}
-            width={100}
-            height={0}
-            className="object-cover object-center"
-            alt="Leon Interiors Madurai"
+            src={"/images/logo.png"}
+            width={130}
+            height={40}
+            className="object-contain h-9 w-auto"
+            alt="Haggai Accounting Logo"
+            priority
           />
         </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-10 lg:gap-14">
+        {/* Desktop Navigation Links (Manrope Medium Weight) */}
+        <div className="hidden md:flex items-center gap-8 lg:gap-10">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`${isActive ? "text-sky-700 font-extrabold" : "text-black font-medium"} nav-link-text relative group text-[12px] uppercase tracking-[0.2em] transition-colors duration-300 pb-1`}
+                className={`${
+                  isActive
+                    ? "text-primary font-bold"
+                    : "text-slate-700 hover:text-primary font-medium"
+                } relative group text-xs uppercase tracking-[0.18em] transition-colors duration-300 pb-1 font-manrope`}
               >
                 {link.name}
                 <span
-                  className={`${isActive ? "w-full" : "w-0"} absolute bottom-0 left-1/2 -translate-x-1/2 h-[1.5px] bg-gold transition-all duration-500 ease-out w-0 group-hover:w-full`}
+                  className={`${
+                    isActive ? "w-full" : "w-0"
+                  } absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-primary transition-all duration-300 ease-out group-hover:w-full`}
                 />
               </Link>
             );
           })}
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex w-full justify-end items-center">
+        {/* Desktop Action Button (Manrope SemiBold) */}
+        <div className="hidden md:flex items-center">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-xs font-semibold font-manrope text-white shadow-xs transition-all duration-300 hover:bg-[#004870] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary"
+          >
+            Book a Consultation
+          </Link>
+        </div>
+
+        {/* Mobile Menu Toggle Button */}
+        <div className="md:hidden flex items-center">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden z-50 flex flex-col justify-center items-center h-20 w-10 relative overflow-hidden group"
-            aria-label="Toggle Navigation"
+            className="z-50 flex flex-col justify-center items-center h-10 w-10 relative focus:outline-none"
+            aria-label="Toggle Navigation Menu"
           >
-            <div
-              className={`flex flex-col gap-1.25 transition-transform duration-500 group-hover:scale-110`}
-            >
+            <div className="flex flex-col gap-1.5 transition-transform duration-300">
               <span
-                className={`h-px w-6 transition-all duration-500 ${isMenuOpen ? "rotate-45 translate-y-1.5" : ""} ${hamburgerColor}`}
+                className={`h-0.5 w-6 rounded-full transition-all duration-300 ${
+                  isMenuOpen ? "rotate-45 translate-y-2" : ""
+                } ${hamburgerColor}`}
               />
               <span
-                className={`h-px w-6 transition-all duration-500 ${isMenuOpen ? "opacity-0 -translate-x-4" : ""} ${hamburgerColor}`}
+                className={`h-0.5 w-6 rounded-full transition-all duration-300 ${
+                  isMenuOpen ? "opacity-0 -translate-x-3" : ""
+                } ${hamburgerColor}`}
               />
               <span
-                className={`h-px w-6 transition-all duration-500 ${isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""} ${hamburgerColor}`}
+                className={`h-0.5 w-6 rounded-full transition-all duration-300 ${
+                  isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+                } ${hamburgerColor}`}
               />
             </div>
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
-      <nav>
-        <div
-          className={`fixed inset-0 h-screen bg-white/60 backdrop-blur-xl z-40 transform transition-all duration-700 md:hidden flex flex-col justify-center items-center ${
-            isMenuOpen
-              ? "translate-y-0 opacity-100"
-              : "-translate-y-full opacity-0"
-          }`}
-        >
-          <div className="flex flex-col items-center gap-8">
-            {navLinks.map((link, idx) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={` ${isActive ? "text-sky-700 font-black" : "text-black font-semibold"} text-green text-3xl uppercase tracking-[0.25em] transition-all duration-700 ${
-                    isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                  }`}
-                  style={{ transitionDelay: `${idx * 100}ms` }}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
-          </div>
+      {/* Mobile Overlay Navigation Menu */}
+      <div
+        className={`fixed inset-0 h-screen bg-white/95 backdrop-blur-xl z-40 transform transition-all duration-500 md:hidden flex flex-col justify-center items-center font-manrope ${
+          isMenuOpen
+            ? "translate-y-0 opacity-100 pointer-events-auto"
+            : "-translate-y-full opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="flex flex-col items-center gap-7">
+          {navLinks.map((link, idx) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsMenuOpen(false)}
+                className={`${
+                  isActive
+                    ? "text-primary font-bold"
+                    : "text-slate-800 font-semibold hover:text-primary"
+                } text-2xl uppercase tracking-[0.15em] transition-all duration-300 font-manrope ${
+                  isMenuOpen
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-8 opacity-0"
+                }`}
+                style={{ transitionDelay: `${idx * 60}ms` }}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
 
-          {/* <div
-            className={`absolute bottom-16 left-0 w-full text-center transition-all duration-1000 delay-500 ${isMenuOpen ? "opacity-70" : "opacity-0"}`}
-          ></div> */}
+          <div className="mt-4">
+            <Link
+              href="/contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-3.5 text-sm font-semibold font-manrope text-white shadow-md transition-all duration-300 hover:bg-[#004870]"
+            >
+              Book a Consultation
+            </Link>
+          </div>
         </div>
-      </nav>
+      </div>
     </>
   );
 };

@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import PricingHero from "./(components)/Hero";
 import PricingPlans from "./(components)/PricingPlans";
 import PlanComparison from "./(components)/PlanComparison";
+import PricingFaq from "./(components)/FaqSection";
 import FinancialDashboardCTA from "@/src/components/FinancialDashboardCTA";
 
 export const metadata: Metadata = {
@@ -22,7 +23,10 @@ export default function PricingPage() {
       {/* 3. Interactive Plan Comparison Matrix */}
       <PlanComparison />
 
-      {/* 4. Call To Action / Financial Dashboard Signature Interaction */}
+      {/* 4. Frequently Asked Questions Section */}
+      <PricingFaq />
+
+      {/* 5. Call To Action / Financial Dashboard Signature Interaction */}
       <FinancialDashboardCTA />
     </div>
   );
