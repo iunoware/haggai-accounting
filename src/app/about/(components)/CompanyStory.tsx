@@ -57,7 +57,7 @@ export default function CompanyStory() {
             opacity: 1,
             y: 0,
             x: 0,
-          }
+          },
         );
 
         gsap.set(".story-progress-line", {
@@ -92,7 +92,7 @@ export default function CompanyStory() {
             stagger: 0.12,
             ease: "power4.out",
           },
-          "-=0.4"
+          "-=0.4",
         )
         .from(
           ".story-description",
@@ -102,7 +102,7 @@ export default function CompanyStory() {
             duration: 0.7,
             ease: "power3.out",
           },
-          "-=0.45"
+          "-=0.45",
         )
         .from(
           ".story-link",
@@ -112,7 +112,7 @@ export default function CompanyStory() {
             duration: 0.6,
             ease: "power3.out",
           },
-          "-=0.35"
+          "-=0.35",
         )
         .from(
           ".story-visual",
@@ -122,7 +122,7 @@ export default function CompanyStory() {
             duration: 1,
             ease: "power4.out",
           },
-          "-=0.85"
+          "-=0.85",
         )
         .from(
           ".story-progress-line",
@@ -132,7 +132,7 @@ export default function CompanyStory() {
             transformOrigin: "top",
             ease: "power3.inOut",
           },
-          "-=0.65"
+          "-=0.65",
         )
         .from(
           ".story-card",
@@ -143,7 +143,7 @@ export default function CompanyStory() {
             stagger: 0.18,
             ease: "power3.out",
           },
-          "-=1"
+          "-=1",
         );
 
       gsap.to(".story-orbit", {
@@ -163,36 +163,40 @@ export default function CompanyStory() {
     },
     {
       scope: sectionRef,
-    }
+    },
   );
 
   return (
     <section
       ref={sectionRef}
       id="our-story"
-      className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28 font-body text-slate-900"
+      className="relative overflow-hidden bg-[#f7f7f7] py-20 sm:py-24 lg:py-32"
     >
       {/* Background details */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent"
+        className="pointer-events-none absolute left-0 top-0 h-px w-full bg-linear-to-r from-transparent via-slate-200 to-transparent"
       />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-soft/50 blur-3xl"
+        // className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-sky-100/60 blur-3xl"
+        className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-soft/80 blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-secondary/10 blur-3xl"
+        // className="absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-slate-100 blur-3xl"
+        className="absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-secondary/10 blur-3xl"
       />
 
       <div className="relative mx-auto grid max-w-7xl items-start gap-16 px-5 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24 lg:px-12">
         {/* Left content */}
         <div className="lg:sticky lg:top-32">
           <div className="story-eyebrow mb-6 flex items-center gap-3">
-            <span className="h-px w-10 bg-primary" />
-            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+            {/* <span className="h-px w-10 bg-sky-700" /> */}
+            <span className="h-px w-10 bg-accent" />
+
+            <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-sky-700">
               Our Beginning
             </span>
           </div>
@@ -203,6 +207,7 @@ export default function CompanyStory() {
             </span>
 
             <span className="block overflow-hidden pb-2">
+              {/* <span className="story-heading-line block italic text-sky-700"> */}
               <span className="story-heading-line block italic text-primary">
                 started.
               </span>
@@ -225,32 +230,40 @@ export default function CompanyStory() {
 
         {/* Right story visual */}
         <div className="story-visual relative">
-          <div className="relative overflow-hidden rounded-3xl border border-slate-200/90 bg-slate-50/60 px-5 py-8 shadow-xl shadow-primary/5 sm:px-9 sm:py-11">
+          {/* <div className="relative overflow-hidden rounded/-4xl border border-slate-200 bg-[#eef5f8] px-5 py-8 shadow-[0_25px_80px_-40px_rgba(12,46,45,0.3)] sm:px-9 sm:py-11"> */}
+          <div className="relative overflow-hidden rounded-4xl border border-primary/10 bg-soft/35 px-5 py-8 shadow-[0_25px_80px_-40px_rgba(0,89,138,0.3)] sm:px-9 sm:py-11">
             {/* Decorative visual */}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute right-0 top-0 h-64 w-64 translate-x-1/3 -translate-y-1/3"
             >
-              <div className="story-orbit absolute inset-0 rounded-full border border-secondary/20">
-                <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary" />
+              <div className="story-orbit absolute inset-0 rounded-full border border-secondary/25">
+                {/* <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-700" /> */}
+                <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_0_5px_rgba(226,158,33,0.15)]" />
               </div>
 
               <div className="absolute inset-8 rounded-full border border-secondary/15" />
+
               <div className="absolute inset-16 rounded-full bg-white/70 backdrop-blur-sm" />
             </div>
 
             <div className="relative mb-12 flex items-end justify-between border-b border-slate-200/90 pb-8">
               <div>
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                  The Haggai Journey
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+
+                  <span className="font-manrope text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
+                    The Haggai Journey
+                  </span>
+                </div>
 
                 <p className="mt-3 max-w-sm font-heading text-3xl font-medium leading-tight text-slate-950 sm:text-4xl">
                   From a clear idea to a trusted financial partnership.
                 </p>
               </div>
 
-              <div className="story-floating-shape hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary text-white shadow-lg shadow-primary/20 sm:flex">
+              {/* <div className="story-floating-shape hidden h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-sky-700 text-white shadow-lg shadow-sky-700/20 sm:flex"> */}
+              <div className="story-floating-shape hidden h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-accent text-white shadow-lg shadow-accent/25 sm:flex">
                 <ChartBarSquareIcon aria-hidden="true" className="h-7 w-7" />
               </div>
             </div>
@@ -259,12 +272,14 @@ export default function CompanyStory() {
             <div className="relative">
               <div
                 aria-hidden="true"
-                className="absolute bottom-5 left-5.75 top-5 w-px bg-slate-200 sm:left-6.75"
+                // className="absolute bottom-5 left-5.75 top-5 w-px bg-slate-300 sm:left-6.75"
+                className="absolute bottom-5 left-5.75 top-5 w-px bg-secondary/25 sm:left-6.75"
               />
 
               <div
                 aria-hidden="true"
-                className="story-progress-line absolute bottom-5 left-5.75 top-5 w-px bg-primary sm:left-6.75"
+                // className="story-progress-line absolute bottom-5 left-5.75 top-5 w-px bg-sky-700 sm:left-6.75"
+                className="story-progress-line absolute bottom-5 left-5.75 top-5 w-px bg-accent sm:left-6.75"
               />
 
               <div className="space-y-5">
@@ -276,7 +291,10 @@ export default function CompanyStory() {
                       key={point.number}
                       className="story-card group relative grid grid-cols-[48px_1fr] gap-4 sm:grid-cols-[56px_1fr] sm:gap-6"
                     >
-                      <div className="relative z-40 flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white shadow-xs transition-all duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-white sm:h-14 sm:w-14">
+                      <div
+                        // className="relative z-40 flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm transition-all duration-300 group-hover:border-sky-700 group-hover:bg-sky-700 group-hover:text-white sm:h-14 sm:w-14"
+                        className="relative z-40 flex h-12 w-12 items-center justify-center rounded-full border border-secondary/20 bg-white text-primary shadow-sm transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-white sm:h-14 sm:w-14"
+                      >
                         <Icon aria-hidden="true" className="h-5 w-5" />
                       </div>
 
@@ -286,7 +304,10 @@ export default function CompanyStory() {
                             {point.title}
                           </h3>
 
-                          <span className="font-heading text-sm font-bold tracking-[0.15em] text-primary">
+                          <span
+                            // className="font-manrope text-xs font-bold tracking-[0.15em] text-sky-700"
+                            className="font-manrope text-xs font-bold tracking-[0.15em] text-accent"
+                          >
                             {point.number}
                           </span>
                         </div>
@@ -301,6 +322,12 @@ export default function CompanyStory() {
               </div>
             </div>
           </div>
+
+          <div
+            aria-hidden="true"
+            // className="absolute -bottom-4 -left-4 -z-10 h-full w-full rounded-4xl border border-sky-700/10"
+            className="absolute -bottom-4 -left-4 -z-10 h-full w-full rounded-4xl border border-secondary/20"
+          />
         </div>
       </div>
     </section>
