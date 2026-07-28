@@ -14,6 +14,7 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Industries", href: "/industries" },
+  { name: "why offshore", href: "/why-offshore" },
   { name: "Pricing", href: "/pricing" },
   { name: "Contact", href: "/contact" },
 ];
@@ -144,10 +145,8 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className={` ${isActive ? "text-sky-700 font-black" : "text-black font-semibold"} text-green text-4xl uppercase tracking-[0.25em] transition-all duration-700 ${
-                    isMenuOpen
-                      ? "translate-y-0 opacity-100"
-                      : "translate-y-10 opacity-0"
+                  className={` ${isActive ? "text-sky-700 font-black" : "text-black font-semibold"} text-green text-3xl uppercase tracking-[0.25em] transition-all duration-700 ${
+                    isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                   }`}
                   style={{ transitionDelay: `${idx * 100}ms` }}
                 >

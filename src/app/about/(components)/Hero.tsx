@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { ArrowDownRightIcon, ArrowRightIcon, CheckIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowDownRightIcon,
+  ArrowRightIcon,
+  CheckIcon,
+} from "@heroicons/react/24/outline";
 
 const highlights = [
   {
@@ -18,40 +22,70 @@ const highlights = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-20 bg-white font-body text-slate-900">
-      {/* Background decoration */}
+    <section className="relative overflow-hidden bg-soft/40 pt-10">
+      {/* Background grid */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_35%,rgba(0,89,138,0.035),rgba(255,255,255,0))]"
+        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,89,138,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,89,138,0.045)_1px,transparent_1px)] bg-size-[72px_72px]"
       />
 
-      <div className="relative mx-auto flex min-h-[calc(100vh-80px)] max-w-7xl flex-col px-5 pb-8 pt-12 sm:px-8 sm:pt-16 lg:px-12 lg:pb-10 lg:pt-20">
+      {/* Decorative background glows */}
+      <div
+        aria-hidden="true"
+        className="absolute -right-32 top-16 h-96 w-96 rounded-full bg-secondary/15 blur-3xl"
+      />
+
+      <div
+        aria-hidden="true"
+        className="absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-soft blur-3xl"
+      />
+
+      {/* Decorative circle */}
+      <div
+        aria-hidden="true"
+        className="absolute right-[8%] top-[24%] hidden h-24 w-24 rounded-full border border-secondary/20 lg:block"
+      >
+        <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent" />
+      </div>
+
+      <div className="relative mx-auto flex min-h-[calc(100vh-80px)] max-w-360 flex-col px-5 pb-8 pt-16 sm:px-8 sm:pt-20 lg:px-12 lg:pb-10 lg:pt-24">
         {/* Main content */}
         <div className="mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-secondary/40 bg-soft/60 px-4 py-1.5 backdrop-blur-sm">
-            <CheckIcon className="h-4 w-4 stroke-[2.5] text-primary" aria-hidden="true" />
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+          {/* Eyebrow */}
+          <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-primary/15 bg-white/65 px-4 py-2 shadow-sm backdrop-blur-sm">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-accent/15">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+            </span>
+
+            <span className="font-manrope text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
               About Haggai Accounting
             </span>
           </div>
 
-          <h1 className="max-w-4xl font-heading text-4xl font-medium leading-[0.95] tracking-tight text-slate-950 sm:text-7xl lg:text-[6.2rem]">
-            The story behind{" "}
-            <span className="block font-normal italic text-primary sm:inline">
+          {/* Heading */}
+          <h1 className="max-w-4xl font-cormorant text-[3.4rem] font-medium leading-[0.91] tracking-[-0.045em] text-[#0c2e2d] sm:text-7xl lg:text-[6.8rem]">
+            The story behind
+            <span className="relative block font-normal italic text-primary">
               Haggai Accounting
+              <span
+                aria-hidden="true"
+                className="absolute -bottom-3 left-1/2 h-1 w-24 -translate-x-1/2 rounded-full bg-accent sm:w-32"
+              />
             </span>
           </h1>
 
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
+          {/* Description */}
+          <p className="mt-10 max-w-2xl font-manrope text-sm leading-7 text-[#426474] sm:text-base sm:leading-8">
             Haggai was founded to give growing businesses the financial clarity,
             dependable processes, and dedicated accounting support they need to move
             forward with confidence.
           </p>
 
-          <div className="mt-8 flex flex-col items-center gap-3.5 sm:flex-row">
+          {/* Buttons */}
+          <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row">
             <Link
               href="#our-story"
-              className="group inline-flex min-h-12 items-center justify-center gap-2.5 rounded-xl bg-primary px-7 text-sm font-semibold text-white shadow-md shadow-primary/20 transition-all duration-300 hover:bg-[#004870] hover:scale-[1.02] active:scale-[0.98]"
+              className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-md bg-primary px-6 font-manrope text-sm font-semibold text-white shadow-lg shadow-primary/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#004875] hover:shadow-xl hover:shadow-primary/20"
             >
               <span>Discover our story</span>
               <ArrowDownRightIcon
@@ -62,7 +96,7 @@ export default function Hero() {
 
             <Link
               href="/contact"
-              className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-900 transition-all duration-300 hover:border-primary hover:text-primary hover:bg-soft/40"
+              className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-secondary/30 bg-white/50 px-5 font-manrope text-sm font-semibold text-primary transition-all duration-300 hover:border-secondary hover:bg-white"
             >
               <span>Work with Haggai</span>
               <ArrowRightIcon
@@ -74,24 +108,33 @@ export default function Hero() {
         </div>
 
         {/* Bottom highlights */}
-        <div className="mt-16 border-t border-slate-200/90 lg:mt-12">
+        <div className="mt-16 overflow-hidden rounded-2xl border border-primary/10 bg-white/55 shadow-[0_18px_50px_-35px_rgba(0,89,138,0.35)] backdrop-blur-sm lg:mt-10">
           <div className="grid md:grid-cols-3">
             {highlights.map((item, index) => (
               <div
                 key={item.value}
-                className={`px-4 py-6 text-center sm:px-8 lg:py-8 ${
+                className={`group relative px-5 py-7 text-center transition-colors duration-300 hover:bg-soft/55 sm:px-8 lg:py-8 ${
                   index !== highlights.length - 1
-                    ? "border-b border-slate-200/90 md:border-b-0 md:border-r"
+                    ? "border-b border-primary/10 md:border-b-0 md:border-r"
                     : ""
                 }`}
               >
-                <p className="font-heading text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+                <div className="mx-auto mb-4 flex h-9 w-9 items-center justify-center rounded-full bg-secondary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                  <CheckIcon aria-hidden="true" className="h-4 w-4" />
+                </div>
+
+                <p className="font-cormorant text-3xl font-semibold tracking-[-0.02em] text-primary sm:text-4xl">
                   {item.value}
                 </p>
 
-                <p className="mx-auto mt-2 max-w-xs text-xs leading-relaxed text-slate-600">
+                <p className="mx-auto mt-2 max-w-xs font-manrope text-xs leading-5 text-[#55717e]">
                   {item.label}
                 </p>
+
+                <span
+                  aria-hidden="true"
+                  className="absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 bg-accent transition-all duration-500 group-hover:w-16"
+                />
               </div>
             ))}
           </div>

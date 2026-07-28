@@ -1,7 +1,18 @@
+import HowWeWork from "./(components)/HowWeWork";
+import AccountingSoftwareExpertise from "./(components)/AccountingSoftwareExpertise";
+import Hero from "./(components)/Hero";
+import WhiteLabelServices from "./(components)/WhiteLabelServices";
+import ServicesFaq from "./(components)/ServicesFaq";
+
 export default function Services() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans text-black">
-      <h2>Services page</h2>
-    </div>
+    <>
+      <Hero />
+      <WhiteLabelServices />
+      <AccountingSoftwareExpertise />
+      <HowWeWork />
+      <ServicesFaq />
+      {/* <CTA /> */}
+    </>
   );
 }
