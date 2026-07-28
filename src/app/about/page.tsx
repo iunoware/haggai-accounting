@@ -1,7 +1,15 @@
-export default function About() {
+import CompanyStory from "./(components)/CompanyStory";
+import Hero from "./(components)/Hero";
+import MissionSection from "./(components)/MissionSection";
+import VisionSection from "./(components)/VisionSection";
+
+export default function AboutPage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans text-black">
-      <h2>About page</h2>
-    </div>
+    <>
+      <Hero />
+      <CompanyStory />
+      <MissionSection />
+      <VisionSection />
+    </>
   );
 }
