@@ -205,12 +205,12 @@ export default function WhyHaggai() {
           {/* FEATURED CARD (Spans full width top) */}
           <div
             ref={featuredCardRef}
-            className="group relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 lg:p-10 shadow-xs transition-all duration-300 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/[0.04]"
+            className="group relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 lg:p-10 shadow-xs transition-all duration-300 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/4"
           >
             {/* Small accent line on top */}
             <div
               aria-hidden="true"
-              className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-sky-500 to-blue-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-blue-600 via-sky-500 to-blue-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
             />
 
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-10">
@@ -260,7 +260,7 @@ export default function WhyHaggai() {
               {/* Right Column: Illustration / Visual Container */}
               <div className="lg:col-span-5 flex items-center justify-center">
                 <div className="floating-featured-image relative w-full overflow-hidden rounded-2xl border border-slate-100 bg-slate-50/50 p-4 shadow-inner">
-                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-white border border-slate-200/60 shadow-xs flex items-center justify-center">
+                  <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl bg-white border border-slate-200/60 shadow-xs flex items-center justify-center">
                     <Image
                       src="/images/solutions-illustration.png"
                       alt="Dedicated offshore accounting team workspace"
@@ -287,7 +287,7 @@ export default function WhyHaggai() {
                 <article
                   key={item.title}
                   role="listitem"
-                  className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/[0.05] cursor-default"
+                  className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/5 cursor-default"
                 >
                   {/* Top subtle blue accent line on hover */}
                   <div

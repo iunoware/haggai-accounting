@@ -83,10 +83,15 @@ export default function HowWeWork() {
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
-    if (typeof window === "undefined" || !sectionRef.current || !trackRef.current) return;
+    if (
+      typeof window === "undefined" ||
+      !sectionRef.current ||
+      !trackRef.current
+    )
+      return;
 
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     const isDesktop = window.innerWidth >= 768;
@@ -109,7 +114,7 @@ export default function HowWeWork() {
         headerTl.fromTo(
           badgeRef.current,
           { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
         );
       }
       if (headingRef.current) {
@@ -117,7 +122,7 @@ export default function HowWeWork() {
           headingRef.current,
           { opacity: 0, y: 25 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
       if (paragraphRef.current) {
@@ -125,7 +130,7 @@ export default function HowWeWork() {
           paragraphRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.4"
+          "-=0.4",
         );
       }
 
@@ -143,7 +148,7 @@ export default function HowWeWork() {
               const progress = self.progress;
               const idx = Math.min(
                 Math.floor(progress * steps.length),
-                steps.length - 1
+                steps.length - 1,
               );
               setActiveStep(idx);
             },
@@ -179,7 +184,7 @@ export default function HowWeWork() {
       ref={sectionRef}
       id="how-we-work"
       aria-labelledby="how-we-work-heading"
-      className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28 font-body text-slate-900"
+      className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-20 font-body text-slate-900"
     >
       {/* Soft radial blue background glow (opacity under 6%, white-first) */}
       <div
@@ -216,14 +221,18 @@ export default function HowWeWork() {
             ref={paragraphRef}
             className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg"
           >
-            Haggai follows a transparent step-by-step workflow that keeps you informed and
-            confident from initial onboarding through ongoing daily accounting support.
+            Haggai follows a transparent step-by-step workflow that keeps you
+            informed and confident from initial onboarding through ongoing daily
+            accounting support.
           </p>
         </div>
       </div>
 
       {/* MAIN EXPERIENCE: Pinned Horizontal Scroll on Desktop / Tablet, Vertical Stack on Mobile */}
-      <div ref={pinWrapperRef} className="relative w-full overflow-hidden min-h-[460px]">
+      <div
+        ref={pinWrapperRef}
+        className="relative w-full overflow-hidden min-h-115"
+      >
         {/* DESKTOP / TABLET HORIZONTAL TRACK (hidden on small screens) */}
         <div className="hidden md:block relative w-full pt-6 pb-12">
           {/* Track container containing progress bar and horizontal cards */}
@@ -247,7 +256,7 @@ export default function HowWeWork() {
               return (
                 <article
                   key={step.number}
-                  className={`group relative z-10 w-[380px] lg:w-[440px] shrink-0 overflow-hidden rounded-3xl border bg-white p-7 lg:p-8 transition-all duration-500 cursor-default ${
+                  className={`group relative z-10 w-95 lg:w-110 shrink-0 overflow-hidden rounded-3xl border bg-white p-7 lg:p-8 transition-all duration-500 cursor-default ${
                     isActive
                       ? "border-blue-500 shadow-2xl shadow-blue-900/10 scale-[1.02] ring-2 ring-blue-600/15"
                       : "border-slate-200/90 shadow-xs opacity-85 hover:opacity-100 hover:border-slate-300"
@@ -259,8 +268,8 @@ export default function HowWeWork() {
                       isActive
                         ? "bg-blue-600"
                         : isPassed
-                        ? "bg-blue-400"
-                        : "bg-transparent"
+                          ? "bg-blue-400"
+                          : "bg-transparent"
                     }`}
                   />
 
@@ -281,7 +290,10 @@ export default function HowWeWork() {
                           : "bg-blue-50 text-blue-600"
                       }`}
                     >
-                      <Icon className="h-6 w-6 stroke-[1.8]" aria-hidden="true" />
+                      <Icon
+                        className="h-6 w-6 stroke-[1.8]"
+                        aria-hidden="true"
+                      />
                     </div>
                   </div>
 
@@ -328,7 +340,7 @@ export default function HowWeWork() {
                   className="relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs"
                 >
                   {/* Timeline dot */}
-                  <div className="absolute -left-[35px] top-6 flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-white ring-4 ring-white text-xs font-bold">
+                  <div className="absolute -left-8.75 top-6 flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-white ring-4 ring-white text-xs font-bold">
                     ✓
                   </div>
 
@@ -337,7 +349,10 @@ export default function HowWeWork() {
                       {step.number}
                     </span>
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
-                      <Icon className="h-5 w-5 stroke-[1.8]" aria-hidden="true" />
+                      <Icon
+                        className="h-5 w-5 stroke-[1.8]"
+                        aria-hidden="true"
+                      />
                     </div>
                   </div>
 
