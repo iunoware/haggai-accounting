@@ -76,7 +76,7 @@ const Navbar = () => {
         {/* Brand Logo */}
         <Link href="/" className="relative z-50 group">
           <Image
-            src={"/images/logo.png"}
+            src={"/images/haggai-logo.png"}
             width={100}
             height={0}
             className="object-cover object-center"
@@ -131,7 +131,9 @@ const Navbar = () => {
       <nav>
         <div
           className={`fixed inset-0 h-screen bg-white/60 backdrop-blur-xl z-40 transform transition-all duration-700 md:hidden flex flex-col justify-center items-center ${
-            isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+            isMenuOpen
+              ? "translate-y-0 opacity-100"
+              : "-translate-y-full opacity-0"
           }`}
         >
           <div className="flex flex-col items-center gap-8">
@@ -143,7 +145,9 @@ const Navbar = () => {
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
                   className={` ${isActive ? "text-sky-700 font-black" : "text-black font-semibold"} text-green text-4xl uppercase tracking-[0.25em] transition-all duration-700 ${
-                    isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                    isMenuOpen
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-10 opacity-0"
                   }`}
                   style={{ transitionDelay: `${idx * 100}ms` }}
                 >

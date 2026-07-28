@@ -17,7 +17,6 @@ import {
   BriefcaseIcon,
   ArrowRightIcon,
   CheckCircleIcon,
-  BuildingStorefrontIcon,
 } from "@heroicons/react/24/outline";
 
 if (typeof window !== "undefined") {
@@ -29,7 +28,8 @@ const industriesData = [
     id: "healthcare",
     name: "Healthcare",
     icon: ShieldCheckIcon,
-    shortDesc: "HIPAA-compliant accounting, medical billing tracking & payroll.",
+    shortDesc:
+      "HIPAA-compliant accounting, medical billing tracking & payroll.",
     strengths: [
       "Regulatory compliance & audit readiness",
       "Specialized medical billing reconciliation",
@@ -73,7 +73,8 @@ const industriesData = [
     id: "tech-saas",
     name: "Technology & SaaS",
     icon: ComputerDesktopIcon,
-    shortDesc: "ARR/MRR tracking, deferred revenue & investor financial reporting.",
+    shortDesc:
+      "ARR/MRR tracking, deferred revenue & investor financial reporting.",
     strengths: [
       "ASC 606 revenue recognition",
       "Subscription metrics (ARR, CAC, Churn)",
@@ -106,7 +107,8 @@ const industriesData = [
     id: "services",
     name: "Professional Services",
     icon: BriefcaseIcon,
-    shortDesc: "Time-tracking billing, partner distributions & client retainers.",
+    shortDesc:
+      "Time-tracking billing, partner distributions & client retainers.",
     strengths: [
       "Retainer & project-based accounting",
       "Utilization & realization tracking",
@@ -225,7 +227,6 @@ export default function IndustriesWeServe() {
         );
       }
 
-      // Continuous subtle floating effect on central hub image
       if (hubRef.current) {
         const floatingEl = hubRef.current.querySelector(".floating-hub-img");
         if (floatingEl) {
@@ -248,12 +249,12 @@ export default function IndustriesWeServe() {
       ref={sectionRef}
       id="industries"
       aria-labelledby="industries-heading"
-      className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28 font-body text-slate-900"
+      className="relative overflow-hidden bg-slate-50/50 py-20 sm:py-24 lg:py-24 font-body text-slate-900"
     >
-      {/* Pure white background with extremely subtle blue radial glow (< 4% opacity) */}
+      {/* Background glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_40%,rgba(37,99,235,0.03),rgba(255,255,255,0))]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_40%,rgba(0,89,138,0.03),rgba(255,255,255,0))]"
       />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -261,9 +262,9 @@ export default function IndustriesWeServe() {
         <div className="mx-auto max-w-3xl text-center">
           {/* Small Badge */}
           <div ref={badgeRef} className="mb-5 inline-block">
-            <span className="inline-flex items-center gap-2 rounded-full border border-blue-200/80 bg-blue-50/80 px-4 py-1.5 text-xs font-semibold text-blue-700 shadow-xs backdrop-blur-sm sm:text-sm">
+            <span className="inline-flex items-center gap-2 rounded-full border border-secondary/40 bg-soft/60 px-4 py-1.5 text-xs font-semibold text-primary shadow-xs backdrop-blur-sm sm:text-sm">
               <CheckIcon
-                className="h-4 w-4 stroke-[2.5] text-blue-600"
+                className="h-4 w-4 stroke-[2.5] text-primary"
                 aria-hidden="true"
               />
               Industries We Serve
@@ -277,7 +278,7 @@ export default function IndustriesWeServe() {
             className="font-heading text-3xl font-medium tracking-tight text-slate-950 sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1]"
           >
             Built for businesses across every{" "}
-            <span className="text-blue-600">stage of growth.</span>
+            <span className="text-primary">stage of growth.</span>
           </h2>
 
           {/* Supporting Paragraph */}
@@ -285,14 +286,15 @@ export default function IndustriesWeServe() {
             ref={paragraphRef}
             className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg"
           >
-            Haggai supports businesses across multiple industries by understanding the unique
-            financial, reporting, payroll, and compliance requirements of each sector.
+            Haggai supports businesses across multiple industries by
+            understanding the unique financial, reporting, payroll, and
+            compliance requirements of each sector.
           </p>
         </div>
 
-        {/* MAIN EXPERIENCE: WORLD OF INDUSTRIES ECOSYSTEM */}
+        {/* MAIN EXPERIENCE */}
         <div className="mt-12 sm:mt-16 grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8">
-          {/* Left Column Industry Cards (4 items on Desktop: lg:col-span-3) */}
+          {/* Left Column Industry Cards (4 items on Desktop) */}
           <div className="hidden lg:col-span-3 lg:flex flex-col space-y-3.5">
             {industriesData.slice(0, 4).map((industry, index) => {
               const Icon = industry.icon;
@@ -305,8 +307,8 @@ export default function IndustriesWeServe() {
                   onMouseEnter={() => handleSelectIndustry(index)}
                   className={`group relative overflow-hidden rounded-2xl border p-4 sm:p-5 text-left transition-all duration-300 cursor-pointer ${
                     isActive
-                      ? "border-blue-500 bg-blue-50/40 shadow-lg shadow-blue-900/[0.06] scale-[1.02] ring-2 ring-blue-600/15"
-                      : "border-slate-200/90 bg-white shadow-xs hover:border-blue-300 hover:shadow-md"
+                      ? "border-primary bg-soft/40 shadow-lg shadow-primary/5 scale-[1.02] ring-2 ring-primary/15"
+                      : "border-slate-200/90 bg-white shadow-xs hover:border-primary/40 hover:shadow-md"
                   }`}
                 >
                   <div className="flex items-center justify-between">
@@ -314,15 +316,18 @@ export default function IndustriesWeServe() {
                       <div
                         className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${
                           isActive
-                            ? "bg-blue-600 text-white shadow-md shadow-blue-600/20 rotate-3"
-                            : "bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white"
+                            ? "bg-primary text-white shadow-md shadow-primary/20 rotate-3"
+                            : "bg-soft text-primary group-hover:bg-primary group-hover:text-white"
                         }`}
                       >
-                        <Icon className="h-5 w-5 stroke-[1.8]" aria-hidden="true" />
+                        <Icon
+                          className="h-5 w-5 stroke-[1.8]"
+                          aria-hidden="true"
+                        />
                       </div>
 
                       <div>
-                        <h3 className="text-sm font-semibold text-slate-900 group-hover:text-blue-700 transition-colors">
+                        <h3 className="font-heading text-sm font-semibold text-slate-950 group-hover:text-primary transition-colors">
                           {industry.name}
                         </h3>
                         <p className="text-xs text-slate-500 line-clamp-1">
@@ -332,7 +337,7 @@ export default function IndustriesWeServe() {
                     </div>
 
                     <ArrowRightIcon
-                      className={`h-4 w-4 text-blue-600 transition-all duration-300 ${
+                      className={`h-4 w-4 text-primary transition-all duration-300 ${
                         isActive
                           ? "opacity-100 translate-x-0"
                           : "opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"
@@ -345,19 +350,20 @@ export default function IndustriesWeServe() {
             })}
           </div>
 
-          {/* Centerpiece: AI Ecosystem Illustration + Pinned Dynamic Detail Panel (Desktop: lg:col-span-6) */}
-          <div ref={hubRef} className="lg:col-span-6 flex flex-col items-center">
-            {/* Center Ecosystem Illustration Container */}
-            <div className="floating-hub-img relative w-full max-w-md lg:max-w-lg overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-b from-white via-blue-50/20 to-white p-5 shadow-xl shadow-blue-950/[0.03]">
-              {/* Subtle orbital dashed SVG ring backdrop */}
+          {/* Centerpiece: Illustration + Dynamic Detail Panel */}
+          <div
+            ref={hubRef}
+            className="lg:col-span-6 flex flex-col items-center"
+          >
+            <div className="floating-hub-img relative w-full max-w-md lg:max-w-lg overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-5 shadow-xl shadow-primary/5">
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-40"
+                className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-30"
               >
-                <div className="h-72 w-72 rounded-full border border-dashed border-blue-300 animate-spin-slow" />
+                <div className="h-72 w-72 rounded-full border border-dashed border-secondary animate-spin-slow" />
               </div>
 
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-white border border-blue-50 shadow-inner flex items-center justify-center">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-white border border-slate-100 shadow-xs flex items-center justify-center">
                 <Image
                   src="/images/industries-ecosystem.png"
                   alt="Interconnected business ecosystem surrounded by industry specialization"
@@ -369,18 +375,18 @@ export default function IndustriesWeServe() {
               </div>
             </div>
 
-            {/* Dynamic Information Panel beneath the illustration */}
+            {/* Dynamic Info Panel */}
             <div
               ref={infoPanelRef}
-              className={`mt-6 w-full overflow-hidden rounded-2xl border border-blue-200/80 bg-gradient-to-br from-white via-blue-50/30 to-white p-6 shadow-md shadow-blue-900/[0.04] transition-opacity duration-300 ${
+              className={`mt-6 w-full overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-6 shadow-md shadow-primary/5 transition-opacity duration-300 ${
                 isFading ? "opacity-30" : "opacity-100"
               }`}
             >
               <div className="flex items-center justify-between mb-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold text-white shadow-xs">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3.5 py-1 text-xs font-semibold text-white shadow-xs">
                   {activeIndustry.name}
                 </span>
-                <span className="text-xs font-semibold text-blue-700">
+                <span className="text-xs font-semibold text-primary">
                   Haggai Industry Expertise
                 </span>
               </div>
@@ -389,7 +395,7 @@ export default function IndustriesWeServe() {
                 {activeIndustry.shortDesc}
               </p>
 
-              <div className="mt-4 border-t border-blue-100 pt-3">
+              <div className="mt-4 border-t border-slate-100 pt-3">
                 <span className="text-xs font-bold tracking-wider text-slate-400 uppercase block mb-2">
                   Specialized Financial Strengths
                 </span>
@@ -397,9 +403,9 @@ export default function IndustriesWeServe() {
                   {activeIndustry.strengths.map((strength) => (
                     <li
                       key={strength}
-                      className="flex items-center gap-1.5 bg-white/80 rounded-lg p-2 border border-slate-200/60 shadow-2xs"
+                      className="flex items-center gap-1.5 bg-soft/50 rounded-lg p-2 border border-secondary/20 shadow-2xs"
                     >
-                      <CheckCircleIcon className="h-4 w-4 text-blue-600 shrink-0" />
+                      <CheckCircleIcon className="h-4 w-4 text-primary shrink-0" />
                       <span className="leading-tight">{strength}</span>
                     </li>
                   ))}
@@ -408,7 +414,7 @@ export default function IndustriesWeServe() {
             </div>
           </div>
 
-          {/* Right Column Industry Cards (4 items on Desktop: lg:col-span-3) */}
+          {/* Right Column Industry Cards (4 items on Desktop) */}
           <div className="hidden lg:col-span-3 lg:flex flex-col space-y-3.5">
             {industriesData.slice(4, 8).map((industry, index) => {
               const actualIndex = index + 4;
@@ -422,8 +428,8 @@ export default function IndustriesWeServe() {
                   onMouseEnter={() => handleSelectIndustry(actualIndex)}
                   className={`group relative overflow-hidden rounded-2xl border p-4 sm:p-5 text-left transition-all duration-300 cursor-pointer ${
                     isActive
-                      ? "border-blue-500 bg-blue-50/40 shadow-lg shadow-blue-900/[0.06] scale-[1.02] ring-2 ring-blue-600/15"
-                      : "border-slate-200/90 bg-white shadow-xs hover:border-blue-300 hover:shadow-md"
+                      ? "border-primary bg-soft/40 shadow-lg shadow-primary/5 scale-[1.02] ring-2 ring-primary/15"
+                      : "border-slate-200/90 bg-white shadow-xs hover:border-primary/40 hover:shadow-md"
                   }`}
                 >
                   <div className="flex items-center justify-between">
@@ -431,15 +437,18 @@ export default function IndustriesWeServe() {
                       <div
                         className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${
                           isActive
-                            ? "bg-blue-600 text-white shadow-md shadow-blue-600/20 rotate-3"
-                            : "bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white"
+                            ? "bg-primary text-white shadow-md shadow-primary/20 rotate-3"
+                            : "bg-soft text-primary group-hover:bg-primary group-hover:text-white"
                         }`}
                       >
-                        <Icon className="h-5 w-5 stroke-[1.8]" aria-hidden="true" />
+                        <Icon
+                          className="h-5 w-5 stroke-[1.8]"
+                          aria-hidden="true"
+                        />
                       </div>
 
                       <div>
-                        <h3 className="text-sm font-semibold text-slate-900 group-hover:text-blue-700 transition-colors">
+                        <h3 className="font-heading text-sm font-semibold text-slate-950 group-hover:text-primary transition-colors">
                           {industry.name}
                         </h3>
                         <p className="text-xs text-slate-500 line-clamp-1">
@@ -449,7 +458,7 @@ export default function IndustriesWeServe() {
                     </div>
 
                     <ArrowRightIcon
-                      className={`h-4 w-4 text-blue-600 transition-all duration-300 ${
+                      className={`h-4 w-4 text-primary transition-all duration-300 ${
                         isActive
                           ? "opacity-100 translate-x-0"
                           : "opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"
@@ -462,8 +471,11 @@ export default function IndustriesWeServe() {
             })}
           </div>
 
-          {/* TABLET / MOBILE ALL CARDS GRID (shown on lg:hidden) */}
-          <div ref={cardsRef} className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:hidden">
+          {/* TABLET / MOBILE ALL CARDS GRID */}
+          <div
+            ref={cardsRef}
+            className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:hidden"
+          >
             {industriesData.map((industry, index) => {
               const Icon = industry.icon;
               const isActive = index === activeIndex;
@@ -474,8 +486,8 @@ export default function IndustriesWeServe() {
                   onClick={() => handleSelectIndustry(index)}
                   className={`group relative overflow-hidden rounded-2xl border p-4 text-left transition-all duration-300 cursor-pointer ${
                     isActive
-                      ? "border-blue-500 bg-blue-50/50 shadow-md ring-2 ring-blue-600/20"
-                      : "border-slate-200/90 bg-white shadow-xs hover:border-blue-300"
+                      ? "border-primary bg-soft/50 shadow-md ring-2 ring-primary/20"
+                      : "border-slate-200/90 bg-white shadow-xs hover:border-primary/40"
                   }`}
                 >
                   <div className="flex items-center justify-between">
@@ -483,14 +495,17 @@ export default function IndustriesWeServe() {
                       <div
                         className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
                           isActive
-                            ? "bg-blue-600 text-white"
-                            : "bg-blue-50 text-blue-600"
+                            ? "bg-primary text-white"
+                            : "bg-soft text-primary"
                         }`}
                       >
-                        <Icon className="h-5 w-5 stroke-[1.8]" aria-hidden="true" />
+                        <Icon
+                          className="h-5 w-5 stroke-[1.8]"
+                          aria-hidden="true"
+                        />
                       </div>
                       <div>
-                        <h3 className="text-sm font-semibold text-slate-900">
+                        <h3 className="font-heading text-sm font-semibold text-slate-950">
                           {industry.name}
                         </h3>
                         <p className="text-xs text-slate-500 line-clamp-1">
@@ -498,7 +513,10 @@ export default function IndustriesWeServe() {
                         </p>
                       </div>
                     </div>
-                    <ArrowRightIcon className="h-4 w-4 text-blue-600" aria-hidden="true" />
+                    <ArrowRightIcon
+                      className="h-4 w-4 text-primary"
+                      aria-hidden="true"
+                    />
                   </div>
                 </button>
               );
@@ -514,10 +532,13 @@ export default function IndustriesWeServe() {
 
           <Link
             href="/about#industries"
-            className="group inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-7 py-3.5 text-sm sm:text-base font-semibold text-white shadow-md shadow-blue-600/20 transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/30 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 w-full sm:w-auto"
+            className="group inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-sm sm:text-base font-semibold text-white shadow-md shadow-primary/20 transition-all duration-300 hover:bg-[#004870] hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary w-full sm:w-auto"
           >
             <span>Explore Industries</span>
-            <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+            <ArrowRightIcon
+              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
           </Link>
 
           <p className="mt-3 text-sm font-medium text-slate-600 sm:text-base">
