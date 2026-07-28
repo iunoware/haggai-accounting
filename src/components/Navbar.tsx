@@ -77,7 +77,7 @@ const Navbar = () => {
         {/* Brand Logo */}
         <Link href="/" className="relative z-50 group">
           <Image
-            src={"/images/logo.png"}
+            src={"/images/haggai-logo.png"}
             width={100}
             height={0}
             className="object-cover object-center"
@@ -132,7 +132,9 @@ const Navbar = () => {
       <nav>
         <div
           className={`fixed inset-0 h-screen bg-white/60 backdrop-blur-xl z-40 transform transition-all duration-700 md:hidden flex flex-col justify-center items-center ${
-            isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+            isMenuOpen
+              ? "translate-y-0 opacity-100"
+              : "-translate-y-full opacity-0"
           }`}
         >
           <div className="flex flex-col items-center gap-8">

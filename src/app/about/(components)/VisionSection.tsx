@@ -41,156 +41,6 @@ const visionGoals = [
 export default function VisionSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  // useGSAP(
-  //   () => {
-  //     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  //     if (reduceMotion) {
-  //       gsap.set(
-  //         [
-  //           ".vision-eyebrow",
-  //           ".vision-heading-line",
-  //           ".vision-description",
-  //           ".vision-statement",
-  //           ".vision-goal",
-  //           ".vision-footer",
-  //           ".vision-icon",
-  //         ],
-  //         {
-  //           opacity: 1,
-  //           x: 0,
-  //           y: 0,
-  //           scale: 1,
-  //           rotate: 0,
-  //         },
-  //       );
-
-  //       gsap.set(".vision-line", {
-  //         scaleX: 1,
-  //       });
-
-  //       return;
-  //     }
-
-  //     const timeline = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: sectionRef.current,
-  //         start: "top 72%",
-  //         toggleActions: "play none none reverse",
-  //       },
-  //     });
-
-  //     timeline
-  //       .from(".vision-eyebrow", {
-  //         opacity: 0,
-  //         y: 20,
-  //         duration: 0.7,
-  //         ease: "power3.out",
-  //       })
-  //       .from(
-  //         ".vision-heading-line",
-  //         {
-  //           opacity: 0,
-  //           yPercent: 110,
-  //           duration: 1,
-  //           stagger: 0.14,
-  //           ease: "power4.out",
-  //         },
-  //         "-=0.4",
-  //       )
-  //       .from(
-  //         ".vision-description",
-  //         {
-  //           opacity: 0,
-  //           y: 26,
-  //           duration: 0.75,
-  //           stagger: 0.14,
-  //           ease: "power3.out",
-  //         },
-  //         "-=0.55",
-  //       )
-  //       .from(
-  //         ".vision-statement",
-  //         {
-  //           opacity: 0,
-  //           x: -45,
-  //           duration: 0.9,
-  //           ease: "power4.out",
-  //         },
-  //         "-=0.55",
-  //       )
-  //       .from(
-  //         ".vision-line",
-  //         {
-  //           scaleX: 0,
-  //           transformOrigin: "left",
-  //           duration: 1,
-  //           ease: "power3.inOut",
-  //         },
-  //         "-=0.65",
-  //       )
-  //       // .from(
-  //       //   ".vision-goal",
-  //       //   {
-  //       //     opacity: 0,
-  //       //     y: 40,
-  //       //     duration: 0.75,
-  //       //     stagger: 0.16,
-  //       //     ease: "power3.out",
-  //       //   },
-  //       //   "-=0.65",
-  //       // )
-  //       // .from(
-  //       //   ".vision-icon",
-  //       //   {
-  //       //     opacity: 0,
-  //       //     scale: 0.65,
-  //       //     rotate: -15,
-  //       //     duration: 0.75,
-  //       //     stagger: 0.12,
-  //       //     ease: "back.out(1.7)",
-  //       //   },
-  //       //   "-=0.85",
-  //       // )
-  //       .from(
-  //         ".vision-footer",
-  //         {
-  //           opacity: 0,
-  //           y: 22,
-  //           duration: 0.7,
-  //           ease: "power3.out",
-  //         },
-  //         "-=0.35",
-  //       );
-
-  //     gsap.to(".vision-orbit", {
-  //       rotate: 360,
-  //       duration: 42,
-  //       repeat: -1,
-  //       ease: "none",
-  //     });
-
-  //     gsap.to(".vision-orbit-reverse", {
-  //       rotate: -360,
-  //       duration: 30,
-  //       repeat: -1,
-  //       ease: "none",
-  //     });
-
-  //     gsap.to(".vision-floating-shape", {
-  //       y: -12,
-  //       rotate: 3,
-  //       duration: 3.2,
-  //       repeat: -1,
-  //       yoyo: true,
-  //       ease: "sine.inOut",
-  //     });
-  //   },
-  //   {
-  //     scope: sectionRef,
-  //   },
-  // );
-
   useGSAP(
     () => {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -213,7 +63,7 @@ export default function VisionSection() {
             y: 0,
             scale: 1,
             rotate: 0,
-          },
+          }
         );
 
         gsap.set(".vision-line", {
@@ -248,7 +98,7 @@ export default function VisionSection() {
             stagger: 0.14,
             ease: "power4.out",
           },
-          "-=0.4",
+          "-=0.4"
         )
         .from(
           ".vision-description",
@@ -259,7 +109,7 @@ export default function VisionSection() {
             stagger: 0.14,
             ease: "power3.out",
           },
-          "-=0.55",
+          "-=0.55"
         )
         .from(
           ".vision-statement",
@@ -269,7 +119,7 @@ export default function VisionSection() {
             duration: 0.9,
             ease: "power4.out",
           },
-          "-=0.55",
+          "-=0.55"
         )
         .from(
           ".vision-line",
@@ -279,7 +129,7 @@ export default function VisionSection() {
             duration: 1,
             ease: "power3.inOut",
           },
-          "-=0.65",
+          "-=0.65"
         );
 
       const visionCards = gsap.utils.toArray<HTMLElement>(".vision-goal");
@@ -309,7 +159,7 @@ export default function VisionSection() {
               duration: 0.8,
               ease: "power3.out",
               clearProps: "transform",
-            },
+            }
           )
           .fromTo(
             icon,
@@ -324,7 +174,7 @@ export default function VisionSection() {
               ease: "back.out(1.7)",
               clearProps: "transform",
             },
-            "-=0.5",
+            "-=0.5"
           );
       });
 
@@ -367,7 +217,7 @@ export default function VisionSection() {
     },
     {
       scope: sectionRef,
-    },
+    }
   );
 
   return (
@@ -379,17 +229,11 @@ export default function VisionSection() {
       {/* Background decoration */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(3,105,161,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(3,105,161,0.05)_1px,transparent_1px)] bg-size-[78px_78px]"
+        className="pointer-events-none absolute -left-48 top-20 h-120 w-120 rounded-full bg-soft/50 blur-3xl"
       />
-
       <div
         aria-hidden="true"
-        className="absolute -left-48 top-20 h-120 w-120 rounded-full bg-sky-200/45 blur-3xl"
-      />
-
-      <div
-        aria-hidden="true"
-        className="absolute -right-48 bottom-0 h-128 w-lg rounded-full bg-white blur-3xl"
+        className="pointer-events-none absolute -right-48 bottom-0 h-128 w-lg rounded-full bg-secondary/10 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
@@ -397,20 +241,19 @@ export default function VisionSection() {
         <div className="grid items-end gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-24">
           <div>
             <div className="vision-eyebrow mb-7 flex items-center gap-3">
-              <span className="h-px w-10 bg-sky-700" />
-
-              <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-sky-700">
+              <span className="h-px w-10 bg-primary" />
+              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
                 Our Vision
               </span>
             </div>
 
-            <h2 className="font-cormorant text-[3.4rem] font-medium leading-[0.92] tracking-[-0.045em] text-[#0c2e2d] sm:text-6xl lg:text-[5.4rem]">
+            <h2 className="font-heading text-4xl font-medium leading-[0.98] tracking-tight text-slate-950 sm:text-6xl lg:text-[5.4rem]">
               <span className="block overflow-hidden pb-1">
                 <span className="vision-heading-line block">Building a clearer</span>
               </span>
 
               <span className="block overflow-hidden pb-2">
-                <span className="vision-heading-line block italic text-sky-700">
+                <span className="vision-heading-line block italic text-primary">
                   financial future.
                 </span>
               </span>
@@ -418,13 +261,13 @@ export default function VisionSection() {
           </div>
 
           <div className="lg:pb-2">
-            <p className="vision-description max-w-xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
+            <p className="vision-description max-w-xl text-base leading-relaxed text-slate-600">
               Our vision is to become a trusted global accounting partner for growing
               businesses—known for bringing clarity, consistency, and confidence to every
               financial operation.
             </p>
 
-            <p className="vision-description mt-5 max-w-xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
+            <p className="vision-description mt-5 max-w-xl text-base leading-relaxed text-slate-600">
               We are building a company where dependable expertise, thoughtful processes,
               and long-term client relationships create a stronger foundation for
               sustainable growth.
@@ -433,19 +276,14 @@ export default function VisionSection() {
         </div>
 
         {/* Main vision panel */}
-        <div className="vision-statement relative mt-14 overflow-hidden rounded-4xl bg-sky-700 p-6 text-white shadow-[0_30px_90px_-45px_rgba(3,105,161,0.65)] sm:p-9 lg:mt-20 lg:p-12">
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-size-[64px_64px]"
-          />
-
-          <div aria-hidden="true" className="absolute -right-28 -top-28 h-80 w-80">
+        <div className="vision-statement relative mt-14 overflow-hidden rounded-3xl bg-primary p-6 text-white shadow-xl shadow-primary/20 sm:p-9 lg:mt-20 lg:p-12">
+          <div aria-hidden="true" className="absolute -right-28 -top-28 h-80 w-80 pointer-events-none">
             <div className="vision-orbit absolute inset-0 rounded-full border border-white/15">
               <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" />
             </div>
 
             <div className="vision-orbit-reverse absolute inset-10 rounded-full border border-white/10">
-              <span className="absolute bottom-0 left-1/2 h-2.5 w-2.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-sky-200" />
+              <span className="absolute bottom-0 left-1/2 h-2.5 w-2.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-soft" />
             </div>
 
             <div className="absolute inset-20 rounded-full bg-white/10 backdrop-blur-sm" />
@@ -453,17 +291,17 @@ export default function VisionSection() {
 
           <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-16">
             <div>
-              <span className="font-manrope text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-100">
+              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-soft">
                 Where We Are Heading
               </span>
 
-              <blockquote className="mt-6 max-w-4xl font-cormorant text-3xl font-medium leading-[1.16] tracking-tight text-white sm:text-4xl lg:text-[3.25rem]">
+              <blockquote className="mt-6 max-w-4xl font-heading text-2xl font-medium leading-snug tracking-tight text-white sm:text-3xl lg:text-4xl">
                 To shape a future where growing businesses have access to the financial
                 clarity, systems, and support required to build with confidence.
               </blockquote>
             </div>
 
-            <div className="vision-floating-shape flex h-20 w-20 shrink-0 items-center justify-center rounded-3xl bg-white text-sky-700 shadow-xl shadow-sky-950/20 sm:h-24 sm:w-24">
+            <div className="vision-floating-shape flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white text-primary shadow-xl sm:h-24 sm:w-24">
               <BuildingOffice2Icon
                 aria-hidden="true"
                 className="h-9 w-9 sm:h-10 sm:w-10"
@@ -473,7 +311,7 @@ export default function VisionSection() {
         </div>
 
         {/* Vision goals */}
-        <div className="vision-line mt-16 h-px w-full bg-sky-700/20 lg:mt-20" />
+        <div className="vision-line mt-16 h-px w-full bg-slate-200 lg:mt-20" />
 
         <div className="mt-10 grid gap-5 md:grid-cols-3 lg:gap-7">
           {visionGoals.map((goal) => {
@@ -482,29 +320,29 @@ export default function VisionSection() {
             return (
               <article
                 key={goal.number}
-                className="vision-goal group relative overflow-hidden rounded-[1.75rem] border border-sky-700/10 bg-white p-6 transition-all duration-500 hover:-translate-y-2 hover:border-sky-700/25 hover:shadow-[0_25px_60px_-35px_rgba(3,105,161,0.45)] sm:p-7"
+                className="vision-goal group relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 sm:p-7"
               >
                 <div
                   aria-hidden="true"
-                  className="absolute right-0 top-0 h-28 w-28 translate-x-1/3 -translate-y-1/3 rounded-full bg-sky-100 transition-transform duration-500 group-hover:scale-125"
+                  className="absolute right-0 top-0 h-28 w-28 translate-x-1/3 -translate-y-1/3 rounded-full bg-soft/60 transition-transform duration-500 group-hover:scale-125 pointer-events-none"
                 />
 
-                <div className="relative">
+                <div className="relative z-10">
                   <div className="mb-8 flex items-start justify-between gap-5">
-                    <div className="vision-icon flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-700 text-white shadow-lg shadow-sky-700/20 transition-transform duration-500 group-hover:rotate-3 group-hover:scale-105">
+                    <div className="vision-icon flex h-12 w-12 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white">
                       <Icon aria-hidden="true" className="h-6 w-6" />
                     </div>
 
-                    <span className="font-manrope text-xs font-bold tracking-[0.18em] text-sky-700">
+                    <span className="font-heading text-sm font-bold tracking-[0.18em] text-primary">
                       {goal.number}
                     </span>
                   </div>
 
-                  <h3 className="font-cormorant text-2xl font-semibold leading-tight text-[#0c2e2d] sm:text-[1.75rem]">
+                  <h3 className="font-heading text-xl font-semibold leading-tight text-slate-950 sm:text-2xl">
                     {goal.title}
                   </h3>
 
-                  <p className="mt-4 font-manrope text-sm leading-7 text-slate-600">
+                  <p className="mt-4 text-sm leading-relaxed text-slate-600">
                     {goal.description}
                   </p>
                 </div>
@@ -514,23 +352,23 @@ export default function VisionSection() {
         </div>
 
         {/* Bottom link */}
-        <div className="vision-footer mt-12 flex flex-col gap-5 border-t border-sky-700/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="vision-footer mt-12 flex flex-col gap-5 border-t border-slate-200/90 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="font-cormorant text-2xl font-semibold text-[#0c2e2d]">
+            <p className="font-heading text-xl font-semibold text-slate-950">
               Our future is guided by our values.
             </p>
 
-            <p className="mt-2 font-manrope text-sm leading-6 text-slate-600">
+            <p className="mt-1 text-sm leading-relaxed text-slate-600">
               The principles that shape how we work, serve, and grow.
             </p>
           </div>
 
           <a
             href="#core-values"
-            className="group inline-flex items-center gap-3 font-manrope text-sm font-semibold text-sky-700"
+            className="group inline-flex items-center gap-3 text-sm font-semibold text-primary transition-colors hover:text-[#004870]"
           >
-            Explore our core values
-            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-sky-700/25 bg-white transition-all duration-300 group-hover:border-sky-700 group-hover:bg-sky-700 group-hover:text-white">
+            <span>Explore our core values</span>
+            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-secondary/40 bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
               <ArrowDownRightIcon
                 aria-hidden="true"
                 className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5"

@@ -198,12 +198,12 @@ export default function FounderSection() {
       {/* Background decorations */}
       <div
         aria-hidden="true"
-        className="founder-glow absolute -left-48 top-16 h-120 w-120 rounded-full bg-[#D7F3FF]/80 blur-3xl"
+        className="founder-glow absolute -left-48 top-16 h-120 w-120 rounded-full bg-soft/80 blur-3xl"
       />
 
       <div
         aria-hidden="true"
-        className="absolute -right-48 bottom-0 h-112 w-md rounded-full bg-[#508BC0]/10 blur-3xl"
+        className="absolute -right-48 bottom-0 h-112 w-md rounded-full bg-secondary/10 blur-3xl"
       />
 
       <div
@@ -216,9 +216,9 @@ export default function FounderSection() {
         <div className="grid items-end gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
           <div>
             <div className="founder-eyebrow mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#E29E21]" />
+              <span className="h-px w-10 bg-accent" />
 
-              <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-[#00598A]">
+              <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-primary">
                 Meet Our Founder
               </span>
             </div>
@@ -229,7 +229,7 @@ export default function FounderSection() {
               </span>
 
               <span className="block overflow-hidden pb-2">
-                <span className="founder-heading-line block italic text-[#00598A]">
+                <span className="founder-heading-line block italic text-primary">
                   purpose.
                 </span>
               </span>
@@ -254,8 +254,8 @@ export default function FounderSection() {
         <div className="mt-14 grid items-start gap-12 lg:mt-20 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20">
           {/* Founder image */}
           <div className="founder-image relative">
-            <div className="relative overflow-hidden rounded-4xl border border-[#00598A]/10 bg-[#D7F3FF]/35 p-3 shadow-[0_30px_80px_-40px_rgba(0,89,138,0.4)]">
-              <div className="relative aspect-4/5 overflow-hidden rounded-[1.55rem] bg-[#D7F3FF]">
+            <div className="relative overflow-hidden rounded-4xl border border-primary/10 bg-soft/35 p-3 shadow-[0_30px_80px_-40px_rgba(0,89,138,0.4)]">
+              <div className="relative aspect-4/5 overflow-hidden rounded-[1.55rem] bg-soft">
                 <Image
                   src="/images/founder.jpg"
                   alt="Founder of Haggai Accounting"
@@ -266,7 +266,7 @@ export default function FounderSection() {
 
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 bg-linear-to-t from-[#00598A]/45 via-transparent to-transparent"
+                  className="absolute inset-0 bg-linear-to-t from-primary/45 via-transparent to-transparent"
                 />
 
                 <div
@@ -274,32 +274,32 @@ export default function FounderSection() {
                   className="absolute right-0 top-0 h-44 w-44 translate-x-1/3 -translate-y-1/3"
                 >
                   <div className="founder-orbit absolute inset-0 rounded-full border border-white/30">
-                    <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E29E21] shadow-[0_0_0_5px_rgba(226,158,33,0.18)]" />
+                    <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_0_5px_rgba(226,158,33,0.18)]" />
                   </div>
 
                   <div className="absolute inset-8 rounded-full border border-white/20" />
                 </div>
 
-                <div className="founder-floating-badge absolute right-5 top-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#E29E21] text-white shadow-xl shadow-black/15 sm:h-16 sm:w-16">
+                <div className="founder-floating-badge absolute right-5 top-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-white shadow-xl shadow-black/15 sm:h-16 sm:w-16">
                   <CheckBadgeIcon aria-hidden="true" className="h-7 w-7 sm:h-8 sm:w-8" />
                 </div>
               </div>
             </div>
 
             {/* Founder identity card */}
-            <div className="founder-name-card relative z-10 mx-4 -mt-14 rounded-2xl border border-white/80 bg-white/90 p-5 shadow-xl shadow-[#00598A]/10 backdrop-blur-xl sm:mx-8 sm:p-6">
+            <div className="founder-name-card relative z-10 mx-4 -mt-14 rounded-2xl border border-white/80 bg-white/90 p-5 shadow-xl shadow-primary/10 backdrop-blur-xl sm:mx-8 sm:p-6">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <p className="font-cormorant text-3xl font-semibold text-[#0c2e2d]">
                     Founder Name
                   </p>
 
-                  <p className="mt-1 font-manrope text-xs font-semibold uppercase tracking-[0.16em] text-[#00598A]">
+                  <p className="mt-1 font-manrope text-xs font-semibold uppercase tracking-[0.16em] text-primary">
                     Founder &amp; Managing Director
                   </p>
                 </div>
 
-                <span className="inline-flex w-fit items-center rounded-full bg-[#D7F3FF] px-3 py-1.5 font-manrope text-[10px] font-bold uppercase tracking-[0.16em] text-[#00598A]">
+                <span className="inline-flex w-fit items-center rounded-full bg-soft px-3 py-1.5 font-manrope text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
                   Haggai Accounting
                 </span>
               </div>
@@ -307,14 +307,14 @@ export default function FounderSection() {
 
             <div
               aria-hidden="true"
-              className="absolute -bottom-4 -left-4 -z-10 h-full w-full rounded-4xl border border-[#508BC0]/20"
+              className="absolute -bottom-4 -left-4 -z-10 h-full w-full rounded-4xl border border-secondary/20"
             />
           </div>
 
           {/* Founder story */}
           <div className="lg:pt-4">
             <div className="mb-9">
-              <span className="font-manrope text-[11px] font-semibold uppercase tracking-[0.2em] text-[#00598A]">
+              <span className="font-manrope text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
                 The Person Behind Haggai
               </span>
 
@@ -331,15 +331,15 @@ export default function FounderSection() {
                 return (
                   <article
                     key={highlight.title}
-                    className="founder-highlight group relative overflow-hidden rounded-2xl border border-[#00598A]/10 bg-white/80 p-5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#508BC0]/30 hover:shadow-xl hover:shadow-[#00598A]/5 sm:p-6"
+                    className="founder-highlight group relative overflow-hidden rounded-2xl border border-primary/10 bg-white/80 p-5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-secondary/30 hover:shadow-xl hover:shadow-primary/5 sm:p-6"
                   >
                     <span
                       aria-hidden="true"
-                      className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#E29E21] transition-all duration-500 group-hover:w-full"
+                      className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-500 group-hover:w-full"
                     />
 
                     <div className="flex items-start gap-4">
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#D7F3FF] text-[#00598A] transition-all duration-300 group-hover:bg-[#00598A] group-hover:text-white">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
                         <Icon aria-hidden="true" className="h-5 w-5" />
                       </div>
 
@@ -359,7 +359,7 @@ export default function FounderSection() {
             </div>
 
             {/* Founder quote */}
-            <blockquote className="founder-quote relative mt-8 overflow-hidden rounded-2xl bg-[#00598A] p-6 text-white shadow-lg shadow-[#00598A]/15 sm:p-7">
+            <blockquote className="founder-quote relative mt-8 overflow-hidden rounded-2xl bg-primary p-6 text-white shadow-lg shadow-primary/15 sm:p-7">
               <span
                 aria-hidden="true"
                 className="absolute -right-4 -top-10 font-cormorant text-[10rem] leading-none text-white/10"
@@ -368,14 +368,14 @@ export default function FounderSection() {
               </span>
 
               <div className="relative">
-                <span className="mb-5 block h-1 w-12 rounded-full bg-[#E29E21]" />
+                <span className="mb-5 block h-1 w-12 rounded-full bg-accent" />
 
                 <p className="font-cormorant text-2xl font-medium leading-[1.35] sm:text-3xl">
                   Our goal is to give every client the financial clarity and dependable
                   support they need to build with confidence.
                 </p>
 
-                <p className="mt-5 font-manrope text-xs font-semibold uppercase tracking-[0.18em] text-[#D7F3FF]">
+                <p className="mt-5 font-manrope text-xs font-semibold uppercase tracking-[0.18em] text-soft">
                   Founder, Haggai Accounting
                 </p>
               </div>
@@ -383,10 +383,10 @@ export default function FounderSection() {
 
             <a
               href="/contact"
-              className="founder-link group mt-8 inline-flex items-center gap-3 font-manrope text-sm font-semibold text-[#00598A]"
+              className="founder-link group mt-8 inline-flex items-center gap-3 font-manrope text-sm font-semibold text-primary"
             >
               Connect with Haggai
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#00598A]/20 bg-white transition-all duration-300 group-hover:border-[#E29E21] group-hover:bg-[#E29E21] group-hover:text-white">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/20 bg-white transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-white">
                 <ArrowUpRightIcon
                   aria-hidden="true"
                   className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
