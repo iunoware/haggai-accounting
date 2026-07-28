@@ -322,17 +322,17 @@ export default function AccountingSoftwareExpertise() {
     <section
       ref={sectionRef}
       id="software-expertise"
-      className="relative overflow-hidden bg-[#00598A] py-20 text-white sm:py-24 lg:py-32"
+      className="relative overflow-hidden bg-primary py-20 text-white sm:py-24 lg:py-32"
     >
       {/* Background */}
       <div
         aria-hidden="true"
-        className="absolute -left-52 top-0 h-136 w-136 rounded-full bg-[#508BC0]/35 blur-3xl"
+        className="absolute -left-52 top-0 h-136 w-136 rounded-full bg-secondary/35 blur-3xl"
       />
 
       <div
         aria-hidden="true"
-        className="absolute -right-48 bottom-0 h-120 w-120 rounded-full bg-[#D7F3FF]/10 blur-3xl"
+        className="absolute -right-48 bottom-0 h-120 w-120 rounded-full bg-soft/10 blur-3xl"
       />
 
       <div
@@ -353,43 +353,43 @@ export default function AccountingSoftwareExpertise() {
                 aria-hidden="true"
                 className="software-orbit-one absolute inset-[18%] rounded-full border border-white/15"
               >
-                <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E29E21] shadow-[0_0_0_6px_rgba(226,158,33,0.18)]" />
+                <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_0_6px_rgba(226,158,33,0.18)]" />
               </div>
 
               <div
                 aria-hidden="true"
-                className="software-orbit-two absolute inset-[29%] rounded-full border border-[#D7F3FF]/15"
+                className="software-orbit-two absolute inset-[29%] rounded-full border border-soft/15"
               >
-                <span className="absolute bottom-0 left-1/2 h-2.5 w-2.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-[#D7F3FF]" />
+                <span className="absolute bottom-0 left-1/2 h-2.5 w-2.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-soft" />
               </div>
 
               {/* Connection lines */}
-              <span className="software-connection absolute left-[24%] top-[25%] h-px w-[25%] origin-right rotate-34 bg-linear-to-r from-transparent to-[#D7F3FF]/40" />
+              <span className="software-connection absolute left-[24%] top-[25%] h-px w-[25%] origin-right rotate-34 bg-linear-to-r from-transparent to-soft/40" />
 
-              <span className="software-connection absolute right-[24%] top-[25%] h-px w-[25%] origin-left -rotate-34 bg-linear-to-l from-transparent to-[#D7F3FF]/40" />
+              <span className="software-connection absolute right-[24%] top-[25%] h-px w-[25%] origin-left -rotate-34 bg-linear-to-l from-transparent to-soft/40" />
 
-              <span className="software-connection absolute left-[18%] top-1/2 h-px w-[32%] origin-right bg-linear-to-r from-transparent to-[#D7F3FF]/40" />
+              <span className="software-connection absolute left-[18%] top-1/2 h-px w-[32%] origin-right bg-linear-to-r from-transparent to-soft/40" />
 
-              <span className="software-connection absolute right-[18%] top-1/2 h-px w-[32%] origin-left bg-linear-to-l from-transparent to-[#D7F3FF]/40" />
+              <span className="software-connection absolute right-[18%] top-1/2 h-px w-[32%] origin-left bg-linear-to-l from-transparent to-soft/40" />
 
-              <span className="software-connection absolute bottom-[25%] left-[24%] h-px w-[25%] origin-right -rotate-34 bg-linear-to-r from-transparent to-[#D7F3FF]/40" />
+              <span className="software-connection absolute bottom-[25%] left-[24%] h-px w-[25%] origin-right -rotate-34 bg-linear-to-r from-transparent to-soft/40" />
 
-              <span className="software-connection absolute bottom-[25%] right-[24%] h-px w-[25%] origin-left rotate-34 bg-linear-to-l from-transparent to-[#D7F3FF]/40" />
+              <span className="software-connection absolute bottom-[25%] right-[24%] h-px w-[25%] origin-left rotate-34 bg-linear-to-l from-transparent to-soft/40" />
 
               {/* Central hub */}
               <div className="software-hub absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2">
                 <div className="relative">
-                  <span className="software-pulse absolute inset-0 rounded-full border border-[#E29E21]/60" />
+                  <span className="software-pulse absolute inset-0 rounded-full border border-accent/60" />
 
                   <div className="relative flex h-32 w-32 flex-col items-center justify-center rounded-full border border-white/20 bg-[#004b74] shadow-[0_25px_70px_-25px_rgba(0,0,0,0.5)] sm:h-40 sm:w-40">
-                    <span className="software-hub-icon flex h-12 w-12 items-center justify-center rounded-2xl bg-[#E29E21] text-white sm:h-14 sm:w-14">
+                    <span className="software-hub-icon flex h-12 w-12 items-center justify-center rounded-2xl bg-accent text-white sm:h-14 sm:w-14">
                       <CircleStackIcon
                         aria-hidden="true"
                         className="h-6 w-6 sm:h-7 sm:w-7"
                       />
                     </span>
 
-                    <span className="mt-3 font-manrope text-[9px] font-semibold uppercase tracking-[0.18em] text-[#D7F3FF]/65">
+                    <span className="mt-3 font-manrope text-[9px] font-semibold uppercase tracking-[0.18em] text-soft/65">
                       Integrated with
                     </span>
 
@@ -407,12 +407,12 @@ export default function AccountingSoftwareExpertise() {
                   className={`software-platform absolute ${platform.position} z-30`}
                 >
                   <div className="flex min-w-34 items-center gap-3 rounded-2xl border border-white/15 bg-white px-3.5 py-3 text-[#0c2e2d] shadow-[0_20px_50px_-25px_rgba(0,0,0,0.55)] sm:min-w-40 sm:px-4 sm:py-3.5">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#D7F3FF] font-manrope text-xs font-bold text-[#00598A]">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-soft font-manrope text-xs font-bold text-primary">
                       {platform.shortName}
                     </span>
 
                     <div>
-                      <p className="font-manrope text-[9px] font-semibold uppercase tracking-[0.13em] text-[#508BC0]">
+                      <p className="font-manrope text-[9px] font-semibold uppercase tracking-[0.13em] text-secondary">
                         Platform
                       </p>
 
@@ -426,9 +426,9 @@ export default function AccountingSoftwareExpertise() {
             </div>
 
             <div className="mx-auto mt-4 flex w-fit items-center gap-3 rounded-full border border-white/15 bg-white/[0.07] px-5 py-2.5 backdrop-blur-sm">
-              <CloudArrowUpIcon aria-hidden="true" className="h-5 w-5 text-[#E29E21]" />
+              <CloudArrowUpIcon aria-hidden="true" className="h-5 w-5 text-accent" />
 
-              <span className="font-manrope text-[10px] font-semibold uppercase tracking-[0.17em] text-[#D7F3FF]">
+              <span className="font-manrope text-[10px] font-semibold uppercase tracking-[0.17em] text-soft">
                 Cloud-based collaboration
               </span>
             </div>
@@ -437,9 +437,9 @@ export default function AccountingSoftwareExpertise() {
           {/* Content */}
           <div>
             <div className="software-eyebrow mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#E29E21]" />
+              <span className="h-px w-10 bg-accent" />
 
-              <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-[#D7F3FF]">
+              <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-soft">
                 Accounting Software Expertise
               </span>
             </div>
@@ -450,19 +450,19 @@ export default function AccountingSoftwareExpertise() {
               </span>
 
               <span className="block overflow-hidden pb-3">
-                <span className="software-title-line block italic text-[#D7F3FF]">
+                <span className="software-title-line block italic text-soft">
                   Our expertise.
                 </span>
               </span>
             </h2>
 
-            <p className="software-description mt-7 max-w-xl font-manrope text-sm leading-7 text-[#D7F3FF]/80 sm:text-base sm:leading-8">
+            <p className="software-description mt-7 max-w-xl font-manrope text-sm leading-7 text-soft/80 sm:text-base sm:leading-8">
               Haggai works across leading accounting platforms, allowing our team to
               integrate smoothly with the systems and processes your business already
               relies on.
             </p>
 
-            <p className="software-description mt-4 max-w-xl font-manrope text-sm leading-7 text-[#D7F3FF]/80 sm:text-base sm:leading-8">
+            <p className="software-description mt-4 max-w-xl font-manrope text-sm leading-7 text-soft/80 sm:text-base sm:leading-8">
               Whether your operations are built around a cloud accounting platform or a
               more advanced financial system, we adapt our workflows to support efficient
               and consistent delivery.
@@ -478,7 +478,7 @@ export default function AccountingSoftwareExpertise() {
                     key={point.title}
                     className="software-point group flex items-start gap-4 rounded-2xl border border-white/10 bg-white/6 p-4 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/10"
                   >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#E29E21]/15 text-[#E29E21] ring-1 ring-[#E29E21]/25">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/15 text-accent ring-1 ring-accent/25">
                       <Icon aria-hidden="true" className="h-5 w-5" />
                     </span>
 
@@ -487,7 +487,7 @@ export default function AccountingSoftwareExpertise() {
                         {point.title}
                       </h3>
 
-                      <p className="mt-1 font-manrope text-sm leading-6 text-[#D7F3FF]/70">
+                      <p className="mt-1 font-manrope text-sm leading-6 text-soft/70">
                         {point.description}
                       </p>
                     </div>
@@ -502,10 +502,10 @@ export default function AccountingSoftwareExpertise() {
                 <div key={benefit} className="software-benefit flex items-center gap-3">
                   <CheckCircleIcon
                     aria-hidden="true"
-                    className="h-5 w-5 shrink-0 text-[#E29E21]"
+                    className="h-5 w-5 shrink-0 text-accent"
                   />
 
-                  <span className="font-manrope text-xs font-medium leading-5 text-[#D7F3FF]">
+                  <span className="font-manrope text-xs font-medium leading-5 text-soft">
                     {benefit}
                   </span>
                 </div>
@@ -515,7 +515,7 @@ export default function AccountingSoftwareExpertise() {
             <div className="software-action mt-10">
               <Link
                 href="/contact"
-                className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#E29E21] px-7 py-3.5 font-manrope text-sm font-semibold text-white shadow-xl shadow-black/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d5901b]"
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-accent px-7 py-3.5 font-manrope text-sm font-semibold text-white shadow-xl shadow-black/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d5901b]"
               >
                 Discuss Your Software Setup
                 <ArrowRightIcon
@@ -531,10 +531,10 @@ export default function AccountingSoftwareExpertise() {
         <div className="mt-16 border-t border-white/10 pt-7 lg:mt-20">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-4">
-              <ShieldCheckIcon aria-hidden="true" className="h-7 w-7 text-[#E29E21]" />
+              <ShieldCheckIcon aria-hidden="true" className="h-7 w-7 text-accent" />
 
               <div>
-                <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.18em] text-[#D7F3FF]/55">
+                <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.18em] text-soft/55">
                   Built around your operations
                 </p>
 
@@ -544,7 +544,7 @@ export default function AccountingSoftwareExpertise() {
               </div>
             </div>
 
-            <p className="max-w-md font-manrope text-xs leading-6 text-[#D7F3FF]/65 sm:text-right">
+            <p className="max-w-md font-manrope text-xs leading-6 text-soft/65 sm:text-right">
               We fit into your existing accounting environment and help make the systems
               you already use work more effectively.
             </p>

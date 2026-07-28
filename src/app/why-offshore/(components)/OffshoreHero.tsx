@@ -5,34 +5,34 @@ import Link from "next/link";
 import {
   ArrowDownIcon,
   ArrowRightIcon,
-  BanknotesIcon,
-  CalculatorIcon,
-  ChartBarSquareIcon,
-  ClipboardDocumentCheckIcon,
+  ArrowTrendingUpIcon,
+  CurrencyDollarIcon,
+  GlobeAltIcon,
+  UserGroupIcon,
 } from "@heroicons/react/24/outline";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-const services = [
+const benefits = [
   {
-    title: "Bookkeeping",
-    icon: CalculatorIcon,
+    title: "Lower Operating Costs",
+    icon: CurrencyDollarIcon,
   },
   {
-    title: "Month-End Close",
-    icon: ClipboardDocumentCheckIcon,
+    title: "Dedicated Accounting Team",
+    icon: UserGroupIcon,
   },
   {
-    title: "AP & AR Support",
-    icon: BanknotesIcon,
+    title: "Global Talent Access",
+    icon: GlobeAltIcon,
   },
   {
-    title: "Financial Reporting",
-    icon: ChartBarSquareIcon,
+    title: "Scalable Growth",
+    icon: ArrowTrendingUpIcon,
   },
 ];
 
-export default function ServicesHero() {
+export default function OffshoreHero() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -42,12 +42,12 @@ export default function ServicesHero() {
       if (reduceMotion) {
         gsap.set(
           [
-            ".services-new-eyebrow",
-            ".services-new-line",
-            ".services-new-description",
-            ".services-new-actions",
-            ".services-new-scroll",
-            ".services-new-card",
+            ".offshore-hero-eyebrow",
+            ".offshore-hero-line",
+            ".offshore-hero-description",
+            ".offshore-hero-actions",
+            ".offshore-hero-scroll",
+            ".offshore-hero-card",
           ],
           {
             opacity: 1,
@@ -68,13 +68,13 @@ export default function ServicesHero() {
       });
 
       timeline
-        .from(".services-new-eyebrow", {
+        .from(".offshore-hero-eyebrow", {
           opacity: 0,
           y: 18,
           duration: 0.65,
         })
         .from(
-          ".services-new-line",
+          ".offshore-hero-line",
           {
             opacity: 0,
             yPercent: 110,
@@ -85,7 +85,7 @@ export default function ServicesHero() {
           "-=0.3",
         )
         .from(
-          ".services-new-description",
+          ".offshore-hero-description",
           {
             opacity: 0,
             y: 22,
@@ -94,7 +94,7 @@ export default function ServicesHero() {
           "-=0.45",
         )
         .from(
-          ".services-new-actions",
+          ".offshore-hero-actions",
           {
             opacity: 0,
             y: 18,
@@ -103,7 +103,7 @@ export default function ServicesHero() {
           "-=0.35",
         )
         .fromTo(
-          ".services-new-card",
+          ".offshore-hero-card",
           {
             opacity: 0,
             y: 35,
@@ -121,7 +121,7 @@ export default function ServicesHero() {
           "-=0.25",
         )
         .from(
-          ".services-new-scroll",
+          ".offshore-hero-scroll",
           {
             opacity: 0,
             y: 12,
@@ -130,21 +130,21 @@ export default function ServicesHero() {
           "-=0.3",
         );
 
-      gsap.to(".services-new-ring-one", {
+      gsap.to(".offshore-ring-one", {
         rotate: 360,
         duration: 38,
         repeat: -1,
         ease: "none",
       });
 
-      gsap.to(".services-new-ring-two", {
+      gsap.to(".offshore-ring-two", {
         rotate: -360,
         duration: 48,
         repeat: -1,
         ease: "none",
       });
 
-      gsap.to(".services-new-scroll-icon", {
+      gsap.to(".offshore-scroll-icon", {
         y: 7,
         duration: 1.4,
         repeat: -1,
@@ -152,7 +152,7 @@ export default function ServicesHero() {
         ease: "sine.inOut",
       });
 
-      gsap.to(".services-new-glow", {
+      gsap.to(".offshore-glow", {
         scale: 1.18,
         opacity: 0.8,
         duration: 4,
@@ -174,7 +174,7 @@ export default function ServicesHero() {
       {/* Background glow */}
       <div
         aria-hidden="true"
-        className="services-new-glow absolute left-1/2 top-1/3 h-136 w-136 -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary/45 blur-3xl"
+        className="offshore-glow absolute left-1/2 top-1/3 h-136 w-136 -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary/45 blur-3xl"
       />
 
       <div
@@ -192,11 +192,11 @@ export default function ServicesHero() {
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-[44%] h-192 w-3xl -translate-x-1/2 -translate-y-1/2"
       >
-        <div className="services-new-ring-one absolute inset-0 rounded-full border border-white/10">
+        <div className="offshore-ring-one absolute inset-0 rounded-full border border-white/10">
           <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_0_6px_rgba(226,158,33,0.18)]" />
         </div>
 
-        <div className="services-new-ring-two absolute inset-24 rounded-full border border-white/8">
+        <div className="offshore-ring-two absolute inset-24 rounded-full border border-white/8">
           <span className="absolute bottom-0 left-1/2 h-2.5 w-2.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-soft" />
         </div>
 
@@ -212,11 +212,11 @@ export default function ServicesHero() {
       <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
         {/* Main centered content */}
         <div className="mx-auto max-w-5xl text-center">
-          <div className="services-new-eyebrow mb-6 flex items-center justify-center gap-3">
+          <div className="offshore-hero-eyebrow mb-6 flex items-center justify-center gap-3">
             <span className="h-px w-9 bg-accent" />
 
             <span className="font-manrope text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-              Haggai Accounting Services
+              Why Offshore Accounting
             </span>
 
             <span className="h-px w-9 bg-accent" />
@@ -224,27 +224,27 @@ export default function ServicesHero() {
 
           <h1 className="font-cormorant text-[3rem] font-medium leading-[0.88] tracking-[-0.055em] sm:text-7xl lg:text-[6rem]">
             <span className="block overflow-hidden pb-6">
-              <span className="services-new-line block">Accounting services</span>
+              <span className="offshore-hero-line block">Offshore accounting</span>
             </span>
 
             <span className="block overflow-hidden pb-3">
-              <span className="services-new-line block italic text-primary">
-                that scale with you.
+              <span className="offshore-hero-line block italic text-primary">
+                built for growth.
               </span>
             </span>
           </h1>
 
-          <p className="services-new-description mx-auto mt-7 max-w-2xl font-manrope text-sm leading-7 text-primary/80 sm:text-base sm:leading-8">
-            Reliable outsourced accounting support designed to strengthen your operations,
-            improve visibility, and grow with your business.
+          <p className="offshore-hero-description mx-auto mt-7 max-w-2xl font-manrope text-sm leading-7 text-primary/80 sm:text-base sm:leading-8">
+            Reduce overhead, access experienced accounting professionals, and build a
+            reliable finance function that grows alongside your business.
           </p>
 
-          <div className="services-new-actions mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="offshore-hero-actions mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="#white-label-services"
+              href="#offshore-benefits"
               className="group inline-flex items-center justify-center gap-3 rounded-full bg-accent px-7 py-3.5 font-manrope text-sm font-semibold text-[#0c2e2d] shadow-xl shadow-black/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d5901b]"
             >
-              Explore Our Services
+              Discover the Benefits
               <ArrowRightIcon
                 aria-hidden="true"
                 className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -255,20 +255,20 @@ export default function ServicesHero() {
               href="/contact"
               className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/8 px-7 py-3.5 font-manrope text-sm font-semibold text-[#0c2e2d] backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/15"
             >
-              Book a Consultation
+              Talk to Our Team
             </Link>
           </div>
         </div>
 
-        {/* Service strip */}
+        {/* Benefit strip */}
         <div className="mt-16 grid gap-3 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4">
-          {services.map((service, index) => {
-            const Icon = service.icon;
+          {benefits.map((benefit, index) => {
+            const Icon = benefit.icon;
 
             return (
               <div
-                key={service.title}
-                className="services-new-card group relative overflow-hidden border border-white/15 bg-white/[0.07] px-5 py-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:bg-white/11"
+                key={benefit.title}
+                className="offshore-hero-card group relative overflow-hidden border border-white/15 bg-white/[0.07] px-5 py-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:bg-white/11"
               >
                 <div className="flex items-center justify-between gap-5">
                   <div className="flex items-center gap-4">
@@ -284,8 +284,8 @@ export default function ServicesHero() {
                         0{index + 1}
                       </p>
 
-                      <h2 className="mt-1 font-cormorant text-xl font-semibold text-[#0c2e2d]">
-                        {service.title}
+                      <h2 className="mt-1 font-cormorant text-md font-semibold text-[#0c2e2d]">
+                        {benefit.title}
                       </h2>
                     </div>
                   </div>
@@ -307,17 +307,17 @@ export default function ServicesHero() {
 
         {/* Scroll indicator */}
         <a
-          href="#white-label-services"
-          className="services-new-scroll mx-auto mt-10 flex w-fit flex-col items-center gap-2 font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-primary/60 transition-colors duration-300 hover:text-[#0c2e2d]"
+          href="#offshore-benefits"
+          className="offshore-hero-scroll mx-auto mt-10 flex w-fit flex-col items-center gap-2 font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-primary/60 transition-colors duration-300 hover:text-[#0c2e2d]"
         >
           Discover More
-          <span className="services-new-scroll-icon flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/6">
+          <span className="offshore-scroll-icon flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/6">
             <ArrowDownIcon aria-hidden="true" className="h-4 w-4" />
           </span>
         </a>
       </div>
 
-      {/* Curved transition into next section */}
+      {/* Curved transition */}
       <div
         aria-hidden="true"
         className="absolute -bottom-px left-0 h-10 w-full bg-white [clip-path:ellipse(60%_100%_at_50%_100%)] sm:h-14 lg:h-16"
