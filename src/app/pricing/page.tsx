@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import PricingHero from "./(components)/Hero";
-import PricingPreview from "../(components)/PricingPreview";
+import PricingPlans from "./(components)/PricingPlans";
+import PlanComparison from "./(components)/PlanComparison";
+import PricingFaq from "./(components)/FaqSection";
 import FinancialDashboardCTA from "@/src/components/FinancialDashboardCTA";
 
 export const metadata: Metadata = {
@@ -15,12 +17,16 @@ export default function PricingPage() {
       {/* 1. Hero Section */}
       <PricingHero />
 
-      {/* 2. Pricing Plans */}
-      <div id="pricing-plans">
-        <PricingPreview />
-      </div>
+      {/* 2. Data-Driven Spotlight Pricing Stage */}
+      <PricingPlans />
 
-      {/* 3. Call To Action / Financial Dashboard Signature Interaction */}
+      {/* 3. Interactive Plan Comparison Matrix */}
+      <PlanComparison />
+
+      {/* 4. Frequently Asked Questions Section */}
+      <PricingFaq />
+
+      {/* 5. Call To Action / Financial Dashboard Signature Interaction */}
       <FinancialDashboardCTA />
     </div>
   );

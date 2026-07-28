@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "gsap";
@@ -78,29 +78,17 @@ const testimonials: Testimonial[] = [
     company: "Beacon Media Group",
     industry: "Marketing & Media",
     rating: 5,
-    avatar: "/images/avatar-1.png",
-  },
-  {
-    id: 6,
-    quote:
-      "The level of human partnership Haggai brings is unmatched by traditional outsourced vendors. Their team doesn't just process numbers—they actively flag cost optimizations and keep our books investor-ready at all times.",
-    name: "Jonathan Wu",
-    title: "Founder & Managing Director",
-    company: "Nexus Logistics Solutions",
-    industry: "Logistics & Supply Chain",
-    rating: 5,
-    avatar: "/images/avatar-2.png",
+    avatar: "/images/founder.png",
   },
 ];
 
-// Split testimonials for top (row 1) and bottom (row 2)
-const topRowTestimonials = [
-  testimonials[0],
-  testimonials[1],
-  testimonials[2],
-  testimonials[0],
-  testimonials[1],
-  testimonials[2],
+// Duplicate list for infinite smooth looping
+const row1Testimonials = [...testimonials, ...testimonials];
+const row2Testimonials = [
+  ...testimonials.slice(2),
+  ...testimonials.slice(0, 2),
+  ...testimonials.slice(2),
+  ...testimonials.slice(0, 2),
 ];
 
 export default function Testimonials() {
@@ -108,25 +96,20 @@ export default function Testimonials() {
   const badgeRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const paragraphRef = useRef<HTMLParagraphElement>(null);
-  const topMarqueeRef = useRef<HTMLDivElement>(null);
-  const bottomMarqueeRef = useRef<HTMLDivElement>(null);
-  const trustStripRef = useRef<HTMLDivElement>(null);
-
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const marqueeContainerRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (typeof window === "undefined" || !sectionRef.current) return;
 
-    // Check prefers-reduced-motion setting
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
+      "(prefers-reduced-motion: reduce)"
     ).matches;
-
-    setReducedMotion(prefersReducedMotion);
 
     if (prefersReducedMotion) return;
 
     const ctx = gsap.context(() => {
+      // Entrance ScrollTrigger Timeline
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -136,62 +119,47 @@ export default function Testimonials() {
         },
       });
 
-      // 1. Badge reveal
       if (badgeRef.current) {
         tl.fromTo(
           badgeRef.current,
           { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
         );
       }
 
-      // 2. Heading reveal
       if (headingRef.current) {
         tl.fromTo(
           headingRef.current,
           { opacity: 0, y: 25 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.3",
+          "-=0.3"
         );
       }
 
-      // 3. Supporting Paragraph reveal
       if (paragraphRef.current) {
         tl.fromTo(
           paragraphRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.4",
+          "-=0.4"
         );
       }
 
-      // 4. Top Marquee Row reveal
-      if (topMarqueeRef.current) {
+      if (marqueeContainerRef.current) {
         tl.fromTo(
-          topMarqueeRef.current,
-          { opacity: 0, y: 35 },
-          { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
-          "-=0.3",
+          marqueeContainerRef.current,
+          { opacity: 0, scale: 0.98 },
+          { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" },
+          "-=0.3"
         );
       }
 
-      // 5. Bottom Marquee Row reveal
-      if (bottomMarqueeRef.current) {
+      if (ctaRef.current) {
         tl.fromTo(
-          bottomMarqueeRef.current,
-          { opacity: 0, y: 35 },
-          { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
-          "-=0.5",
-        );
-      }
-
-      // 6. Bottom Trust Strip reveal
-      if (trustStripRef.current) {
-        tl.fromTo(
-          trustStripRef.current,
-          { opacity: 0, y: 25 },
+          ctaRef.current,
+          { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.3",
+          "-=0.2"
         );
       }
     }, sectionRef);
@@ -204,22 +172,21 @@ export default function Testimonials() {
       ref={sectionRef}
       id="testimonials"
       aria-labelledby="testimonials-heading"
-      className="relative overflow-hidden bg-[#f7f7f7] py-20 sm:py-24 lg:py-10 font-body text-slate-900"
+      className="relative overflow-hidden bg-slate-50/50 py-20 sm:py-24 lg:py-28 font-manrope text-slate-900"
     >
-      {/* Subtle radial blue background gradient glow (<5% opacity, white-first) */}
+      {/* Background radial gradient glow (Soft brand color) */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(0,89,138,0.035),rgba(255,255,255,0))]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_35%,rgba(0,89,138,0.035),rgba(255,255,255,0))]"
       />
 
-      {/* Soft abstract ambient light blurs */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-20 top-1/4 h-80 w-80 rounded-full bg-secondary/5 blur-3xl"
+        className="pointer-events-none absolute -left-36 top-1/4 h-96 w-96 rounded-full bg-soft/50 blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-20 bottom-1/3 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
+        className="pointer-events-none absolute -right-36 bottom-1/3 h-96 w-96 rounded-full bg-secondary/10 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -227,122 +194,88 @@ export default function Testimonials() {
         <div className="mx-auto max-w-3xl text-center">
           {/* Small Badge */}
           <div ref={badgeRef} className="mb-5 inline-block">
-            <span className="inline-flex items-center gap-2 rounded-full border border-secondary/40 bg-soft/60 px-4 py-1.5 text-xs font-semibold text-primary shadow-xs backdrop-blur-sm sm:text-sm">
+            <span className="inline-flex items-center gap-2 rounded-full border border-secondary/40 bg-soft/60 px-4 py-1.5 text-xs font-semibold font-manrope text-primary shadow-xs backdrop-blur-sm sm:text-sm">
               <CheckIcon
                 className="h-4 w-4 stroke-[2.5] text-primary"
                 aria-hidden="true"
               />
-              What Our Clients Say
+              Client Stories &amp; Testimonials
             </span>
           </div>
 
-          {/* Large Heading */}
+          {/* Large Heading (Cormorant Garamond) */}
           <h2
             ref={headingRef}
             id="testimonials-heading"
-            className="font-heading text-3xl font-medium tracking-tight text-slate-950 sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1]"
+            className="font-cormorant text-3xl font-medium tracking-tight text-slate-950 sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1]"
           >
-            Trusted by businesses that value{" "}
-            <span className="text-primary">accuracy, transparency</span> and
-            long-term partnerships.
+            Trusted by growth-focused companies and{" "}
+            <span className="text-primary">finance leaders.</span>
           </h2>
 
-          {/* Supporting Paragraph */}
+          {/* Supporting Paragraph (Manrope) */}
           <p
             ref={paragraphRef}
-            className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg"
+            className="mx-auto mt-5 max-w-2xl font-manrope text-base leading-7 text-slate-600 sm:text-lg"
           >
-            Haggai is proud to support ambitious companies across tech,
-            healthcare, e-commerce, real estate, and financial services with
-            consistent, responsive, and reliable accounting.
+            Discover how Haggai provides clarity, reliability, and scalable
+            accounting operations for founders, CFOs, and accounting firm partners.
           </p>
         </div>
       </div>
 
-      {/* MAIN EXPERIENCE: INFINITE DUAL-ROW MARQUEE */}
-      <div className="mt-14 sm:mt-16 relative w-full overflow-hidden py-4">
-        {/* Side Gradient Masks for Seamless Edge Fading */}
+      {/* DUAL INFINITE MARQUEE STAGE */}
+      <div ref={marqueeContainerRef} className="relative mt-12 sm:mt-16 w-full">
+        {/* Left Edge Gradient Blur Fade */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 left-0 z-20 w-16 sm:w-32 bg-linear-to-r from-white via-white/80 to-transparent"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 right-0 z-20 w-16 sm:w-32 bg-linear-to-l from-white via-white/80 to-transparent"
+          className="pointer-events-none absolute left-0 top-0 bottom-0 z-20 w-16 sm:w-32 lg:w-48 bg-gradient-to-r from-slate-50/90 via-slate-50/50 to-transparent"
         />
 
-        {reducedMotion ? (
-          /* REDUCED MOTION FALLBACK: RESPONSIVE STATIC GRID */
-          <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-            {testimonials.map((item) => (
-              <TestimonialCard key={item.id} item={item} />
+        {/* Right Edge Gradient Blur Fade */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute right-0 top-0 bottom-0 z-20 w-16 sm:w-32 lg:w-48 bg-gradient-to-l from-slate-50/90 via-slate-50/50 to-transparent"
+        />
+
+        {/* MARQUEE ROW 1 (Scrolls Left) */}
+        <div className="flex w-full overflow-hidden py-3">
+          <div className="flex min-w-full shrink-0 gap-6 animate-marquee-left pause-on-hover px-3">
+            {row1Testimonials.map((item, index) => (
+              <TestimonialCard key={`row1-${item.id}-${index}`} item={item} />
             ))}
           </div>
-        ) : (
-          /* CONTINUOUS DUAL-ROW INFINITE MARQUEE */
-          <div className="space-y-6 sm:space-y-8">
-            {/* TOP ROW: MOVES LEFT CONTINUOUSLY */}
-            <div ref={topMarqueeRef} className="flex overflow-hidden py-10">
-              <div className="flex shrink-0 gap-6 animate-marquee-left pause-on-hover items-stretch">
-                {topRowTestimonials.map((item, idx) => (
-                  <TestimonialCard key={`top-${item.id}-${idx}`} item={item} />
-                ))}
-              </div>
-            </div>
+        </div>
 
-            {/* BOTTOM ROW: MOVES RIGHT CONTINUOUSLY */}
-            {/* <div ref={bottomMarqueeRef} className="flex overflow-hidden">
-              <div className="flex shrink-0 gap-6 animate-marquee-right pause-on-hover items-stretch">
-                {bottomRowTestimonials.map((item, idx) => (
-                  <TestimonialCard
-                    key={`bottom-${item.id}-${idx}`}
-                    item={item}
-                  />
-                ))}
-              </div>
-            </div> */}
+        {/* MARQUEE ROW 2 (Scrolls Right) */}
+        <div className="flex w-full overflow-hidden py-3 mt-2 sm:mt-4">
+          <div className="flex min-w-full shrink-0 gap-6 animate-marquee-right pause-on-hover px-3">
+            {row2Testimonials.map((item, index) => (
+              <TestimonialCard key={`row2-${item.id}-${index}`} item={item} />
+            ))}
           </div>
-        )}
+        </div>
       </div>
 
-      {/* BOTTOM TRUST STRIP */}
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 ">
-        <div
-          ref={trustStripRef}
-          className="mx-auto max-w-3xl rounded-3xl border border-slate-200/90 bg-white p-8 text-center shadow-xs transition-all duration-300 hover:border-secondary/40 hover:shadow-xl hover:shadow-[#00598A]/5"
-        >
-          {/* 5 Gold Stars Rating */}
-          <div className="flex items-center justify-center gap-1 mb-3">
-            {[...Array(5)].map((_, i) => (
-              <StarIcon
-                key={i}
-                className="h-5 w-5 text-accent"
-                aria-hidden="true"
-              />
-            ))}
-          </div>
-
-          <h3 className="font-heading text-xl sm:text-2xl font-semibold text-slate-950">
-            Trusted by businesses across multiple industries.
-          </h3>
-
-          <p className="mx-auto mt-2 max-w-xl text-sm text-slate-600 leading-relaxed">
-            Join 150+ growing companies that rely on Haggai for daily
-            bookkeeping, senior CPA oversight, and strategic financial clarity.
-          </p>
-
-          <div className="mt-6 flex justify-center">
+      {/* BOTTOM CTA */}
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div ref={ctaRef} className="mt-14 sm:mt-16 text-center">
+          <div>
             <Link
-              href="/testimonials"
-              className="group inline-flex items-center gap-2.5 rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#00598A]/25 transition-all duration-300 hover:bg-[#004870] hover:shadow-[#00598A]/40 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#00598A]"
+              href="/contact"
+              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-sm sm:text-base font-semibold font-manrope text-white shadow-md shadow-primary/20 transition-all duration-300 hover:bg-[#004870] hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary w-full sm:w-auto"
             >
-              <span>Read More Success Stories</span>
+              <span>Join Our Satisfied Clients</span>
               <ArrowRightIcon
-                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5"
+                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                 aria-hidden="true"
               />
             </Link>
           </div>
+
+          <p className="mt-3 font-manrope text-sm font-medium text-slate-600 sm:text-base">
+            Experience reliable, stress-free accounting operations for your business.
+          </p>
         </div>
       </div>
     </section>
@@ -352,7 +285,7 @@ export default function Testimonials() {
 // INDIVIDUAL TESTIMONIAL CARD COMPONENT
 function TestimonialCard({ item }: { item: Testimonial }) {
   return (
-    <article className="group/card relative flex flex-col justify-between w-85 sm:w-102.5 shrink-0 overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-7 shadow-xs transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-xl hover:shadow-[#00598A]/10 cursor-pointer">
+    <article className="group/card relative flex flex-col justify-between w-85 sm:w-102.5 shrink-0 overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-7 shadow-xs transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-xl hover:shadow-[#00598A]/10 cursor-pointer font-manrope">
       {/* Top Blue Accent Line */}
       <div
         aria-hidden="true"
@@ -361,7 +294,7 @@ function TestimonialCard({ item }: { item: Testimonial }) {
 
       <div>
         {/* Top Header: 5 Gold Stars & Industry Badge */}
-        <div className="flex items-center justify-between gap-2 mb-4">
+        <div className="flex items-center justify-between gap-2 mb-4 font-manrope">
           {/* 5-Star Rating */}
           <div
             className="flex items-center gap-1"
@@ -376,8 +309,8 @@ function TestimonialCard({ item }: { item: Testimonial }) {
             ))}
           </div>
 
-          {/* Industry Badge in Light Blue */}
-          <span className="inline-block rounded-full bg-soft px-3 py-1 text-xs font-semibold text-primary transition-colors duration-300 group-hover/card:bg-blue-100">
+          {/* Industry Badge in Soft Blue */}
+          <span className="inline-block rounded-full bg-soft px-3 py-1 text-xs font-semibold font-manrope text-primary transition-colors duration-300 group-hover/card:bg-blue-100">
             {item.industry}
           </span>
         </div>
@@ -394,14 +327,14 @@ function TestimonialCard({ item }: { item: Testimonial }) {
           </svg>
         </div>
 
-        {/* Client Quote Body */}
-        <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-body">
+        {/* Client Quote Body (Manrope) */}
+        <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-manrope">
           &ldquo;{item.quote}&rdquo;
         </p>
       </div>
 
       {/* Client Profile Footer */}
-      <div className="mt-6 flex items-center gap-3.5 border-t border-slate-100 pt-4">
+      <div className="mt-6 flex items-center gap-3.5 border-t border-slate-100 pt-4 font-manrope">
         {/* Circular Avatar */}
         <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full border border-slate-200 bg-slate-100">
           <Image
@@ -413,13 +346,13 @@ function TestimonialCard({ item }: { item: Testimonial }) {
           />
         </div>
 
-        {/* Name, Title & Company */}
+        {/* Name (Cormorant Garamond), Title & Company (Manrope) */}
         <div className="flex-1 min-w-0">
-          <h4 className="font-heading text-base font-bold text-slate-950 truncate">
+          <h4 className="font-cormorant text-lg font-bold text-slate-950 truncate leading-snug">
             {item.name}
           </h4>
-          <p className="text-xs text-slate-500 truncate">{item.title}</p>
-          <p className="text-xs font-semibold text-slate-700 transition-colors duration-300 group-hover/card:text-primary truncate">
+          <p className="text-xs font-manrope text-slate-500 truncate">{item.title}</p>
+          <p className="text-xs font-manrope font-semibold text-slate-700 transition-colors duration-300 group-hover/card:text-primary truncate">
             {item.company}
           </p>
         </div>
