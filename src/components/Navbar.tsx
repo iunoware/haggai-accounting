@@ -10,6 +10,7 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Industries", href: "/industries" },
+  { name: "Why Offshore", href: "/why-offshore" },
   { name: "Pricing", href: "/pricing" },
   { name: "Contact", href: "/contact" },
 ];
@@ -61,7 +62,7 @@ const Navbar = () => {
         ref={navRef}
         className={`${
           isScrolled
-            ? "bg-white/90 backdrop-blur-md shadow-xs border-b border-slate-200/80"
+            ? "bg-white/70 backdrop-blur-md shadow-xs"
             : "bg-transparent shadow-none"
         } ${
           isVisible ? "translate-y-0" : "-translate-y-full"
@@ -70,10 +71,10 @@ const Navbar = () => {
         {/* Brand Logo */}
         <Link href="/" className="relative z-50 group flex items-center gap-2">
           <Image
-            src={"/images/logo.png"}
+            src={"/images/haggai-logo.png"}
             width={130}
-            height={40}
-            className="object-contain h-9 w-auto"
+            height={70}
+            className="object-contain h-18 w-auto"
             alt="Haggai Accounting Logo"
             priority
           />
@@ -97,7 +98,7 @@ const Navbar = () => {
                 <span
                   className={`${
                     isActive ? "w-full" : "w-0"
-                  } absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-primary transition-all duration-300 ease-out group-hover:w-full`}
+                  } absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-primary transition-all duration-300 ease-out group-hover:w-full`}
                 />
               </Link>
             );
@@ -105,14 +106,14 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Action Button (Manrope SemiBold) */}
-        <div className="hidden md:flex items-center">
+        {/* <div className="hidden md:flex items-center">
           <Link
             href="/contact"
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-xs font-semibold font-manrope text-white shadow-xs transition-all duration-300 hover:bg-[#004870] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary"
           >
             Book a Consultation
           </Link>
-        </div>
+        </div> */}
 
         {/* Mobile Menu Toggle Button */}
         <div className="md:hidden flex items-center">
@@ -163,9 +164,7 @@ const Navbar = () => {
                     ? "text-primary font-bold"
                     : "text-slate-800 font-semibold hover:text-primary"
                 } text-2xl uppercase tracking-[0.15em] transition-all duration-300 font-manrope ${
-                  isMenuOpen
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-8 opacity-0"
+                  isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                 }`}
                 style={{ transitionDelay: `${idx * 60}ms` }}
               >
@@ -174,7 +173,7 @@ const Navbar = () => {
             );
           })}
 
-          <div className="mt-4">
+          {/* <div className="mt-4">
             <Link
               href="/contact"
               onClick={() => setIsMenuOpen(false)}
@@ -182,7 +181,7 @@ const Navbar = () => {
             >
               Book a Consultation
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
