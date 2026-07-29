@@ -59,7 +59,7 @@ export default function WhyHaggai() {
     if (typeof window === "undefined" || !sectionRef.current) return;
 
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     if (prefersReducedMotion) return;
@@ -78,7 +78,7 @@ export default function WhyHaggai() {
         tl.fromTo(
           badgeRef.current,
           { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
         );
       }
 
@@ -87,7 +87,7 @@ export default function WhyHaggai() {
           headingRef.current,
           { opacity: 0, y: 25 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -96,7 +96,7 @@ export default function WhyHaggai() {
           paragraphRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.4"
+          "-=0.4",
         );
       }
 
@@ -105,7 +105,7 @@ export default function WhyHaggai() {
           featuredCardRef.current,
           { opacity: 0, y: 35 },
           { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -121,13 +121,13 @@ export default function WhyHaggai() {
             stagger: 0.15,
             ease: "power2.out",
           },
-          "-=0.4"
+          "-=0.4",
         );
       }
 
       if (featuredCardRef.current) {
         const floatingEl = featuredCardRef.current.querySelector(
-          ".floating-featured-image"
+          ".floating-featured-image",
         );
         if (floatingEl) {
           gsap.to(floatingEl, {
@@ -254,11 +254,11 @@ export default function WhyHaggai() {
                 <div className="floating-featured-image relative w-full overflow-hidden rounded-2xl border border-slate-100 bg-slate-50/50 p-4 shadow-inner">
                   <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl bg-white border border-slate-200/60 shadow-xs flex items-center justify-center">
                     <Image
-                      src="/images/solutions-illustration.png"
+                      src="/images/acc-1.jpg"
                       alt="Dedicated offshore accounting team workspace"
                       width={600}
                       height={450}
-                      className="h-full w-full object-contain p-2 transition-transform duration-500 group-hover:scale-[1.03]"
+                      className="h-full w-full object-cover object-top rounded-2xl p-2 transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   </div>
                 </div>

@@ -103,7 +103,7 @@ export default function Testimonials() {
     if (typeof window === "undefined" || !sectionRef.current) return;
 
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     if (prefersReducedMotion) return;
@@ -123,7 +123,7 @@ export default function Testimonials() {
         tl.fromTo(
           badgeRef.current,
           { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
         );
       }
 
@@ -132,7 +132,7 @@ export default function Testimonials() {
           headingRef.current,
           { opacity: 0, y: 25 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -141,7 +141,7 @@ export default function Testimonials() {
           paragraphRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.4"
+          "-=0.4",
         );
       }
 
@@ -150,7 +150,7 @@ export default function Testimonials() {
           marqueeContainerRef.current,
           { opacity: 0, scale: 0.98 },
           { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -159,7 +159,7 @@ export default function Testimonials() {
           ctaRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.2"
+          "-=0.2",
         );
       }
     }, sectionRef);
@@ -219,7 +219,8 @@ export default function Testimonials() {
             className="mx-auto mt-5 max-w-2xl font-manrope text-base leading-7 text-slate-600 sm:text-lg"
           >
             Discover how Haggai provides clarity, reliability, and scalable
-            accounting operations for founders, CFOs, and accounting firm partners.
+            accounting operations for founders, CFOs, and accounting firm
+            partners.
           </p>
         </div>
       </div>
@@ -248,13 +249,13 @@ export default function Testimonials() {
         </div>
 
         {/* MARQUEE ROW 2 (Scrolls Right) */}
-        <div className="flex w-full overflow-hidden py-3 mt-2 sm:mt-4">
+        {/* <div className="flex w-full overflow-hidden py-3 mt-2 sm:mt-4">
           <div className="flex min-w-full shrink-0 gap-6 animate-marquee-right pause-on-hover px-3">
             {row2Testimonials.map((item, index) => (
               <TestimonialCard key={`row2-${item.id}-${index}`} item={item} />
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* BOTTOM CTA */}
@@ -274,7 +275,8 @@ export default function Testimonials() {
           </div>
 
           <p className="mt-3 font-manrope text-sm font-medium text-slate-600 sm:text-base">
-            Experience reliable, stress-free accounting operations for your business.
+            Experience reliable, stress-free accounting operations for your
+            business.
           </p>
         </div>
       </div>
@@ -351,7 +353,9 @@ function TestimonialCard({ item }: { item: Testimonial }) {
           <h4 className="font-cormorant text-lg font-bold text-slate-950 truncate leading-snug">
             {item.name}
           </h4>
-          <p className="text-xs font-manrope text-slate-500 truncate">{item.title}</p>
+          <p className="text-xs font-manrope text-slate-500 truncate">
+            {item.title}
+          </p>
           <p className="text-xs font-manrope font-semibold text-slate-700 transition-colors duration-300 group-hover/card:text-primary truncate">
             {item.company}
           </p>

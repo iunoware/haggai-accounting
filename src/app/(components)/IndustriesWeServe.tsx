@@ -145,7 +145,7 @@ export default function IndustriesWeServe() {
     if (typeof window === "undefined" || !sectionRef.current) return;
 
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     if (prefersReducedMotion) return;
@@ -164,7 +164,7 @@ export default function IndustriesWeServe() {
         tl.fromTo(
           badgeRef.current,
           { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
         );
       }
       if (headingRef.current) {
@@ -172,7 +172,7 @@ export default function IndustriesWeServe() {
           headingRef.current,
           { opacity: 0, y: 25 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
       if (paragraphRef.current) {
@@ -180,7 +180,7 @@ export default function IndustriesWeServe() {
           paragraphRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.4"
+          "-=0.4",
         );
       }
 
@@ -189,7 +189,7 @@ export default function IndustriesWeServe() {
           hubRef.current,
           { opacity: 0, scale: 0.95 },
           { opacity: 1, scale: 1, duration: 0.7, ease: "power2.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -205,7 +205,7 @@ export default function IndustriesWeServe() {
             stagger: 0.08,
             ease: "power2.out",
           },
-          "-=0.4"
+          "-=0.4",
         );
       }
 
@@ -214,7 +214,7 @@ export default function IndustriesWeServe() {
           infoPanelRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.2"
+          "-=0.2",
         );
       }
 
@@ -223,7 +223,7 @@ export default function IndustriesWeServe() {
           bottomCtaRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.2"
+          "-=0.2",
         );
       }
 
@@ -363,14 +363,14 @@ export default function IndustriesWeServe() {
                 <div className="h-72 w-72 rounded-full border border-dashed border-secondary animate-spin-slow" />
               </div>
 
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-white border border-slate-100 shadow-xs flex items-center justify-center">
+              <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl bg-white border border-slate-100 shadow-xs flex items-center justify-center">
                 <Image
                   src="/images/industries-ecosystem.png"
                   alt="Interconnected business ecosystem surrounded by industry specialization"
                   width={600}
                   height={450}
                   priority
-                  className="h-full w-full object-contain p-2 transition-transform duration-500 hover:scale-[1.02]"
+                  className="h-full w-full object-cover object-center rounded-2xl p-2 transition-transform duration-500 hover:scale-[1.02]"
                 />
               </div>
             </div>

@@ -1,13 +1,23 @@
-import { Metadata } from "next";
+import { constructMetadata } from "@/src/lib/seo";
 import IndustriesHero from "./(components)/Hero";
 import WhoWeServe from "./(components)/WhoWeServe";
 import FinancialDashboardCTA from "@/src/components/FinancialDashboardCTA";
 
-export const metadata: Metadata = {
-  title: "Industries We Support | Haggai Accounting",
+export const metadata = constructMetadata({
+  title: "Industries We Serve | Industry-Specific Accounting Solutions",
   description:
-    "Tailored accounting solutions for CPA firms, startups, SaaS companies, e-commerce, and growing businesses.",
-};
+    "Discover accounting solutions tailored for CPA firms, accounting firms, startups, SaaS companies, Fractional CFO firms, and e-commerce businesses.",
+  path: "/industries",
+  keywords: [
+    "Industries We Serve",
+    "Industry-Specific Accounting Solutions",
+    "CPA Firm Support",
+    "Startup Accounting",
+    "SaaS Accounting",
+    "Fractional CFO Support",
+    "E-commerce Accounting",
+  ],
+});
 
 export default function IndustriesPage() {
   return (

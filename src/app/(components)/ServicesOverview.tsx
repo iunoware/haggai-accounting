@@ -81,7 +81,7 @@ export default function ServicesOverview() {
     if (typeof window === "undefined" || !sectionRef.current) return;
 
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     if (prefersReducedMotion) return;
@@ -100,7 +100,7 @@ export default function ServicesOverview() {
         tl.fromTo(
           badgeRef.current,
           { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
         );
       }
 
@@ -109,7 +109,7 @@ export default function ServicesOverview() {
           headingRef.current,
           { opacity: 0, y: 25 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -118,7 +118,7 @@ export default function ServicesOverview() {
           paragraphRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.4"
+          "-=0.4",
         );
       }
 
@@ -127,7 +127,7 @@ export default function ServicesOverview() {
           featuredCardRef.current,
           { opacity: 0, y: 30 },
           { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -143,7 +143,7 @@ export default function ServicesOverview() {
             stagger: 0.1,
             ease: "power2.out",
           },
-          "-=0.4"
+          "-=0.4",
         );
       }
 
@@ -152,13 +152,13 @@ export default function ServicesOverview() {
           bottomCtaRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.2"
+          "-=0.2",
         );
       }
 
       if (featuredCardRef.current) {
         const imgEl = featuredCardRef.current.querySelector(
-          ".floating-services-img"
+          ".floating-services-img",
         );
         if (imgEl) {
           gsap.to(imgEl, {
@@ -283,8 +283,8 @@ export default function ServicesOverview() {
                         Monthly Reporting
                       </h4>
                       <p className="text-xs text-slate-600">
-                        P&amp;L statements, balance sheets, and custom management
-                        reports delivered on schedule.
+                        P&amp;L statements, balance sheets, and custom
+                        management reports delivered on schedule.
                       </p>
                     </div>
                   </div>
@@ -326,13 +326,13 @@ export default function ServicesOverview() {
               {/* RIGHT */}
               <div className="lg:col-span-5 flex items-center justify-center">
                 <div className="floating-services-img relative w-full overflow-hidden rounded-2xl border border-slate-100 bg-slate-50/50 p-4 shadow-inner">
-                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-white border border-slate-200/60 shadow-xs flex items-center justify-center">
+                  <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl bg-white border border-slate-200/60 shadow-xs flex items-center justify-center">
                     <Image
-                      src="/images/services-illustration.png"
+                      src="/images/acc-2.jpg"
                       alt="Bookkeeping and financial reporting dashboard illustration"
                       width={600}
                       height={450}
-                      className="h-full w-full object-contain p-2 transition-transform duration-500 group-hover:scale-[1.02]"
+                      className="h-full w-full object-center object-cover p-2 rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                   </div>
                 </div>
