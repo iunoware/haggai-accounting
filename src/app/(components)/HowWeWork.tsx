@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Fragment } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import {
@@ -78,7 +78,6 @@ export default function HowWeWork() {
   const paragraphRef = useRef<HTMLParagraphElement>(null);
   const pinWrapperRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const progressLineRef = useRef<HTMLDivElement>(null);
 
   const [activeStep, setActiveStep] = useState(0);
 
@@ -157,19 +156,6 @@ export default function HowWeWork() {
           x: () => -totalScroll,
           ease: "none",
         });
-
-        if (progressLineRef.current) {
-          gsap.to(progressLineRef.current, {
-            scaleX: 1,
-            ease: "none",
-            scrollTrigger: {
-              trigger: pinWrapperRef.current,
-              start: "top top+=100",
-              end: () => `+=${totalScroll}`,
-              scrub: 1,
-            },
-          });
-        }
       }
     }, sectionRef);
 
@@ -234,92 +220,105 @@ export default function HowWeWork() {
         <div className="hidden md:block relative w-full pt-6 pb-12">
           <div
             ref={trackRef}
-            className="relative flex items-center gap-8 lg:gap-12 px-12 lg:px-24 w-max"
+            className="relative flex items-center gap-3 lg:gap-5 px-12 lg:px-24 w-max"
           >
-            {/* Connecting progress bar behind cards */}
-            <div className="absolute left-24 right-24 top-1/2 -translate-y-1/2 h-1 bg-slate-200/70 rounded-full z-0 pointer-events-none">
-              <div
-                ref={progressLineRef}
-                className="h-full w-full bg-primary rounded-full origin-left scale-x-0 transition-transform duration-100"
-              />
-            </div>
-
             {steps.map((step, index) => {
               const Icon = step.icon;
               const isActive = index === activeStep;
               const isPassed = index <= activeStep;
 
               return (
-                <article
-                  key={step.number}
-                  className={`group relative z-10 w-95 lg:w-110 shrink-0 overflow-hidden rounded-3xl border bg-white p-7 lg:p-8 transition-all duration-500 cursor-default ${
-                    isActive
-                      ? "border-primary shadow-2xl shadow-primary/10 scale-[1.02] ring-2 ring-primary/15"
-                      : "border-slate-200/90 shadow-xs opacity-85 hover:opacity-100 hover:border-slate-300"
-                  }`}
-                >
-                  {/* Top indicator bar */}
-                  <div
-                    className={`absolute top-0 left-0 right-0 h-1.5 transition-colors duration-300 ${
+                <Fragment key={step.number}>
+                  <article
+                    className={`group relative z-10 w-95 lg:w-110 shrink-0 overflow-hidden rounded-3xl border bg-white p-7 lg:p-8 transition-all duration-500 cursor-default ${
                       isActive
-                        ? "bg-primary"
-                        : isPassed
-                        ? "bg-secondary"
-                        : "bg-transparent"
+                        ? "border-primary shadow-2xl shadow-primary/10 scale-[1.02] ring-2 ring-primary/15"
+                        : "border-slate-200/90 shadow-xs opacity-85 hover:opacity-100 hover:border-slate-300"
                     }`}
-                  />
-
-                  {/* Card Header: Step number & Icon badge */}
-                  <div className="flex items-center justify-between mb-6">
-                    <span
-                      className={`font-heading text-4xl lg:text-5xl font-bold transition-colors duration-300 ${
-                        isActive ? "text-primary" : "text-slate-300"
-                      }`}
-                    >
-                      {step.number}
-                    </span>
-
+                  >
+                    {/* Top indicator bar */}
                     <div
-                      className={`flex h-12 w-12 items-center justify-center rounded-2xl transition-all duration-300 ${
+                      className={`absolute top-0 left-0 right-0 h-1.5 transition-colors duration-300 ${
                         isActive
-                          ? "bg-primary text-white shadow-md shadow-primary/25 rotate-3 scale-110"
-                          : "bg-soft text-primary"
+                          ? "bg-primary"
+                          : isPassed
+                          ? "bg-secondary"
+                          : "bg-transparent"
                       }`}
-                    >
-                      <Icon
-                        className="h-6 w-6 stroke-[1.8]"
-                        aria-hidden="true"
-                      />
+                    />
+
+                    {/* Card Header: Step number & Icon badge */}
+                    <div className="flex items-center justify-between mb-6">
+                      <span
+                        className={`font-heading text-4xl lg:text-5xl font-bold transition-colors duration-300 ${
+                          isActive ? "text-primary" : "text-slate-300"
+                        }`}
+                      >
+                        {step.number}
+                      </span>
+
+                      <div
+                        className={`flex h-12 w-12 items-center justify-center rounded-2xl transition-all duration-300 ${
+                          isActive
+                            ? "bg-primary text-white shadow-md shadow-primary/25 rotate-3 scale-110"
+                            : "bg-soft text-primary"
+                        }`}
+                      >
+                        <Icon
+                          className="h-6 w-6 stroke-[1.8]"
+                          aria-hidden="true"
+                        />
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Title & Badge */}
-                  <div className="mb-3 flex items-center gap-3">
-                    <h3 className="font-heading text-xl lg:text-2xl font-semibold text-slate-950">
-                      {step.title}
-                    </h3>
-                    <span className="rounded-full bg-soft px-3 py-1 text-xs font-semibold text-primary border border-secondary/30">
-                      {step.badge}
-                    </span>
-                  </div>
+                    {/* Title & Badge */}
+                    <div className="mb-3 flex items-center gap-3">
+                      <h3 className="font-heading text-xl lg:text-2xl font-semibold text-slate-950">
+                        {step.title}
+                      </h3>
+                      <span className="rounded-full bg-soft px-3 py-1 text-xs font-semibold text-primary border border-secondary/30">
+                        {step.badge}
+                      </span>
+                    </div>
 
-                  {/* Description */}
-                  <p className="text-sm leading-relaxed text-slate-600 mb-6">
-                    {step.description}
-                  </p>
+                    {/* Description */}
+                    <p className="text-sm leading-relaxed text-slate-600 mb-6">
+                      {step.description}
+                    </p>
 
-                  {/* Deliverable Checklist */}
-                  <div className="border-t border-slate-100 pt-4 mt-4">
-                    <ul className="space-y-2 text-xs font-medium text-slate-700">
-                      {step.details.map((detail) => (
-                        <li key={detail} className="flex items-center gap-2">
-                          <CheckCircleIcon className="h-4 w-4 text-primary shrink-0" />
-                          <span>{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </article>
+                    {/* Deliverable Checklist */}
+                    <div className="border-t border-slate-100 pt-4 mt-4">
+                      <ul className="space-y-2 text-xs font-medium text-slate-700">
+                        {step.details.map((detail) => (
+                          <li key={detail} className="flex items-center gap-2">
+                            <CheckCircleIcon className="h-4 w-4 text-primary shrink-0" />
+                            <span>{detail}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </article>
+
+                  {/* Refined Inter-Card Connector Segment */}
+                  {index < steps.length - 1 && (
+                    <div
+                      aria-hidden="true"
+                      className="shrink-0 flex items-center justify-center w-8 lg:w-12 pointer-events-none select-none"
+                    >
+                      <div className="relative w-full h-[2px] rounded-full overflow-hidden bg-slate-200/60">
+                        <div
+                          className={`absolute inset-0 rounded-full transition-all duration-500 ease-out ${
+                            index < activeStep
+                              ? "w-full bg-primary opacity-100 shadow-xs shadow-primary/30"
+                              : index === activeStep
+                              ? "w-full bg-primary/70 opacity-80"
+                              : "w-0 bg-primary/20 opacity-20"
+                          }`}
+                        />
+                      </div>
+                    </div>
+                  )}
+                </Fragment>
               );
             })}
           </div>
@@ -340,7 +339,7 @@ export default function HowWeWork() {
                   </div>
 
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-heading text-3xl font-bold text-primary">
+                    <span className="font-heading text-3xl font-bold text-[#00598A]">
                       {step.number}
                     </span>
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-soft text-primary">
