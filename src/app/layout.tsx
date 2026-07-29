@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Cormorant_Garamond, Manrope } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Cormorant_Garamond,
+  Manrope,
+} from "next/font/google";
 
 import "./globals.css";
 import Navbar from "@/src/components/Navbar";
@@ -7,7 +12,11 @@ import Footer from "@/src/components/Footer";
 
 export const metadata: Metadata = {
   title: "Haggai Accounting",
-  description: "Outsourced accounting and financial operations for growing businesses.",
+  description:
+    "Outsourced accounting and financial operations for growing businesses.",
+  icons: {
+    icon: "/images/haggai_fav_icon.png",
+  },
 };
 
 const geistSans = Geist({

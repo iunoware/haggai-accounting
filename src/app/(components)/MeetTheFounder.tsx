@@ -29,7 +29,7 @@ export default function MeetTheFounder() {
     if (typeof window === "undefined" || !sectionRef.current) return;
 
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     if (prefersReducedMotion) return;
@@ -48,7 +48,7 @@ export default function MeetTheFounder() {
         tl.fromTo(
           badgeRef.current,
           { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
         );
       }
 
@@ -57,7 +57,7 @@ export default function MeetTheFounder() {
           headingRef.current,
           { opacity: 0, y: 25 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -66,7 +66,7 @@ export default function MeetTheFounder() {
           paragraphRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.4"
+          "-=0.4",
         );
       }
 
@@ -75,7 +75,7 @@ export default function MeetTheFounder() {
           portraitContainerRef.current,
           { opacity: 0, y: 35, scale: 0.96 },
           { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "power3.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -84,7 +84,7 @@ export default function MeetTheFounder() {
           quoteRef.current,
           { opacity: 0, y: 30 },
           { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
-          "-=0.5"
+          "-=0.5",
         );
       }
 
@@ -100,7 +100,7 @@ export default function MeetTheFounder() {
             stagger: 0.18,
             ease: "power2.out",
           },
-          "-=0.4"
+          "-=0.4",
         );
       }
 
@@ -109,7 +109,7 @@ export default function MeetTheFounder() {
           founderInfoRef.current,
           { opacity: 0, y: 15 },
           { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -118,7 +118,7 @@ export default function MeetTheFounder() {
           ctaRef.current,
           { opacity: 0, y: 15 },
           { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-          "-=0.2"
+          "-=0.2",
         );
       }
 
@@ -200,35 +200,35 @@ export default function MeetTheFounder() {
         {/* MAIN EDITORIAL SPLIT LAYOUT */}
         <div className="mt-14 lg:mt-20 grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16 max-w-6xl mx-auto">
           {/* LEFT COLUMN */}
-          <div className="relative lg:col-span-5 flex flex-col items-center sm:items-start">
+          <div className="relative justify-center lg:col-span-5 flex flex-col items-center">
             {/* Organic Blue Backdrop Shape */}
             <div
               ref={organicShapeRef}
               aria-hidden="true"
-              className="absolute -inset-4 sm:-inset-6 rounded-[36px] bg-gradient-to-tr from-primary/10 via-secondary/10 to-soft/40 blur-2xl -z-10 opacity-90"
+              className=" absolute -inset-4 sm:-inset-6 rounded-[36px] bg-linear-to-tr from-primary/10 via-secondary/10 to-soft/40 blur-2xl -z-10 opacity-90"
             />
 
             {/* Founder Portrait Container */}
             <div
               ref={portraitContainerRef}
-              className="group relative w-full overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-2.5 shadow-2xl shadow-primary/5 transition-all duration-500 hover:border-primary/40 hover:shadow-primary/10"
+              className="group flex items-center justify-center w-full max-w-md mx-auto overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-2.5 shadow-2xl shadow-primary/5 transition-all duration-500 hover:border-primary/40 hover:shadow-primary/10"
             >
               <div
                 ref={portraitImageRef}
-                className="relative aspect-4/5 w-full overflow-hidden rounded-[18px] bg-slate-100"
+                className="relative translate-y-5 flex items-center justify-center aspect-4/5 w-full overflow-hidden rounded-[18px] bg-slate-100"
               >
                 <Image
                   src="/images/founder.png"
                   alt="Founder and CEO of Haggai Accounting"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 450px"
-                  className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  className="object-cover  object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   priority
                 />
 
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-t from-slate-950/35 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40"
+                  className="absolute inset-0 bg-linear-to-t from-slate-950/35 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40"
                 />
               </div>
             </div>
@@ -236,7 +236,7 @@ export default function MeetTheFounder() {
             {/* Founder Name & Title Below Portrait */}
             <div
               ref={founderInfoRef}
-              className="mt-6 w-full flex flex-row items-center justify-between gap-4 border-t border-slate-100 pt-5 px-1"
+              className="mt-2 w-full flex flex-row items-center justify-between gap-4 border-t border-slate-100 pt-5 px-1"
             >
               <div>
                 <h3 className="font-heading text-xl font-bold tracking-tight text-slate-950">
