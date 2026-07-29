@@ -1,15 +1,24 @@
-import { Metadata } from "next";
+import { constructMetadata } from "@/src/lib/seo";
 import PricingHero from "./(components)/Hero";
 import PricingPlans from "./(components)/PricingPlans";
 import PlanComparison from "./(components)/PlanComparison";
 import PricingFaq from "./(components)/FaqSection";
 import FinancialDashboardCTA from "@/src/components/FinancialDashboardCTA";
 
-export const metadata: Metadata = {
-  title: "Simple, Transparent Pricing | Haggai Accounting",
+export const metadata = constructMetadata({
+  title: "Simple & Transparent Accounting Pricing | Haggai Accounting",
   description:
-    "Flexible accounting plans designed to match your current business needs with zero hidden fees.",
-};
+    "Compare flexible accounting plans designed for startups, growing businesses, CPA firms, and enterprises with transparent pricing and no hidden fees.",
+  path: "/pricing",
+  keywords: [
+    "Simple & Transparent Accounting Pricing",
+    "Accounting Plans",
+    "Transparent Pricing",
+    "No Hidden Fees",
+    "Startup Accounting Plans",
+    "CPA Firm Pricing",
+  ],
+});
 
 export default function PricingPage() {
   return (
