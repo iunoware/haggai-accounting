@@ -203,8 +203,8 @@ export default function MissionSection() {
               </span>
             </div>
 
-            <h2 className="font-heading text-4xl font-medium leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl">
-              <span className="block overflow-hidden pb-1">
+            <h2 className="font-heading font-medium leading-[0.98] tracking-tight text-4xl sm:text-5xl lg:text-6xl">
+              <span className="block pb-1">
                 <span className="mission-heading-line block">Clarity in every</span>
               </span>
 
@@ -217,11 +217,11 @@ export default function MissionSection() {
 
             <p className="mission-description mt-8 max-w-xl text-base leading-relaxed text-slate-100/90">
               Our mission is to provide growing businesses with accurate, consistent, and
-              reliable accounting support that brings order to their financial operations.
+              reliable business support that brings order to their financial operations.
             </p>
 
             <p className="mission-description mt-5 max-w-xl text-base leading-relaxed text-slate-100/90">
-              We aim to become a dependable extension of every client&apos;s team—creating
+              We aim to become a dependable extension of every client&apos;s team-creating
               stronger processes, clearer reporting, and greater confidence in the numbers
               behind their business.
             </p>
@@ -272,9 +272,13 @@ export default function MissionSection() {
                   “
                 </span>
 
-                <blockquote className="-mt-5 font-heading text-2xl font-medium leading-snug tracking-tight text-white sm:text-3xl lg:text-4xl">
-                  To give every growing business the financial clarity and dependable
-                  support it needs to move forward with confidence.
+                <blockquote className="-mt-5 font-heading font-medium leading-snug tracking-tight text-white text-xl sm:text-2xl lg:text-3xl">
+                  {/* To give every growing business the financial clarity and dependable
+                  support it needs to move forward with confidence. */}
+                  To provide enterprise-grade finance, accounting, payroll, and supply
+                  chain solutions that help growing businesses operate like large
+                  enterprises - through experienced professionals, proven processes, and
+                  the right technology.
                 </blockquote>
               </div>
 

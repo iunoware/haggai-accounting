@@ -376,7 +376,7 @@ export default function SupplyChainServices() {
   );
 
   return (
-    <div ref={pageRef} className="relative bg-white">
+    <div ref={pageRef} className="relative bg-bg">
       {/* HERO*/}
       <section className="haggai-supply-hero relative overflow-hidden py-20 sm:py-24 lg:py-28">
         {/* Background glow */}

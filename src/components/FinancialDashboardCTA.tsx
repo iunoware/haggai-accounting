@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -211,9 +212,8 @@ export default function FinancialDashboardCTA() {
             ref={paragraphRef}
             className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg"
           >
-            Haggai helps businesses gain complete visibility over their finances
-            through accurate bookkeeping, timely reporting and dedicated
-            accounting support.
+            Haggai helps businesses gain complete visibility over their finances through
+            accurate bookkeeping, timely reporting and dedicated business support.
           </p>
         </div>
 
@@ -231,7 +231,7 @@ export default function FinancialDashboardCTA() {
                 <span className="h-3 w-3 rounded-full bg-amber-400/80" />
                 <span className="h-3 w-3 rounded-full bg-emerald-400/80" />
                 <span className="ml-3 hidden sm:inline-block font-mono font-medium text-slate-500">
-                  haggai.app/executive-dashboard
+                  haggai/executive-dashboard
                 </span>
               </div>
 
@@ -258,10 +258,7 @@ export default function FinancialDashboardCTA() {
                   <span className="text-xs font-bold tracking-wider text-slate-500 uppercase">
                     Financial Health
                   </span>
-                  <ShieldCheckIcon
-                    className="h-5 w-5 text-primary"
-                    aria-hidden="true"
-                  />
+                  <ShieldCheckIcon className="h-5 w-5 text-primary" aria-hidden="true" />
                 </div>
 
                 <div className="my-4 flex items-center justify-center">
@@ -324,22 +321,11 @@ export default function FinancialDashboardCTA() {
 
                 {/* Smooth SVG Line Chart */}
                 <div className="h-16 w-full mt-2">
-                  <svg
-                    className="h-full w-full overflow-visible"
-                    viewBox="0 0 100 40"
-                  >
+                  <svg className="h-full w-full overflow-visible" viewBox="0 0 100 40">
                     <defs>
                       <linearGradient id="revGrad" x1="0" y1="0" x2="0" y2="1">
-                        <stop
-                          offset="0%"
-                          stopColor="#00598A"
-                          stopOpacity="0.25"
-                        />
-                        <stop
-                          offset="100%"
-                          stopColor="#00598A"
-                          stopOpacity="0.0"
-                        />
+                        <stop offset="0%" stopColor="#00598A" stopOpacity="0.25" />
+                        <stop offset="100%" stopColor="#00598A" stopOpacity="0.0" />
                       </linearGradient>
                     </defs>
                     <path
@@ -365,10 +351,7 @@ export default function FinancialDashboardCTA() {
                   <span className="text-xs font-bold tracking-wider text-slate-500 uppercase">
                     Net Runway
                   </span>
-                  <BanknotesIcon
-                    className="h-5 w-5 text-secondary"
-                    aria-hidden="true"
-                  />
+                  <BanknotesIcon className="h-5 w-5 text-secondary" aria-hidden="true" />
                 </div>
 
                 <div className="my-2">
@@ -382,10 +365,7 @@ export default function FinancialDashboardCTA() {
 
                 {/* Mini Area Chart SVG */}
                 <div className="h-16 w-full mt-2">
-                  <svg
-                    className="h-full w-full overflow-visible"
-                    viewBox="0 0 100 40"
-                  >
+                  <svg className="h-full w-full overflow-visible" viewBox="0 0 100 40">
                     <path
                       d="M0 25 Q 30 35, 60 15 T 100 10 L 100 40 L 0 40 Z"
                       className="fill-soft/60"
@@ -434,10 +414,7 @@ export default function FinancialDashboardCTA() {
                   <span className="text-xs font-bold tracking-wider text-slate-500 uppercase">
                     Payroll Status
                   </span>
-                  <UserGroupIcon
-                    className="h-5 w-5 text-primary"
-                    aria-hidden="true"
-                  />
+                  <UserGroupIcon className="h-5 w-5 text-primary" aria-hidden="true" />
                 </div>
 
                 <div className="my-2">
@@ -488,19 +465,16 @@ export default function FinancialDashboardCTA() {
             >
               <div className="text-center md:text-left max-w-xl">
                 <div className="inline-flex items-center gap-2 text-xs font-bold tracking-wider text-primary uppercase mb-1">
-                  <CheckCircleIcon
-                    className="h-4 w-4 text-primary"
-                    aria-hidden="true"
-                  />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" aria-hidden="true" />
                   Clear Financial Future
                 </div>
                 <h3 className="font-heading text-2xl sm:text-3xl font-bold text-slate-950">
                   Everything looks on track.
                 </h3>
                 <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  With the right accounting partner, your business gains the
-                  clarity needed to make smarter financial decisions and scale
-                  with total confidence.
+                  With the right accounting partner, your business gains the clarity
+                  needed to make smarter financial decisions and scale with total
+                  confidence.
                 </p>
               </div>
 
@@ -521,10 +495,7 @@ export default function FinancialDashboardCTA() {
                   href="/contact?type=team"
                   className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-7 py-3.5 text-sm font-semibold text-slate-900 shadow-xs transition-all duration-300 hover:border-primary hover:text-primary hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary"
                 >
-                  <PhoneIcon
-                    className="h-4 w-4 text-slate-500"
-                    aria-hidden="true"
-                  />
+                  <PhoneIcon className="h-4 w-4 text-slate-500" aria-hidden="true" />
                   <span>Talk to Our Team</span>
                 </Link>
               </div>

@@ -107,17 +107,17 @@ export default function ContactHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-[72vh] items-center overflow-hidden bg-[#D7F3FF] pb-20 pt-32 sm:min-h-[78vh] sm:pb-24 sm:pt-36"
+      className="relative flex min-h-[72vh] items-center overflow-hidden bg-primary text-white pb-20 pt-32 sm:min-h-[78vh] sm:pb-24 sm:pt-36"
     >
       {/* Background decorations */}
       <div
         aria-hidden="true"
-        className="absolute -left-40 top-20 h-80 w-80 rounded-full bg-white/70 blur-3xl"
+        className="absolute -left-40 top-20 h-80 w-80 rounded-full bg-secondary/70 blur-3xl"
       />
 
       <div
         aria-hidden="true"
-        className="absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-[#508BC0]/12 blur-3xl"
+        className="absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-secondary/12 blur-3xl"
       />
 
       <div
@@ -129,30 +129,30 @@ export default function ContactHero() {
         <div className="mx-auto max-w-4xl text-center">
           {/* Eyebrow */}
           <div className="contact-hero-eyebrow mb-6 flex items-center justify-center gap-3">
-            <span className="h-px w-9 bg-[#E29E21]" />
+            <span className="h-px w-9 bg-accent" />
 
-            <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-[#00598A]">
+            <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-soft">
               Contact Haggai
             </span>
 
-            <span className="h-px w-9 bg-[#E29E21]" />
+            <span className="h-px w-9 bg-accent" />
           </div>
 
           {/* Heading */}
-          <h1 className="font-cormorant text-[3.6rem] font-medium leading-[0.92] tracking-tighter text-[#0c2e2d] sm:text-7xl lg:text-[6.5rem]">
+          <h1 className="font-cormorant text-[3.6rem] font-medium leading-[0.92] tracking-tighter text-soft sm:text-7xl lg:text-[6.5rem]">
             <span className="block overflow-hidden pb-2">
               <span className="contact-hero-title-line block">Let&apos;s talk about</span>
             </span>
 
             <span className="block overflow-hidden pb-3">
-              <span className="contact-hero-title-line block italic text-[#00598A]">
+              <span className="contact-hero-title-line block italic text-soft">
                 your business.
               </span>
             </span>
           </h1>
 
           {/* Description */}
-          <p className="contact-hero-description mx-auto mt-7 max-w-2xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
+          <p className="contact-hero-description mx-auto mt-7 max-w-2xl font-manrope text-sm leading-7 text-soft sm:text-base sm:leading-8">
             Tell us about your accounting needs, current challenges, or growth plans. Our
             team is here to listen, understand, and help you find the right support.
           </p>
@@ -161,9 +161,9 @@ export default function ContactHero() {
           {/* <div className="contact-hero-link mt-9">
             <Link
               href="#contact-form"
-              className="group inline-flex items-center gap-3 font-manrope text-sm font-semibold text-[#00598A] transition-colors duration-300 hover:text-[#E29E21]"
+              className="group inline-flex items-center gap-3 font-manrope text-sm font-semibold text-primary transition-colors duration-300 hover:text-accent"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#00598A] shadow-[0_12px_35px_-18px_rgba(0,89,138,0.45)] transition-all duration-300 group-hover:bg-[#00598A] group-hover:text-white">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-primary shadow-[0_12px_35px_-18px_rgba(0,89,138,0.45)] transition-all duration-300 group-hover:bg-primary group-hover:text-white">
                 <ChatBubbleLeftRightIcon aria-hidden="true" className="h-5 w-5" />
               </span>
               Start a conversation
@@ -174,10 +174,10 @@ export default function ContactHero() {
         {/* Scroll indicator */}
         <a
           href="#contact-form"
-          className="contact-hero-link mx-auto mt-12 flex w-fit flex-col items-center gap-2 font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-[#00598A]/60 transition-colors duration-300 hover:text-[#00598A]"
+          className="contact-hero-link mx-auto mt-12 flex w-fit flex-col items-center gap-2 font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-soft transition-colors duration-300 hover:text-primary"
         >
           Contact Details
-          <span className="contact-hero-arrow flex h-9 w-9 items-center justify-center rounded-full border border-[#00598A]/15 bg-white/60 text-[#00598A]">
+          <span className="contact-hero-arrow flex h-9 w-9 items-center justify-center rounded-full border border-primary/15 bg-white/60 text-primary">
             <ArrowDownIcon aria-hidden="true" className="h-4 w-4" />
           </span>
         </a>
@@ -186,7 +186,7 @@ export default function ContactHero() {
       {/* Bottom transition */}
       <div
         aria-hidden="true"
-        className="absolute -bottom-px left-0 h-10 w-full bg-white [clip-path:ellipse(60%_100%_at_50%_100%)] sm:h-14"
+        className="absolute -bottom-px left-0 h-10 w-full bg-bg [clip-path:ellipse(60%_100%_at_50%_100%)] sm:h-14"
       />
     </section>
   );

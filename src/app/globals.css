@@ -89,6 +89,12 @@ html {
   --color-secondary: #508bc0;
   --color-soft: #d7f3ff;
   --color-accent: #e29e21;
+  /* 200 */
+  /* --color-bg: #e3ecef; */
+
+  /* 100 */
+  --color-bg: #f1f8f9;
+
 }
 
 @theme inline {
@@ -105,6 +111,11 @@ html {
   --color-secondary: #508bc0;
   --color-soft: #d7f3ff;
   --color-accent: #e29e21;
+  /* 200 */
+  /* --color-bg: #e3ecef; */
+
+  /* 100 */
+  --color-bg: #f1f8f9;
 }
 
 @layer base {

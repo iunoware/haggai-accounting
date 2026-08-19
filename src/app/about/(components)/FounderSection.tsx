@@ -2,39 +2,12 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import {
-  ArrowUpRightIcon,
-  BriefcaseIcon,
-  CheckBadgeIcon,
-  LightBulbIcon,
-  UserGroupIcon,
-} from "@heroicons/react/24/outline";
+import { ArrowUpRightIcon, CheckBadgeIcon } from "@heroicons/react/24/outline";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const founderHighlights = [
-  {
-    title: "Purpose-led leadership",
-    description:
-      "Building Haggai around clarity, accountability, and long-term client relationships.",
-    icon: LightBulbIcon,
-  },
-  {
-    title: "Practical expertise",
-    description:
-      "Combining accounting knowledge with processes that support real business decisions.",
-    icon: BriefcaseIcon,
-  },
-  {
-    title: "Client-first approach",
-    description:
-      "Creating dependable financial support shaped around each client’s needs and growth.",
-    icon: UserGroupIcon,
-  },
-];
 
 export default function FounderSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -128,7 +101,6 @@ export default function FounderSection() {
         .from(
           ".founder-highlight",
           {
-            // opacity: 0,
             x: 30,
             duration: 0.7,
             stagger: 0.14,
@@ -193,7 +165,7 @@ export default function FounderSection() {
     <section
       ref={sectionRef}
       id="founder"
-      className="relative overflow-hidden bg-[#f7f7f7] py-20 sm:py-24 lg:py-32"
+      className="relative overflow-hidden bg-bg py-20 sm:py-24 lg:py-32"
     >
       {/* Background decorations */}
       <div
@@ -219,18 +191,18 @@ export default function FounderSection() {
               <span className="h-px w-10 bg-accent" />
 
               <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-                Meet Our Founder
+                Meet the Founder
               </span>
             </div>
 
-            <h2 className="font-cormorant text-[3.25rem] font-medium leading-[0.93] tracking-[-0.045em] text-[#0c2e2d] sm:text-6xl lg:text-[5.25rem]">
+            <h2 className="font-cormorant font-medium leading-[0.93] tracking-[-0.045em] text-[#0c2e2d] text-4xl sm:text-5xl lg:text-6xl">
               <span className="block overflow-hidden pb-1">
-                <span className="founder-heading-line block">Leadership with</span>
+                <span className="founder-heading-line block">The Founder Behind</span>
               </span>
 
               <span className="block overflow-hidden pb-2">
                 <span className="founder-heading-line block italic text-primary">
-                  purpose.
+                  Haggai Business Solutions
                 </span>
               </span>
             </h2>
@@ -238,14 +210,17 @@ export default function FounderSection() {
 
           <div className="lg:pb-2">
             <p className="founder-description max-w-xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-              Haggai was founded with a clear vision: to give growing businesses
-              dependable accounting support, stronger financial processes, and the
-              confidence to make better decisions.
+              With 17+ years of experience in enterprise finance and accounting
+              operations, Jensi has led month-end close processes across entire global
+              regions and managed high-volume revenue operations for fast-growing
+              companies.
             </p>
 
             <p className="founder-description mt-5 max-w-xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-              That vision continues to guide how the company serves its clients, develops
-              its team, and builds long-term financial partnerships.
+              That experience - spanning complex reconciliations, financial reporting, and
+              cross-functional collaboration - shapes how Haggai Business Solutions
+              approaches every client engagement: with the discipline of an enterprise
+              team and the responsiveness of a dedicated partner.
             </p>
           </div>
         </div>
@@ -258,7 +233,7 @@ export default function FounderSection() {
               <div className="relative aspect-4/5 overflow-hidden rounded-[1.55rem] bg-soft">
                 <Image
                   src="/images/founder.jpg"
-                  alt="Founder of Haggai Accounting"
+                  alt="Jensi, Founder of Haggai Business Solutions"
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
                   className="object-cover object-center"
@@ -291,16 +266,16 @@ export default function FounderSection() {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <p className="font-cormorant text-3xl font-semibold text-[#0c2e2d]">
-                    Founder Name
+                    Jensi
                   </p>
 
                   <p className="mt-1 font-manrope text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-                    Founder &amp; Managing Director
+                    Founder
                   </p>
                 </div>
 
                 <span className="inline-flex w-fit items-center rounded-full bg-soft px-3 py-1.5 font-manrope text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
-                  Haggai Accounting
+                  Haggai Business Solutions
                 </span>
               </div>
             </div>
@@ -315,47 +290,65 @@ export default function FounderSection() {
           <div className="lg:pt-4">
             <div className="mb-9">
               <span className="font-manrope text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
-                The Person Behind Haggai
+                Jensi - Founder
               </span>
 
               <p className="mt-4 font-cormorant text-3xl font-medium leading-[1.18] text-[#0c2e2d] sm:text-4xl">
-                Building more than an accounting company-building a trusted financial
+                Enterprise experience, delivered with the responsiveness of a dedicated
                 partner.
               </p>
             </div>
 
             <div className="space-y-4">
-              {founderHighlights.map((highlight) => {
-                const Icon = highlight.icon;
+              <article className="founder-highlight group relative overflow-hidden rounded-2xl border border-primary/10 bg-white/80 p-5 shadow-sm backdrop-blur-sm hover:border-secondary/30 hover:shadow-xl hover:shadow-primary/5 sm:p-6">
+                <span
+                  aria-hidden="true"
+                  className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-500 group-hover:w-full"
+                />
 
-                return (
-                  <article
-                    key={highlight.title}
-                    className="founder-highlight group relative overflow-hidden rounded-2xl border border-primary/10 bg-white/80 p-5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-secondary/30 hover:shadow-xl hover:shadow-primary/5 sm:p-6"
-                  >
-                    <span
-                      aria-hidden="true"
-                      className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-500 group-hover:w-full"
-                    />
+                <div className="flex items-start gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                    <CheckBadgeIcon aria-hidden="true" className="h-5 w-5" />
+                  </div>
 
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
-                        <Icon aria-hidden="true" className="h-5 w-5" />
-                      </div>
+                  <div>
+                    <h3 className="font-cormorant text-2xl font-semibold text-[#0c2e2d]">
+                      17+ Years of Enterprise Finance Experience
+                    </h3>
 
-                      <div>
-                        <h3 className="font-cormorant text-2xl font-semibold text-[#0c2e2d]">
-                          {highlight.title}
-                        </h3>
+                    <p className="mt-2 font-manrope text-sm leading-7 text-slate-600">
+                      Jensi has led month-end close processes across entire global regions
+                      and managed high-volume revenue operations for fast-growing
+                      companies.
+                    </p>
+                  </div>
+                </div>
+              </article>
 
-                        <p className="mt-2 font-manrope text-sm leading-7 text-slate-600">
-                          {highlight.description}
-                        </p>
-                      </div>
-                    </div>
-                  </article>
-                );
-              })}
+              <article className="founder-highlight group relative overflow-hidden rounded-2xl border border-primary/10 bg-white/80 p-5 shadow-sm backdrop-blur-sm hover:border-secondary/30 hover:shadow-xl hover:shadow-primary/5 sm:p-6">
+                <span
+                  aria-hidden="true"
+                  className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-500 group-hover:w-full"
+                />
+
+                <div className="flex items-start gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                    <CheckBadgeIcon aria-hidden="true" className="h-5 w-5" />
+                  </div>
+
+                  <div>
+                    <h3 className="font-cormorant text-2xl font-semibold text-[#0c2e2d]">
+                      Built for Growing Businesses
+                    </h3>
+
+                    <p className="mt-2 font-manrope text-sm leading-7 text-slate-600">
+                      Jensi founded Haggai Business Solutions to help growing businesses
+                      access the same level of financial rigor without the cost of
+                      building it in-house.
+                    </p>
+                  </div>
+                </div>
+              </article>
             </div>
 
             {/* Founder quote */}
@@ -371,12 +364,12 @@ export default function FounderSection() {
                 <span className="mb-5 block h-1 w-12 rounded-full bg-accent" />
 
                 <p className="font-cormorant text-2xl font-medium leading-[1.35] sm:text-3xl">
-                  Our goal is to give every client the financial clarity and dependable
-                  support they need to build with confidence.
+                  With the discipline of an enterprise team and the responsiveness of a
+                  dedicated partner.
                 </p>
 
                 <p className="mt-5 font-manrope text-xs font-semibold uppercase tracking-[0.18em] text-soft">
-                  Founder, Haggai Accounting
+                  Jensi, Founder - Haggai Business Solutions
                 </p>
               </div>
             </blockquote>

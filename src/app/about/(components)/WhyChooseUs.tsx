@@ -2,12 +2,12 @@
 
 import { useRef } from "react";
 import {
-  ArrowRightIcon,
+  // ArrowRightIcon,
   ChartBarSquareIcon,
   CheckCircleIcon,
   ClockIcon,
   EyeIcon,
-  ScaleIcon,
+  // ScaleIcon,
   ShieldCheckIcon,
   SparklesIcon,
   UserGroupIcon,
@@ -21,63 +21,63 @@ gsap.registerPlugin(ScrollTrigger);
 
 const comparisonPoints = [
   {
-    traditional: "Generic accounting support",
-    haggai: "Dedicated support tailored to your business",
+    traditional: "Generic support",
+    haggai: "Experienced professionals",
   },
   {
-    traditional: "Delayed and inconsistent reporting",
-    haggai: "Accurate and timely financial reporting",
+    traditional: "Limited scalability",
+    haggai: "Flexible teams that grow with your business",
   },
   {
-    traditional: "Limited financial visibility",
-    haggai: "Clear insights into business performance",
+    traditional: "Disconnected systems",
+    haggai: "Technology-driven delivery",
   },
   {
-    traditional: "Reactive problem-solving",
-    haggai: "Proactive and dependable financial guidance",
+    traditional: "Unclear data handling",
+    haggai: "Secure and confidential operations",
   },
   {
-    traditional: "Processes that do not scale",
-    haggai: "Structured systems built for growth",
+    traditional: "Slow communication",
+    haggai: "Dedicated, responsive client support",
   },
 ];
 
 const strengths = [
   {
-    title: "Dedicated Partnership",
+    title: "Experienced Professionals",
     description:
-      "We work as an extension of your team, providing consistent support and understanding your business beyond the numbers.",
+      "Backed by 17+ years of enterprise finance and operations experience, applied to your business from day one.",
     icon: UserGroupIcon,
   },
   {
-    title: "Reliable Accuracy",
+    title: "Scalable Delivery",
     description:
-      "Every financial process is handled carefully to produce dependable records and reporting you can confidently rely on.",
-    icon: ShieldCheckIcon,
-  },
-  {
-    title: "Clear Visibility",
-    description:
-      "We turn financial information into meaningful reports that help you understand performance and make informed decisions.",
-    icon: EyeIcon,
-  },
-  {
-    title: "Timely Support",
-    description:
-      "Our structured approach helps reduce delays, maintain consistency, and keep essential accounting work moving forward.",
-    icon: ClockIcon,
-  },
-  {
-    title: "Scalable Processes",
-    description:
-      "Our accounting systems are designed to adapt as your operations, team, and financial requirements continue to grow.",
+      "Flexible teams that grow with your business — no rehiring or restructuring as your needs change.",
     icon: ChartBarSquareIcon,
   },
   {
-    title: "Client-Focused Service",
+    title: "Technology-Driven",
     description:
-      "Every solution is shaped around your priorities, challenges, and long-term business objectives.",
-    icon: ScaleIcon,
+      "Hands-on experience across leading accounting, ERP, and reporting platforms, so we fit into your existing systems.",
+    icon: SparklesIcon,
+  },
+  {
+    title: "Secure & Confidential",
+    description:
+      "Strong controls and secure handling of your financial and business data, every step of the way.",
+    icon: ShieldCheckIcon,
+  },
+  {
+    title: "Client-Centric",
+    description:
+      "Dedicated support with responsive communication — you're never left waiting for answers.",
+    icon: ClockIcon,
+  },
+  {
+    title: "Continuous Improvement",
+    description:
+      "We look for ways to improve efficiency, not just complete tasks — your operations get better over time, not just maintained.",
+    icon: EyeIcon,
   },
 ];
 
@@ -96,7 +96,6 @@ export default function WhyChooseUsSection() {
             ".why-description",
             ".why-comparison",
             ".why-comparison-row",
-            // ".why-strength",
             ".why-cta",
           ],
           {
@@ -182,17 +181,6 @@ export default function WhyChooseUsSection() {
           },
           "-=0.3",
         )
-        // .from(
-        //   ".why-strength",
-        //   {
-        //     // opacity: 0,
-        //     y: 35,
-        //     duration: 0.7,
-        //     stagger: 0.1,
-        //     ease: "power3.out",
-        //   },
-        //   "-=0.5",
-        // )
         .from(
           ".why-cta",
           {
@@ -241,7 +229,7 @@ export default function WhyChooseUsSection() {
     <section
       ref={sectionRef}
       id="why-choose-us"
-      className="relative overflow-hidden bg-[#f7f7f7] py-20 sm:py-24 lg:py-32"
+      className="relative overflow-hidden bg-bg py-20 sm:py-24 lg:py-32"
     >
       {/* Background decorations */}
       <div
@@ -267,18 +255,18 @@ export default function WhyChooseUsSection() {
               <span className="h-px w-10 bg-accent" />
 
               <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-                Why Choose Haggai
+                Why Haggai Business Solutions
               </span>
             </div>
 
-            <h2 className="font-cormorant text-[3.25rem] font-medium leading-[0.93] tracking-[-0.045em] text-[#0c2e2d] sm:text-6xl lg:text-[5.15rem]">
-              <span className="block overflow-hidden pb-1">
-                <span className="why-heading-line block">Why businesses</span>
+            <h2 className="font-cormorant font-medium leading-[0.93] tracking-[-0.045em] text-[#0c2e2d] text-4xl sm:text-5xl lg:text-6xl">
+              <span className="block pb-1">
+                <span className="why-heading-line block">Measurable Reasons</span>
               </span>
 
-              <span className="block overflow-hidden pb-2">
+              <span className="block pb-2">
                 <span className="why-heading-line block italic text-primary">
-                  trust Haggai.
+                  to Trust Haggai
                 </span>
               </span>
             </h2>
@@ -286,14 +274,14 @@ export default function WhyChooseUsSection() {
 
           <div className="lg:pb-2">
             <p className="why-description max-w-xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-              Businesses choose Haggai because they need more than routine accounting.
-              They need dependable support, clear communication, and financial processes
-              designed around the way their business actually operates.
+              Businesses choose Haggai Business Solutions for experienced professionals,
+              scalable delivery, technology-driven operations, and dependable support
+              across their financial and business operations.
             </p>
 
             <p className="why-description mt-5 max-w-xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-              Our approach combines accuracy, consistency, and genuine partnership to help
-              clients move forward with greater confidence.
+              From day-to-day execution to continuous improvement, we are focused on
+              helping your operations become more efficient, secure, and ready to grow.
             </p>
           </div>
         </div>
@@ -325,11 +313,11 @@ export default function WhyChooseUsSection() {
 
                   <div>
                     <p className="font-cormorant text-2xl font-semibold text-[#0c2e2d] sm:text-3xl">
-                      Traditional Support
+                      Traditional Approach
                     </p>
 
                     <p className="mt-1 font-manrope text-xs uppercase tracking-[0.16em] text-slate-500">
-                      A general approach
+                      Limited flexibility
                     </p>
                   </div>
                 </div>
@@ -343,11 +331,11 @@ export default function WhyChooseUsSection() {
 
                   <div>
                     <p className="font-cormorant text-2xl font-semibold sm:text-3xl">
-                      Haggai Accounting
+                      Haggai Business Solutions
                     </p>
 
                     <p className="mt-1 font-manrope text-xs uppercase tracking-[0.16em] text-soft">
-                      A dedicated partnership
+                      Built to grow with you
                     </p>
                   </div>
                 </div>
@@ -403,7 +391,7 @@ export default function WhyChooseUsSection() {
                 <span className="h-px w-10 bg-accent" />
 
                 <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-                  What Sets Us Apart
+                  Why Choose Haggai
                 </span>
               </div>
 
@@ -414,8 +402,9 @@ export default function WhyChooseUsSection() {
             </div>
 
             <p className="max-w-xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8 lg:justify-self-end">
-              Our service is designed to give clients the consistency, visibility, and
-              support they need to manage their finances with greater confidence.
+              From experienced professionals and scalable delivery to secure operations
+              and continuous improvement, Haggai is built to help your business operate
+              with greater confidence.
             </p>
           </div>
 
@@ -453,7 +442,7 @@ export default function WhyChooseUsSection() {
         </div>
 
         {/* CTA */}
-        <div className="why-cta relative mt-16 overflow-hidden rounded-4xl bg-primary px-6 py-10 text-white shadow-[0_30px_80px_-40px_rgba(0,89,138,0.55)] sm:px-9 sm:py-12 lg:mt-24 lg:px-12 lg:py-14">
+        {/* <div className="why-cta relative mt-16 overflow-hidden rounded-4xl bg-primary px-6 py-10 text-white shadow-[0_30px_80px_-40px_rgba(0,89,138,0.55)] sm:px-9 sm:py-12 lg:mt-24 lg:px-12 lg:py-14">
           <div
             aria-hidden="true"
             className="absolute -right-24 -top-24 h-64 w-64 rounded-full border border-white/15"
@@ -475,17 +464,18 @@ export default function WhyChooseUsSection() {
                 <span className="h-px w-10 bg-accent" />
 
                 <span className="font-manrope text-xs font-semibold uppercase tracking-[0.2em] text-soft">
-                  Ready to Work Together?
+                  See the Difference
                 </span>
               </div>
 
               <h3 className="max-w-3xl font-cormorant text-4xl font-medium leading-[1.05] tracking-[-0.035em] sm:text-5xl lg:text-6xl">
-                Build a stronger financial foundation with a partner you can trust.
+                See the difference for yourself.
               </h3>
 
               <p className="mt-5 max-w-2xl font-manrope text-sm leading-7 text-soft/85 sm:text-base sm:leading-8">
-                Discover how Haggai can support your accounting operations with clearer
-                processes, reliable reporting, and dedicated financial support.
+                Discover how Haggai Business Solutions can support your operations with
+                experienced professionals, scalable delivery, and technology-driven
+                solutions.
               </p>
             </div>
 
@@ -493,14 +483,14 @@ export default function WhyChooseUsSection() {
               href="/contact"
               className="group inline-flex w-fit items-center justify-center gap-3 rounded-full bg-accent px-6 py-3.5 font-manrope text-sm font-semibold text-white shadow-lg shadow-black/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d18e16] hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
             >
-              Schedule a Consultation
+              Schedule a Discovery Call
               <ArrowRightIcon
                 aria-hidden="true"
                 className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
               />
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

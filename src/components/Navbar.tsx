@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/set-state-in-effect */
 // "use client";
 
@@ -318,13 +319,14 @@ const Navbar = () => {
     <>
       <nav
         ref={navRef}
-        className={`${
-          isScrolled
-            ? "bg-white/70 backdrop-blur-md shadow-xs"
-            : "bg-transparent shadow-none"
-        } ${
-          isVisible ? "translate-y-0" : "-translate-y-full"
-        } fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 sm:px-10 lg:px-16 h-20 pointer-events-auto transition-all duration-500 font-manrope`}
+        // className={`${
+        //   isScrolled
+        //     ? "bg-white/70 backdrop-blur-md shadow-xs"
+        //     : "bg-transparent shadow-none"
+        // } ${
+        //   isVisible ? "translate-y-0" : "-translate-y-full"
+        // } fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 sm:px-10 lg:px-16 h-20 pointer-events-auto transition-all duration-500 font-manrope`}
+        className={`${isVisible ? "translate-y-0" : "-translate-y-full"} bg-white/70 backdrop-blur-md shadow-xs fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 sm:px-10 lg:px-16 h-20 pointer-events-auto transition-all duration-500 font-manrope`}
       >
         {/* Brand Logo */}
         <Link href="/" className="relative z-50 group flex items-center gap-2">
