@@ -311,6 +311,7 @@ export default function ServicesHub() {
                 </p>
               </div>
             </div>
+<<<<<<< HEAD
 
             <Link
               href="/contact"
@@ -330,3 +331,23 @@ export default function ServicesHub() {
   );
 }
 
+=======
+
+            <Link
+              href="/contact"
+              className="group inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-3.5 font-manrope text-sm font-semibold text-primary shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-soft"
+            >
+              <CalendarDaysIcon aria-hidden="true" className="h-4 w-4" />
+              Schedule a Discovery Call
+              <ArrowRightIcon
+                aria-hidden="true"
+                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+>>>>>>> 2eb0c014b0358d365497d10a52fc7472f214cca7

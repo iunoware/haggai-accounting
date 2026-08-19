@@ -11,6 +11,7 @@ import MeetTheFounder from "./(components)/MeetTheFounder";
 import Testimonials from "./(components)/Testimonials";
 import FaqSection from "./(components)/FaqSection";
 import FinancialDashboardCTA from "../components/FinancialDashboardCTA";
+import Technology from "./(components)/Technology";
 
 export const metadata = constructMetadata({
   title: "Home | Haggai Accounting",
@@ -29,6 +30,7 @@ export default function Home() {
       <MeetTheFounder />
       <HowWeWork />
       {/* <ServicesOverview /> */}
+      <Technology />
       <IndustriesWeServe />
       <PricingPreview />
       <Testimonials />

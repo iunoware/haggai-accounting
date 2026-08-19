@@ -25,9 +25,9 @@ const contactDetails = [
   },
   {
     title: "Call Us",
-    value: "+91 987 654 3210",
+    value: "+91 978 999 7028",
     description: "Speak directly with our accounting support team.",
-    href: "tel:+919876543210",
+    href: "tel:+919789997028",
     icon: PhoneIcon,
   },
   {
@@ -168,17 +168,17 @@ export default function ContactInformation() {
     <section
       ref={sectionRef}
       id="contact-information"
-      className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28"
+      className="relative overflow-hidden bg-bg py-20 sm:py-24 lg:py-28"
     >
       {/* Background */}
       <div
         aria-hidden="true"
-        className="absolute -left-48 top-16 h-120 w-120 rounded-full bg-[#D7F3FF]/70 blur-3xl"
+        className="absolute -left-48 top-16 h-120 w-120 rounded-full bg-soft/70 blur-3xl"
       />
 
       <div
         aria-hidden="true"
-        className="absolute -right-48 bottom-0 h-112 w-md rounded-full bg-[#508BC0]/10 blur-3xl"
+        className="absolute -right-48 bottom-0 h-112 w-md rounded-full bg-secondary/10 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
@@ -186,9 +186,9 @@ export default function ContactInformation() {
           {/* Left content */}
           <div className="lg:sticky lg:top-28">
             <div className="contact-info-eyebrow mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#E29E21]" />
+              <span className="h-px w-10 bg-accent" />
 
-              <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-[#00598A]">
+              <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-primary">
                 Get in Touch
               </span>
             </div>
@@ -199,7 +199,7 @@ export default function ContactInformation() {
               </span>
 
               <span className="block overflow-hidden pb-3">
-                <span className="contact-info-title-line block italic text-[#00598A]">
+                <span className="contact-info-title-line block italic text-primary">
                   when you&apos;re ready.
                 </span>
               </span>
@@ -210,8 +210,8 @@ export default function ContactInformation() {
               you understand the right accounting support for your business.
             </p>
 
-            <div className="contact-info-note mt-8 rounded-2xl border border-[#00598A]/10 bg-[#D7F3FF]/55 p-5">
-              <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.18em] text-[#508BC0]">
+            <div className="contact-info-note mt-8 rounded-2xl border border-primary/10 bg-soft/55 p-5">
+              <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.18em] text-secondary">
                 Response time
               </p>
 
@@ -227,21 +227,21 @@ export default function ContactInformation() {
               const Icon = detail.icon;
 
               const content = (
-                <>
+                <div className="">
                   <div className="flex items-start justify-between gap-5">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#D7F3FF] text-[#00598A] transition-all duration-300 group-hover:bg-[#00598A] group-hover:text-white">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
                       <Icon aria-hidden="true" className="h-6 w-6" />
                     </span>
 
                     {detail.href && (
                       <ArrowRightIcon
                         aria-hidden="true"
-                        className="h-4 w-4 text-[#E29E21] transition-transform duration-300 group-hover:translate-x-1"
+                        className="h-4 w-4 text-accent transition-transform duration-300 group-hover:translate-x-1"
                       />
                     )}
                   </div>
 
-                  <p className="mt-7 font-manrope text-[10px] font-semibold uppercase tracking-[0.18em] text-[#508BC0]">
+                  <p className="mt-7 font-manrope text-[10px] font-semibold uppercase tracking-[0.18em] text-secondary">
                     {detail.title}
                   </p>
 
@@ -255,9 +255,9 @@ export default function ContactInformation() {
 
                   <span
                     aria-hidden="true"
-                    className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#E29E21] transition-all duration-500 group-hover:w-full"
+                    className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-500 group-hover:w-full"
                   />
-                </>
+                </div>
               );
 
               if (detail.href) {
@@ -270,7 +270,7 @@ export default function ContactInformation() {
                     // target={isExternalMap ? "_blank" : undefined}
                     target="_blank"
                     rel={isExternalMap ? "noreferrer" : undefined}
-                    className="contact-info-card group relative overflow-hidden rounded-[1.75rem] border border-[#00598A]/10 bg-white p-6 shadow-[0_20px_55px_-38px_rgba(0,89,138,0.5)] transition-all duration-300 hover:-translate-y-1 hover:border-[#508BC0]/35 hover:shadow-[0_28px_65px_-35px_rgba(0,89,138,0.55)] sm:p-7"
+                    className="contact-info-card group relative overflow-hidden rounded-[1.75rem] border border-primary/10 bg-white p-6 shadow-[0_20px_55px_-38px_rgba(0,89,138,0.5)] transition-all duration-300 hover:-translate-y-1 hover:border-secondary/35 hover:shadow-[0_28px_65px_-35px_rgba(0,89,138,0.55)] sm:p-7"
                   >
                     {content}
                   </Link>
@@ -280,7 +280,7 @@ export default function ContactInformation() {
               return (
                 <article
                   key={detail.title}
-                  className="contact-info-card group relative overflow-hidden rounded-[1.75rem] border border-[#00598A]/10 bg-white p-6 shadow-[0_20px_55px_-38px_rgba(0,89,138,0.5)] transition-all duration-300 hover:-translate-y-1 hover:border-[#508BC0]/35 hover:shadow-[0_28px_65px_-35px_rgba(0,89,138,0.55)] sm:p-7"
+                  className="contact-info-card group relative overflow-hidden rounded-[1.75rem] border border-primary/10 bg-white p-6 shadow-[0_20px_55px_-38px_rgba(0,89,138,0.5)] transition-all duration-300 hover:-translate-y-1 hover:border-secondary/35 hover:shadow-[0_28px_65px_-35px_rgba(0,89,138,0.55)] sm:p-7"
                 >
                   {content}
                 </article>
