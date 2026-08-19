@@ -375,7 +375,7 @@ export default function TraditionalHiringComparison() {
                   </p>
 
                   <h3 className="mt-1 font-cormorant text-2xl font-semibold text-white">
-                    Haggai Accounting
+                    Haggai Business Solutions
                   </h3>
                 </div>
               </div>
@@ -498,7 +498,7 @@ export default function TraditionalHiringComparison() {
                     </span>
 
                     <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60">
-                      Haggai Accounting
+                      Haggai Business Solutions
                     </p>
                   </div>
 

@@ -874,7 +874,7 @@ export default function ContactForm() {
     setIsRedirecting(true);
 
     const whatsappMessage = [
-      "Hello Haggai Accounting,",
+      "Hello Haggai Business Solutions,",
       "",
       "I would like to discuss accounting support for my business.",
       "",

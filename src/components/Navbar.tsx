@@ -335,7 +335,7 @@ const Navbar = () => {
             width={130}
             height={70}
             className="object-contain h-18 w-auto"
-            alt="Haggai Accounting Logo"
+            alt="Haggai Business Solutions Logo"
             priority
           />
         </Link>
