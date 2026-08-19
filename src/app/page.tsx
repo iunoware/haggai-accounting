@@ -4,29 +4,20 @@ import PainPoints from "./(components)/PainPoints";
 import OurSolutions from "./(components)/OurSolutions";
 import WhyHaggai from "./(components)/WhyHaggai";
 import HowWeWork from "./(components)/HowWeWork";
-import ServicesOverview from "./(components)/ServicesOverview";
+// import ServicesOverview from "./(components)/ServicesOverview";
 import IndustriesWeServe from "./(components)/IndustriesWeServe";
 import PricingPreview from "./(components)/PricingPreview";
 import MeetTheFounder from "./(components)/MeetTheFounder";
 import Testimonials from "./(components)/Testimonials";
+// import FaqSection from "./(components)/FaqSection";
 import FinancialDashboardCTA from "../components/FinancialDashboardCTA";
+import Technology from "./(components)/Technology";
 
 export const metadata = constructMetadata({
   title: "Home | Haggai Accounting",
   description:
     "Scale your business with offshore accounting, bookkeeping, payroll, and financial reporting services from Haggai Accounting. Trusted accounting support tailored to your business.",
   path: "/",
-  keywords: [
-    "Offshore Accounting Services",
-    "Accounting Services",
-    "Bookkeeping Services",
-    "Offshore Bookkeeping",
-    "Financial Reporting",
-    "Payroll Services",
-    "Virtual CFO",
-    "Accounting Outsourcing",
-    "Dedicated Offshore Accounting Team",
-  ],
 });
 
 export default function Home() {
@@ -36,12 +27,14 @@ export default function Home() {
       <PainPoints />
       <OurSolutions />
       <WhyHaggai />
+      <MeetTheFounder />
       <HowWeWork />
-      <ServicesOverview />
+      {/* <ServicesOverview /> */}
+      <Technology />
       <IndustriesWeServe />
       <PricingPreview />
-      <MeetTheFounder />
       <Testimonials />
+      {/* <FaqSection /> */}
       <FinancialDashboardCTA />
     </>
   );

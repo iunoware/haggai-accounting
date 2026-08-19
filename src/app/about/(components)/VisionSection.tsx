@@ -224,7 +224,7 @@ export default function VisionSection() {
     <section
       ref={sectionRef}
       id="vision"
-      className="relative overflow-hidden bg-[#f7f7f7] py-20 sm:py-24 lg:py-32"
+      className="relative overflow-hidden bg-bg py-20 sm:py-24 lg:py-32"
     >
       {/* Background decoration */}
       <div

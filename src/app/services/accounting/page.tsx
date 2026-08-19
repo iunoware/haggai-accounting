@@ -252,7 +252,7 @@ export default function AccountingServices() {
   );
 
   return (
-    <div ref={pageRef} className="relative bg-white">
+    <div ref={pageRef} className="relative bg-bg">
       {/* Hero*/}
       <section className="haggai-acct-hero relative overflow-hidden py-20 sm:py-24 lg:py-28">
         <div
