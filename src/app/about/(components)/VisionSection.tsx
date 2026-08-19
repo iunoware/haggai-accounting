@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import {
-  ArrowDownRightIcon,
+  // ArrowDownRightIcon,
   ArrowTrendingUpIcon,
   BuildingOffice2Icon,
   GlobeAltIcon,
@@ -63,7 +63,7 @@ export default function VisionSection() {
             y: 0,
             scale: 1,
             rotate: 0,
-          }
+          },
         );
 
         gsap.set(".vision-line", {
@@ -98,7 +98,7 @@ export default function VisionSection() {
             stagger: 0.14,
             ease: "power4.out",
           },
-          "-=0.4"
+          "-=0.4",
         )
         .from(
           ".vision-description",
@@ -109,7 +109,7 @@ export default function VisionSection() {
             stagger: 0.14,
             ease: "power3.out",
           },
-          "-=0.55"
+          "-=0.55",
         )
         .from(
           ".vision-statement",
@@ -119,7 +119,7 @@ export default function VisionSection() {
             duration: 0.9,
             ease: "power4.out",
           },
-          "-=0.55"
+          "-=0.55",
         )
         .from(
           ".vision-line",
@@ -129,7 +129,7 @@ export default function VisionSection() {
             duration: 1,
             ease: "power3.inOut",
           },
-          "-=0.65"
+          "-=0.65",
         );
 
       const visionCards = gsap.utils.toArray<HTMLElement>(".vision-goal");
@@ -159,7 +159,7 @@ export default function VisionSection() {
               duration: 0.8,
               ease: "power3.out",
               clearProps: "transform",
-            }
+            },
           )
           .fromTo(
             icon,
@@ -174,7 +174,7 @@ export default function VisionSection() {
               ease: "back.out(1.7)",
               clearProps: "transform",
             },
-            "-=0.5"
+            "-=0.5",
           );
       });
 
@@ -217,7 +217,7 @@ export default function VisionSection() {
     },
     {
       scope: sectionRef,
-    }
+    },
   );
 
   return (
@@ -247,8 +247,8 @@ export default function VisionSection() {
               </span>
             </div>
 
-            <h2 className="font-heading text-4xl font-medium leading-[0.98] tracking-tight text-slate-950 sm:text-6xl lg:text-[5.4rem]">
-              <span className="block overflow-hidden pb-1">
+            <h2 className="font-heading font-medium leading-[0.98] line-c tracking-tight text-slate-950 text-4xl sm:text-5xl lg:text-6xl">
+              <span className="block pb-1">
                 <span className="vision-heading-line block">Building a clearer</span>
               </span>
 
@@ -262,9 +262,9 @@ export default function VisionSection() {
 
           <div className="lg:pb-2">
             <p className="vision-description max-w-xl text-base leading-relaxed text-slate-600">
-              Our vision is to become a trusted global accounting partner for growing
-              businesses—known for bringing clarity, consistency, and confidence to every
-              financial operation.
+              Our vision is to become a trusted global business solutions partner for
+              growing businesses-known for bringing clarity, consistency, and confidence
+              to every financial operation.
             </p>
 
             <p className="vision-description mt-5 max-w-xl text-base leading-relaxed text-slate-600">
@@ -277,7 +277,10 @@ export default function VisionSection() {
 
         {/* Main vision panel */}
         <div className="vision-statement relative mt-14 overflow-hidden rounded-3xl bg-primary p-6 text-white shadow-xl shadow-primary/20 sm:p-9 lg:mt-20 lg:p-12">
-          <div aria-hidden="true" className="absolute -right-28 -top-28 h-80 w-80 pointer-events-none">
+          <div
+            aria-hidden="true"
+            className="absolute -right-28 -top-28 h-80 w-80 pointer-events-none"
+          >
             <div className="vision-orbit absolute inset-0 rounded-full border border-white/15">
               <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" />
             </div>
@@ -295,9 +298,12 @@ export default function VisionSection() {
                 Where We Are Heading
               </span>
 
-              <blockquote className="mt-6 max-w-4xl font-heading text-2xl font-medium leading-snug tracking-tight text-white sm:text-3xl lg:text-4xl">
-                To shape a future where growing businesses have access to the financial
-                clarity, systems, and support required to build with confidence.
+              <blockquote className="mt-6 max-w-4xl font-heading font-medium leading-snug tracking-tight text-white text-xl sm:text-2xl lg:text-3xl">
+                {/* To shape a future where growing businesses have access to the financial
+                clarity, systems, and support required to build with confidence. */}
+                To become a globally trusted business solutions partner, empowering medium
+                and large enterprises through innovative finance, payroll, supply chain,
+                and business process outsourcing services.
               </blockquote>
             </div>
 
@@ -352,7 +358,7 @@ export default function VisionSection() {
         </div>
 
         {/* Bottom link */}
-        <div className="vision-footer mt-12 flex flex-col gap-5 border-t border-slate-200/90 pt-8 sm:flex-row sm:items-center sm:justify-between">
+        {/* <div className="vision-footer mt-12 flex flex-col gap-5 border-t border-slate-200/90 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="font-heading text-xl font-semibold text-slate-950">
               Our future is guided by our values.
@@ -375,7 +381,7 @@ export default function VisionSection() {
               />
             </span>
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

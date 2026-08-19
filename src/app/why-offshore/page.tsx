@@ -7,18 +7,10 @@ import TraditionalHiringComparison from "./(components)/TraditionalHiringCompari
 
 export const metadata = constructMetadata({
   title:
-    "Why Offshore Accounting? Benefits for Growing Businesses | Haggai Accounting",
+    "Why Offshore Accounting? Benefits for Growing Businesses | Haggai Business Solutions",
   description:
-    "Discover how offshore accounting helps businesses reduce costs, access experienced accounting professionals, improve efficiency, and scale confidently with Haggai Accounting.",
+    "Discover how offshore accounting helps businesses reduce costs, access experienced accounting professionals, improve efficiency, and scale confidently with Haggai Business Solutions.",
   path: "/why-offshore",
-  keywords: [
-    "Why Offshore Accounting",
-    "Offshore Accounting Benefits",
-    "Reduce Accounting Costs",
-    "Experienced Accounting Professionals",
-    "Scale Accounting Confidently",
-    "Accounting Outsourcing",
-  ],
 });
 
 export default function WhyOffshorePage() {

@@ -193,11 +193,11 @@ export default function OffshoreHero() {
         className="pointer-events-none absolute left-1/2 top-[44%] h-192 w-3xl -translate-x-1/2 -translate-y-1/2"
       >
         <div className="offshore-ring-one absolute inset-0 rounded-full border border-white/10">
-          <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_0_6px_rgba(226,158,33,0.18)]" />
+          {/* <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_0_6px_rgba(226,158,33,0.18)]" /> */}
         </div>
 
         <div className="offshore-ring-two absolute inset-24 rounded-full border border-white/8">
-          <span className="absolute bottom-0 left-1/2 h-2.5 w-2.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-soft" />
+          {/* <span className="absolute bottom-0 left-1/2 h-2.5 w-2.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-soft" /> */}
         </div>
 
         <div className="absolute inset-48 rounded-full border border-white/6" />
@@ -223,11 +223,11 @@ export default function OffshoreHero() {
           </div>
 
           <h1 className="font-cormorant text-[3rem] font-medium leading-[0.88] tracking-[-0.055em] sm:text-7xl lg:text-[6rem]">
-            <span className="block overflow-hidden pb-6">
+            <span className="block pb-6">
               <span className="offshore-hero-line block">Offshore accounting</span>
             </span>
 
-            <span className="block overflow-hidden pb-3">
+            <span className="block pb-3">
               <span className="offshore-hero-line block italic text-primary">
                 built for growth.
               </span>

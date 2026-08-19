@@ -13,9 +13,7 @@ export default function Hero() {
 
   useGSAP(
     () => {
-      const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduceMotion) return;
 
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -28,26 +26,10 @@ export default function Hero() {
           { opacity: 0, scale: 0.96, duration: 0.9, ease: "power2.out" },
           "-=0.4",
         )
-        .from(
-          ".hero-card-1",
-          { opacity: 0, x: -30, y: -10, duration: 0.7 },
-          "-=0.6",
-        )
-        .from(
-          ".hero-card-2",
-          { opacity: 0, x: -30, y: 10, duration: 0.7 },
-          "-=0.5",
-        )
-        .from(
-          ".hero-card-3",
-          { opacity: 0, x: 30, y: -10, duration: 0.7 },
-          "-=0.6",
-        )
-        .from(
-          ".hero-card-4",
-          { opacity: 0, x: 30, y: 10, duration: 0.7 },
-          "-=0.5",
-        )
+        .from(".hero-card-1", { opacity: 0, x: -30, y: -10, duration: 0.7 }, "-=0.6")
+        .from(".hero-card-2", { opacity: 0, x: -30, y: 10, duration: 0.7 }, "-=0.5")
+        .from(".hero-card-3", { opacity: 0, x: 30, y: -10, duration: 0.7 }, "-=0.6")
+        .from(".hero-card-4", { opacity: 0, x: 30, y: 10, duration: 0.7 }, "-=0.5")
         .from(".hero-cta-btn", { opacity: 0, y: 15, duration: 0.6 }, "-=0.4");
     },
     { scope: containerRef },
@@ -56,7 +38,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative overflow-hidden bg-linear-to-b from-[#EFF9FF]/60 via-white to-white pt-20 pb-16 font-body text-slate-900 sm:pt-24 lg:pt-12 "
+      className="relative overflow-hidden bg-linear-to-b from-[#EFF9FF]/60 via-white to-white pt-20 pb-16 font-body text-slate-900 sm:pt-24 lg:pt-16"
     >
       {/* Background ambient subtle grid & glow */}
       <div
@@ -81,14 +63,14 @@ export default function Hero() {
           {/* Main Heading */}
           <h1 className="hero-heading mx-auto mt-5 max-w-4xl font-heading text-4xl font-medium leading-[0.98] tracking-tight text-[#0F172A] sm:text-6xl lg:text-5xl">
             The Story Behind{" "}
-            <span className="text-primary italic">Haggai Accounting</span>
+            <span className="text-primary italic">Haggai Business Solutions</span>
           </h1>
 
           {/* Description */}
           <p className="hero-desc mx-auto mt-6 max-w-2xl font-manrope text-base leading-relaxed text-slate-600 sm:text-md">
             Haggai was founded to give growing businesses the financial clarity,
-            dependable processes, and dedicated accounting support they need to
-            move forward with confidence.
+            dependable processes, and dedicated support they need to move forward with
+            confidence.
           </p>
         </div>
 
@@ -102,16 +84,14 @@ export default function Hero() {
                 99.8%
               </p>
               <p className="mt-2 font-manrope text-xs font-medium leading-relaxed text-sky-100/90">
-                Precision &amp; consistency across financial reporting &amp;
-                month-end closes.
+                Precision &amp; consistency across financial reporting &amp; month-end
+                closes.
               </p>
             </div>
 
             {/* Floating Card 2: Bottom Left (Light Card) */}
             <div className="hero-card-2 absolute -bottom-6 left-4 z-20 hidden max-w-52 rounded-3xl border border-slate-100 bg-white p-5 text-slate-900 shadow-xl shadow-slate-950/5 lg:block">
-              <p className="font-heading text-3xl font-bold text-primary">
-                100%
-              </p>
+              <p className="font-heading text-3xl font-bold text-primary">100%</p>
               <p className="mt-1 font-manrope text-xs font-medium leading-relaxed text-slate-600">
                 Dedicated offshore team assigned directly to your business.
               </p>
@@ -135,16 +115,13 @@ export default function Hero() {
             {/* Floating Card 3: Top Right (Rating / Trust Card) */}
             <div className="hero-card-3 absolute -top-6 right-10 z-20 hidden max-w-52 rounded-3xl border border-slate-100 bg-white p-5 text-slate-900 shadow-xl shadow-slate-950/5 lg:block">
               <div className="flex items-center gap-1.5 text-amber-500">
-                <p className="font-heading text-3xl font-bold text-slate-900">
-                  4.9
-                </p>
+                <p className="font-heading text-3xl font-bold text-slate-900">4.9</p>
                 <div className="flex text-amber-400">
                   <StarIcon className="h-5 w-5 fill-amber-400" />
                 </div>
               </div>
               <p className="mt-2 font-manrope text-xs font-medium leading-relaxed text-slate-600">
-                Our average client satisfaction &amp; operational reliability
-                rating.
+                Our average client satisfaction &amp; operational reliability rating.
               </p>
             </div>
 
@@ -173,20 +150,15 @@ export default function Hero() {
           {/* Mobile & Tablet Card Layout (Stacked below image for clean responsive flow) */}
           <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:hidden">
             <div className="rounded-2xl bg-primary p-5 text-white shadow-md">
-              <p className="font-heading text-3xl font-bold text-white">
-                99.8%
-              </p>
+              <p className="font-heading text-3xl font-bold text-white">99.8%</p>
               <p className="mt-1 font-manrope text-xs text-sky-100">
-                Precision &amp; consistency across financial reporting &amp;
-                closes.
+                Precision &amp; consistency across financial reporting &amp; closes.
               </p>
             </div>
 
             <div className="rounded-2xl border border-slate-200/80 bg-white p-5 text-slate-900 shadow-xs">
               <div className="flex items-center gap-1.5">
-                <p className="font-heading text-2xl font-bold text-slate-900">
-                  4.9
-                </p>
+                <p className="font-heading text-2xl font-bold text-slate-900">4.9</p>
                 <StarIcon className="h-4 w-4 text-amber-400" />
               </div>
               <p className="mt-1 font-manrope text-xs text-slate-600">
@@ -195,9 +167,7 @@ export default function Hero() {
             </div>
 
             <div className="rounded-2xl border border-slate-200/80 bg-white p-5 text-slate-900 shadow-xs">
-              <p className="font-heading text-2xl font-bold text-primary">
-                100%
-              </p>
+              <p className="font-heading text-2xl font-bold text-primary">100%</p>
               <p className="mt-1 font-manrope text-xs text-slate-600">
                 Dedicated offshore accounting team integration.
               </p>

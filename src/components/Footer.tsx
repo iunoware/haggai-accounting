@@ -46,9 +46,9 @@ export default function Footer() {
               </Link>
 
               <p className="text-xs sm:text-sm font-manrope text-soft/80 leading-relaxed max-w-sm">
-                Haggai delivers transparent accounting and dedicated offshore
-                teams, empowering growing businesses with complete financial
-                clarity and trusted long-term partnerships.
+                Haggai delivers transparent business solutions and dedicated offshore
+                teams, empowering growing businesses with complete financial clarity and
+                trusted long-term partnerships.
               </p>
 
               {/* Brand Pillars Highlights */}
