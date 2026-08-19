@@ -2,32 +2,32 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
-  ArrowDownIcon,
   ArrowRightIcon,
   BanknotesIcon,
   CalculatorIcon,
   ChartBarSquareIcon,
-  ClipboardDocumentCheckIcon,
+  CheckCircleIcon,
+  SparklesIcon,
 } from "@heroicons/react/24/outline";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-const services = [
+const serviceHighlights = [
   {
-    title: "Bookkeeping",
+    title: "Finance Operations",
+    desc: "Streamlined bookkeeping & month-end closes",
     icon: CalculatorIcon,
   },
   {
-    title: "Month-End Close",
-    icon: ClipboardDocumentCheckIcon,
-  },
-  {
-    title: "AP & AR Support",
+    title: "Payroll Management",
+    desc: "Accurate, compliant & on-time processing",
     icon: BanknotesIcon,
   },
   {
-    title: "Financial Reporting",
+    title: "Supply Chain Solutions",
+    desc: "Connected financial & operational logistics",
     icon: ChartBarSquareIcon,
   },
 ];
@@ -37,291 +37,211 @@ export default function ServicesHero() {
 
   useGSAP(
     () => {
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      if (reduceMotion) return;
 
-      if (reduceMotion) {
-        gsap.set(
-          [
-            ".services-new-eyebrow",
-            ".services-new-line",
-            ".services-new-description",
-            ".services-new-actions",
-            ".services-new-scroll",
-            ".services-new-card",
-          ],
-          {
-            opacity: 1,
-            visibility: "visible",
-            y: 0,
-            scale: 1,
-            clearProps: "transform",
-          },
-        );
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-        return;
-      }
-
-      const timeline = gsap.timeline({
-        defaults: {
-          ease: "power3.out",
-        },
-      });
-
-      timeline
-        .from(".services-new-eyebrow", {
-          opacity: 0,
-          y: 18,
-          duration: 0.65,
-        })
+      tl.from(".svc-eyebrow", { opacity: 0, y: 15, duration: 0.6 })
+        .from(".svc-heading", { opacity: 0, y: 25, duration: 0.8 }, "-=0.4")
+        .from(".svc-desc", { opacity: 0, y: 20, duration: 0.6 }, "-=0.5")
+        .from(".svc-highlights", { opacity: 0, y: 20, duration: 0.6 }, "-=0.4")
+        .from(".svc-actions", { opacity: 0, y: 15, duration: 0.6 }, "-=0.4")
         .from(
-          ".services-new-line",
-          {
-            opacity: 0,
-            yPercent: 110,
-            duration: 1,
-            stagger: 0.14,
-            ease: "power4.out",
-          },
-          "-=0.3",
+          ".svc-visual",
+          { opacity: 0, scale: 0.95, duration: 0.9 },
+          "-=0.7",
         )
-        .from(
-          ".services-new-description",
-          {
-            opacity: 0,
-            y: 22,
-            duration: 0.7,
-          },
-          "-=0.45",
-        )
-        .from(
-          ".services-new-actions",
-          {
-            opacity: 0,
-            y: 18,
-            duration: 0.65,
-          },
-          "-=0.35",
-        )
-        .fromTo(
-          ".services-new-card",
-          {
-            opacity: 0,
-            y: 35,
-            scale: 0.96,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.3,
-            stagger: 0.1,
-            ease: "power3.out",
-            clearProps: "transform",
-          },
-          "-=0.25",
-        )
-        .from(
-          ".services-new-scroll",
-          {
-            opacity: 0,
-            y: 12,
-            duration: 0.6,
-          },
-          "-=0.3",
-        );
-
-      gsap.to(".services-new-ring-one", {
-        rotate: 360,
-        duration: 38,
-        repeat: -1,
-        ease: "none",
-      });
-
-      gsap.to(".services-new-ring-two", {
-        rotate: -360,
-        duration: 48,
-        repeat: -1,
-        ease: "none",
-      });
-
-      gsap.to(".services-new-scroll-icon", {
-        y: 7,
-        duration: 1.4,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-
-      gsap.to(".services-new-glow", {
-        scale: 1.18,
-        opacity: 0.8,
-        duration: 4,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
+        .from(".svc-float-1", { opacity: 0, x: -20, duration: 0.6 }, "-=0.5")
+        .from(".svc-float-2", { opacity: 0, x: 20, duration: 0.6 }, "-=0.5")
+        .from(".svc-float-3", { opacity: 0, y: 20, duration: 0.6 }, "-=0.4");
     },
-    {
-      scope: sectionRef,
-    },
+    { scope: sectionRef },
   );
 
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen overflow-hidden bg-soft pb-16 pt-32 text-[#0c2e2d] sm:pt-36 lg:flex lg:items-center lg:pb-20 lg:pt-32"
+      className="relative min-h-[90vh] overflow-hidden bg-cover bg-center bg-no-repeat pt-28 pb-16 lg:flex lg:items-center lg:pt-32 lg:pb-20 font-body text-slate-900"
+      style={{ backgroundImage: "url('/images/service-bg.png')" }}
     >
-      {/* Background glow */}
+      {/* Subtle overlay to ensure high text contrast */}
       <div
         aria-hidden="true"
-        className="services-new-glow absolute left-1/2 top-1/3 h-136 w-136 -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary/45 blur-3xl"
-      />
-
-      <div
-        aria-hidden="true"
-        className="absolute -left-40 top-20 h-80 w-80 rounded-full bg-soft/10 blur-3xl"
-      />
-
-      <div
-        aria-hidden="true"
-        className="absolute -right-40 bottom-10 h-96 w-96 rounded-full bg-accent/10 blur-3xl"
-      />
-
-      {/* Decorative rings */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-[44%] h-192 w-3xl -translate-x-1/2 -translate-y-1/2"
-      >
-        <div className="services-new-ring-one absolute inset-0 rounded-full border border-white/10">
-          <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_0_6px_rgba(226,158,33,0.18)]" />
-        </div>
-
-        <div className="services-new-ring-two absolute inset-24 rounded-full border border-white/8">
-          <span className="absolute bottom-0 left-1/2 h-2.5 w-2.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-soft" />
-        </div>
-
-        <div className="absolute inset-48 rounded-full border border-white/6" />
-      </div>
-
-      {/* Subtle grid */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-size-[90px_90px]"
+        className="absolute inset-0 bg-linear-to-r from-white/95 via-white/85 to-white/40 lg:via-white/70"
       />
 
       <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
-        {/* Main centered content */}
-        <div className="mx-auto max-w-5xl text-center">
-          <div className="services-new-eyebrow mb-6 flex items-center justify-center gap-3">
-            <span className="h-px w-9 bg-accent" />
-
-            <span className="font-manrope text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-              Haggai Accounting Services
-            </span>
-
-            <span className="h-px w-9 bg-accent" />
-          </div>
-
-          <h1 className="font-cormorant text-[3rem] font-medium leading-[0.88] tracking-[-0.055em] sm:text-7xl lg:text-[6rem]">
-            <span className="block overflow-hidden pb-6">
-              <span className="services-new-line block">Accounting services</span>
-            </span>
-
-            <span className="block overflow-hidden pb-3">
-              <span className="services-new-line block italic text-primary">
-                that scale with you.
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
+          {/* Left Column — Content */}
+          <div className="lg:col-span-7 xl:col-span-6">
+            {/* Eyebrow */}
+            {/* <div className="svc-eyebrow inline-flex items-center gap-2 rounded-full border border-primary/20 bg-[#EFF9FF] px-4 py-1.5 shadow-xs">
+              <SparklesIcon className="h-4 w-4 text-primary" />
+              <span className="font-manrope text-xs font-semibold uppercase tracking-wider text-primary">
+                OUR SERVICES
               </span>
-            </span>
-          </h1>
+            </div> */}
 
-          <p className="services-new-description mx-auto mt-7 max-w-2xl font-manrope text-sm leading-7 text-primary/80 sm:text-base sm:leading-8">
-            Reliable outsourced accounting support designed to strengthen your operations,
-            improve visibility, and grow with your business.
-          </p>
+            {/* Main Headline */}
+            <h1 className="svc-heading mt-5 font-heading text-4xl font-bold leading-[1.08] tracking-tight text-[#0F172A] sm:text-5xl">
+              Finance, Payroll &amp; Supply Chain Solutions{" "}
+              <span className="text-primary block sm:inline">
+                Built Around Your Business
+              </span>
+            </h1>
 
-          <div className="services-new-actions mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="#white-label-services"
-              className="group inline-flex items-center justify-center gap-3 rounded-full bg-accent px-7 py-3.5 font-manrope text-sm font-semibold text-[#0c2e2d] shadow-xl shadow-black/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d5901b]"
-            >
-              Explore Our Services
-              <ArrowRightIcon
-                aria-hidden="true"
-                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </Link>
+            {/* Supporting Description */}
+            <p className="svc-desc mt-6 max-w-xl font-manrope text-base leading-relaxed text-slate-600 sm:text-md">
+              We help medium and large enterprises streamline finance, payroll,
+              and supply chain operations through scalable outsourcing solutions
+              that reduce costs, improve efficiency, and support sustainable
+              growth.
+            </p>
 
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/8 px-7 py-3.5 font-manrope text-sm font-semibold text-[#0c2e2d] backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/15"
-            >
-              Book a Consultation
-            </Link>
-          </div>
-        </div>
-
-        {/* Service strip */}
-        <div className="mt-16 grid gap-3 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-
-            return (
-              <div
-                key={service.title}
-                className="services-new-card group relative overflow-hidden border border-white/15 bg-white/[0.07] px-5 py-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:bg-white/11"
-              >
-                <div className="flex items-center justify-between gap-5">
-                  <div className="flex items-center gap-4">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-[#0c2e2d]">
-                      <Icon
-                        aria-hidden="true"
-                        className="h-5 w-5 text-black group-hover:text-soft"
-                      />
-                    </span>
-
-                    <div>
-                      <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.18em] text-primary/55">
-                        0{index + 1}
-                      </p>
-
-                      <h2 className="mt-1 font-cormorant text-xl font-semibold text-[#0c2e2d]">
-                        {service.title}
-                      </h2>
+            {/* Service Highlights Row */}
+            {/* <div className="svc-highlights mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
+              {serviceHighlights.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={item.title}
+                    className="flex flex-col rounded-2xl border border-slate-200/80 bg-white/80 p-3.5 backdrop-blur-xs shadow-xs transition-all hover:border-primary/30"
+                  >
+                    <div className="flex items-center gap-2 text-primary mb-1">
+                      <Icon className="h-4 w-4 stroke-[2.5]" />
+                      <span className="font-manrope text-xs font-bold text-slate-900">
+                        {item.title}
+                      </span>
                     </div>
+                    <span className="font-manrope text-[11px] text-slate-500 leading-snug">
+                      {item.desc}
+                    </span>
                   </div>
+                );
+              })}
+            </div> */}
 
-                  <ArrowRightIcon
-                    aria-hidden="true"
-                    className="h-4 w-4 shrink-0 text-accent transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </div>
+            {/* CTA Actions */}
+            <div className="svc-actions mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <Link
+                href="/contact"
+                className="inline-flex h-13 items-center justify-center gap-3 rounded-xl bg-primary px-8 font-manrope text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all duration-300 hover:bg-[#004870] hover:shadow-xl hover:shadow-primary/35 hover:-translate-y-0.5 active:translate-y-0 sm:w-auto"
+              >
+                <span>Schedule a Discovery Call</span>
+                <ArrowRightIcon className="h-4 w-4 stroke-[2.5]" />
+              </Link>
 
-                <span
-                  aria-hidden="true"
-                  className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-500 group-hover:w-full"
+              <Link
+                href="#white-label-services"
+                className="inline-flex h-13 items-center justify-center rounded-xl border border-slate-300 bg-white/70 px-7 font-manrope text-sm font-semibold text-primary backdrop-blur-xs transition-all duration-300 hover:border-primary hover:bg-white hover:-translate-y-0.5 active:translate-y-0 sm:w-auto"
+              >
+                <span>Explore Services</span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Column — Visual */}
+          <div className="svc-visual relative flex items-center justify-center lg:col-span-5 xl:col-span-6 h-full">
+            {/* Visual Container */}
+            <div className="relative w-full h-full max-w-xs sm:max-w-sm overflow-hidden rounded-3xl p-2 mx-auto">
+              <div className="relative aspect-4/3 w-full h-full overflow-hidden rounded-2xl">
+                <Image
+                  src="/images/service-hero-1.png"
+                  alt="Haggai Finance, Payroll & Supply Chain Solutions"
+                  fill
+                  sizes="(max-width: 1200px) 100vw, 400px"
+                  priority
+                  className="object-cover object-center"
                 />
               </div>
-            );
-          })}
+            </div>
+
+            {/* Floating Info Accents around image */}
+            {/* <div className="svc-float-1 absolute -top-4 -left-4 hidden lg:flex items-center gap-2.5 rounded-2xl border border-slate-100 bg-white p-3.5 shadow-xl shadow-slate-950/5 backdrop-blur-md">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#EFF9FF] text-primary">
+                <CheckCircleIcon className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="font-manrope text-xs font-bold text-slate-900">
+                  Finance
+                </p>
+                <p className="font-manrope text-[11px] text-slate-500">
+                  Streamlined Operations
+                </p>
+              </div>
+            </div> */}
+
+            {/* <div className="svc-float-2 absolute -bottom-4 -right-4 hidden lg:flex items-center gap-2.5 rounded-2xl border border-slate-100 bg-white p-3.5 shadow-xl shadow-slate-950/5 backdrop-blur-md">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white">
+                <CheckCircleIcon className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="font-manrope text-xs font-bold text-slate-900">
+                  Payroll
+                </p>
+                <p className="font-manrope text-[11px] text-slate-500">
+                  Accurate &amp; Reliable
+                </p>
+              </div>
+            </div> */}
+
+            {/* <div className="svc-float-3 absolute top-1/2 -right-6 hidden lg:flex -translate-y-1/2 items-center gap-2 rounded-full border border-primary/20 bg-white px-4 py-2 shadow-lg shadow-slate-900/5">
+              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="font-manrope text-xs font-semibold text-primary">
+                Supply Chain Connected
+              </span>
+            </div> */}
+          </div>
         </div>
-
-        {/* Scroll indicator */}
-        <a
-          href="#white-label-services"
-          className="services-new-scroll mx-auto mt-10 flex w-fit flex-col items-center gap-2 font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-primary/60 transition-colors duration-300 hover:text-[#0c2e2d]"
-        >
-          Discover More
-          <span className="services-new-scroll-icon flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/6">
-            <ArrowDownIcon aria-hidden="true" className="h-4 w-4" />
-          </span>
-        </a>
       </div>
-
-      {/* Curved transition into next section */}
-      <div
-        aria-hidden="true"
-        className="absolute -bottom-px left-0 h-10 w-full bg-white [clip-path:ellipse(60%_100%_at_50%_100%)] sm:h-14 lg:h-16"
-      />
     </section>
   );
 }
+
+// ====================================================================
+// OLD HERO IMPLEMENTATION (PRESERVED FOR RESTORATION IF NEEDED)
+// ====================================================================
+//
+// import { useRef } from "react";
+// import Link from "next/link";
+// import {
+//   ArrowDownIcon,
+//   ArrowRightIcon,
+//   BanknotesIcon,
+//   CalculatorIcon,
+//   ChartBarSquareIcon,
+//   ClipboardDocumentCheckIcon,
+// } from "@heroicons/react/24/outline";
+//
+// const services = [
+//   {
+//     title: "Bookkeeping",
+//     icon: CalculatorIcon,
+//   },
+//   {
+//     title: "Month-End Close",
+//     icon: ClipboardDocumentCheckIcon,
+//   },
+//   {
+//     title: "AP & AR Support",
+//     icon: BanknotesIcon,
+//   },
+//   {
+//     title: "Financial Reporting",
+//     icon: ChartBarSquareIcon,
+//   },
+// ];
+//
+// export function OldServicesHero() {
+//   return (
+//     <section className="relative min-h-screen overflow-hidden bg-soft pb-16 pt-32 text-[#0c2e2d] sm:pt-36 lg:flex lg:items-center lg:pb-20 lg:pt-32">
+//       <div aria-hidden="true" className="services-new-glow absolute left-1/2 top-1/3 h-136 w-136 -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary/45 blur-3xl" />
+//       <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+//         ...
+//       </div>
+//     </section>
+//   );
+// }
