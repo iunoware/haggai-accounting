@@ -7,11 +7,11 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import {
   CheckIcon,
-  DocumentCheckIcon,
-  ClockIcon,
-  ShieldCheckIcon,
+  // DocumentCheckIcon,
+  BanknotesIcon,
+  ArrowsRightLeftIcon,
   UserGroupIcon,
-  ChartBarIcon,
+  // ChartBarIcon,
   ArrowTrendingUpIcon,
   ArrowRightIcon,
 } from "@heroicons/react/24/outline";
@@ -22,35 +22,41 @@ if (typeof window !== "undefined") {
 
 const benefits = [
   {
-    icon: DocumentCheckIcon,
-    title: "Accurate Bookkeeping",
-    description: "Clean, organized financial records.",
-  },
-  {
-    icon: ClockIcon,
-    title: "Faster Month-End Close",
-    description: "Reports delivered on time.",
-  },
-  {
-    icon: ShieldCheckIcon,
-    title: "Compliance Without Stress",
-    description: "Payroll and tax deadlines handled.",
+    icon: BanknotesIcon,
+    title: "Finance & Accounting",
+    link: "/services/accounting",
+    description:
+      "Enterprise-grade bookkeeping, reconciliations, and financial reporting — an outsourced accounting department that closes your books accurately and on time, every time.",
   },
   {
     icon: UserGroupIcon,
-    title: "Dedicated Offshore Team",
-    description: "Works like your in-house accounting department.",
+    title: "Payroll & Workforce",
+    link: "/services/payroll",
+    description:
+      "Accurate, compliant payroll processing and administration, so your team gets paid right and your business stays compliant.",
   },
   {
-    icon: ChartBarIcon,
-    title: "Better Financial Visibility",
-    description: "Clear reports that help better decisions.",
+    icon: ArrowsRightLeftIcon,
+    title: "Supply Chain ",
+    link: "/services/supply-chain",
+    description:
+      "Procurement, vendor management, and logistics coordination that keeps your operations moving without the overhead of a full internal team.",
   },
-  {
-    icon: ArrowTrendingUpIcon,
-    title: "More Time to Grow",
-    description: "Focus on your business while we manage your accounting.",
-  },
+  // {
+  //   icon: UserGroupIcon,
+  //   title: "Dedicated Offshore Team",
+  //   description: "Works like your in-house accounting department.",
+  // },
+  // {
+  //   icon: ChartBarIcon,
+  //   title: "Better Financial Visibility",
+  //   description: "Clear reports that help better decisions.",
+  // },
+  // {
+  //   icon: ArrowTrendingUpIcon,
+  //   title: "More Time to Grow",
+  //   description: "Focus on your business while we manage your accounting.",
+  // },
 ];
 
 export default function OurSolutions() {
@@ -66,7 +72,7 @@ export default function OurSolutions() {
     if (typeof window === "undefined" || !sectionRef.current) return;
 
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     if (prefersReducedMotion) return;
@@ -85,7 +91,7 @@ export default function OurSolutions() {
         tl.fromTo(
           badgeRef.current,
           { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
         );
       }
 
@@ -94,7 +100,7 @@ export default function OurSolutions() {
           headingRef.current,
           { opacity: 0, y: 25 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -103,7 +109,7 @@ export default function OurSolutions() {
           paragraphRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.4"
+          "-=0.4",
         );
       }
 
@@ -112,7 +118,7 @@ export default function OurSolutions() {
           illustrationRef.current,
           { opacity: 0, x: -30 },
           { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -128,7 +134,7 @@ export default function OurSolutions() {
             stagger: 0.15,
             ease: "power2.out",
           },
-          "-=0.6"
+          "-=0.6",
         );
       }
 
@@ -137,7 +143,7 @@ export default function OurSolutions() {
           ctaRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.2"
+          "-=0.2",
         );
       }
 
@@ -164,7 +170,7 @@ export default function OurSolutions() {
       ref={sectionRef}
       id="our-solutions"
       aria-labelledby="solutions-heading"
-      className="relative overflow-hidden bg-slate-50/50 py-20 sm:py-24 lg:py-24 font-body text-slate-900"
+      className="relative overflow-hidden bg-slate-50/50 py-20 sm:py-14 font-body text-slate-900"
     >
       {/* Background radial gradient glow */}
       <div
@@ -199,7 +205,7 @@ export default function OurSolutions() {
           <h2
             ref={headingRef}
             id="solutions-heading"
-            className="font-heading text-3xl font-medium tracking-tight text-slate-950 sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1]"
+            className="font-heading text-3xl font-medium tracking-tight text-slate-950 sm:text-4xl md:text-5xl  leading-[1.1]"
           >
             Accounting made simple, scalable, and{" "}
             <span className="text-primary">stress-free.</span>
@@ -208,7 +214,7 @@ export default function OurSolutions() {
           {/* 3. Supporting Text */}
           <p
             ref={paragraphRef}
-            className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg"
+            className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-md"
           >
             Haggai becomes a seamless extension of your finance department,
             removing accounting complexity so you can operate with total clarity
@@ -263,31 +269,33 @@ export default function OurSolutions() {
                     role="listitem"
                     className="group relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-5 sm:p-5.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary hover:shadow-lg hover:shadow-primary/5 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1.5 before:bg-primary before:rounded-l-2xl before:scale-y-0 hover:before:scale-y-100 before:transition-transform before:duration-300 before:origin-center flex items-center justify-between gap-4 cursor-default"
                   >
-                    <div className="flex items-center gap-4 sm:gap-5 min-w-0">
-                      {/* Hero Icon inside soft blue container */}
-                      <div className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:rotate-6 group-hover:shadow-md group-hover:shadow-primary/20">
-                        <Icon
-                          className="h-5 w-5 sm:h-6 sm:w-6"
-                          strokeWidth={1.75}
-                          aria-hidden="true"
-                        />
+                    <Link href={benefit.link}>
+                      <div className="flex items-center gap-4 sm:gap-5 min-w-0">
+                        {/* Hero Icon inside soft blue container */}
+                        <div className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:rotate-6 group-hover:shadow-md group-hover:shadow-primary/20">
+                          <Icon
+                            className="h-5 w-5 sm:h-6 sm:w-6"
+                            strokeWidth={1.75}
+                            aria-hidden="true"
+                          />
+                        </div>
+
+                        {/* Text details */}
+                        <div className="min-w-0">
+                          <h3 className="font-heading text-lg font-semibold text-slate-950 transition-colors group-hover:text-primary">
+                            {benefit.title}
+                          </h3>
+                          <p className="text-xs sm:text-sm text-slate-600 mt-0.5 leading-relaxed truncate sm:whitespace-normal">
+                            {benefit.description}
+                          </p>
+                        </div>
                       </div>
 
-                      {/* Text details */}
-                      <div className="min-w-0">
-                        <h3 className="font-heading text-lg font-semibold text-slate-950 transition-colors group-hover:text-primary">
-                          {benefit.title}
-                        </h3>
-                        <p className="text-xs sm:text-sm text-slate-600 mt-0.5 leading-relaxed truncate sm:whitespace-normal">
-                          {benefit.description}
-                        </p>
+                      {/* Arrow icon appearing on hover */}
+                      <div aria-hidden="true" className="shrink-0 pl-2">
+                        <ArrowRightIcon className="h-5 w-5 text-primary opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" />
                       </div>
-                    </div>
-
-                    {/* Arrow icon appearing on hover */}
-                    <div aria-hidden="true" className="shrink-0 pl-2">
-                      <ArrowRightIcon className="h-5 w-5 text-primary opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" />
-                    </div>
+                    </Link>
                   </article>
                 );
               })}

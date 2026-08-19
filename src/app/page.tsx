@@ -9,7 +9,7 @@ import IndustriesWeServe from "./(components)/IndustriesWeServe";
 import PricingPreview from "./(components)/PricingPreview";
 import MeetTheFounder from "./(components)/MeetTheFounder";
 import Testimonials from "./(components)/Testimonials";
-// import FaqSection from "./(components)/FaqSection";
+import FaqSection from "./(components)/FaqSection";
 import FinancialDashboardCTA from "../components/FinancialDashboardCTA";
 import Technology from "./(components)/Technology";
 
@@ -34,7 +34,7 @@ export default function Home() {
       <IndustriesWeServe />
       <PricingPreview />
       <Testimonials />
-      {/* <FaqSection /> */}
+      <FaqSection />
       <FinancialDashboardCTA />
     </>
   );

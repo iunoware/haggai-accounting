@@ -7,12 +7,13 @@ import {
   CheckIcon,
   ArrowRightIcon,
   CheckCircleIcon,
-  AcademicCapIcon,
-  CalculatorIcon,
-  ChartBarIcon,
-  RocketLaunchIcon,
+  HeartIcon,
+  CogIcon,
+  ShieldCheckIcon,
+  TruckIcon,
   ComputerDesktopIcon,
   ShoppingBagIcon,
+  BriefcaseIcon,
 } from "@heroicons/react/24/outline";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -24,99 +25,121 @@ if (typeof window !== "undefined") {
 
 const clientTypes = [
   {
-    id: "cpa-firms",
-    name: "CPA Firms",
+    id: "technology-saas",
+    name: "Technology & SaaS",
     shortDesc:
-      "White-label accounting support that helps CPA firms expand capacity while maintaining quality and confidentiality.",
+      "Recurring revenue accounting, subscription billing accuracy, and scalable back-office support that keeps pace with fast-moving growth.",
     fullDesc:
-      "Haggai serves as a seamless white-label accounting partner for CPA firms looking to scale client capacity without inflating domestic overhead. We handle daily bookkeeping, write-up work, and financial prep under strict NDA compliance.",
-    icon: AcademicCapIcon,
-    image: "/images/serve-cpa.png",
-    benefits: [
-      "Dedicated White-Label Support",
-      "Strict NDA & Data Confidentiality",
-      "Senior CPA Quality Supervision",
-      "Instant Operational Capacity Expansion",
-    ],
-  },
-  {
-    id: "accounting-firms",
-    name: "Accounting Firms",
-    shortDesc:
-      "Reliable offshore bookkeeping and accounting support that reduces workload and improves operational efficiency.",
-    fullDesc:
-      "Expand your practice margins and eliminate team burnout. Our dedicated offshore accountants integrate directly into your firm's existing software stack to execute daily transactions, account reconciliations, and routine ledgers.",
-    icon: CalculatorIcon,
-    image: "/images/serve-accounting.png",
-    benefits: [
-      "Full Integration with QuickBooks & Xero",
-      "Standardized Operating Procedures",
-      "Significant Overhead Cost Reduction",
-      "Predictable Monthly SLA Delivery",
-    ],
-  },
-  {
-    id: "fractional-cfo",
-    name: "Fractional CFO Firms",
-    shortDesc:
-      "Accounting operations support that allows Fractional CFOs to focus on strategic advisory and client relationships.",
-    fullDesc:
-      "Focus on high-value strategic advisory, financial modeling, and client relationships while Haggai powers your back-office execution with timely month-end closes and reliable financial reporting.",
-    icon: ChartBarIcon,
-    image: "/images/serve-cfo.png",
-    benefits: [
-      "Clean Month-End Close Packages",
-      "Custom Executive Management Reports",
-      "Operational Back-Office Execution",
-      "Direct Daily Line of Communication",
-    ],
-  },
-  {
-    id: "startups",
-    name: "Startups",
-    shortDesc:
-      "Scalable accounting support that grows alongside your business while keeping financial records accurate and organized.",
-    fullDesc:
-      "From initial seed funding to Series A growth, Haggai establishes institutional-grade bookkeeping so founders can focus on product-market fit, investor updates, and cash runway optimization.",
-    icon: RocketLaunchIcon,
-    image: "/images/serve-startups.png",
-    benefits: [
-      "Audit-Ready Financial Statements",
-      "Runway & Cash Flow Visibility",
-      "Investor & Board Reporting Support",
-      "Flexible Resource Scaling as You Grow",
-    ],
-  },
-  {
-    id: "saas-companies",
-    name: "SaaS Companies",
-    shortDesc:
-      "Specialized accounting for subscription-based businesses with recurring revenue and financial reporting expertise.",
-    fullDesc:
-      "Subscription accounting requires specialized revenue recognition and metrics. Haggai manages ASC 606 compliance, deferred revenue schedules, and key metrics like ARR, MRR, CAC, and Churn.",
+      "Haggai supports technology and SaaS businesses with reliable recurring revenue accounting, accurate subscription billing, and scalable financial operations designed to keep pace with rapid growth.",
     icon: ComputerDesktopIcon,
-    image: "/images/serve-saas.png",
+    image: "/images/tech&saas.png",
     benefits: [
-      "ASC 606 Revenue Recognition",
-      "Deferred Revenue & Billing Schedules",
-      "Subscriptions & Cohort Metrics Tracking",
-      "Billing Integration (Stripe & Chargebee)",
+      "Recurring Revenue Accounting",
+      "Subscription Billing Accuracy",
+      "Scalable Back-Office Support",
+      "Financial Operations Built for Growth",
     ],
   },
+
   {
-    id: "ecommerce",
-    name: "E-commerce Businesses",
+    id: "manufacturing",
+    name: "Manufacturing",
     shortDesc:
-      "Accounting solutions designed for online businesses managing high transaction volumes and inventory-related financial operations.",
+      "Multi-region close processes, cost accounting, and supply chain coordination for operations with complex, high-volume transactions.",
     fullDesc:
-      "High transaction volume, inventory valuation, and multi-channel payouts require precision. Haggai reconciles Shopify, Amazon, and Stripe payouts while automating multi-state sales tax compliance.",
+      "Haggai supports manufacturing businesses with structured multi-region close processes, cost accounting, and coordinated financial operations across complex, high-volume environments.",
+    icon: CogIcon,
+    image: "/images/manufacturing.jpg",
+    benefits: [
+      "Multi-Region Month-End Close",
+      "Cost Accounting & Analysis",
+      "High-Volume Transaction Management",
+      "Supply Chain Coordination",
+    ],
+  },
+
+  {
+    id: "healthcare",
+    name: "Healthcare",
+    shortDesc:
+      "Accurate financial reporting and compliant payroll support for organizations balancing patient care with operational rigor.",
+    fullDesc:
+      "Haggai provides healthcare organizations with accurate financial reporting and dependable payroll support, helping leadership maintain strong financial and operational discipline while staying focused on patient care.",
+    icon: ShieldCheckIcon,
+    image: "/images/helathcare.jpg",
+    benefits: [
+      "Accurate Financial Reporting",
+      "Compliant Payroll Support",
+      "Reliable Financial Operations",
+      "Operational Support for Growing Teams",
+    ],
+  },
+
+  {
+    id: "retail-ecommerce",
+    name: "Retail & E-commerce",
+    shortDesc:
+      "High-volume transaction accounting, revenue reconciliation across sales channels, and inventory/order management that scales with demand.",
+    fullDesc:
+      "Haggai helps retail and e-commerce businesses manage high transaction volumes, reconcile revenue across sales channels, and maintain organized inventory and order-related financial operations as demand grows.",
     icon: ShoppingBagIcon,
     image: "/images/serve-ecommerce.png",
     benefits: [
-      "Multi-Channel Payout Reconciliation",
-      "COGS & Inventory Valuation Tracking",
-      "Sales Tax Automation & Filing Support",
-      "Real-Time Gross Margin Visibility",
+      "High-Volume Transaction Accounting",
+      "Multi-Channel Revenue Reconciliation",
+      "Inventory & Order Management",
+      "Scalable Financial Operations",
+    ],
+  },
+
+  {
+    id: "logistics-distribution",
+    name: "Logistics & Distribution",
+    shortDesc:
+      "Procurement, vendor management, and supply chain analytics for businesses where operational efficiency is the product.",
+    fullDesc:
+      "Haggai supports logistics and distribution businesses with organized procurement, vendor management, and supply chain analytics that improve financial visibility and operational efficiency.",
+    icon: TruckIcon,
+    image: "/images/logistics.jpg",
+    benefits: [
+      "Procurement Management",
+      "Vendor Management",
+      "Supply Chain Analytics",
+      "Operational Efficiency & Visibility",
+    ],
+  },
+
+  {
+    id: "professional-services",
+    name: "Professional Services",
+    shortDesc:
+      "Clean bookkeeping, reliable payroll, and financial reporting that lets firms focus on billable work, not back-office admin.",
+    fullDesc:
+      "Haggai handles the essential bookkeeping, payroll, and financial reporting needs of professional services firms, reducing back-office administration so teams can stay focused on billable client work.",
+    icon: BriefcaseIcon,
+    image: "/images/professional-services.jpg",
+    benefits: [
+      "Clean & Accurate Bookkeeping",
+      "Reliable Payroll Support",
+      "Timely Financial Reporting",
+      "Reduced Back-Office Administration",
+    ],
+  },
+
+  {
+    id: "nonprofits",
+    name: "Nonprofits",
+    shortDesc:
+      "Transparent, audit-ready financial reporting and reliable payroll support for organizations accountable to donors and boards.",
+    fullDesc:
+      "Haggai helps nonprofits maintain transparent and audit-ready financial operations with dependable financial reporting and payroll support, giving leadership greater confidence when reporting to donors and boards.",
+    icon: HeartIcon,
+    image: "/images/non-profit.jpg",
+    benefits: [
+      "Transparent Financial Reporting",
+      "Audit-Ready Financial Records",
+      "Reliable Payroll Support",
+      "Donor & Board Reporting Readiness",
     ],
   },
 ];
@@ -140,7 +163,7 @@ export default function WhoWeServe() {
   useGSAP(
     () => {
       const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
+        "(prefers-reduced-motion: reduce)",
       ).matches;
 
       if (reduceMotion) return;
@@ -157,7 +180,7 @@ export default function WhoWeServe() {
         tl.fromTo(
           badgeRef.current,
           { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
         );
       }
 
@@ -166,7 +189,7 @@ export default function WhoWeServe() {
           headingRef.current,
           { opacity: 0, y: 25 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -175,7 +198,7 @@ export default function WhoWeServe() {
           paragraphRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.4"
+          "-=0.4",
         );
       }
 
@@ -191,7 +214,7 @@ export default function WhoWeServe() {
             stagger: 0.08,
             ease: "power2.out",
           },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -200,13 +223,15 @@ export default function WhoWeServe() {
           detailPanelRef.current,
           { opacity: 0, y: 30, scale: 0.98 },
           { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "power3.out" },
-          "-=0.2"
+          "-=0.2",
         );
       }
 
       // Continuous subtle floating animation for illustration
       if (illustrationRef.current) {
-        const floatEl = illustrationRef.current.querySelector(".floating-detail-img");
+        const floatEl = illustrationRef.current.querySelector(
+          ".floating-detail-img",
+        );
         if (floatEl) {
           gsap.to(floatEl, {
             y: -8,
@@ -218,7 +243,7 @@ export default function WhoWeServe() {
         }
       }
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   // Tab Switching Animation Timeline
@@ -226,7 +251,7 @@ export default function WhoWeServe() {
     if (index === activeTab || isAnimating) return;
 
     const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     if (reduceMotion) {
@@ -255,25 +280,32 @@ export default function WhoWeServe() {
     tl.fromTo(
       illustrationRef.current,
       { opacity: 0, y: 15, scale: 0.96 },
-      { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "power3.out" }
+      { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "power3.out" },
     );
 
     tl.fromTo(
       detailContentRef.current,
       { opacity: 0, y: 15 },
       { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" },
-      "-=0.35"
+      "-=0.35",
     );
 
     // Stagger benefit items
     if (detailContentRef.current) {
-      const listItems = detailContentRef.current.querySelectorAll(".benefit-item");
+      const listItems =
+        detailContentRef.current.querySelectorAll(".benefit-item");
       if (listItems.length > 0) {
         tl.fromTo(
           listItems,
           { opacity: 0, x: -15 },
-          { opacity: 1, x: 0, duration: 0.35, stagger: 0.06, ease: "power2.out" },
-          "-=0.3"
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.35,
+            stagger: 0.06,
+            ease: "power2.out",
+          },
+          "-=0.3",
         );
       }
     }
@@ -284,7 +316,7 @@ export default function WhoWeServe() {
       ref={containerRef}
       id="who-we-serve"
       aria-labelledby="who-we-serve-heading"
-      className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28 font-body text-slate-900"
+      className="relative overflow-hidden bg-bg py-15 font-body text-slate-900"
     >
       {/* Background radial gradient glow */}
       <div
@@ -318,7 +350,7 @@ export default function WhoWeServe() {
           <h2
             ref={headingRef}
             id="who-we-serve-heading"
-            className="font-heading text-3xl font-medium tracking-tight text-slate-950 sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1]"
+            className="font-heading text-3xl font-medium tracking-tight text-slate-950 sm:text-4xl md:text-5xl leading-[1.1]"
           >
             Accounting solutions designed around the way your{" "}
             <span className="text-primary">business operates.</span>
@@ -327,11 +359,10 @@ export default function WhoWeServe() {
           {/* Supporting Paragraph (Max 3 lines) */}
           <p
             ref={paragraphRef}
-            className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-relaxed"
+            className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-md sm:leading-relaxed"
           >
-            Every business has unique accounting workflows, financial reporting
-            requirements and operational challenges. Explore the business type that best
-            matches yours and discover how Haggai can support your growth.
+            Different industries face different operational pressures.
+            Here&apos;s how we help.
           </p>
         </div>
 
@@ -371,7 +402,9 @@ export default function WhoWeServe() {
                 <div
                   aria-hidden="true"
                   className={`absolute top-0 left-0 right-0 h-1 transition-all duration-300 ${
-                    isActive ? "bg-primary opacity-100" : "bg-transparent opacity-0"
+                    isActive
+                      ? "bg-primary opacity-100"
+                      : "bg-transparent opacity-0"
                   }`}
                 />
 
@@ -385,7 +418,10 @@ export default function WhoWeServe() {
                           : "bg-soft text-primary group-hover:bg-primary group-hover:text-white group-hover:rotate-3"
                       }`}
                     >
-                      <Icon className="h-6 w-6 stroke-[1.8]" aria-hidden="true" />
+                      <Icon
+                        className="h-6 w-6 stroke-[1.8]"
+                        aria-hidden="true"
+                      />
                     </div>
 
                     <ArrowRightIcon
@@ -401,7 +437,9 @@ export default function WhoWeServe() {
                   {/* Title & Short Description */}
                   <h3
                     className={`mt-5 font-heading text-xl font-semibold transition-colors duration-300 ${
-                      isActive ? "text-primary" : "text-slate-950 group-hover:text-primary"
+                      isActive
+                        ? "text-primary"
+                        : "text-slate-950 group-hover:text-primary"
                     }`}
                   >
                     {client.name}
@@ -415,7 +453,11 @@ export default function WhoWeServe() {
                 {/* Bottom Active Label */}
                 <div className="mt-5 pt-3 border-t border-slate-100/80 flex items-center justify-between text-xs font-semibold">
                   <span
-                    className={isActive ? "text-primary font-bold" : "text-slate-500 group-hover:text-primary"}
+                    className={
+                      isActive
+                        ? "text-primary font-bold"
+                        : "text-slate-500 group-hover:text-primary"
+                    }
                   >
                     {isActive ? "Currently Selected" : "Click to Explore"}
                   </span>
@@ -438,7 +480,10 @@ export default function WhoWeServe() {
         >
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
             {/* LEFT COLUMN: CUSTOM AI ILLUSTRATION FOR SELECTED CLIENT TYPE */}
-            <div ref={illustrationRef} className="lg:col-span-6 flex items-center justify-center">
+            <div
+              ref={illustrationRef}
+              className="lg:col-span-6 flex items-center justify-center"
+            >
               <div className="floating-detail-img relative w-full overflow-hidden rounded-2xl border border-slate-100 bg-slate-50/50 p-4 shadow-inner">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-white border border-slate-200/60 shadow-xs flex items-center justify-center">
                   <Image
@@ -454,7 +499,10 @@ export default function WhoWeServe() {
             </div>
 
             {/* RIGHT COLUMN: DYNAMIC CONTENT DETAILS & BENEFITS */}
-            <div ref={detailContentRef} className="lg:col-span-6 flex flex-col justify-center">
+            <div
+              ref={detailContentRef}
+              className="lg:col-span-6 flex flex-col justify-center"
+            >
               <div className="mb-4 inline-block">
                 <span className="inline-flex items-center gap-2 rounded-full bg-primary px-3.5 py-1 text-xs font-semibold text-white shadow-xs">
                   {activeClient.name} Solution
@@ -484,7 +532,9 @@ export default function WhoWeServe() {
                       <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white text-primary shadow-2xs">
                         <CheckCircleIcon className="h-4.5 w-4.5 stroke-[2]" />
                       </div>
-                      <span className="leading-tight font-semibold">{benefit}</span>
+                      <span className="leading-tight font-semibold">
+                        {benefit}
+                      </span>
                     </div>
                   ))}
                 </div>

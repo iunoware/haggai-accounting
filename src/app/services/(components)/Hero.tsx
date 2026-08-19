@@ -3,34 +3,9 @@
 import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  ArrowRightIcon,
-  BanknotesIcon,
-  CalculatorIcon,
-  ChartBarSquareIcon,
-  CheckCircleIcon,
-  SparklesIcon,
-} from "@heroicons/react/24/outline";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-
-const serviceHighlights = [
-  {
-    title: "Finance Operations",
-    desc: "Streamlined bookkeeping & month-end closes",
-    icon: CalculatorIcon,
-  },
-  {
-    title: "Payroll Management",
-    desc: "Accurate, compliant & on-time processing",
-    icon: BanknotesIcon,
-  },
-  {
-    title: "Supply Chain Solutions",
-    desc: "Connected financial & operational logistics",
-    icon: ChartBarSquareIcon,
-  },
-];
 
 export default function ServicesHero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -47,16 +22,12 @@ export default function ServicesHero() {
       tl.from(".svc-eyebrow", { opacity: 0, y: 15, duration: 0.6 })
         .from(".svc-heading", { opacity: 0, y: 25, duration: 0.8 }, "-=0.4")
         .from(".svc-desc", { opacity: 0, y: 20, duration: 0.6 }, "-=0.5")
-        .from(".svc-highlights", { opacity: 0, y: 20, duration: 0.6 }, "-=0.4")
         .from(".svc-actions", { opacity: 0, y: 15, duration: 0.6 }, "-=0.4")
         .from(
           ".svc-visual",
-          { opacity: 0, scale: 0.95, duration: 0.9 },
-          "-=0.7",
-        )
-        .from(".svc-float-1", { opacity: 0, x: -20, duration: 0.6 }, "-=0.5")
-        .from(".svc-float-2", { opacity: 0, x: 20, duration: 0.6 }, "-=0.5")
-        .from(".svc-float-3", { opacity: 0, y: 20, duration: 0.6 }, "-=0.4");
+          { opacity: 0, scale: 0.96, y: 15, duration: 0.8 },
+          "-=0.5",
+        );
     },
     { scope: sectionRef },
   );
@@ -64,7 +35,7 @@ export default function ServicesHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[90vh] overflow-hidden bg-cover bg-center bg-no-repeat pt-28 pb-16 lg:flex lg:items-center lg:pt-32 lg:pb-20 font-body text-slate-900"
+      className="relative min-h-[85vh] overflow-hidden bg-cover bg-center bg-no-repeat pt-28 pb-16 lg:flex lg:items-center lg:pt-32 lg:pb-20 font-body text-slate-900"
       style={{ backgroundImage: "url('/images/service-bg.png')" }}
     >
       {/* Subtle overlay to ensure high text contrast */}
@@ -78,51 +49,28 @@ export default function ServicesHero() {
           {/* Left Column — Content */}
           <div className="lg:col-span-7 xl:col-span-6">
             {/* Eyebrow */}
-            {/* <div className="svc-eyebrow inline-flex items-center gap-2 rounded-full border border-primary/20 bg-[#EFF9FF] px-4 py-1.5 shadow-xs">
-              <SparklesIcon className="h-4 w-4 text-primary" />
-              <span className="font-manrope text-xs font-semibold uppercase tracking-wider text-primary">
-                OUR SERVICES
+            <div className="svc-eyebrow mb-5 inline-block">
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-soft/50 px-3.5 py-1 text-xs font-bold tracking-widest text-primary uppercase backdrop-blur-xs">
+                <span
+                  className="h-1.5 w-1.5 rounded-full bg-primary"
+                  aria-hidden="true"
+                />
+                SERVICES
               </span>
-            </div> */}
+            </div>
 
             {/* Main Headline */}
-            <h1 className="svc-heading mt-5 font-heading text-4xl font-bold leading-[1.08] tracking-tight text-[#0F172A] sm:text-5xl">
-              Finance, Payroll &amp; Supply Chain Solutions{" "}
-              <span className="text-primary block sm:inline">
-                Built Around Your Business
-              </span>
+            <h1 className="svc-heading font-heading text-4xl font-bold leading-[1.08] tracking-tight text-[#0F172A] sm:text-5xl lg:text-6xl">
+              The Weight of Operations.{" "}
+              <span className="text-primary block sm:inline">Handled.</span>
             </h1>
 
             {/* Supporting Description */}
-            <p className="svc-desc mt-6 max-w-xl font-manrope text-base leading-relaxed text-slate-600 sm:text-md">
-              We help medium and large enterprises streamline finance, payroll,
-              and supply chain operations through scalable outsourcing solutions
-              that reduce costs, improve efficiency, and support sustainable
-              growth.
+            <p className="svc-desc mt-6 max-w-xl font-manrope text-base leading-relaxed text-slate-600 sm:text-lg">
+              Haggai takes the complexity of finance, payroll, and supply chain
+              operations off your team — with the expertise and operational
+              support to keep your business moving.
             </p>
-
-            {/* Service Highlights Row */}
-            {/* <div className="svc-highlights mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
-              {serviceHighlights.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={item.title}
-                    className="flex flex-col rounded-2xl border border-slate-200/80 bg-white/80 p-3.5 backdrop-blur-xs shadow-xs transition-all hover:border-primary/30"
-                  >
-                    <div className="flex items-center gap-2 text-primary mb-1">
-                      <Icon className="h-4 w-4 stroke-[2.5]" />
-                      <span className="font-manrope text-xs font-bold text-slate-900">
-                        {item.title}
-                      </span>
-                    </div>
-                    <span className="font-manrope text-[11px] text-slate-500 leading-snug">
-                      {item.desc}
-                    </span>
-                  </div>
-                );
-              })}
-            </div> */}
 
             {/* CTA Actions */}
             <div className="svc-actions mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -138,62 +86,25 @@ export default function ServicesHero() {
                 href="#white-label-services"
                 className="inline-flex h-13 items-center justify-center rounded-xl border border-slate-300 bg-white/70 px-7 font-manrope text-sm font-semibold text-primary backdrop-blur-xs transition-all duration-300 hover:border-primary hover:bg-white hover:-translate-y-0.5 active:translate-y-0 sm:w-auto"
               >
-                <span>Explore Services</span>
+                <span>Explore Our Services</span>
               </Link>
             </div>
           </div>
 
-          {/* Right Column — Visual */}
+          {/* Right Column — Visual Metaphor (Ant carrying heavy operational stack) */}
           <div className="svc-visual relative flex items-center justify-center lg:col-span-5 xl:col-span-6 h-full">
-            {/* Visual Container */}
-            <div className="relative w-full h-full max-w-xs sm:max-w-sm overflow-hidden rounded-3xl p-2 mx-auto">
-              <div className="relative aspect-4/3 w-full h-full overflow-hidden rounded-2xl">
+            <div className="relative w-full max-w-md sm:max-w-lg mx-auto">
+              <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl p-1">
                 <Image
                   src="/images/service-hero-1.png"
-                  alt="Haggai Finance, Payroll & Supply Chain Solutions"
+                  alt="Ant carrying operational load — representing Haggai lifting the weight of finance and operations"
                   fill
-                  sizes="(max-width: 1200px) 100vw, 400px"
+                  sizes="(max-width: 1200px) 100vw, 520px"
                   priority
-                  className="object-cover object-center"
+                  className="object-contain object-center transition-transform duration-700 hover:scale-[1.02]"
                 />
               </div>
             </div>
-
-            {/* Floating Info Accents around image */}
-            {/* <div className="svc-float-1 absolute -top-4 -left-4 hidden lg:flex items-center gap-2.5 rounded-2xl border border-slate-100 bg-white p-3.5 shadow-xl shadow-slate-950/5 backdrop-blur-md">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#EFF9FF] text-primary">
-                <CheckCircleIcon className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="font-manrope text-xs font-bold text-slate-900">
-                  Finance
-                </p>
-                <p className="font-manrope text-[11px] text-slate-500">
-                  Streamlined Operations
-                </p>
-              </div>
-            </div> */}
-
-            {/* <div className="svc-float-2 absolute -bottom-4 -right-4 hidden lg:flex items-center gap-2.5 rounded-2xl border border-slate-100 bg-white p-3.5 shadow-xl shadow-slate-950/5 backdrop-blur-md">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white">
-                <CheckCircleIcon className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="font-manrope text-xs font-bold text-slate-900">
-                  Payroll
-                </p>
-                <p className="font-manrope text-[11px] text-slate-500">
-                  Accurate &amp; Reliable
-                </p>
-              </div>
-            </div> */}
-
-            {/* <div className="svc-float-3 absolute top-1/2 -right-6 hidden lg:flex -translate-y-1/2 items-center gap-2 rounded-full border border-primary/20 bg-white px-4 py-2 shadow-lg shadow-slate-900/5">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="font-manrope text-xs font-semibold text-primary">
-                Supply Chain Connected
-              </span>
-            </div> */}
           </div>
         </div>
       </div>
@@ -201,47 +112,3 @@ export default function ServicesHero() {
   );
 }
 
-// ====================================================================
-// OLD HERO IMPLEMENTATION (PRESERVED FOR RESTORATION IF NEEDED)
-// ====================================================================
-//
-// import { useRef } from "react";
-// import Link from "next/link";
-// import {
-//   ArrowDownIcon,
-//   ArrowRightIcon,
-//   BanknotesIcon,
-//   CalculatorIcon,
-//   ChartBarSquareIcon,
-//   ClipboardDocumentCheckIcon,
-// } from "@heroicons/react/24/outline";
-//
-// const services = [
-//   {
-//     title: "Bookkeeping",
-//     icon: CalculatorIcon,
-//   },
-//   {
-//     title: "Month-End Close",
-//     icon: ClipboardDocumentCheckIcon,
-//   },
-//   {
-//     title: "AP & AR Support",
-//     icon: BanknotesIcon,
-//   },
-//   {
-//     title: "Financial Reporting",
-//     icon: ChartBarSquareIcon,
-//   },
-// ];
-//
-// export function OldServicesHero() {
-//   return (
-//     <section className="relative min-h-screen overflow-hidden bg-soft pb-16 pt-32 text-[#0c2e2d] sm:pt-36 lg:flex lg:items-center lg:pb-20 lg:pt-32">
-//       <div aria-hidden="true" className="services-new-glow absolute left-1/2 top-1/3 h-136 w-136 -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary/45 blur-3xl" />
-//       <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
-//         ...
-//       </div>
-//     </section>
-//   );
-// }

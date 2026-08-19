@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import {
   CheckIcon,
   ShieldCheckIcon,
-  BuildingOfficeIcon,
+  HeartIcon,
   CogIcon,
   ShoppingBagIcon,
   ComputerDesktopIcon,
@@ -36,17 +36,7 @@ const industriesData = [
       "Multi-provider payroll accuracy",
     ],
   },
-  {
-    id: "construction",
-    name: "Construction",
-    icon: BuildingOfficeIcon,
-    shortDesc: "Job costing, progress billing & contractor payroll management.",
-    strengths: [
-      "Project job costing & WIP tracking",
-      "Subcontractor tax & 1099 compliance",
-      "Equipment asset depreciation tracking",
-    ],
-  },
+
   {
     id: "manufacturing",
     name: "Manufacturing",
@@ -94,7 +84,7 @@ const industriesData = [
   },
   {
     id: "logistics",
-    name: "Logistics",
+    name: "Logistics & Distribution",
     icon: TruckIcon,
     shortDesc: "Fleet cost allocation, freight invoicing & driver payroll.",
     strengths: [
@@ -113,6 +103,18 @@ const industriesData = [
       "Retainer & project-based accounting",
       "Utilization & realization tracking",
       "Partner equity & dividend planning",
+    ],
+  },
+  {
+    id: "nonprofits",
+    name: "Nonprofits",
+    icon: HeartIcon,
+    shortDesc:
+      "Fund accounting, grant tracking & transparent financial reporting.",
+    strengths: [
+      "Grant & restricted fund tracking",
+      "Donor contribution reconciliation",
+      "Financial reporting & compliance",
     ],
   },
 ];
@@ -249,7 +251,7 @@ export default function IndustriesWeServe() {
       ref={sectionRef}
       id="industries"
       aria-labelledby="industries-heading"
-      className="relative overflow-hidden bg-slate-50/50 py-20 sm:py-24 lg:py-24 font-body text-slate-900"
+      className="relative overflow-hidden bg-slate-50/50 py-15 font-body text-slate-900"
     >
       {/* Background glow */}
       <div
@@ -531,7 +533,7 @@ export default function IndustriesWeServe() {
           </h3>
 
           <Link
-            href="/about#industries"
+            href="/industries"
             className="group inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-sm sm:text-base font-semibold text-white shadow-md shadow-primary/20 transition-all duration-300 hover:bg-[#004870] hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary w-full sm:w-auto"
           >
             <span>Explore Industries</span>
@@ -541,9 +543,9 @@ export default function IndustriesWeServe() {
             />
           </Link>
 
-          <p className="mt-3 text-sm font-medium text-slate-600 sm:text-base">
+          {/* <p className="mt-3 text-sm font-medium text-slate-600 sm:text-base">
             Learn how Haggai supports businesses across a wide range of sectors.
-          </p>
+          </p> */}
         </div>
       </div>
     </section>

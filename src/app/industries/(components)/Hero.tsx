@@ -54,7 +54,7 @@ export default function IndustriesHero() {
   useGSAP(
     () => {
       const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
+        "(prefers-reduced-motion: reduce)",
       ).matches;
 
       if (reduceMotion) {
@@ -71,7 +71,7 @@ export default function IndustriesHero() {
             opacity: 1,
             y: 0,
             scale: 1,
-          }
+          },
         );
         return;
       }
@@ -89,7 +89,7 @@ export default function IndustriesHero() {
         timeline.fromTo(
           badgeRef.current,
           { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
         );
       }
 
@@ -99,7 +99,7 @@ export default function IndustriesHero() {
           headingRef.current,
           { opacity: 0, y: 25 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -109,7 +109,7 @@ export default function IndustriesHero() {
           paragraphRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.4"
+          "-=0.4",
         );
       }
 
@@ -119,7 +119,7 @@ export default function IndustriesHero() {
           buttonsRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -129,7 +129,7 @@ export default function IndustriesHero() {
           illustrationRef.current,
           { opacity: 0, scale: 0.94, y: 30 },
           { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "power3.out" },
-          "-=0.6"
+          "-=0.6",
         );
       }
 
@@ -146,7 +146,7 @@ export default function IndustriesHero() {
             stagger: 0.1,
             ease: "power2.out",
           },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -165,7 +165,7 @@ export default function IndustriesHero() {
         }
       }
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return (
@@ -209,10 +209,10 @@ export default function IndustriesHero() {
             <h1
               ref={headingRef}
               id="industries-hero-heading"
-              className="font-heading text-4xl font-medium leading-[1.04] tracking-tight text-slate-950 sm:text-5xl md:text-6xl lg:text-[3.8rem]"
+              className="font-heading text-4xl font-medium leading-[1.04] tracking-tight text-slate-950 sm:text-5xl md:text-5xl lg:text-[3.8rem]"
             >
-              Accounting expertise tailored to the way your{" "}
-              <span className="text-primary">business operates.</span>
+              Built to Support the Way Your Industry
+              <span className="text-primary">Actually Operates.</span>
             </h1>
 
             {/* Supporting Paragraph (Max 3 lines) */}
@@ -220,10 +220,10 @@ export default function IndustriesHero() {
               ref={paragraphRef}
               className="mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg sm:leading-relaxed"
             >
-              Every business has unique financial workflows, reporting requirements
-              and operational challenges. Haggai provides accounting solutions designed
-              around the way your business works, helping you stay focused on growth
-              while we handle the numbers.
+              Every business has unique financial workflows, reporting
+              requirements and operational challenges. Haggai provides
+              accounting solutions designed around the way your business works,
+              helping you stay focused on growth while we handle the numbers.
             </p>
 
             {/* Action Buttons */}

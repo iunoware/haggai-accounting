@@ -21,33 +21,37 @@ const processSteps = [
     number: "01",
     title: "Discovery Call",
     description:
-      "We begin by understanding your business, current accounting processes, challenges, and support requirements.",
+      "We start with a focused conversation to understand your business, current challenges, accounting needs, and goals.",
     icon: ChatBubbleLeftRightIcon,
-    label: "Understand",
+    label: "INITIAL CONVERSATION",
+    supportingPoint: "Understand your business",
   },
   {
     number: "02",
-    title: "Workflow Setup",
+    title: "Business Assessment",
     description:
-      "We align with your software, reporting needs, communication preferences, and existing financial workflows.",
-    icon: Cog6ToothIcon,
-    label: "Configure",
+      "We assess your existing financial processes, systems, and workflows to identify gaps, inefficiencies, and opportunities for improvement.",
+    icon: ClipboardDocumentCheckIcon,
+    label: "BUSINESS REVIEW",
+    supportingPoint: "Identify key opportunities",
   },
   {
     number: "03",
-    title: "Service Delivery",
+    title: "Solution Design",
     description:
-      "Our team manages the agreed accounting responsibilities through structured and dependable processes.",
-    icon: ClipboardDocumentCheckIcon,
-    label: "Deliver",
+      "We design a tailored accounting and financial operations solution aligned with your business requirements and long-term objectives.",
+    icon: Cog6ToothIcon,
+    label: "TAILORED STRATEGY",
+    supportingPoint: "Build the right solution",
   },
   {
     number: "04",
-    title: "Ongoing Support",
+    title: "Seamless Delivery",
     description:
-      "We provide regular updates, maintain clear communication, and adapt our support as your business grows.",
+      "We implement the solution seamlessly and provide ongoing support to ensure your financial operations run accurately, efficiently, and reliably.",
     icon: PresentationChartLineIcon,
-    label: "Improve",
+    label: "ONGOING SUPPORT",
+    supportingPoint: "Reliable ongoing support",
   },
 ];
 
@@ -63,7 +67,9 @@ export default function HowWeWork() {
 
   useGSAP(
     () => {
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
 
       if (reduceMotion) {
         gsap.set(
@@ -226,7 +232,7 @@ export default function HowWeWork() {
     <section
       ref={sectionRef}
       id="how-we-work"
-      className="relative overflow-hidden bg-[#fefefe] py-20 sm:py-24 lg:py-32"
+      className="relative overflow-hidden bg-bg py-15"
     >
       {/* Background decorations */}
       <div
@@ -269,7 +275,7 @@ export default function HowWeWork() {
             <span className="h-px w-9 bg-accent" />
           </div>
 
-          <h2 className="font-cormorant text-[3.3rem] font-medium leading-[0.92] tracking-tighter text-[#0c2e2d] sm:text-6xl lg:text-[5.5rem]">
+          <h2 className="font-cormorant font-medium leading-[0.92] tracking-tighter text-[#0c2e2d] text-4xl sm:text-5xl lg:text-6xl">
             <span className="block overflow-hidden pb-2">
               <span className="process-title-line block">A clear process.</span>
             </span>
@@ -282,9 +288,9 @@ export default function HowWeWork() {
           </h2>
 
           <p className="process-description mx-auto mt-7 max-w-2xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-            Our structured approach makes outsourcing accounting simple, transparent, and
-            easy to manage. You always know what happens next and what to expect from our
-            team.
+            Our structured approach makes outsourcing accounting simple,
+            transparent, and easy to manage. You always know what happens next
+            and what to expect from our team.
           </p>
         </div>
 
@@ -303,7 +309,10 @@ export default function HowWeWork() {
               const Icon = step.icon;
 
               return (
-                <article key={step.number} className="process-step group relative">
+                <article
+                  key={step.number}
+                  className="process-step group relative"
+                >
                   {/* Step marker */}
                   <div className="relative z-10 mx-auto flex h-20 w-20 items-center justify-center">
                     <span className="process-dot absolute inset-0 rounded-full bg-soft" />
@@ -335,11 +344,14 @@ export default function HowWeWork() {
 
                     <div className="mt-7 flex items-center gap-3 border-t border-primary/10 pt-5">
                       <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent/15 text-accent">
-                        <CheckCircleIcon aria-hidden="true" className="h-4 w-4" />
+                        <CheckCircleIcon
+                          aria-hidden="true"
+                          className="h-4 w-4"
+                        />
                       </span>
 
                       <span className="font-manrope text-xs font-semibold text-primary">
-                        Clear and transparent
+                        {step.supportingPoint}
                       </span>
                     </div>
                   </div>

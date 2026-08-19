@@ -85,7 +85,9 @@ export default function WhiteLabelServices() {
 
   useGSAP(
     () => {
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
 
       if (reduceMotion) {
         gsap.set(
@@ -266,17 +268,17 @@ export default function WhiteLabelServices() {
     <section
       ref={sectionRef}
       id="white-label-services"
-      className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-32"
+      className="relative overflow-hidden bg-bg py-15"
     >
       {/* Background decorations */}
       <div
         aria-hidden="true"
-        className="white-label-glow absolute -left-48 top-24 h-128 w-lg rounded-full bg-[#D7F3FF]/85 blur-3xl"
+        className="white-label-glow absolute -left-48 top-24 h-128 w-lg rounded-full bg-soft/85 blur-3xl"
       />
 
       <div
         aria-hidden="true"
-        className="absolute -right-48 bottom-0 h-h-120 w-h-120 rounded-full bg-[#508BC0]/10 blur-3xl"
+        className="absolute -right-48 bottom-0 h-h-120 w-h-120 rounded-full bg-secondary/10 blur-3xl"
       />
 
       <div
@@ -311,14 +313,15 @@ export default function WhiteLabelServices() {
             </h2>
 
             <p className="white-label-description mt-7 max-w-xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-              Expand your firm&apos;s accounting capacity without increasing internal
-              overhead. Haggai works behind the scenes to support your clients while
-              preserving your brand, standards, and relationships.
+              Expand your firm&apos;s accounting capacity without increasing
+              internal overhead. Haggai works behind the scenes to support your
+              clients while preserving your brand, standards, and relationships.
             </p>
 
             <p className="white-label-description mt-4 max-w-xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-              Our white-label services give CPA and accounting firms access to dependable
-              back-office support that can scale with changing workloads.
+              Our white-label services give CPA and accounting firms access to
+              dependable back-office support that can scale with changing
+              workloads.
             </p>
 
             {/* Trust points */}
@@ -397,7 +400,9 @@ export default function WhiteLabelServices() {
 
                       <h3 className="mt-4 max-w-md font-cormorant text-4xl font-medium leading-none tracking-[-0.035em] sm:text-5xl">
                         The team behind
-                        <span className="block italic text-[#D7F3FF]">your firm.</span>
+                        <span className="block italic text-[#D7F3FF]">
+                          your firm.
+                        </span>
                       </h3>
                     </div>
 
@@ -407,8 +412,8 @@ export default function WhiteLabelServices() {
                   </div>
 
                   <p className="mt-6 max-w-lg font-manrope text-sm leading-7 text-[#D7F3FF]/80">
-                    We manage essential accounting processes while your firm remains the
-                    trusted face of every client relationship.
+                    We manage essential accounting processes while your firm
+                    remains the trusted face of every client relationship.
                   </p>
 
                   {/* Brand status */}
@@ -416,7 +421,10 @@ export default function WhiteLabelServices() {
                     <div className="rounded-2xl border border-white/10 bg-white/8 p-4 backdrop-blur-sm">
                       <div className="flex items-center gap-3">
                         <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#E29E21]/15 text-[#E29E21] ring-1 ring-[#E29E21]/25">
-                          <EyeSlashIcon aria-hidden="true" className="h-5 w-5" />
+                          <EyeSlashIcon
+                            aria-hidden="true"
+                            className="h-5 w-5"
+                          />
                         </span>
 
                         <div>
@@ -434,7 +442,10 @@ export default function WhiteLabelServices() {
                     <div className="rounded-2xl border border-white/10 bg-white/8 p-4 backdrop-blur-sm">
                       <div className="flex items-center gap-3">
                         <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#E29E21]/15 text-[#E29E21] ring-1 ring-[#E29E21]/25">
-                          <LockClosedIcon aria-hidden="true" className="h-5 w-5" />
+                          <LockClosedIcon
+                            aria-hidden="true"
+                            className="h-5 w-5"
+                          />
                         </span>
 
                         <div>
