@@ -1,55 +1,43 @@
 import {
   ExclamationTriangleIcon,
   ClockIcon,
-  DocumentTextIcon,
+  // DocumentTextIcon,
   ChartBarIcon,
-  ExclamationCircleIcon,
+  // ExclamationCircleIcon,
   ArrowTrendingDownIcon,
   CheckIcon,
 } from "@heroicons/react/24/outline";
 
 const painPoints = [
   {
-    icon: ExclamationTriangleIcon,
-    title: "Unreliable Financial Records",
-    description:
-      "Incomplete or inaccurate books make it difficult to understand your true financial position.",
-  },
-  {
     icon: ClockIcon,
-    title: "Time-Consuming Accounting",
+    title: "Slow Month-End Closes",
     description:
-      "Managing daily transactions and reconciliations takes valuable time away from growing your business.",
+      "Books that take 10+ days to close, with no clear visibility into what's holding things up.",
   },
   {
-    icon: DocumentTextIcon,
-    title: "Delayed Payments and Collections",
+    icon: ExclamationTriangleIcon,
+    title: "Payroll Risk",
     description:
-      "Disorganized payables and receivables can create unnecessary pressure on your cash flow.",
-  },
-  {
-    icon: ChartBarIcon,
-    title: "Limited Financial Visibility",
-    description:
-      "Without clear and timely reports, making confident business decisions becomes challenging.",
-  },
-  {
-    icon: ExclamationCircleIcon,
-    title: "Stressful Month-End Closing",
-    description:
-      "Inconsistent processes often result in delayed reports, overlooked entries, and last-minute corrections.",
+      "Compliance gaps and processing errors put leadership's time — and the company's reputation — on the line.",
   },
   {
     icon: ArrowTrendingDownIcon,
-    title: "Accounting That Cannot Scale",
+    title: "Supply Chains That Don't Scale",
     description:
-      "Manual processes and disconnected systems can struggle to support your business as it grows.",
+      "Procurement and logistics processes built for a smaller business can start straining under growth.",
+  },
+  {
+    icon: ChartBarIcon,
+    title: "Overpaying for Underused Headcount",
+    description:
+      "Full in-house teams staffed for peak workloads can sit idle during slower periods, increasing unnecessary costs.",
   },
 ];
 
 export default function PainPoints() {
   return (
-    <section className="relative overflow-hidden bg-slate-50/60 py-20 sm:py-24 lg:py-28 font-body">
+    <section className="relative overflow-hidden bg-slate-50/60 py-20 font-body">
       {/* Background decoration */}
       <div
         aria-hidden="true"
@@ -64,16 +52,19 @@ export default function PainPoints() {
         {/* Section heading */}
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-secondary/40 bg-soft/60 px-4 py-1.5 text-xs font-semibold text-primary shadow-xs backdrop-blur-sm sm:text-sm">
-            <CheckIcon className="h-4 w-4 stroke-[2.5] text-primary" aria-hidden="true" />
+            <CheckIcon
+              className="h-4 w-4 stroke-[2.5] text-primary"
+              aria-hidden="true"
+            />
             Challenges We Solve
           </div>
 
-          <h2 className="font-heading text-3xl font-medium tracking-tight text-slate-950 sm:text-4xl lg:text-5xl leading-tight">
-            Accounting challenges should not hold your{" "}
-            <span className="text-primary">business back.</span>
+          <h2 className="font-heading text-3xl font-medium tracking-tight text-slate-950 sm:text-4xl lg:text-4xl leading-tight">
+            Running a growing business shouldn&apos;t mean drowning in{" "}
+            <span className="text-primary">back-office work.</span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-md">
             Growing businesses often struggle with unclear records, delayed
             reporting, and time-consuming financial processes. Haggai helps
             bring clarity, control, and consistency to your accounting.
@@ -81,7 +72,7 @@ export default function PainPoints() {
         </div>
 
         {/* Pain-point cards */}
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:mt-16 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:mt-16">
           {painPoints.map((painPoint, index) => {
             const Icon = painPoint.icon;
 
@@ -118,7 +109,8 @@ export default function PainPoints() {
         <div className="mt-12 flex flex-col items-center justify-between gap-5 rounded-2xl border border-slate-200/90 bg-white px-6 py-6 text-center shadow-xs sm:flex-row sm:text-left lg:px-8">
           <div>
             <p className="font-heading text-lg font-semibold text-slate-950">
-              Your accounting should support your growth—not slow it down.
+              If any of this sounds familiar, you don&apos;t need more people -
+              you need the right partner.
             </p>
 
             <p className="mt-1 text-sm leading-relaxed text-slate-600">

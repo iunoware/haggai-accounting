@@ -211,7 +211,12 @@ export default function HowWeWork() {
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
-    if (typeof window === "undefined" || !sectionRef.current || !trackRef.current) return;
+    if (
+      typeof window === "undefined" ||
+      !sectionRef.current ||
+      !trackRef.current
+    )
+      return;
 
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
@@ -267,7 +272,10 @@ export default function HowWeWork() {
             anticipatePin: 1,
             onUpdate: (self) => {
               const progress = self.progress;
-              const idx = Math.min(Math.floor(progress * steps.length), steps.length - 1);
+              const idx = Math.min(
+                Math.floor(progress * steps.length),
+                steps.length - 1,
+              );
               setActiveStep(idx);
             },
           },
@@ -325,14 +333,18 @@ export default function HowWeWork() {
             ref={paragraphRef}
             className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg"
           >
-            Haggai follows a transparent step-by-step workflow that keeps you informed and
-            confident from initial onboarding through ongoing daily accounting support.
+            Haggai follows a transparent step-by-step workflow that keeps you
+            informed and confident from initial onboarding through ongoing daily
+            accounting support.
           </p>
         </div>
       </div>
 
       {/* MAIN EXPERIENCE: Pinned Horizontal Scroll on Desktop / Mobile Vertical Stack */}
-      <div ref={pinWrapperRef} className="relative w-full overflow-hidden min-h-115">
+      <div
+        ref={pinWrapperRef}
+        className="relative w-full overflow-hidden min-h-115"
+      >
         {/* DESKTOP / TABLET HORIZONTAL TRACK */}
         <div className="hidden md:block relative w-full pt-6 pb-12">
           <div
@@ -381,7 +393,10 @@ export default function HowWeWork() {
                             : "bg-soft text-primary"
                         }`}
                       >
-                        <Icon className="h-6 w-6 stroke-[1.8]" aria-hidden="true" />
+                        <Icon
+                          className="h-6 w-6 stroke-[1.8]"
+                          aria-hidden="true"
+                        />
                       </div>
                     </div>
 
@@ -457,7 +472,10 @@ export default function HowWeWork() {
                       {step.number}
                     </span>
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-soft text-primary">
-                      <Icon className="h-5 w-5 stroke-[1.8]" aria-hidden="true" />
+                      <Icon
+                        className="h-5 w-5 stroke-[1.8]"
+                        aria-hidden="true"
+                      />
                     </div>
                   </div>
 

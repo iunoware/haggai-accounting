@@ -8,7 +8,7 @@ export default function HeroSection() {
       <div
         aria-hidden="true"
         className="absolute inset-0 z-0 bg-cover bg-position-[80%_center] md:bg-position-[85%_center] lg:bg-position-[right_center] bg-no-repeat"
-        style={{ backgroundImage: "url('/image/haggai-hero.png')" }}
+        style={{ backgroundImage: "url('/images/haggai-hero.png')" }}
       />
 
       {/* Subtle Gradient Overlay for Content Legibility */}

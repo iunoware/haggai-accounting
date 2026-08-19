@@ -22,28 +22,24 @@ if (typeof window !== "undefined") {
 
 const whyChoosePoints = [
   {
-    icon: AcademicCapIcon,
-    title: "Experienced Accountants",
-    description:
-      "Qualified financial specialists and CPAs who ensure precision, compliance, and institutional-grade bookkeeping for your business.",
+    icon: ShieldCheckIcon,
+    title: "Integrity ",
+    description: "Trust built through honesty and transparency.",
   },
   {
-    icon: ShieldCheckIcon,
-    title: "Secure & Confidential",
-    description:
-      "Enterprise-grade security protocols, strict confidentiality agreements, and encrypted data transfers protecting your financial records.",
+    icon: CheckCircleIcon,
+    title: "Excellence",
+    description: "Accurate, reliable, high-quality delivery.",
   },
   {
     icon: ArrowTrendingUpIcon,
-    title: "Scalable Support",
-    description:
-      "Flexible accounting infrastructure designed to scale effortlessly as your transaction volume, team size, and complexity expand.",
+    title: "Client Success",
+    description: "Your growth is how we measure ours.",
   },
   {
     icon: ChatBubbleLeftRightIcon,
     title: "Transparent Communication",
-    description:
-      "Dedicated account managers, real-time status updates, and direct lines of communication for seamless daily collaboration.",
+    description: "Dedicated support, live updates, direct lines.",
   },
 ];
 
@@ -149,7 +145,7 @@ export default function WhyHaggai() {
       ref={sectionRef}
       id="why-haggai"
       aria-labelledby="why-haggai-heading"
-      className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-24 font-body text-slate-900"
+      className="relative overflow-hidden bg-white py-15 font-body text-slate-900"
     >
       {/* Background glow */}
       <div
@@ -175,7 +171,7 @@ export default function WhyHaggai() {
           <h2
             ref={headingRef}
             id="why-haggai-heading"
-            className="font-heading text-3xl font-medium tracking-tight text-slate-950 sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1]"
+            className="font-heading text-3xl font-medium tracking-tight text-slate-950 sm:text-4xl md:text-5xl leading-[1.1]"
           >
             Why businesses choose Haggai as their{" "}
             <span className="text-primary">trusted accounting partner.</span>
@@ -184,7 +180,7 @@ export default function WhyHaggai() {
           {/* Short Supporting Paragraph */}
           <p
             ref={paragraphRef}
-            className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg"
+            className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-md"
           >
             Haggai combines experienced financial professionals, modern
             accounting processes, dedicated offshore teams, and long-term

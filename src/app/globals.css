@@ -94,7 +94,6 @@ html {
 
   /* 100 */
   --color-bg: #f1f8f9;
-
 }
 
 @theme inline {
@@ -127,11 +126,7 @@ html {
     min-height: 100vh;
     background: var(--background);
     color: #0f172a;
-    font-family:
-      var(--font-manrope-font),
-      Arial,
-      Helvetica,
-      sans-serif;
+    font-family: var(--font-manrope-font), Arial, Helvetica, sans-serif;
   }
 
   h1,
@@ -140,11 +135,7 @@ html {
   h4,
   h5,
   h6 {
-    font-family:
-      var(--font-cormorant-font),
-      Georgia,
-      "Times New Roman",
-      serif;
+    font-family: var(--font-cormorant-font), Georgia, "Times New Roman", serif;
   }
 
   /*

@@ -8,20 +8,11 @@ export const metadata = constructMetadata({
   description:
     "Discover accounting solutions tailored for CPA firms, accounting firms, startups, SaaS companies, Fractional CFO firms, and e-commerce businesses.",
   path: "/industries",
-  keywords: [
-    "Industries We Serve",
-    "Industry-Specific Accounting Solutions",
-    "CPA Firm Support",
-    "Startup Accounting",
-    "SaaS Accounting",
-    "Fractional CFO Support",
-    "E-commerce Accounting",
-  ],
 });
 
 export default function IndustriesPage() {
   return (
-    <div className="flex min-h-screen flex-col font-body bg-white text-slate-900">
+    <div className="flex min-h-screen flex-col font-body bg-bg text-slate-900">
       {/* 1. Hero Section */}
       <IndustriesHero />
 
