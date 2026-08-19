@@ -102,7 +102,7 @@ export default function Hero() {
               <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-slate-100 sm:rounded-3xl">
                 <Image
                   src="/images/about-hero.png"
-                  alt="Haggai Accounting Professional Team"
+                  alt="Haggai Business Solutions Professional Team"
                   fill
                   sizes="(max-width: 1200px) 100vw, 800px"
                   priority
