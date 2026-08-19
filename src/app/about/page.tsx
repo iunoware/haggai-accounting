@@ -12,13 +12,6 @@ export const metadata = constructMetadata({
   description:
     "Learn how Haggai Accounting helps businesses grow through dedicated offshore accounting teams, financial expertise, and long-term client partnerships.",
   path: "/about",
-  keywords: [
-    "About Haggai Accounting",
-    "Trusted Offshore Accounting Partner",
-    "Dedicated Offshore Accounting Team",
-    "Financial Expertise",
-    "Long-Term Client Partnerships",
-  ],
 });
 
 export default function AboutPage() {

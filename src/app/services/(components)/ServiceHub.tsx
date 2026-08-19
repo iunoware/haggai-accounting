@@ -23,7 +23,7 @@ const services = [
     description:
       "An outsourced accounting department that closes your books accurately and on time - bookkeeping, reconciliations, reporting, and controller-level support.",
     cta: "Explore Accounting Services",
-    href: "/services/finance-accounting",
+    href: "/services/accounting",
     icon: BanknotesIcon,
   },
   {
@@ -32,7 +32,7 @@ const services = [
     description:
       "Accurate, compliant payroll processing and administration that keeps your team paid correctly and your business audit-ready.",
     cta: "Explore Payroll Services",
-    href: "/services/payroll-workforce",
+    href: "/services/payroll",
     icon: UsersIcon,
   },
   {
@@ -51,7 +51,9 @@ export default function ServicesHub() {
 
   useGSAP(
     () => {
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
 
       if (reduceMotion) {
         gsap.set(
@@ -164,7 +166,7 @@ export default function ServicesHub() {
     <section
       ref={sectionRef}
       id="services-hub"
-      className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-32"
+      className="relative overflow-hidden bg-bg py-15"
     >
       {/* Background decorations */}
       <div
@@ -195,9 +197,11 @@ export default function ServicesHub() {
             <span className="h-px w-10 bg-accent" />
           </div>
 
-          <h2 className="font-cormorant text-[2.6rem] font-medium leading-[0.95] tracking-tighter text-[#0c2e2d] sm:text-5xl lg:text-[3.6rem]">
+          <h2 className="font-cormorant font-medium leading-[0.95] tracking-tighter text-[#0c2e2d] text-4xl sm:text-5xl">
             <span className="block overflow-hidden pb-2">
-              <span className="haggai-hub-line block">Enterprise-Grade Operations,</span>
+              <span className="haggai-hub-line block">
+                Enterprise-Grade Operations,
+              </span>
             </span>
 
             <span className="block overflow-hidden pb-3">
@@ -208,9 +212,9 @@ export default function ServicesHub() {
           </h2>
 
           <p className="haggai-hub-description mt-6 font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-            Whether it&apos;s your books, your people, or your supply chain, we help you
-            run it with the accuracy and structure of a much larger company - without the
-            overhead.
+            Whether it&apos;s your books, your people, or your supply chain, we
+            help you run it with the accuracy and structure of a much larger
+            company - without the overhead.
           </p>
         </div>
 
@@ -329,4 +333,3 @@ export default function ServicesHub() {
     </section>
   );
 }
-

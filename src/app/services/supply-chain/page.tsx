@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRightIcon,
   ArrowsRightLeftIcon,
@@ -376,30 +377,22 @@ export default function SupplyChainServices() {
   );
 
   return (
-    <div ref={pageRef} className="relative bg-white">
+    <div ref={pageRef} className="relative bg-bg">
       {/* HERO*/}
-      <section className="haggai-supply-hero relative overflow-hidden py-20 sm:py-24 lg:py-28">
-        {/* Background glow */}
+      <section
+        className="haggai-supply-hero relative overflow-hidden bg-cover bg-center bg-no-repeat pt-28 pb-16 lg:flex lg:items-center lg:pt-32 lg:pb-20 font-body text-slate-900"
+        style={{ backgroundImage: "url('/images/service-bg.png')" }}
+      >
+        {/* Subtle overlay to ensure high text contrast */}
         <div
           aria-hidden="true"
-          className="absolute -left-56 top-0 h-128 w-lg rounded-full bg-soft/70 blur-3xl"
+          className="absolute inset-0 bg-linear-to-r from-white/95 via-white/85 to-white/40 lg:via-white/70"
         />
 
-        <div
-          aria-hidden="true"
-          className="absolute -right-52 bottom-0 h-136 w-136 rounded-full bg-secondary/10 blur-3xl"
-        />
-
-        {/* Grid */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,89,138,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,89,138,0.025)_1px,transparent_1px)] bg-size-[90px_90px]"
-        />
-
-        <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
-          <div className="grid items-center gap-14 lg:grid-cols-[1fr_0.8fr] lg:gap-16">
-            {/* Hero Content */}
-            <div>
+        <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
+            {/* Left Column — Content */}
+            <div className="lg:col-span-7 xl:col-span-6">
               <div className="haggai-supply-eyebrow mb-6 flex items-center gap-3">
                 <span className="h-px w-10 bg-accent" />
 
@@ -440,102 +433,19 @@ export default function SupplyChainServices() {
               </div>
             </div>
 
-            {/* Hero Visual */}
-            <div className="haggai-supply-hero-visual relative">
-              <div className="relative mx-auto max-w-md">
-                {/* Main panel */}
-                <div className="relative overflow-hidden rounded-3xl border border-primary/10 bg-white p-6 shadow-[0_25px_70px_rgba(12,46,45,0.08)] sm:p-7">
-                  {/* Top */}
-                  <div className="flex items-center justify-between border-b border-primary/10 pb-5">
-                    <div>
-                      <span className="font-manrope text-[9px] font-bold uppercase tracking-[0.2em] text-primary/50">
-                        Supply Chain
-                      </span>
-
-                      <p className="mt-1 font-cormorant text-xl font-semibold text-[#0c2e2d]">
-                        Connected Operations
-                      </p>
-                    </div>
-
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-soft text-primary">
-                      <ArrowsRightLeftIcon aria-hidden="true" className="h-4.5 w-4.5" />
-                    </div>
-                  </div>
-
-                  {/* Flow */}
-                  <div className="relative py-7">
-                    <div className="absolute bottom-9 left-4.75 top-9 w-px bg-primary/10" />
-
-                    {[
-                      {
-                        title: "Procurement",
-                        description: "Source efficiently",
-                      },
-                      {
-                        title: "Inventory",
-                        description: "Maintain visibility",
-                      },
-                      {
-                        title: "Logistics",
-                        description: "Move reliably",
-                      },
-                      {
-                        title: "Delivery",
-                        description: "Stay on schedule",
-                      },
-                    ].map((item, index) => (
-                      <div
-                        key={item.title}
-                        className="relative flex items-center gap-4 py-2.5"
-                      >
-                        <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/15 bg-white shadow-sm">
-                          <span className="h-2.5 w-2.5 rounded-full bg-accent" />
-                        </div>
-
-                        <div>
-                          <p className="font-manrope text-sm font-semibold text-[#0c2e2d]">
-                            {item.title}
-                          </p>
-
-                          <p className="font-manrope text-[11px] text-slate-400">
-                            {item.description}
-                          </p>
-                        </div>
-
-                        {index < 3 && (
-                          <ArrowRightIcon
-                            aria-hidden="true"
-                            className="ml-auto h-3.5 w-3.5 text-primary/20"
-                          />
-                        )}
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Bottom */}
-                  <div className="rounded-2xl bg-soft/50 px-4 py-3">
-                    <div className="flex items-center gap-3">
-                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white">
-                        <CheckIcon aria-hidden="true" className="h-3.5 w-3.5" />
-                      </span>
-
-                      <p className="font-manrope text-[11px] font-medium text-primary/70">
-                        Structured coordination across every step
-                      </p>
-                    </div>
-                  </div>
+            {/* Right Column — Visual */}
+            <div className="haggai-supply-hero-visual relative flex items-center justify-center lg:col-span-5 xl:col-span-6">
+              <div className="relative w-full max-w-md sm:max-w-lg mx-auto">
+                <div className="relative aspect-4/3 w-full overflow-hidden p-1">
+                  <Image
+                    src="/images/service-3.png"
+                    alt="Haggai Supply Chain Services Visual"
+                    fill
+                    sizes="(max-width: 1200px) 100vw, 520px"
+                    priority
+                    className="object-contain object-center transition-transform duration-700 hover:scale-[1.02]"
+                  />
                 </div>
-
-                {/* Decorative nodes */}
-                <div
-                  aria-hidden="true"
-                  className="absolute -right-5 top-10 h-10 w-10 rounded-full border border-primary/10 bg-white shadow-sm"
-                />
-
-                <div
-                  aria-hidden="true"
-                  className="absolute -bottom-5 -left-5 h-16 w-16 rounded-full border border-accent/20 bg-soft/60"
-                />
               </div>
             </div>
           </div>

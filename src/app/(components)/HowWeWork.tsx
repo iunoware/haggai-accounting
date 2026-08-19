@@ -6,8 +6,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import {
   CheckIcon,
   MagnifyingGlassIcon,
-  UserPlusIcon,
-  CalculatorIcon,
+  ClipboardDocumentCheckIcon,
+  WrenchScrewdriverIcon,
   ArrowTrendingUpIcon,
   CheckCircleIcon,
 } from "@heroicons/react/24/outline";
@@ -19,54 +19,54 @@ if (typeof window !== "undefined") {
 const steps = [
   {
     number: "01",
-    title: "Discover",
+    title: "Discovery Call",
     icon: MagnifyingGlassIcon,
-    badge: "Initial Alignment",
+    badge: "Initial Conversation",
     description:
-      "We learn about your business, accounting needs, and long-term goals to build the right financial workflow tailored specifically for you.",
+      "We start with a focused conversation to understand your business, current challenges, accounting needs, and goals.",
     details: [
-      "Deep-dive financial review",
-      "Software & stack evaluation",
-      "Custom roadmap design",
+      "Understand your business",
+      "Identify key challenges",
+      "Discuss goals & priorities",
     ],
   },
   {
     number: "02",
-    title: "Onboard",
-    icon: UserPlusIcon,
-    badge: "Seamless Setup",
+    title: "Business Assessment",
+    icon: ClipboardDocumentCheckIcon,
+    badge: "Business Review",
     description:
-      "We set up dedicated communication channels, integrate accounting systems, and define standardized operating procedures for a smooth transition.",
+      "We assess your existing financial processes, systems, and workflows to identify gaps, inefficiencies, and opportunities for improvement.",
     details: [
-      "Secure credential transfer",
-      "System integration & sync",
-      "Dedicated team assigned",
+      "Review current processes",
+      "Identify operational gaps",
+      "Evaluate systems & workflows",
     ],
   },
   {
     number: "03",
-    title: "Manage",
-    icon: CalculatorIcon,
-    badge: "Daily Operations",
+    title: "Solution Design",
+    icon: WrenchScrewdriverIcon,
+    badge: "Tailored Strategy",
     description:
-      "Your dedicated accounting team handles daily bookkeeping, payroll, compliance, and month-end closes with extreme precision.",
+      "We design a tailored accounting and financial operations solution aligned with your business requirements and long-term objectives.",
     details: [
-      "Real-time transaction logging",
-      "Payroll & tax compliance",
-      "Timely month-end closes",
+      "Design the right workflow",
+      "Define processes & systems",
+      "Build a tailored solution",
     ],
   },
   {
     number: "04",
-    title: "Grow",
+    title: "Seamless Delivery",
     icon: ArrowTrendingUpIcon,
-    badge: "Strategic Scaling",
+    badge: "Ongoing Support",
     description:
-      "Receive accurate financial reporting, strategic insights, and ongoing support so you can focus entirely on expanding your business.",
+      "We implement the solution seamlessly and provide ongoing support to ensure your financial operations run accurately, efficiently, and reliably.",
     details: [
-      "Executive KPI dashboards",
-      "Proactive advisory reviews",
-      "Scalable resource allocation",
+      "Seamless implementation",
+      "Reliable ongoing operations",
+      "Continuous support & improvement",
     ],
   },
 ];
@@ -90,7 +90,7 @@ export default function HowWeWork() {
       return;
 
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     const isDesktop = window.innerWidth >= 768;
@@ -112,7 +112,7 @@ export default function HowWeWork() {
         headerTl.fromTo(
           badgeRef.current,
           { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
         );
       }
       if (headingRef.current) {
@@ -120,7 +120,7 @@ export default function HowWeWork() {
           headingRef.current,
           { opacity: 0, y: 25 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.3"
+          "-=0.3",
         );
       }
       if (paragraphRef.current) {
@@ -128,7 +128,7 @@ export default function HowWeWork() {
           paragraphRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.4"
+          "-=0.4",
         );
       }
 
@@ -145,7 +145,7 @@ export default function HowWeWork() {
               const progress = self.progress;
               const idx = Math.min(
                 Math.floor(progress * steps.length),
-                steps.length - 1
+                steps.length - 1,
               );
               setActiveStep(idx);
             },
@@ -167,7 +167,7 @@ export default function HowWeWork() {
       ref={sectionRef}
       id="how-we-work"
       aria-labelledby="how-we-work-heading"
-      className="relative overflow-hidden bg-slate-50/60 py-20 sm:py-24 lg:py-24 font-body text-slate-900"
+      className="relative overflow-hidden bg-slate-50/60 py-15 font-body text-slate-900"
     >
       {/* Background radial gradient glow */}
       <div
@@ -193,21 +193,24 @@ export default function HowWeWork() {
           <h2
             ref={headingRef}
             id="how-we-work-heading"
-            className="font-heading text-3xl font-medium tracking-tight text-slate-950 sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1]"
+            className="font-heading text-3xl font-medium tracking-tight text-slate-950 sm:text-4xl leading-[1.1]"
           >
-            A simple process designed around{" "}
-            <span className="text-primary">your business.</span>
+            A simple, proven path from first conversation to fully operational
+            support{" "}
+            <span className="text-primary">
+              no long onboarding, no guesswork.
+            </span>
           </h2>
 
           {/* Supporting Text */}
-          <p
+          {/* <p
             ref={paragraphRef}
             className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg"
           >
             Haggai follows a transparent step-by-step workflow that keeps you
             informed and confident from initial onboarding through ongoing daily
             accounting support.
-          </p>
+          </p> */}
         </div>
       </div>
 
@@ -242,8 +245,8 @@ export default function HowWeWork() {
                         isActive
                           ? "bg-primary"
                           : isPassed
-                          ? "bg-secondary"
-                          : "bg-transparent"
+                            ? "bg-secondary"
+                            : "bg-transparent"
                       }`}
                     />
 
@@ -311,8 +314,8 @@ export default function HowWeWork() {
                             index < activeStep
                               ? "w-full bg-primary opacity-100 shadow-xs shadow-primary/30"
                               : index === activeStep
-                              ? "w-full bg-primary/70 opacity-80"
-                              : "w-0 bg-primary/20 opacity-20"
+                                ? "w-full bg-primary/70 opacity-80"
+                                : "w-0 bg-primary/20 opacity-20"
                           }`}
                         />
                       </div>

@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowPathIcon,
   ArrowRightIcon,
@@ -66,13 +67,16 @@ export default function PayrollServices() {
 
   useGSAP(
     () => {
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
 
       const animatedSelectors = [
         ".haggai-payroll-eyebrow",
         ".haggai-payroll-line",
         ".haggai-payroll-description",
         ".haggai-payroll-action",
+        ".haggai-payroll-hero-visual",
         ".haggai-payroll-hub",
         ".haggai-payroll-node",
         ".haggai-payroll-stub",
@@ -130,6 +134,12 @@ export default function PayrollServices() {
           { opacity: 0, y: 18 },
           { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" },
           "-=0.3",
+        )
+        .fromTo(
+          ".haggai-payroll-hero-visual",
+          { opacity: 0, scale: 0.96, y: 20 },
+          { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "power3.out" },
+          "-=0.35",
         );
 
       // Cycle ring + mobile stubs ("What You Get")
@@ -224,64 +234,79 @@ export default function PayrollServices() {
   );
 
   return (
-    <div ref={pageRef} className="relative bg-white">
+    <div ref={pageRef} className="relative bg-bg">
       {/* Hero*/}
-      <section className="haggai-payroll-hero relative overflow-hidden py-20 sm:py-24 lg:py-28">
+      <section
+        className="haggai-payroll-hero relative overflow-hidden bg-cover bg-center bg-no-repeat pt-28 pb-16 lg:flex lg:items-center lg:pt-32 lg:pb-20 font-body text-slate-900"
+        style={{ backgroundImage: "url('/images/service-bg.png')" }}
+      >
+        {/* Subtle overlay to ensure high text contrast */}
         <div
           aria-hidden="true"
-          className="absolute -right-56 top-10 h-128 w-lg rounded-full bg-soft/70 blur-3xl"
+          className="absolute inset-0 bg-linear-to-r from-white/95 via-white/85 to-white/40 lg:via-white/70"
         />
 
-        <div
-          aria-hidden="true"
-          className="absolute -left-52 bottom-0 h-136 w-136 rounded-full bg-secondary/10 blur-3xl"
-        />
+        <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
+            {/* Left Column — Content */}
+            <div className="lg:col-span-7 xl:col-span-6">
+              <div className="haggai-payroll-eyebrow mb-6 flex items-center gap-3">
+                <span className="h-px w-10 bg-accent" />
 
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,89,138,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,89,138,0.025)_1px,transparent_1px)] bg-size-[90px_90px]"
-        />
+                <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+                  Payroll Services
+                </span>
+              </div>
 
-        <div className="relative mx-auto max-w-4xl px-5 text-center sm:px-8 lg:px-12">
-          <div className="haggai-payroll-eyebrow mb-6 flex items-center justify-center gap-3">
-            <span className="h-px w-10 bg-accent" />
+              <h1 className="font-cormorant text-[2.6rem] font-medium leading-[0.95] tracking-tighter text-[#0c2e2d] sm:text-5xl lg:text-[3.75rem]">
+                <span className="block overflow-hidden pb-2">
+                  <span className="haggai-payroll-line block">
+                    Payroll You Can Trust -
+                  </span>
+                </span>
 
-            <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-              Payroll Services
-            </span>
+                <span className="block overflow-hidden pb-3">
+                  <span className="haggai-payroll-line block italic text-primary">
+                    Every Cycle, Every Time.
+                  </span>
+                </span>
+              </h1>
 
-            <span className="h-px w-10 bg-accent" />
-          </div>
+              <p className="haggai-payroll-description mt-6 max-w-xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
+                Payroll errors are costly - in trust, in compliance risk, and in
+                leadership&apos;s time. We make sure your people get paid right,
+                on time, every time.
+              </p>
 
-          <h1 className="font-cormorant text-[2.6rem] font-medium leading-[0.95] tracking-tighter text-[#0c2e2d] sm:text-5xl lg:text-[3.75rem]">
-            <span className="block overflow-hidden pb-2">
-              <span className="haggai-payroll-line block">Payroll You Can Trust -</span>
-            </span>
+              <div className="haggai-payroll-action mt-9">
+                <Link
+                  href="/contact"
+                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-primary px-7 py-3.5 font-manrope text-sm font-semibold text-white shadow-[0_18px_40px_-22px_rgba(0,89,138,0.75)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#004b74]"
+                >
+                  Schedule a Discovery Call
+                  <ArrowRightIcon
+                    aria-hidden="true"
+                    className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </Link>
+              </div>
+            </div>
 
-            <span className="block overflow-hidden pb-3">
-              <span className="haggai-payroll-line block italic text-primary">
-                Every Cycle, Every Time.
-              </span>
-            </span>
-          </h1>
-
-          <p className="haggai-payroll-description mx-auto mt-6 max-w-2xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-            Payroll errors are costly - in trust, in compliance risk, and in
-            leadership&apos;s time. We make sure your people get paid right, on time,
-            every time.
-          </p>
-
-          <div className="haggai-payroll-action mt-9 flex justify-center">
-            <Link
-              href="/contact"
-              className="group inline-flex items-center justify-center gap-3 rounded-full bg-primary px-7 py-3.5 font-manrope text-sm font-semibold text-white shadow-[0_18px_40px_-22px_rgba(0,89,138,0.75)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#004b74]"
-            >
-              Schedule a Discovery Call
-              <ArrowRightIcon
-                aria-hidden="true"
-                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </Link>
+            {/* Right Column — Visual */}
+            <div className="haggai-payroll-hero-visual relative flex items-center justify-center lg:col-span-5 xl:col-span-6">
+              <div className="relative w-full max-w-md sm:max-w-lg mx-auto">
+                <div className="relative aspect-4/3 w-full overflow-hidden p-1">
+                  <Image
+                    src="/images/service-2.png"
+                    alt="Haggai Payroll & Workforce Services Visual"
+                    fill
+                    sizes="(max-width: 1200px) 100vw, 520px"
+                    priority
+                    className="object-contain object-center transition-transform duration-700 hover:scale-[1.02]"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -317,7 +342,10 @@ export default function PayrollServices() {
 
             {/* center hub */}
             <div className="haggai-payroll-hub absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-primary text-white shadow-[0_25px_60px_-25px_rgba(0,89,138,0.6)]">
-              <ArrowPathIcon aria-hidden="true" className="h-7 w-7 text-accent" />
+              <ArrowPathIcon
+                aria-hidden="true"
+                className="h-7 w-7 text-accent"
+              />
 
               <span className="mt-1.5 font-manrope text-[10px] font-semibold uppercase tracking-[0.14em] text-white/80">
                 Payroll Cycle
@@ -326,7 +354,8 @@ export default function PayrollServices() {
 
             {/* orbit nodes */}
             {cycleItems.map((item, index) => {
-              const angle = (index / cycleItems.length) * 2 * Math.PI - Math.PI / 2;
+              const angle =
+                (index / cycleItems.length) * 2 * Math.PI - Math.PI / 2;
               const x = RING_RADIUS * Math.cos(angle);
               const y = RING_RADIUS * Math.sin(angle);
               const Icon = item.icon;
@@ -423,9 +452,10 @@ export default function PayrollServices() {
             </span>
 
             <blockquote className="-mt-8 font-cormorant text-[1.8rem] font-medium italic leading-tight text-white sm:-mt-10 sm:text-[2.3rem]">
-              Payroll mistakes damage <span className="text-accent">employee trust</span>{" "}
-              and expose the business to compliance risk. We remove that risk so
-              leadership can focus elsewhere.
+              Payroll mistakes damage{" "}
+              <span className="text-accent">employee trust</span> and expose the
+              business to compliance risk. We remove that risk so leadership can
+              focus elsewhere.
             </blockquote>
 
             <div className="mt-7 flex items-center justify-center gap-3">
