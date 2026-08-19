@@ -110,7 +110,7 @@ export default function Footer() {
                 { name: "About Us", href: "/about" },
                 { name: "Services", href: "/services" },
                 { name: "Industries", href: "/industries" },
-                { name: "Why Offshore", href: "/why-offshore" },
+                { name: "Why Haggai", href: "/why-offshore" },
                 { name: "Pricing", href: "/pricing" },
                 { name: "Contact Us", href: "/contact" },
               ].map((link) => (
@@ -138,20 +138,19 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-xs font-manrope">
               {[
-                "Full-Charge Bookkeeping",
-                "Dedicated Offshore Teams",
-                "Accounts Payable & Receivable",
-                "Payroll & Tax Compliance",
-                "Virtual CFO & Advisory",
+                { name: "Services Hub", href: "/services/" },
+                { name: "Accounting Services", href: "/services/accounting" },
+                { name: "Payroll Services", href: "/services/payroll" },
+                { name: "Supply Chain Services", href: "/services/supply-chain" },
               ].map((service) => (
-                <li key={service}>
+                <li key={service.name}>
                   <Link
-                    href="/services"
+                    href={service.href}
                     className="group inline-flex items-center gap-1.5 text-soft/80 hover:text-secondary transition-colors duration-300"
                   >
                     <span className="h-1 w-1 rounded-full bg-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     <span className="relative">
-                      {service}
+                      {service.name}
                       <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full" />
                     </span>
                   </Link>
@@ -178,24 +177,26 @@ export default function Footer() {
               <li className="group flex items-center gap-2.5">
                 <PhoneIcon className="h-4 w-4 text-secondary shrink-0 transition-colors duration-300 group-hover:text-accent" />
                 <a
-                  href="tel:+18005554244"
+                  href="tel:+919789997028"
+                  target="_blank"
                   className="hover:text-secondary transition-colors"
                 >
-                  +1 (800) 555-HAGGAI
+                  +91 978 999 7028
                 </a>
               </li>
               <li className="group flex items-center gap-2.5">
                 <EnvelopeIcon className="h-4 w-4 text-secondary shrink-0 transition-colors duration-300 group-hover:text-accent" />
                 <a
-                  href="mailto:contact@haggaiaccounting.com"
+                  target="_blank"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=info@haggaiaccounting.com"
                   className="hover:text-secondary transition-colors"
                 >
-                  contact@haggaiaccounting.com
+                  info@haggaiaccounting.com
                 </a>
               </li>
               <li className="group flex items-center gap-2.5">
                 <ClockIcon className="h-4 w-4 text-secondary shrink-0 transition-colors duration-300 group-hover:text-accent" />
-                <span>Mon – Fri: 9:00 AM – 6:00 PM EST</span>
+                <span>Mon - Fri: 9:00 AM - 6:00 PM EST</span>
               </li>
               {/* <li className="pt-2">
                 <a

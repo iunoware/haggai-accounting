@@ -266,12 +266,12 @@
 //     >
 //       <div
 //         aria-hidden="true"
-//         className="absolute -left-52 bottom-0 h-128 w-lg rounded-full bg-[#D7F3FF]/80 blur-3xl"
+//         className="absolute -left-52 bottom-0 h-128 w-lg rounded-full bg-soft/80 blur-3xl"
 //       />
 
 //       <div
 //         aria-hidden="true"
-//         className="absolute -right-48 top-16 h-112 w-md rounded-full bg-[#508BC0]/10 blur-3xl"
+//         className="absolute -right-48 top-16 h-112 w-md rounded-full bg-secondary/10 blur-3xl"
 //       />
 
 //       <div
@@ -284,9 +284,9 @@
 //           {/* Left content */}
 //           <div className="lg:sticky lg:top-28">
 //             <div className="contact-form-eyebrow mb-6 flex items-center gap-3">
-//               <span className="h-px w-10 bg-[#E29E21]" />
+//               <span className="h-px w-10 bg-accent" />
 
-//               <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-[#00598A]">
+//               <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-primary">
 //                 Send Us a Message
 //               </span>
 //             </div>
@@ -297,7 +297,7 @@
 //               </span>
 
 //               <span className="block overflow-hidden pb-3">
-//                 <span className="contact-form-title-line block italic text-[#00598A]">
+//                 <span className="contact-form-title-line block italic text-primary">
 //                   we can help.
 //                 </span>
 //               </span>
@@ -310,7 +310,7 @@
 
 //             <div className="mt-9 space-y-4">
 //               <div className="contact-form-note flex items-start gap-4">
-//                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#D7F3FF] text-[#00598A]">
+//                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-soft text-primary">
 //                   <UserIcon aria-hidden="true" className="h-5 w-5" />
 //                 </span>
 
@@ -326,7 +326,7 @@
 //               </div>
 
 //               <div className="contact-form-note flex items-start gap-4">
-//                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#D7F3FF] text-[#00598A]">
+//                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-soft text-primary">
 //                   <BuildingOffice2Icon aria-hidden="true" className="h-5 w-5" />
 //                 </span>
 
@@ -343,7 +343,7 @@
 //               </div>
 
 //               <div className="contact-form-note flex items-start gap-4">
-//                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#D7F3FF] text-[#00598A]">
+//                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-soft text-primary">
 //                   <EnvelopeIcon aria-hidden="true" className="h-5 w-5" />
 //                 </span>
 
@@ -362,14 +362,14 @@
 //           </div>
 
 //           {/* Form */}
-//           <div className="contact-form-panel overflow-hidden rounded-4xl border border-[#00598A]/10 bg-white shadow-[0_30px_80px_-45px_rgba(0,89,138,0.5)]">
+//           <div className="contact-form-panel overflow-hidden rounded-4xl border border-primary/10 bg-white shadow-[0_30px_80px_-45px_rgba(0,89,138,0.5)]">
 //             {isSubmitted ? (
 //               <div className="flex min-h-168 flex-col items-center justify-center px-6 py-16 text-center sm:px-10">
-//                 <span className="flex h-20 w-20 items-center justify-center rounded-full bg-[#D7F3FF] text-[#00598A]">
+//                 <span className="flex h-20 w-20 items-center justify-center rounded-full bg-soft text-primary">
 //                   <CheckCircleIcon aria-hidden="true" className="h-10 w-10" />
 //                 </span>
 
-//                 <p className="mt-7 font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-[#508BC0]">
+//                 <p className="mt-7 font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary">
 //                   Message received
 //                 </p>
 
@@ -385,15 +385,15 @@
 //                 <button
 //                   type="button"
 //                   onClick={() => setIsSubmitted(false)}
-//                   className="mt-8 rounded-full bg-[#00598A] px-7 py-3.5 font-manrope text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#004b74]"
+//                   className="mt-8 rounded-full bg-primary px-7 py-3.5 font-manrope text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#004b74]"
 //                 >
 //                   Send Another Message
 //                 </button>
 //               </div>
 //             ) : (
 //               <form onSubmit={handleSubmit} noValidate className="p-6 sm:p-8 lg:p-10">
-//                 <div className="mb-8 border-b border-[#00598A]/10 pb-7">
-//                   <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-[#508BC0]">
+//                 <div className="mb-8 border-b border-primary/10 pb-7">
+//                   <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary">
 //                     Consultation inquiry
 //                   </p>
 
@@ -461,7 +461,7 @@
 //                     className="mb-2.5 block font-manrope text-xs font-semibold text-[#0c2e2d]"
 //                   >
 //                     Service You&apos;re Interested In
-//                     <span className="ml-1 text-[#E29E21]">*</span>
+//                     <span className="ml-1 text-accent">*</span>
 //                   </label>
 
 //                   <select
@@ -474,7 +474,7 @@
 //                     className={`min-h-12 w-full rounded-xl border bg-[#F8FCFE] px-4 py-3 font-manrope text-sm text-[#0c2e2d] outline-none transition-all duration-300 ${
 //                       errors.service
 //                         ? "border-red-400 focus:border-red-500 focus:ring-4 focus:ring-red-100"
-//                         : "border-[#00598A]/15 focus:border-[#00598A] focus:ring-4 focus:ring-[#D7F3FF]"
+//                         : "border-primary/15 focus:border-primary focus:ring-4 focus:ring-soft"
 //                     }`}
 //                   >
 //                     <option value="">Select a service</option>
@@ -502,7 +502,7 @@
 //                     className="mb-2.5 block font-manrope text-xs font-semibold text-[#0c2e2d]"
 //                   >
 //                     How Can We Help?
-//                     <span className="ml-1 text-[#E29E21]">*</span>
+//                     <span className="ml-1 text-accent">*</span>
 //                   </label>
 
 //                   <textarea
@@ -518,7 +518,7 @@
 //                     className={`w-full resize-none rounded-xl border bg-[#F8FCFE] px-4 py-3.5 font-manrope text-sm leading-7 text-[#0c2e2d] outline-none transition-all duration-300 placeholder:text-slate-400 ${
 //                       errors.message
 //                         ? "border-red-400 focus:border-red-500 focus:ring-4 focus:ring-red-100"
-//                         : "border-[#00598A]/15 focus:border-[#00598A] focus:ring-4 focus:ring-[#D7F3FF]"
+//                         : "border-primary/15 focus:border-primary focus:ring-4 focus:ring-soft"
 //                     }`}
 //                   />
 
@@ -546,7 +546,7 @@
 //                   </div>
 //                 )}
 
-//                 <div className="mt-7 flex flex-col gap-5 border-t border-[#00598A]/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
+//                 <div className="mt-7 flex flex-col gap-5 border-t border-primary/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
 //                   <p className="max-w-sm font-manrope text-[11px] leading-5 text-slate-500">
 //                     By submitting this form, you agree to be contacted regarding your
 //                     inquiry.
@@ -555,7 +555,7 @@
 //                   <button
 //                     type="submit"
 //                     disabled={isSubmitting}
-//                     className="group inline-flex min-w-50 items-center justify-center gap-3 rounded-full bg-[#00598A] px-7 py-3.5 font-manrope text-sm font-semibold text-white shadow-[0_15px_35px_-18px_rgba(0,89,138,0.7)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#004b74] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+//                     className="group inline-flex min-w-50 items-center justify-center gap-3 rounded-full bg-primary px-7 py-3.5 font-manrope text-sm font-semibold text-white shadow-[0_15px_35px_-18px_rgba(0,89,138,0.7)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#004b74] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
 //                   >
 //                     {isSubmitting ? "Sending..." : "Send Message"}
 
@@ -609,7 +609,7 @@
 //       >
 //         {label}
 
-//         {required && <span className="ml-1 text-[#E29E21]">*</span>}
+//         {required && <span className="ml-1 text-accent">*</span>}
 //       </label>
 
 //       <input
@@ -625,7 +625,7 @@
 //         className={`min-h-12 w-full rounded-xl border bg-[#F8FCFE] px-4 py-3 font-manrope text-sm text-[#0c2e2d] outline-none transition-all duration-300 placeholder:text-slate-400 ${
 //           error
 //             ? "border-red-400 focus:border-red-500 focus:ring-4 focus:ring-red-100"
-//             : "border-[#00598A]/15 focus:border-[#00598A] focus:ring-4 focus:ring-[#D7F3FF]"
+//             : "border-primary/15 focus:border-primary focus:ring-4 focus:ring-soft"
 //         }`}
 //       />
 
@@ -684,7 +684,7 @@ const services = [
   "Not Sure Yet",
 ];
 
-const WHATSAPP_NUMBER = "919876543210";
+const WHATSAPP_NUMBER = "919789997028";
 
 export default function ContactForm() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -913,17 +913,17 @@ export default function ContactForm() {
     <section
       ref={sectionRef}
       id="contact-form"
-      className="relative overflow-hidden bg-[#F8FCFE] py-20 sm:py-24 lg:py-32"
+      className="relative overflow-hidden bg-bg py-20 sm:py-24 lg:py-32"
     >
       {/* Background decorations */}
       <div
         aria-hidden="true"
-        className="absolute -left-52 bottom-0 h-128 w-lg rounded-full bg-[#D7F3FF]/80 blur-3xl"
+        className="absolute -left-52 bottom-0 h-128 w-lg rounded-full bg-soft/80 blur-3xl"
       />
 
       <div
         aria-hidden="true"
-        className="absolute -right-48 top-16 h-112 w-md rounded-full bg-[#508BC0]/10 blur-3xl"
+        className="absolute -right-48 top-16 h-112 w-md rounded-full bg-secondary/10 blur-3xl"
       />
 
       <div
@@ -936,9 +936,9 @@ export default function ContactForm() {
           {/* Left content */}
           <div className="lg:sticky lg:top-28">
             <div className="contact-form-eyebrow mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#E29E21]" />
+              <span className="h-px w-10 bg-accent" />
 
-              <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-[#00598A]">
+              <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-primary">
                 Send Us a Message
               </span>
             </div>
@@ -949,7 +949,7 @@ export default function ContactForm() {
               </span>
 
               <span className="block overflow-hidden pb-3">
-                <span className="contact-form-title-line block italic text-[#00598A]">
+                <span className="contact-form-title-line block italic text-primary">
                   we can help.
                 </span>
               </span>
@@ -963,7 +963,7 @@ export default function ContactForm() {
 
             <div className="mt-9 space-y-4">
               <div className="contact-form-note flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#D7F3FF] text-[#00598A]">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-soft text-primary">
                   <UserIcon aria-hidden="true" className="h-5 w-5" />
                 </span>
 
@@ -979,7 +979,7 @@ export default function ContactForm() {
               </div>
 
               <div className="contact-form-note flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#D7F3FF] text-[#00598A]">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-soft text-primary">
                   <BuildingOffice2Icon aria-hidden="true" className="h-5 w-5" />
                 </span>
 
@@ -996,7 +996,7 @@ export default function ContactForm() {
               </div>
 
               <div className="contact-form-note flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#D7F3FF] text-[#00598A]">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-soft text-primary">
                   <EnvelopeIcon aria-hidden="true" className="h-5 w-5" />
                 </span>
 
@@ -1014,11 +1014,11 @@ export default function ContactForm() {
           </div>
 
           {/* Form panel */}
-          <div className="contact-form-panel overflow-hidden rounded-4xl border border-[#00598A]/10 bg-white shadow-[0_30px_80px_-45px_rgba(0,89,138,0.5)]">
+          <div className="contact-form-panel overflow-hidden rounded-4xl border border-primary/10 bg-white shadow-[0_30px_80px_-45px_rgba(0,89,138,0.5)]">
             <form onSubmit={handleSubmit} noValidate className="p-6 sm:p-8 lg:p-10">
               {/* Form heading */}
-              <div className="mb-8 border-b border-[#00598A]/10 pb-7">
-                <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-[#508BC0]">
+              <div className="mb-8 border-b border-primary/10 pb-7">
+                <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary">
                   Consultation inquiry
                 </p>
 
@@ -1089,7 +1089,7 @@ export default function ContactForm() {
                   className="mb-2.5 block font-manrope text-xs font-semibold text-[#0c2e2d]"
                 >
                   Service You&apos;re Interested In
-                  <span className="ml-1 text-[#E29E21]">*</span>
+                  <span className="ml-1 text-accent">*</span>
                 </label>
 
                 <select
@@ -1102,7 +1102,7 @@ export default function ContactForm() {
                   className={`min-h-12 w-full rounded-xl border bg-[#F8FCFE] px-4 py-3 font-manrope text-sm text-[#0c2e2d] outline-none transition-all duration-300 ${
                     errors.service
                       ? "border-red-400 focus:border-red-500 focus:ring-4 focus:ring-red-100"
-                      : "border-[#00598A]/15 focus:border-[#00598A] focus:ring-4 focus:ring-[#D7F3FF]"
+                      : "border-primary/15 focus:border-primary focus:ring-4 focus:ring-soft"
                   }`}
                 >
                   <option value="">Select a service</option>
@@ -1131,7 +1131,7 @@ export default function ContactForm() {
                   className="mb-2.5 block font-manrope text-xs font-semibold text-[#0c2e2d]"
                 >
                   How Can We Help?
-                  <span className="ml-1 text-[#E29E21]">*</span>
+                  <span className="ml-1 text-accent">*</span>
                 </label>
 
                 <textarea
@@ -1147,7 +1147,7 @@ export default function ContactForm() {
                   className={`w-full resize-none rounded-xl border bg-[#F8FCFE] px-4 py-3.5 font-manrope text-sm leading-7 text-[#0c2e2d] outline-none transition-all duration-300 placeholder:text-slate-400 ${
                     errors.message
                       ? "border-red-400 focus:border-red-500 focus:ring-4 focus:ring-red-100"
-                      : "border-[#00598A]/15 focus:border-[#00598A] focus:ring-4 focus:ring-[#D7F3FF]"
+                      : "border-primary/15 focus:border-primary focus:ring-4 focus:ring-soft"
                   }`}
                 />
 
@@ -1167,7 +1167,7 @@ export default function ContactForm() {
               </div>
 
               {/* Footer */}
-              <div className="mt-7 flex flex-col gap-5 border-t border-[#00598A]/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
+              <div className="mt-7 flex flex-col gap-5 border-t border-primary/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
                 <p className="max-w-sm font-manrope text-[11px] leading-5 text-slate-500">
                   Submitting this form will open WhatsApp with your inquiry details ready
                   to send.
@@ -1176,7 +1176,7 @@ export default function ContactForm() {
                 <button
                   type="submit"
                   disabled={isRedirecting}
-                  className="group inline-flex min-w-50 items-center justify-center gap-3 rounded-full bg-[#00598A] px-7 py-3.5 font-manrope text-sm font-semibold text-white shadow-[0_15px_35px_-18px_rgba(0,89,138,0.7)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#004b74] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+                  className="group inline-flex min-w-50 items-center justify-center gap-3 rounded-full bg-primary px-7 py-3.5 font-manrope text-sm font-semibold text-white shadow-[0_15px_35px_-18px_rgba(0,89,138,0.7)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#004b74] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
                 >
                   {isRedirecting ? "Opening WhatsApp..." : "Send Message"}
 
@@ -1229,7 +1229,7 @@ function FormField({
       >
         {label}
 
-        {required && <span className="ml-1 text-[#E29E21]">*</span>}
+        {required && <span className="ml-1 text-accent">*</span>}
       </label>
 
       <input
@@ -1245,7 +1245,7 @@ function FormField({
         className={`min-h-12 w-full rounded-xl border bg-[#F8FCFE] px-4 py-3 font-manrope text-sm text-[#0c2e2d] outline-none transition-all duration-300 placeholder:text-slate-400 ${
           error
             ? "border-red-400 focus:border-red-500 focus:ring-4 focus:ring-red-100"
-            : "border-[#00598A]/15 focus:border-[#00598A] focus:ring-4 focus:ring-[#D7F3FF]"
+            : "border-primary/15 focus:border-primary focus:ring-4 focus:ring-soft"
         }`}
       />
 

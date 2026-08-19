@@ -1,9 +1,9 @@
 import { constructMetadata } from "@/src/lib/seo";
 import FinancialDashboardCTA from "@/src/components/FinancialDashboardCTA";
 import OffshoreHero from "./(components)/OffshoreHero";
-import WhyOffshoreHaggai from "./(components)/WhyOffshoreHaggai";
-import DedicatedAccountingTeam from "./(components)/DedicatedAccountingTeam";
-import TraditionalHiringComparison from "./(components)/TraditionalHiringComparison";
+// import WhyOffshoreHaggai from "./(components)/WhyOffshoreHaggai";
+// import DedicatedAccountingTeam from "./(components)/DedicatedAccountingTeam";
+// import TraditionalHiringComparison from "./(components)/TraditionalHiringComparison";
 
 export const metadata = constructMetadata({
   title:
@@ -17,9 +17,9 @@ export default function WhyOffshorePage() {
   return (
     <>
       <OffshoreHero />
-      <WhyOffshoreHaggai />
+      {/* <WhyOffshoreHaggai />
       <DedicatedAccountingTeam />
-      <TraditionalHiringComparison />
+      <TraditionalHiringComparison /> */}
       <FinancialDashboardCTA />
     </>
   );
