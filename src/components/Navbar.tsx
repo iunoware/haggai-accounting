@@ -222,7 +222,7 @@ const navLinks: NavLink[] = [
   { name: "Industries", href: "/industries" },
   { name: "Why Haggai", href: "/why-offshore" },
   { name: "Careers", href: "/careers" },
-  { name: "Pricing", href: "/pricing" },
+  // { name: "Pricing", href: "/pricing" },
   { name: "Contact", href: "/contact" },
 ];
 
