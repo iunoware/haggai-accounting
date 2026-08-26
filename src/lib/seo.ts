@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const SITE_NAME = "Haggai Accounting";
+export const SITE_NAME = "Haggai Business Solutions";
 export const SITE_URL = "https://www.haggaiaccounting.com";
 export const DEFAULT_OG_IMAGE = "/images/home-hero.png";
 
@@ -40,9 +40,7 @@ export function constructMetadata({
     "Fractional CFO Support",
   ];
 
-  const mergedKeywords = Array.from(
-    new Set([...keywords, ...defaultKeywords])
-  );
+  const mergedKeywords = Array.from(new Set([...keywords, ...defaultKeywords]));
 
   return {
     title,
