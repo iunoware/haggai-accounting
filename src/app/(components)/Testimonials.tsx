@@ -31,7 +31,7 @@ const testimonials: Testimonial[] = [
       "Haggai transformed our entire month-end financial closing process. What used to take our internal team two full weeks of stressful reconciliations is now completed cleanly within three days. Their dedicated CPA team feels like a natural extension of our leadership.",
     name: "Sarah Jenkins",
     title: "Chief Executive Officer",
-    company: "Apex Tech Solutions",
+    company: "Haggai Business Solutions",
     industry: "SaaS & Technology",
     rating: 5,
     avatar: "/images/avatar-1.png",
@@ -336,8 +336,8 @@ function TestimonialCard({ item }: { item: Testimonial }) {
       </div>
 
       {/* Client Profile Footer */}
-      <div className="mt-6 flex items-center gap-3.5 border-t border-slate-100 pt-4 font-manrope">
-        {/* Circular Avatar */}
+      {/* <div className="mt-6 flex items-center gap-3.5 border-t border-slate-100 pt-4 font-manrope">
+        
         <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full border border-slate-200 bg-slate-100">
           <Image
             src={item.avatar}
@@ -348,7 +348,7 @@ function TestimonialCard({ item }: { item: Testimonial }) {
           />
         </div>
 
-        {/* Name (Cormorant Garamond), Title & Company (Manrope) */}
+        
         <div className="flex-1 min-w-0">
           <h4 className="font-cormorant text-lg font-bold text-slate-950 truncate leading-snug">
             {item.name}
@@ -360,7 +360,7 @@ function TestimonialCard({ item }: { item: Testimonial }) {
             {item.company}
           </p>
         </div>
-      </div>
+      </div> */}
     </article>
   );
 }
