@@ -40,7 +40,7 @@ export default function Footer() {
                   alt="Haggai Business Solutions Logo"
                   width={150}
                   height={45}
-                  className="h-20 w-auto object-contain brightness-0 invert"
+                  className="h-20 w-auto object-contain"
                   priority
                 />
               </Link>
