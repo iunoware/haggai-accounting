@@ -46,9 +46,9 @@ export default function Footer() {
               </Link>
 
               <p className="text-xs sm:text-sm font-manrope text-soft/80 leading-relaxed max-w-sm">
-                Haggai delivers transparent business solutions and dedicated offshore
-                teams, empowering growing businesses with complete financial clarity and
-                trusted long-term partnerships.
+                Haggai delivers transparent business solutions and dedicated
+                offshore teams, empowering growing businesses with complete
+                financial clarity and trusted long-term partnerships.
               </p>
 
               {/* Brand Pillars Highlights */}
@@ -141,7 +141,10 @@ export default function Footer() {
                 { name: "Services Hub", href: "/services/" },
                 { name: "Accounting Services", href: "/services/accounting" },
                 { name: "Payroll Services", href: "/services/payroll" },
-                { name: "Supply Chain Services", href: "/services/supply-chain" },
+                {
+                  name: "Supply Chain Services",
+                  href: "/services/supply-chain",
+                },
               ].map((service) => (
                 <li key={service.name}>
                   <Link
@@ -169,9 +172,9 @@ export default function Footer() {
               <li className="group flex items-start gap-2.5">
                 <MapPinIcon className="h-4 w-4 text-secondary shrink-0 mt-0.5 transition-colors duration-300 group-hover:text-accent" />
                 <span className="leading-tight">
-                  100 Financial Plaza, Suite 400
+                  Plot No-719, Viswashanthi Nagar 4th street,
                   <br />
-                  New York, NY 10005
+                  Madurai, Tamil Nadu, India.
                 </span>
               </li>
               <li className="group flex items-center gap-2.5">
@@ -191,7 +194,7 @@ export default function Footer() {
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=info@haggaiaccounting.com"
                   className="hover:text-secondary transition-colors"
                 >
-                  info@haggaiaccounting.com
+                  info@haggaibs.com
                 </a>
               </li>
               <li className="group flex items-center gap-2.5">

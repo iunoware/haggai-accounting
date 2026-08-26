@@ -8,13 +8,6 @@ export const metadata = constructMetadata({
   description:
     "Get in touch with Haggai Business Solutions to discuss bookkeeping, offshore accounting, payroll, financial reporting, or a customized accounting solution for your business.",
   path: "/contact",
-  keywords: [
-    "Contact Haggai Accounting",
-    "Speak with Accounting Experts",
-    "Bookkeeping Consultation",
-    "Offshore Accounting Quote",
-    "Customized Accounting Solution",
-  ],
 });
 
 export default function Contact() {
