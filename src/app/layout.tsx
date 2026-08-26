@@ -1,10 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import {
-  Geist,
-  Geist_Mono,
-  Cormorant_Garamond,
-  Manrope,
-} from "next/font/google";
+import { Geist, Geist_Mono, Cormorant_Garamond, Manrope } from "next/font/google";
 
 import "./globals.css";
 import Navbar from "@/src/components/Navbar";
@@ -14,11 +9,11 @@ import { SITE_NAME, SITE_URL, DEFAULT_OG_IMAGE } from "@/src/lib/seo";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Offshore Accounting Services | Haggai Accounting",
+    default: "Offshore Accounting Services | Haggai Business Solutions",
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Scale your business with offshore accounting, bookkeeping, payroll, and financial reporting services from Haggai Accounting. Trusted accounting support tailored to your business.",
+    "Scale your business with offshore accounting, bookkeeping, payroll, and financial reporting services from Haggai Business Solutions. Trusted accounting support tailored to your business.",
   applicationName: SITE_NAME,
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   generator: "Next.js",
@@ -40,9 +35,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "Offshore Accounting Services | Haggai Accounting",
+    title: "Offshore Accounting Services | Haggai Business Solutions",
     description:
-      "Scale your business with offshore accounting, bookkeeping, payroll, and financial reporting services from Haggai Accounting. Trusted accounting support tailored to your business.",
+      "Scale your business with offshore accounting, bookkeeping, payroll, and financial reporting services from Haggai Business Solutions. Trusted accounting support tailored to your business.",
     images: [
       {
         url: DEFAULT_OG_IMAGE,
@@ -54,9 +49,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Offshore Accounting Services | Haggai Accounting",
+    title: "Offshore Accounting Services | Haggai Business Solutions",
     description:
-      "Scale your business with offshore accounting, bookkeeping, payroll, and financial reporting services from Haggai Accounting. Trusted accounting support tailored to your business.",
+      "Scale your business with offshore accounting, bookkeeping, payroll, and financial reporting services from Haggai Business Solutions. Trusted accounting support tailored to your business.",
     images: [DEFAULT_OG_IMAGE],
     creator: "@HaggaiAccounting",
   },

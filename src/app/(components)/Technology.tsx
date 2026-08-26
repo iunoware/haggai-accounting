@@ -230,7 +230,7 @@ export default function Technology() {
                     {group.platforms.map((platform) => (
                       <span
                         key={platform}
-                        className="technology-platform inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-700 transition-all duration-300 group-hover:border-primary/15 group-hover:bg-soft/50"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-700 transition-all duration-300 group-hover:border-primary/15 group-hover:bg-soft/50"
                       >
                         <CheckIcon
                           className="h-3.5 w-3.5 text-primary"
