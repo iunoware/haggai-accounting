@@ -80,7 +80,7 @@ export default function MeetTheFounder() {
       ref={sectionRef}
       id="meet-the-founder"
       aria-labelledby="founder-heading"
-      className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28 font-body text-slate-900"
+      className="relative overflow-hidden bg-white py-20 sm:py-20 font-body text-slate-900"
     >
       {/* Ambient soft background glow */}
       <div
@@ -117,10 +117,11 @@ export default function MeetTheFounder() {
           ref={paragraphRef}
           className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg"
         >
-          Built on 17+ years of enterprise finance and operations experience —
+          Built on 17+ years of enterprise finance and operations experience -
           from managing month-end close across entire regions to running
-          high-volume revenue operations at scale. Haggai Business Solutions
-          exists to bring that same level of rigor to growing businesses.
+          high-volume revenue operations at scale. A Certified Management
+          Accountant (CMA), Jensi brings that same level of rigor to Haggai
+          Business Solutions for growing businesses.
         </p>
 
         {/* Divider & Footer Block (Founder Meta + CTA) */}
@@ -130,7 +131,7 @@ export default function MeetTheFounder() {
         >
           <div>
             <h3 className="font-heading text-xl sm:text-2xl font-bold tracking-tight text-slate-950">
-              Jensi Clement
+              Jensi Clement, CMA
             </h3>
             <p className="text-xs sm:text-sm font-semibold text-primary tracking-wide mt-0.5">
               Founder &amp; CEO
@@ -154,5 +155,3 @@ export default function MeetTheFounder() {
     </section>
   );
 }
-
-
