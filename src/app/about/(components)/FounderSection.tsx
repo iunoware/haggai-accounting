@@ -1,38 +1,116 @@
 "use client";
 
-import Image from "next/image";
 import { useRef } from "react";
-import { ArrowUpRightIcon, CheckBadgeIcon } from "@heroicons/react/24/outline";
+import {
+  AcademicCapIcon,
+  BriefcaseIcon,
+  CalculatorIcon,
+  ChartBarIcon,
+  CheckBadgeIcon,
+  DocumentTextIcon,
+  ShieldCheckIcon,
+  TruckIcon,
+  UserGroupIcon,
+} from "@heroicons/react/24/outline";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const founderCredentials = [
+  {
+    title: "17+ Years of Enterprise Finance Experience",
+    description:
+      "Jensi has led month-end close processes across entire global regions and managed high-volume revenue operations for fast-growing companies.",
+    icon: BriefcaseIcon,
+  },
+  {
+    title: "CMA (Certified Management Accountant)",
+    description:
+      "Professional management accounting expertise supporting disciplined financial operations and decision-making.",
+    icon: AcademicCapIcon,
+  },
+  {
+    title: "Built for Growing Businesses",
+    description:
+      "Enterprise-grade financial rigor and processes without the cost and complexity of building a large in-house finance team.",
+    icon: ChartBarIcon,
+  },
+];
+
+const teamRoles = [
+  {
+    id: "senior-accountants",
+    title: "Senior Accountants",
+    countText: "4 MEMBERS",
+    description:
+      "CA/CPA-qualified. Own month-end close, reconciliations, and financial reporting.",
+    icon: CalculatorIcon,
+  },
+  {
+    id: "accounts-executives",
+    title: "Accounts Executives",
+    countText: "5 MEMBERS",
+    description:
+      "Handle day-to-day bookkeeping, AP/AR, and bank reconciliations across QuickBooks, Xero & NetSuite.",
+    icon: DocumentTextIcon,
+  },
+  {
+    id: "payroll-compliance",
+    title: "Payroll & Compliance Specialists",
+    countText: "3 MEMBERS",
+    description:
+      "Process payroll and tax withholdings on ADP, Gusto & Rippling.",
+    icon: ShieldCheckIcon,
+  },
+  {
+    id: "supply-chain-ops",
+    title: "Supply Chain & Operations Analysts",
+    countText: "2 MEMBERS",
+    description:
+      "Support procurement, logistics coordination, and vendor management.",
+    icon: TruckIcon,
+  },
+  {
+    id: "client-operations",
+    title: "Client Operations",
+    countText: "1 MEMBER",
+    description:
+      "Manages onboarding and day-to-day communication with your team.",
+    icon: UserGroupIcon,
+  },
+];
+
 export default function FounderSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(
     () => {
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
 
       if (reduceMotion) {
         gsap.set(
           [
-            ".founder-eyebrow",
-            ".founder-heading-line",
-            ".founder-description",
-            ".founder-image",
-            ".founder-name-card",
-            ".founder-highlight",
-            ".founder-quote",
-            ".founder-link",
+            ".team-eyebrow",
+            ".team-heading-line",
+            ".team-header-description",
+            ".founder-card",
+            ".credential-card",
+            ".section-divider",
+            ".team-intro-eyebrow",
+            ".team-intro-heading",
+            ".team-intro-text",
+            ".team-role-card",
           ],
           {
             opacity: 1,
             x: 0,
             y: 0,
             scale: 1,
+            clearProps: "all",
           },
         );
 
@@ -42,113 +120,140 @@ export default function FounderSection() {
       const mainTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 72%",
+          start: "top 85%",
           toggleActions: "play none none none",
           once: true,
         },
       });
 
       mainTimeline
-        .from(".founder-eyebrow", {
-          opacity: 0,
-          y: 20,
-          duration: 0.7,
-          ease: "power3.out",
-        })
-        .from(
-          ".founder-heading-line",
+        .fromTo(
+          ".team-eyebrow",
+          { opacity: 0, y: 20 },
           {
-            opacity: 0,
-            yPercent: 110,
-            duration: 0.95,
-            stagger: 0.13,
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            ease: "power3.out",
+            clearProps: "transform,opacity",
+          },
+        )
+        .fromTo(
+          ".team-heading-line",
+          { opacity: 0, yPercent: 110 },
+          {
+            opacity: 1,
+            yPercent: 0,
+            duration: 0.9,
+            stagger: 0.12,
             ease: "power4.out",
+            clearProps: "transform,opacity",
           },
           "-=0.4",
         )
-        .from(
-          ".founder-description",
+        .fromTo(
+          ".team-header-description",
+          { opacity: 0, y: 20 },
           {
-            opacity: 0,
-            y: 25,
+            opacity: 1,
+            y: 0,
             duration: 0.75,
-            stagger: 0.12,
             ease: "power3.out",
+            clearProps: "transform,opacity",
           },
           "-=0.5",
         )
-        .from(
-          ".founder-image",
+        .fromTo(
+          ".founder-card",
+          { opacity: 0, y: 30 },
           {
-            opacity: 0,
-            x: -55,
-            scale: 0.96,
-            duration: 1,
+            opacity: 1,
+            y: 0,
+            duration: 0.85,
             ease: "power4.out",
+            clearProps: "transform,opacity",
           },
-          "-=0.85",
+          "-=0.4",
         )
-        .from(
-          ".founder-name-card",
+        .fromTo(
+          ".credential-card",
+          { opacity: 0, y: 25 },
           {
-            opacity: 0,
-            y: 35,
-            duration: 0.8,
-            ease: "power3.out",
-          },
-          "-=0.55",
-        )
-        .from(
-          ".founder-highlight",
-          {
-            x: 30,
+            opacity: 1,
+            y: 0,
             duration: 0.7,
-            stagger: 0.14,
+            stagger: 0.12,
             ease: "power3.out",
+            clearProps: "transform,opacity",
           },
-          "-=0.75",
+          "-=0.5",
         )
-        .from(
-          ".founder-quote",
+        .fromTo(
+          ".section-divider",
+          { opacity: 0, scaleX: 0 },
           {
-            opacity: 0,
-            y: 25,
-            duration: 0.75,
+            opacity: 1,
+            scaleX: 1,
+            duration: 0.8,
+            ease: "power3.inOut",
+            clearProps: "transform,opacity",
+          },
+          "-=0.3",
+        )
+        .fromTo(
+          ".team-intro-eyebrow",
+          { opacity: 0, y: 18 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
             ease: "power3.out",
+            clearProps: "transform,opacity",
           },
-          "-=0.45",
+          "-=0.3",
         )
-        .from(
-          ".founder-link",
+        .fromTo(
+          ".team-intro-heading",
+          { opacity: 0, y: 20 },
           {
-            opacity: 0,
-            y: 16,
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            ease: "power3.out",
+            clearProps: "transform,opacity",
+          },
+          "-=0.4",
+        )
+        .fromTo(
+          ".team-intro-text",
+          { opacity: 0, y: 15 },
+          {
+            opacity: 1,
+            y: 0,
             duration: 0.65,
             ease: "power3.out",
+            clearProps: "transform,opacity",
           },
-          "-=0.35",
+          "-=0.4",
+        )
+        .fromTo(
+          ".team-role-card",
+          { opacity: 0, y: 28 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            stagger: 0.1,
+            ease: "power3.out",
+            clearProps: "transform,opacity",
+          },
+          "-=0.3",
         );
 
-      gsap.to(".founder-orbit", {
-        rotate: 360,
-        duration: 38,
-        repeat: -1,
-        ease: "none",
-      });
-
-      gsap.to(".founder-floating-badge", {
-        y: -12,
-        rotate: 3,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-
-      gsap.to(".founder-glow", {
-        scale: 1.15,
-        opacity: 0.75,
-        duration: 4,
+      gsap.to(".team-bg-glow", {
+        scale: 1.12,
+        opacity: 0.7,
+        duration: 5,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
@@ -164,228 +269,256 @@ export default function FounderSection() {
   return (
     <section
       ref={sectionRef}
-      id="founder"
-      className="relative overflow-hidden bg-bg py-20 sm:py-24 lg:py-32"
+      id="meet-the-team"
+      className="relative overflow-hidden bg-bg py-16 sm:py-20 lg:py-24 font-manrope text-slate-900"
     >
-      {/* Background decorations */}
+      {/* Ambient background decorations */}
       <div
         aria-hidden="true"
-        className="founder-glow absolute -left-48 top-16 h-120 w-120 rounded-full bg-soft/80 blur-3xl"
+        className="team-bg-glow absolute -left-48 top-16 h-120 w-120 rounded-full bg-soft/80 blur-3xl pointer-events-none"
       />
 
       <div
         aria-hidden="true"
-        className="absolute -right-48 bottom-0 h-112 w-md rounded-full bg-secondary/10 blur-3xl"
+        className="absolute -right-48 bottom-0 h-112 w-md rounded-full bg-secondary/10 blur-3xl pointer-events-none"
       />
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,89,138,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,89,138,0.035)_1px,transparent_1px)] bg-size-[78px_78px]"
+        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,89,138,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,89,138,0.035)_1px,transparent_1px)] bg-size-[78px_78px] pointer-events-none"
       />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-        {/* Section heading */}
-        <div className="grid items-end gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-          <div>
-            <div className="founder-eyebrow mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-accent" />
+        {/* 1. Main Section Header (Centered) */}
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="team-eyebrow mb-4 inline-flex items-center justify-center gap-3">
+            <span className="h-px w-8 bg-accent" />
+            <span className="font-manrope text-xs font-bold uppercase tracking-[0.22em] text-primary">
+              MEET THE TEAM
+            </span>
+            <span className="h-px w-8 bg-accent" />
+          </div>
 
-              <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-                Meet the Founder
+          <h2 className="font-cormorant font-medium leading-[0.96] tracking-[-0.035em] text-[#0c2e2d] text-4xl sm:text-5xl lg:text-6xl">
+            <span className="block overflow-hidden pb-1">
+              <span className="team-heading-line block">
+                Enterprise Experience.
+              </span>
+            </span>
+            <span className="block overflow-hidden pb-2">
+              <span className="team-heading-line block italic text-primary">
+                A Team Built to Deliver.
+              </span>
+            </span>
+          </h2>
+
+          <p className="team-header-description mx-auto mt-4 max-w-2xl font-manrope text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+            Haggai Business Solutions combines enterprise-level financial
+            expertise with a dedicated team built to support growing businesses
+            with discipline, accuracy, and strategic partnership.
+          </p>
+        </div>
+
+        {/* 2. Founder Introduction (Full Width Premium Card, No Image, No CTA button) */}
+        <div className="founder-card relative mt-10 sm:mt-12 overflow-hidden rounded-3xl border border-primary/15 bg-white/90 p-6 shadow-xl shadow-primary/5 backdrop-blur-xl sm:p-8 lg:p-10">
+          <div
+            aria-hidden="true"
+            className="absolute top-0 left-0 right-0 h-1.5 bg-linear-to-r from-primary via-secondary to-accent"
+          />
+
+          <div className="space-y-4">
+            <div className="flex flex-wrap items-center gap-2.5">
+              <span className="inline-flex items-center gap-2 rounded-full bg-soft/70 px-4 py-1 font-manrope text-xs font-bold uppercase tracking-[0.18em] text-primary border border-secondary/20">
+                <CheckBadgeIcon className="h-4 w-4 text-accent stroke-[2.2]" />
+                JENSI — FOUNDER &amp; CMA
+              </span>
+
+              <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 font-manrope text-[11px] font-semibold tracking-wider text-slate-600 uppercase">
+                LEADERSHIP
               </span>
             </div>
 
-            <h2 className="font-cormorant font-medium leading-[0.93] tracking-[-0.045em] text-[#0c2e2d] text-4xl sm:text-5xl lg:text-6xl">
-              <span className="block overflow-hidden pb-1">
-                <span className="founder-heading-line block">The Founder Behind</span>
-              </span>
+            <h3 className="font-cormorant text-2xl font-medium leading-snug text-[#0c2e2d] sm:text-3xl lg:text-4xl">
+              Enterprise experience, delivered with the responsiveness of a
+              dedicated partner.
+            </h3>
 
-              <span className="block overflow-hidden pb-2">
-                <span className="founder-heading-line block italic text-primary">
-                  Haggai Business Solutions
-                </span>
-              </span>
-            </h2>
-          </div>
-
-          <div className="lg:pb-2">
-            <p className="founder-description max-w-xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-              With 17+ years of experience in enterprise finance and accounting
-              operations, Jensi has led month-end close processes across entire global
-              regions and managed high-volume revenue operations for fast-growing
-              companies.
-            </p>
-
-            <p className="founder-description mt-5 max-w-xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-              That experience - spanning complex reconciliations, financial reporting, and
-              cross-functional collaboration - shapes how Haggai Business Solutions
-              approaches every client engagement: with the discipline of an enterprise
-              team and the responsiveness of a dedicated partner.
+            <p className="font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
+              “With 17+ years of experience in enterprise finance and accounting
+              operations, Jensi, a Certified Management Accountant (CMA), has
+              led month-end close processes across entire global regions and
+              managed high-volume revenue operations for fast-growing companies.
+              That experience — spanning complex reconciliations, financial
+              reporting, and cross-functional collaboration — shapes how Haggai
+              Business Solutions approaches every client engagement: with the
+              discipline of an enterprise team and the responsiveness of a
+              dedicated partner.”
             </p>
           </div>
         </div>
 
-        {/* Main founder layout */}
-        <div className="mt-14 grid items-start gap-12 lg:mt-20 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20">
-          {/* Founder image */}
-          <div className="founder-image relative">
-            <div className="relative overflow-hidden rounded-4xl border border-primary/10 bg-soft/35 p-3 shadow-[0_30px_80px_-40px_rgba(0,89,138,0.4)]">
-              <div className="relative aspect-4/5 overflow-hidden rounded-[1.55rem] bg-soft">
-                <Image
-                  src="/images/founder.jpg"
-                  alt="Jensi, Founder of Haggai Business Solutions"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 45vw"
-                  className="object-cover object-center"
+        {/* 3. Three Founder Credentials (Compact White Cards) */}
+        <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-3">
+          {founderCredentials.map((credential) => {
+            const Icon = credential.icon;
+            return (
+              <article
+                key={credential.title}
+                className="credential-card group relative overflow-hidden rounded-2xl border border-primary/10 bg-white/90 p-5 shadow-xs backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-secondary/30 hover:shadow-xl hover:shadow-primary/5"
+              >
+                <span
+                  aria-hidden="true"
+                  className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-500 group-hover:w-full"
                 />
 
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-linear-to-t from-primary/45 via-transparent to-transparent"
-                />
-
-                <div
-                  aria-hidden="true"
-                  className="absolute right-0 top-0 h-44 w-44 translate-x-1/3 -translate-y-1/3"
-                >
-                  <div className="founder-orbit absolute inset-0 rounded-full border border-white/30">
-                    <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_0_5px_rgba(226,158,33,0.18)]" />
+                <div className="flex items-center justify-center gap-3.5">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-105">
+                    <Icon
+                      aria-hidden="true"
+                      className="h-5.5 w-5.5 stroke-[1.8]"
+                    />
                   </div>
 
-                  <div className="absolute inset-8 rounded-full border border-white/20" />
+                  <div>
+                    <h4 className="font-cormorant text-xl font-semibold text-[#0c2e2d] group-hover:text-primary transition-colors leading-snug">
+                      {credential.title}
+                    </h4>
+
+                    {/* <p className="mt-1.5 font-manrope text-xs leading-5 text-slate-600">
+                      {credential.description}
+                    </p> */}
+                  </div>
                 </div>
+              </article>
+            );
+          })}
+        </div>
 
-                <div className="founder-floating-badge absolute right-5 top-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-white shadow-xl shadow-black/15 sm:h-16 sm:w-16">
-                  <CheckBadgeIcon aria-hidden="true" className="h-7 w-7 sm:h-8 sm:w-8" />
-                </div>
-              </div>
-            </div>
+        {/* 4. Visual Transition Divider */}
+        <div className="section-divider my-12 sm:my-14 flex items-center justify-center gap-4">
+          <span className="h-px w-24 bg-linear-to-r from-transparent via-primary/25 to-primary/40" />
+          <span className="h-2 w-2 rounded-full bg-accent shadow-xs" />
+          <span className="h-px w-24 bg-linear-to-l from-transparent via-primary/25 to-primary/40" />
+        </div>
 
-            {/* Founder identity card */}
-            <div className="founder-name-card relative z-10 mx-4 -mt-14 rounded-2xl border border-white/80 bg-white/90 p-5 shadow-xl shadow-primary/10 backdrop-blur-xl sm:mx-8 sm:p-6">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <p className="font-cormorant text-3xl font-semibold text-[#0c2e2d]">
-                    Jensi
-                  </p>
-
-                  <p className="mt-1 font-manrope text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-                    Founder
-                  </p>
-                </div>
-
-                <span className="inline-flex w-fit items-center rounded-full bg-soft px-3 py-1.5 font-manrope text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
-                  Haggai Business Solutions
-                </span>
-              </div>
-            </div>
-
-            <div
-              aria-hidden="true"
-              className="absolute -bottom-4 -left-4 -z-10 h-full w-full rounded-4xl border border-secondary/20"
-            />
+        {/* 5. Team Introduction Header */}
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="team-intro-eyebrow mb-3 inline-flex items-center justify-center gap-3">
+            <span className="h-px w-6 bg-accent" />
+            <span className="font-manrope text-xs font-bold uppercase tracking-[0.22em] text-primary">
+              THE TEAM BEHIND THE WORK
+            </span>
+            <span className="h-px w-6 bg-accent" />
           </div>
 
-          {/* Founder story */}
-          <div className="lg:pt-4">
-            <div className="mb-9">
-              <span className="font-manrope text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
-                Jensi - Founder
-              </span>
+          <h3 className="team-intro-heading font-cormorant font-medium leading-tight text-[#0c2e2d] text-3xl sm:text-4xl md:text-5xl">
+            A Team Built Around Your Business.
+          </h3>
 
-              <p className="mt-4 font-cormorant text-3xl font-medium leading-[1.18] text-[#0c2e2d] sm:text-4xl">
-                Enterprise experience, delivered with the responsiveness of a dedicated
-                partner.
-              </p>
-            </div>
+          <p className="team-intro-text mt-3 font-manrope text-base leading-7 text-slate-600 sm:text-lg">
+            A multidisciplinary team handling the financial operations,
+            compliance, and day-to-day support that keep your business moving.
+          </p>
+        </div>
 
-            <div className="space-y-4">
-              <article className="founder-highlight group relative overflow-hidden rounded-2xl border border-primary/10 bg-white/80 p-5 shadow-sm backdrop-blur-sm hover:border-secondary/30 hover:shadow-xl hover:shadow-primary/5 sm:p-6">
-                <span
-                  aria-hidden="true"
-                  className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-500 group-hover:w-full"
-                />
-
-                <div className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
-                    <CheckBadgeIcon aria-hidden="true" className="h-5 w-5" />
-                  </div>
-
-                  <div>
-                    <h3 className="font-cormorant text-2xl font-semibold text-[#0c2e2d]">
-                      17+ Years of Enterprise Finance Experience
-                    </h3>
-
-                    <p className="mt-2 font-manrope text-sm leading-7 text-slate-600">
-                      Jensi has led month-end close processes across entire global regions
-                      and managed high-volume revenue operations for fast-growing
-                      companies.
-                    </p>
-                  </div>
-                </div>
-              </article>
-
-              <article className="founder-highlight group relative overflow-hidden rounded-2xl border border-primary/10 bg-white/80 p-5 shadow-sm backdrop-blur-sm hover:border-secondary/30 hover:shadow-xl hover:shadow-primary/5 sm:p-6">
-                <span
-                  aria-hidden="true"
-                  className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-500 group-hover:w-full"
-                />
-
-                <div className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
-                    <CheckBadgeIcon aria-hidden="true" className="h-5 w-5" />
-                  </div>
+        {/* 6. Five Team Role Cards (2 Centered Rows on Desktop: 3 top + 2 bottom) */}
+        <div className="mt-8 sm:mt-10 space-y-4 lg:space-y-5">
+          {/* Top Row: 3 Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+            {teamRoles.slice(0, 3).map((role) => {
+              const Icon = role.icon;
+              return (
+                <article
+                  key={role.id}
+                  className="team-role-card group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:border-secondary/40 hover:shadow-xl hover:shadow-primary/5"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-500 group-hover:w-full"
+                  />
 
                   <div>
-                    <h3 className="font-cormorant text-2xl font-semibold text-[#0c2e2d]">
-                      Built for Growing Businesses
-                    </h3>
+                    {/* Icon + Member Count Pill */}
+                    <div className="flex items-center justify-between gap-2 mb-4">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:rotate-3">
+                        <Icon
+                          aria-hidden="true"
+                          className="h-5 w-5 stroke-[1.8]"
+                        />
+                      </div>
 
-                    <p className="mt-2 font-manrope text-sm leading-7 text-slate-600">
-                      Jensi founded Haggai Business Solutions to help growing businesses
-                      access the same level of financial rigor without the cost of
-                      building it in-house.
+                      <span className="inline-flex items-center rounded-full bg-soft/70 px-2.5 py-0.5 font-manrope text-[11px] font-extrabold tracking-wider text-primary border border-secondary/20">
+                        {role.countText}
+                      </span>
+                    </div>
+
+                    {/* Role Title */}
+                    <h4 className="font-cormorant text-xl font-semibold leading-snug text-[#0c2e2d] group-hover:text-primary transition-colors">
+                      {role.title}
+                    </h4>
+
+                    {/* Description */}
+                    <p className="mt-2 font-manrope text-xs leading-5 text-slate-600">
+                      “{role.description}”
                     </p>
                   </div>
-                </div>
-              </article>
-            </div>
 
-            {/* Founder quote */}
-            <blockquote className="founder-quote relative mt-8 overflow-hidden rounded-2xl bg-primary p-6 text-white shadow-lg shadow-primary/15 sm:p-7">
-              <span
-                aria-hidden="true"
-                className="absolute -right-4 -top-10 font-cormorant text-[10rem] leading-none text-white/10"
-              >
-                “
-              </span>
+                  <div className="mt-5 border-t border-slate-100 pt-2.5 flex items-center justify-between text-[11px] text-primary font-semibold">
+                    <span>Functional Team</span>
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                  </div>
+                </article>
+              );
+            })}
+          </div>
 
-              <div className="relative">
-                <span className="mb-5 block h-1 w-12 rounded-full bg-accent" />
+          {/* Bottom Row: 2 Cards (Centered) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-5 max-w-3xl mx-auto">
+            {teamRoles.slice(3, 5).map((role) => {
+              const Icon = role.icon;
+              return (
+                <article
+                  key={role.id}
+                  className="team-role-card group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:border-secondary/40 hover:shadow-xl hover:shadow-primary/5"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-500 group-hover:w-full"
+                  />
 
-                <p className="font-cormorant text-2xl font-medium leading-[1.35] sm:text-3xl">
-                  With the discipline of an enterprise team and the responsiveness of a
-                  dedicated partner.
-                </p>
+                  <div>
+                    {/* Icon + Member Count Pill */}
+                    <div className="flex items-center justify-between gap-2 mb-4">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:rotate-3">
+                        <Icon
+                          aria-hidden="true"
+                          className="h-5 w-5 stroke-[1.8]"
+                        />
+                      </div>
 
-                <p className="mt-5 font-manrope text-xs font-semibold uppercase tracking-[0.18em] text-soft">
-                  Jensi, Founder - Haggai Business Solutions
-                </p>
-              </div>
-            </blockquote>
+                      <span className="inline-flex items-center rounded-full bg-soft/70 px-2.5 py-0.5 font-manrope text-[11px] font-extrabold tracking-wider text-primary border border-secondary/20">
+                        {role.countText}
+                      </span>
+                    </div>
 
-            <a
-              href="/contact"
-              className="founder-link group mt-8 inline-flex items-center gap-3 font-manrope text-sm font-semibold text-primary"
-            >
-              Connect with Haggai
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/20 bg-white transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-white">
-                <ArrowUpRightIcon
-                  aria-hidden="true"
-                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
-              </span>
-            </a>
+                    {/* Role Title */}
+                    <h4 className="font-cormorant text-xl font-semibold leading-snug text-[#0c2e2d] group-hover:text-primary transition-colors">
+                      {role.title}
+                    </h4>
+
+                    {/* Description */}
+                    <p className="mt-2 font-manrope text-xs leading-5 text-slate-600">
+                      “{role.description}”
+                    </p>
+                  </div>
+
+                  <div className="mt-5 border-t border-slate-100 pt-2.5 flex items-center justify-between text-[11px] text-primary font-semibold">
+                    <span>Functional Team</span>
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </div>
