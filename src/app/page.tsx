@@ -27,15 +27,15 @@ export default function Home() {
     <>
       <HeroSection />
       <WhoWeWorkWith />
-      <PainPoints />
       <OurSolutions />
       <EngagementModels />
       <WhyHaggai />
+      <PainPoints />
+      <Technology />
+      <IndustriesWeServe />
       <MeetTheFounder />
       <HowWeWork />
       {/* <ServicesOverview /> */}
-      <Technology />
-      <IndustriesWeServe />
       {/* <PricingPreview /> */}
       <Testimonials />
       <FaqSection />
