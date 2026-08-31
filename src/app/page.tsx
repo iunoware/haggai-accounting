@@ -1,7 +1,9 @@
 import { constructMetadata } from "@/src/lib/seo";
 import HeroSection from "./(components)/Hero";
+import WhoWeWorkWith from "./(components)/WhoWeWorkWith";
 import PainPoints from "./(components)/PainPoints";
 import OurSolutions from "./(components)/OurSolutions";
+import EngagementModels from "./(components)/EngagementModels";
 import WhyHaggai from "./(components)/WhyHaggai";
 import HowWeWork from "./(components)/HowWeWork";
 // import ServicesOverview from "./(components)/ServicesOverview";
@@ -24,8 +26,10 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <WhoWeWorkWith />
       <PainPoints />
       <OurSolutions />
+      <EngagementModels />
       <WhyHaggai />
       <MeetTheFounder />
       <HowWeWork />

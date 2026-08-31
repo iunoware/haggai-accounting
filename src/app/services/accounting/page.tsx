@@ -12,6 +12,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import FinancialDashboardCTA from "@/src/components/FinancialDashboardCTA";
+import WhiteLabelPartnership from "../(components)/WhiteLabelPartnership";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -545,6 +546,9 @@ export default function AccountingServices() {
           </div>
         </div>
       </section>
+
+      {/* White-Label Partnership Section */}
+      <WhiteLabelPartnership />
 
       {/* Why It Matters*/}
       {/* <section className="haggai-acct-why relative overflow-hidden py-20 sm:py-24">
