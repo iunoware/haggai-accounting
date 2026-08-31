@@ -28,57 +28,46 @@ const testimonials: Testimonial[] = [
   {
     id: 1,
     quote:
-      "Haggai transformed our entire month-end financial closing process. What used to take our internal team two full weeks of stressful reconciliations is now completed cleanly within three days. Their dedicated CPA team feels like a natural extension of our leadership.",
+      "Haggai Business Solutions has been a reliable extension of our accounting team. Their support with reconciliations, journal entries, and month-end tasks helped us stay organized and close our books on time. The team is responsive, detail-oriented, and easy to work with.",
     name: "Sarah Jenkins",
-    title: "Chief Executive Officer",
-    company: "Haggai Business Solutions",
-    industry: "SaaS & Technology",
+    title: "Accounting Manager",
+    company: "U.S.-Based Company",
+    industry: "Month-End Close Support",
     rating: 5,
     avatar: "/images/avatar-1.png",
   },
   {
     id: 2,
     quote:
-      "The accuracy and proactive transparency of Haggai’s financial reporting gave us total clarity during our Series B fundraising round. Having seasoned CPAs overseeing daily operations eliminated all accounting compliance anxiety.",
+      "We needed support across several areas of accounting, including AP, reconciliations, journal entries, and financial reporting. Haggai helped us bring these activities together and provided consistent day-to-day support. Having a dedicated team has reduced the pressure on our internal accounting staff.",
     name: "Marcus Vance",
-    title: "VP of Operations & Finance",
-    company: "Vanguard Healthcare",
-    industry: "Healthcare & Life Sciences",
+    title: " Finance Manager",
+    company: "Growing Business",
+    industry: " Complete Accounting Support",
     rating: 5,
     avatar: "/images/avatar-2.png",
   },
   {
     id: 3,
     quote:
-      "Switching to Haggai was one of the best operational decisions we made this year. Their offshore team handles complex inventory tags, multi-state tax compliance, and payroll flawlessly, allowing us to focus 100% on product growth.",
+      "We were moving our accounting operations into NetSuite and needed additional support during the transition. Haggai helped with data review, account mapping, reconciliations, and ongoing accounting activities. Their team understood the accounting side of the migration, which made the transition easier for our finance team.",
     name: "Elena Rostova",
-    title: "Co-Founder & COO",
-    company: "Lumina Global Commerce",
-    industry: "E-Commerce & Retail",
+    title: "Controller",
+    company: " Mid-Sized Company",
+    industry: "NetSuite Migration",
     rating: 5,
     avatar: "/images/avatar-3.png",
   },
   {
     id: 4,
     quote:
-      "As a rapidly growing real estate firm, managing multi-entity books was a constant bottleneck. Haggai implemented a unified cloud accounting framework that brought institutional structure to all our property holdings.",
+      "Haggai supports us with our regular accounting operations and works within our existing NetSuite environment. They have helped us manage reconciliations, journal entries, and month-end activities with a structured and consistent approach. The flexibility of the team has been particularly valuable as our workload changes.",
     name: "David Sterling",
-    title: "Managing Director",
-    company: "Sterling Capital Holdings",
-    industry: "Real Estate & Assets",
+    title: "Finance Director",
+    company: "U.S.-Based Business",
+    industry: "Ongoing Accounting & NetSuite Support",
     rating: 5,
     avatar: "/images/avatar-4.png",
-  },
-  {
-    id: 5,
-    quote:
-      "Haggai’s team is remarkably responsive and diligent. Whenever we have complex tax structure questions or strategic cash-flow forecasts, our dedicated lead accountant provides clear, actionable guidance within hours.",
-    name: "Rachel Thorne",
-    title: "Chief Financial Officer",
-    company: "Beacon Media Group",
-    industry: "Marketing & Media",
-    rating: 5,
-    avatar: "/images/founder.png",
   },
 ];
 
@@ -230,13 +219,13 @@ export default function Testimonials() {
         {/* Left Edge Gradient Blur Fade */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute left-0 top-0 bottom-0 z-20 w-16 sm:w-32 lg:w-48 bg-gradient-to-r from-slate-50/90 via-slate-50/50 to-transparent"
+          className="pointer-events-none absolute left-0 top-0 bottom-0 z-20 w-16 sm:w-32 lg:w-48 bg-linear-to-r from-slate-50/90 via-slate-50/50 to-transparent"
         />
 
         {/* Right Edge Gradient Blur Fade */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute right-0 top-0 bottom-0 z-20 w-16 sm:w-32 lg:w-48 bg-gradient-to-l from-slate-50/90 via-slate-50/50 to-transparent"
+          className="pointer-events-none absolute right-0 top-0 bottom-0 z-20 w-16 sm:w-32 lg:w-48 bg-linear-to-l from-slate-50/90 via-slate-50/50 to-transparent"
         />
 
         {/* MARQUEE ROW 1 (Scrolls Left) */}
@@ -336,9 +325,8 @@ function TestimonialCard({ item }: { item: Testimonial }) {
       </div>
 
       {/* Client Profile Footer */}
-      {/* <div className="mt-6 flex items-center gap-3.5 border-t border-slate-100 pt-4 font-manrope">
-        
-        <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full border border-slate-200 bg-slate-100">
+      <div className=" flex items-center gap-3.5 border-t border-slate-100 pt-4 font-manrope">
+        {/* <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full border border-slate-200 bg-slate-100">
           <Image
             src={item.avatar}
             alt={item.name}
@@ -346,21 +334,20 @@ function TestimonialCard({ item }: { item: Testimonial }) {
             sizes="44px"
             className="object-cover transition-transform duration-300 group-hover/card:scale-105"
           />
-        </div>
+        </div> */}
 
-        
         <div className="flex-1 min-w-0">
           <h4 className="font-cormorant text-lg font-bold text-slate-950 truncate leading-snug">
-            {item.name}
-          </h4>
-          <p className="text-xs font-manrope text-slate-500 truncate">
             {item.title}
-          </p>
+          </h4>
+          {/* <p className="text-xs font-manrope text-slate-500 truncate">
+            {item.title}
+          </p> */}
           <p className="text-xs font-manrope font-semibold text-slate-700 transition-colors duration-300 group-hover/card:text-primary truncate">
             {item.company}
           </p>
         </div>
-      </div> */}
+      </div>
     </article>
   );
 }

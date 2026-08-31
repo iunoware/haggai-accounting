@@ -60,11 +60,11 @@ const clientTypes = [
 
   {
     id: "healthcare",
-    name: "Healthcare",
+    name: "Healthcare & Health Services",
     shortDesc:
       "Accurate financial reporting and compliant payroll support for organizations balancing patient care with operational rigor.",
     fullDesc:
-      "Haggai provides healthcare organizations with accurate financial reporting and dependable payroll support, helping leadership maintain strong financial and operational discipline while staying focused on patient care.",
+      "We provide accounting and finance operations support for healthcare and health services organizations, helping finance teams manage reconciliations, accounts payable and receivable, payroll support, month-end activities, and financial reporting.",
     icon: ShieldCheckIcon,
     image: "/images/helathcare.jpg",
     benefits: [

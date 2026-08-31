@@ -28,8 +28,7 @@ const industriesData = [
     id: "healthcare",
     name: "Healthcare",
     icon: ShieldCheckIcon,
-    shortDesc:
-      "HIPAA-compliant accounting, medical billing tracking & payroll.",
+    shortDesc: "Medical billing tracking & payroll.",
     strengths: [
       "Regulatory compliance & audit readiness",
       "Specialized medical billing reconciliation",
