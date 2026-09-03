@@ -40,7 +40,8 @@ const industriesData = [
     id: "manufacturing",
     name: "Manufacturing",
     icon: CogIcon,
-    shortDesc: "Inventory valuation, COGS tracking & supply chain accounting.",
+    // shortDesc: "Inventory valuation, COGS tracking & supply chain accounting.",
+    shortDesc: "Inventory valuation & COGS tracking ",
     strengths: [
       "Raw materials & inventory accounting",
       "Cost of Goods Sold (COGS) optimization",
@@ -62,8 +63,7 @@ const industriesData = [
     id: "tech-saas",
     name: "Technology & SaaS",
     icon: ComputerDesktopIcon,
-    shortDesc:
-      "ARR/MRR tracking, deferred revenue & investor financial reporting.",
+    shortDesc: "ARR/MRR tracking, deferred revenue & investor financial reporting.",
     strengths: [
       "ASC 606 revenue recognition",
       "Subscription metrics (ARR, CAC, Churn)",
@@ -96,8 +96,7 @@ const industriesData = [
     id: "services",
     name: "Professional Services",
     icon: BriefcaseIcon,
-    shortDesc:
-      "Time-tracking billing, partner distributions & client retainers.",
+    shortDesc: "Time-tracking billing, partner distributions & client retainers.",
     strengths: [
       "Retainer & project-based accounting",
       "Utilization & realization tracking",
@@ -108,8 +107,7 @@ const industriesData = [
     id: "nonprofits",
     name: "Nonprofits",
     icon: HeartIcon,
-    shortDesc:
-      "Fund accounting, grant tracking & transparent financial reporting.",
+    shortDesc: "Fund accounting, grant tracking & transparent financial reporting.",
     strengths: [
       "Grant & restricted fund tracking",
       "Donor contribution reconciliation",
@@ -287,9 +285,9 @@ export default function IndustriesWeServe() {
             ref={paragraphRef}
             className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg"
           >
-            Haggai supports businesses across multiple industries by
-            understanding the unique financial, reporting, payroll, and
-            compliance requirements of each sector.
+            Haggai supports businesses across multiple industries by understanding the
+            unique financial, reporting, payroll, and compliance requirements of each
+            sector.
           </p>
         </div>
 
@@ -321,10 +319,7 @@ export default function IndustriesWeServe() {
                             : "bg-soft text-primary group-hover:bg-primary group-hover:text-white"
                         }`}
                       >
-                        <Icon
-                          className="h-5 w-5 stroke-[1.8]"
-                          aria-hidden="true"
-                        />
+                        <Icon className="h-5 w-5 stroke-[1.8]" aria-hidden="true" />
                       </div>
 
                       <div>
@@ -352,10 +347,7 @@ export default function IndustriesWeServe() {
           </div>
 
           {/* Centerpiece: Illustration + Dynamic Detail Panel */}
-          <div
-            ref={hubRef}
-            className="lg:col-span-6 flex flex-col items-center"
-          >
+          <div ref={hubRef} className="lg:col-span-6 flex flex-col items-center">
             <div className="floating-hub-img relative w-full max-w-md lg:max-w-lg overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-5 shadow-xl shadow-primary/5">
               <div
                 aria-hidden="true"
@@ -442,10 +434,7 @@ export default function IndustriesWeServe() {
                             : "bg-soft text-primary group-hover:bg-primary group-hover:text-white"
                         }`}
                       >
-                        <Icon
-                          className="h-5 w-5 stroke-[1.8]"
-                          aria-hidden="true"
-                        />
+                        <Icon className="h-5 w-5 stroke-[1.8]" aria-hidden="true" />
                       </div>
 
                       <div>
@@ -495,15 +484,10 @@ export default function IndustriesWeServe() {
                     <div className="flex items-center gap-3">
                       <div
                         className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
-                          isActive
-                            ? "bg-primary text-white"
-                            : "bg-soft text-primary"
+                          isActive ? "bg-primary text-white" : "bg-soft text-primary"
                         }`}
                       >
-                        <Icon
-                          className="h-5 w-5 stroke-[1.8]"
-                          aria-hidden="true"
-                        />
+                        <Icon className="h-5 w-5 stroke-[1.8]" aria-hidden="true" />
                       </div>
                       <div>
                         <h3 className="font-heading text-sm font-semibold text-slate-950">
@@ -514,10 +498,7 @@ export default function IndustriesWeServe() {
                         </p>
                       </div>
                     </div>
-                    <ArrowRightIcon
-                      className="h-4 w-4 text-primary"
-                      aria-hidden="true"
-                    />
+                    <ArrowRightIcon className="h-4 w-4 text-primary" aria-hidden="true" />
                   </div>
                 </button>
               );

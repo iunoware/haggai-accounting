@@ -21,12 +21,12 @@ const painPoints = [
     description:
       "Compliance gaps and processing errors put leadership's time — and the company's reputation — on the line.",
   },
-  {
-    icon: ArrowTrendingDownIcon,
-    title: "Supply Chains That Don't Scale",
-    description:
-      "Procurement and logistics processes built for a smaller business can start straining under growth.",
-  },
+  // {
+  //   icon: ArrowTrendingDownIcon,
+  //   title: "Supply Chains That Don't Scale",
+  //   description:
+  //     "Procurement and logistics processes built for a smaller business can start straining under growth.",
+  // },
   {
     icon: ChartBarIcon,
     title: "Overpaying for Underused Headcount",
@@ -52,10 +52,7 @@ export default function PainPoints() {
         {/* Section heading */}
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-secondary/40 bg-soft/60 px-4 py-1.5 text-xs font-semibold text-primary shadow-xs backdrop-blur-sm sm:text-sm">
-            <CheckIcon
-              className="h-4 w-4 stroke-[2.5] text-primary"
-              aria-hidden="true"
-            />
+            <CheckIcon className="h-4 w-4 stroke-[2.5] text-primary" aria-hidden="true" />
             Challenges We Solve
           </div>
 
@@ -65,21 +62,27 @@ export default function PainPoints() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-md">
-            Growing businesses often struggle with unclear records, delayed
-            reporting, and time-consuming financial processes. Haggai helps
-            bring clarity, control, and consistency to your accounting.
+            Growing businesses often struggle with unclear records, delayed reporting, and
+            time-consuming financial processes. Haggai helps bring clarity, control, and
+            consistency to your accounting.
           </p>
         </div>
 
         {/* Pain-point cards */}
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:mt-16">
+          {/* <div className="mt-14 flex gap-6 min-w-100 lg:mt-16"> */}
           {painPoints.map((painPoint, index) => {
             const Icon = painPoint.icon;
+            const isLastOdd =
+              painPoints.length % 2 !== 0 && index === painPoints.length - 1;
 
             return (
               <article
                 key={painPoint.title}
-                className="group relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-xl hover:shadow-primary/5 sm:p-7"
+                // className="group relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-xl hover:shadow-primary/5 sm:p-7"
+                className={`group relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-xl hover:shadow-primary/5 sm:p-7 ${
+                  isLastOdd ? "md:col-span-2 md:mx-auto md:w-full md:max-w-md" : ""
+                }`}
               >
                 <div className="absolute right-5 top-5 text-5xl font-heading font-semibold text-slate-100 transition-colors duration-300 group-hover:text-soft/80">
                   {String(index + 1).padStart(2, "0")}
@@ -109,13 +112,13 @@ export default function PainPoints() {
         <div className="mt-12 flex flex-col items-center justify-between gap-5 rounded-2xl border border-slate-200/90 bg-white px-6 py-6 text-center shadow-xs sm:flex-row sm:text-left lg:px-8">
           <div>
             <p className="font-heading text-lg font-semibold text-slate-950">
-              If any of this sounds familiar, you don&apos;t need more people -
-              you need the right partner.
+              If any of this sounds familiar, you don&apos;t need more people - you need
+              the right partner.
             </p>
 
             <p className="mt-1 text-sm leading-relaxed text-slate-600">
-              We simplify your financial operations so you can focus on running
-              your business.
+              We simplify your financial operations so you can focus on running your
+              business.
             </p>
           </div>
 

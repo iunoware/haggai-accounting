@@ -216,7 +216,7 @@ const navLinks: NavLink[] = [
       // { name: "Services Hub", href: "/services/services-hub" },
       { name: "Accounting Services", href: "/services/accounting" },
       { name: "Payroll Services", href: "/services/payroll" },
-      { name: "Supply Chain Services", href: "/services/supply-chain" },
+      // { name: "Supply Chain Services", href: "/services/supply-chain" },
     ],
   },
   { name: "Industries", href: "/industries" },
@@ -233,16 +233,12 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   // Desktop dropdown state (hover + click)
-  const [openDesktopDropdown, setOpenDesktopDropdown] = useState<string | null>(
-    null,
-  );
+  const [openDesktopDropdown, setOpenDesktopDropdown] = useState<string | null>(null);
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dropdownWrapperRef = useRef<HTMLDivElement>(null);
 
   // Mobile accordion state
-  const [openMobileAccordion, setOpenMobileAccordion] = useState<string | null>(
-    null,
-  );
+  const [openMobileAccordion, setOpenMobileAccordion] = useState<string | null>(null);
 
   const navRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
@@ -504,9 +500,7 @@ const Navbar = () => {
                       ? "text-primary font-bold"
                       : "text-slate-800 font-semibold hover:text-primary"
                   } text-2xl uppercase tracking-[0.15em] transition-all duration-300 font-manrope ${
-                    isMenuOpen
-                      ? "translate-y-0 opacity-100"
-                      : "translate-y-8 opacity-0"
+                    isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                   }`}
                   style={{ transitionDelay: `${idx * 60}ms` }}
                 >
@@ -519,9 +513,7 @@ const Navbar = () => {
               <div
                 key={link.name}
                 className={`flex flex-col items-center w-full transition-all duration-300 ${
-                  isMenuOpen
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-8 opacity-0"
+                  isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                 }`}
                 style={{ transitionDelay: `${idx * 60}ms` }}
               >

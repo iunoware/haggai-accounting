@@ -45,7 +45,8 @@ const clientTypes = [
     id: "manufacturing",
     name: "Manufacturing",
     shortDesc:
-      "Multi-region close processes, cost accounting, and supply chain coordination for operations with complex, high-volume transactions.",
+      // "Multi-region close processes, cost accounting, and supply chain coordination for operations with complex, high-volume transactions.",
+      "Multi-region close processes & cost accounting for operations with complex, high-volume transactions.",
     fullDesc:
       "Haggai supports manufacturing businesses with structured multi-region close processes, cost accounting, and coordinated financial operations across complex, high-volume environments.",
     icon: CogIcon,
@@ -54,7 +55,7 @@ const clientTypes = [
       "Multi-Region Month-End Close",
       "Cost Accounting & Analysis",
       "High-Volume Transaction Management",
-      "Supply Chain Coordination",
+      // "Supply Chain Coordination",
     ],
   },
 
@@ -96,15 +97,17 @@ const clientTypes = [
     id: "logistics-distribution",
     name: "Logistics & Distribution",
     shortDesc:
-      "Procurement, vendor management, and supply chain analytics for businesses where operational efficiency is the product.",
+      // "Procurement, vendor management, and supply chain analytics for businesses where operational efficiency is the product.",
+      "Procurement & vendor management for businesses where operational efficiency is the product.",
     fullDesc:
-      "Haggai supports logistics and distribution businesses with organized procurement, vendor management, and supply chain analytics that improve financial visibility and operational efficiency.",
+      // "Haggai supports logistics and distribution businesses with organized procurement, vendor management, and supply chain analytics that improve financial visibility and operational efficiency.",
+      "Haggai supports logistics and distribution businesses with organized procurement & vendor management that improve financial visibility and operational efficiency.",
     icon: TruckIcon,
     image: "/images/logistics.jpg",
     benefits: [
       "Procurement Management",
       "Vendor Management",
-      "Supply Chain Analytics",
+      // "Supply Chain Analytics",
       "Operational Efficiency & Visibility",
     ],
   },
@@ -162,9 +165,7 @@ export default function WhoWeServe() {
   // Initial GSAP Entrance Animation
   useGSAP(
     () => {
-      const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       if (reduceMotion) return;
 
@@ -229,9 +230,7 @@ export default function WhoWeServe() {
 
       // Continuous subtle floating animation for illustration
       if (illustrationRef.current) {
-        const floatEl = illustrationRef.current.querySelector(
-          ".floating-detail-img",
-        );
+        const floatEl = illustrationRef.current.querySelector(".floating-detail-img");
         if (floatEl) {
           gsap.to(floatEl, {
             y: -8,
@@ -250,9 +249,7 @@ export default function WhoWeServe() {
   const handleTabChange = (index: number) => {
     if (index === activeTab || isAnimating) return;
 
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (reduceMotion) {
       setActiveTab(index);
@@ -292,8 +289,7 @@ export default function WhoWeServe() {
 
     // Stagger benefit items
     if (detailContentRef.current) {
-      const listItems =
-        detailContentRef.current.querySelectorAll(".benefit-item");
+      const listItems = detailContentRef.current.querySelectorAll(".benefit-item");
       if (listItems.length > 0) {
         tl.fromTo(
           listItems,
@@ -361,8 +357,8 @@ export default function WhoWeServe() {
             ref={paragraphRef}
             className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-md sm:leading-relaxed"
           >
-            Different industries face different operational pressures.
-            Here&apos;s how we help.
+            Different industries face different operational pressures. Here&apos;s how we
+            help.
           </p>
         </div>
 
@@ -402,9 +398,7 @@ export default function WhoWeServe() {
                 <div
                   aria-hidden="true"
                   className={`absolute top-0 left-0 right-0 h-1 transition-all duration-300 ${
-                    isActive
-                      ? "bg-primary opacity-100"
-                      : "bg-transparent opacity-0"
+                    isActive ? "bg-primary opacity-100" : "bg-transparent opacity-0"
                   }`}
                 />
 
@@ -418,10 +412,7 @@ export default function WhoWeServe() {
                           : "bg-soft text-primary group-hover:bg-primary group-hover:text-white group-hover:rotate-3"
                       }`}
                     >
-                      <Icon
-                        className="h-6 w-6 stroke-[1.8]"
-                        aria-hidden="true"
-                      />
+                      <Icon className="h-6 w-6 stroke-[1.8]" aria-hidden="true" />
                     </div>
 
                     <ArrowRightIcon
@@ -485,7 +476,7 @@ export default function WhoWeServe() {
               className="lg:col-span-6 flex items-center justify-center"
             >
               <div className="floating-detail-img relative w-full overflow-hidden rounded-2xl border border-slate-100 bg-slate-50/50 p-4 shadow-inner">
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-white border border-slate-200/60 shadow-xs flex items-center justify-center">
+                <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl bg-white border border-slate-200/60 shadow-xs flex items-center justify-center">
                   <Image
                     src={activeClient.image}
                     alt={`${activeClient.name} accounting illustration`}
@@ -530,11 +521,9 @@ export default function WhoWeServe() {
                       className="benefit-item flex items-center gap-2.5 rounded-xl border border-slate-200/60 bg-soft/40 p-3 shadow-2xs"
                     >
                       <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white text-primary shadow-2xs">
-                        <CheckCircleIcon className="h-4.5 w-4.5 stroke-[2]" />
+                        <CheckCircleIcon className="h-4.5 w-4.5 stroke-2" />
                       </div>
-                      <span className="leading-tight font-semibold">
-                        {benefit}
-                      </span>
+                      <span className="leading-tight font-semibold">{benefit}</span>
                     </div>
                   ))}
                 </div>

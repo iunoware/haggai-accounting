@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -35,13 +36,13 @@ const benefits = [
     description:
       "Accurate, compliant payroll processing and administration, so your team gets paid right and your business stays compliant.",
   },
-  {
-    icon: ArrowsRightLeftIcon,
-    title: "Supply Chain ",
-    link: "/services/supply-chain",
-    description:
-      "Procurement, vendor management, and logistics coordination that keeps your operations moving without the overhead of a full internal team.",
-  },
+  // {
+  //   icon: ArrowsRightLeftIcon,
+  //   title: "Supply Chain ",
+  //   link: "/services/supply-chain",
+  //   description:
+  //     "Procurement, vendor management, and logistics coordination that keeps your operations moving without the overhead of a full internal team.",
+  // },
   // {
   //   icon: UserGroupIcon,
   //   title: "Dedicated Offshore Team",

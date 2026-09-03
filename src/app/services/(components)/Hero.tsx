@@ -12,9 +12,7 @@ export default function ServicesHero() {
 
   useGSAP(
     () => {
-      const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduceMotion) return;
 
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -23,11 +21,7 @@ export default function ServicesHero() {
         .from(".svc-heading", { opacity: 0, y: 25, duration: 0.8 }, "-=0.4")
         .from(".svc-desc", { opacity: 0, y: 20, duration: 0.6 }, "-=0.5")
         .from(".svc-actions", { opacity: 0, y: 15, duration: 0.6 }, "-=0.4")
-        .from(
-          ".svc-visual",
-          { opacity: 0, scale: 0.96, y: 15, duration: 0.8 },
-          "-=0.5",
-        );
+        .from(".svc-visual", { opacity: 0, scale: 0.96, y: 15, duration: 0.8 }, "-=0.5");
     },
     { scope: sectionRef },
   );
@@ -67,9 +61,11 @@ export default function ServicesHero() {
 
             {/* Supporting Description */}
             <p className="svc-desc mt-6 max-w-xl font-manrope text-base leading-relaxed text-slate-600 sm:text-lg">
-              Haggai takes the complexity of finance, payroll, and supply chain
+              {/* Haggai takes the complexity of finance, payroll, and supply chain
               operations off your team — with the expertise and operational
-              support to keep your business moving.
+              support to keep your business moving. */}
+              Haggai takes the complexity of finance & payroll off your team — with the
+              expertise and operational support to keep your business moving.
             </p>
 
             {/* CTA Actions */}
@@ -111,4 +107,3 @@ export default function ServicesHero() {
     </section>
   );
 }
-

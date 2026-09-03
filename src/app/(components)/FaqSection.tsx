@@ -18,11 +18,11 @@ const faqs = [
   {
     question: "What size businesses do you work with?",
     answer:
-      "We work primarily with medium and large enterprises looking to scale their finance, payroll, or supply chain operations without expanding in-house headcount.",
+      // "We work primarily with medium and large enterprises looking to scale their finance, payroll, or supply chain operations without expanding in-house headcount.",
+      "We work primarily with medium and large enterprises looking to scale their finance or payroll without expanding in-house headcount.",
   },
   {
-    question:
-      "Do you replace our internal finance team, or work alongside them?",
+    question: "Do you replace our internal finance team, or work alongside them?",
     answer:
       "Either. We can serve as your full outsourced accounting department or work as an extension of your existing team, depending on what you need.",
   },
@@ -49,9 +49,7 @@ export default function FaqSection() {
 
   useGSAP(
     () => {
-      const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       if (reduceMotion) {
         gsap.set(
@@ -239,8 +237,8 @@ export default function FaqSection() {
           </h2>
 
           <p className="faq-description mx-auto mt-7 max-w-2xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-            Find clear answers about our accounting services, onboarding
-            process, software compatibility, communication, and ongoing support.
+            Find clear answers about our accounting services, onboarding process, software
+            compatibility, communication, and ongoing support.
           </p>
         </div>
 
@@ -260,10 +258,7 @@ export default function FaqSection() {
 
               <div className="relative">
                 <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-white shadow-lg shadow-black/15">
-                  <QuestionMarkCircleIcon
-                    aria-hidden="true"
-                    className="h-7 w-7"
-                  />
+                  <QuestionMarkCircleIcon aria-hidden="true" className="h-7 w-7" />
                 </span>
 
                 <p className="mt-7 font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-soft/80">
@@ -272,14 +267,12 @@ export default function FaqSection() {
 
                 <h3 className="mt-3 font-heading text-4xl font-semibold leading-[0.95]">
                   Let&apos;s talk about
-                  <span className="block italic text-soft">
-                    your requirements.
-                  </span>
+                  <span className="block italic text-soft">your requirements.</span>
                 </h3>
 
                 <p className="mt-5 font-manrope text-sm leading-7 text-soft/80">
-                  Every business has different accounting needs. Speak with our
-                  team to understand how Haggai can support your operations.
+                  Every business has different accounting needs. Speak with our team to
+                  understand how Haggai can support your operations.
                 </p>
 
                 <Link
