@@ -957,9 +957,12 @@ export default function CareersPage() {
               </div>
 
               <p className="career-hero-description mt-8 max-w-2xl font-manrope text-base leading-8 text-slate-100/90 sm:text-lg">
-                We&apos;re building a team of experienced, detail-driven professionals
+                {/* We&apos;re building a team of experienced, detail-driven professionals
                 across finance, payroll, and supply chain - people who take ownership of
-                their work and care about doing it right.
+                their work and care about doing it right. */}
+                We&apos;re building a team of experienced, detail-driven professionals
+                across finance & payroll - people who take ownership of their work and
+                care about doing it right.
               </p>
 
               <div className="career-hero-cta mt-9">

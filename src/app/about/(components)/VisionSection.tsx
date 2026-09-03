@@ -301,9 +301,12 @@ export default function VisionSection() {
               <blockquote className="mt-6 max-w-4xl font-heading font-medium leading-snug tracking-tight text-white text-xl sm:text-2xl lg:text-3xl">
                 {/* To shape a future where growing businesses have access to the financial
                 clarity, systems, and support required to build with confidence. */}
-                To become a globally trusted business solutions partner, empowering medium
+                {/* To become a globally trusted business solutions partner, empowering medium
                 and large enterprises through innovative finance, payroll, supply chain,
-                and business process outsourcing services.
+                and business process outsourcing services. */}
+                To become a globally trusted business solutions partner, empowering medium
+                and large enterprises through innovative finance, payroll, and business
+                process outsourcing services.
               </blockquote>
             </div>
 

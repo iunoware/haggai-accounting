@@ -9,7 +9,7 @@ import {
   CheckBadgeIcon,
   DocumentTextIcon,
   ShieldCheckIcon,
-  TruckIcon,
+  // TruckIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
 import gsap from "gsap";
@@ -60,24 +60,22 @@ const teamRoles = [
     id: "payroll-compliance",
     title: "Payroll & Compliance Specialists",
     countText: "3 MEMBERS",
-    description:
-      "Process payroll and tax withholdings on ADP, Gusto & Rippling.",
+    description: "Process payroll and tax withholdings on ADP, Gusto & Rippling.",
     icon: ShieldCheckIcon,
   },
-  {
-    id: "supply-chain-ops",
-    title: "Supply Chain & Operations Analysts",
-    countText: "2 MEMBERS",
-    description:
-      "Support procurement, logistics coordination, and vendor management.",
-    icon: TruckIcon,
-  },
+  // {
+  //   id: "supply-chain-ops",
+  //   title: "Supply Chain & Operations Analysts",
+  //   countText: "2 MEMBERS",
+  //   description:
+  //     "Support procurement, logistics coordination, and vendor management.",
+  //   icon: TruckIcon,
+  // },
   {
     id: "client-operations",
     title: "Client Operations",
     countText: "1 MEMBER",
-    description:
-      "Manages onboarding and day-to-day communication with your team.",
+    description: "Manages onboarding and day-to-day communication with your team.",
     icon: UserGroupIcon,
   },
 ];
@@ -87,9 +85,7 @@ export default function FounderSection() {
 
   useGSAP(
     () => {
-      const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       if (reduceMotion) {
         gsap.set(
@@ -301,9 +297,7 @@ export default function FounderSection() {
 
           <h2 className="font-cormorant font-medium leading-[0.96] tracking-[-0.035em] text-[#0c2e2d] text-4xl sm:text-5xl lg:text-6xl">
             <span className="block overflow-hidden pb-1">
-              <span className="team-heading-line block">
-                Enterprise Experience.
-              </span>
+              <span className="team-heading-line block">Enterprise Experience.</span>
             </span>
             <span className="block overflow-hidden pb-2">
               <span className="team-heading-line block italic text-primary">
@@ -313,9 +307,9 @@ export default function FounderSection() {
           </h2>
 
           <p className="team-header-description mx-auto mt-4 max-w-2xl font-manrope text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-            Haggai Business Solutions combines enterprise-level financial
-            expertise with a dedicated team built to support growing businesses
-            with discipline, accuracy, and strategic partnership.
+            Haggai Business Solutions combines enterprise-level financial expertise with a
+            dedicated team built to support growing businesses with discipline, accuracy,
+            and strategic partnership.
           </p>
         </div>
 
@@ -339,20 +333,19 @@ export default function FounderSection() {
             </div>
 
             <h3 className="font-cormorant text-2xl font-medium leading-snug text-[#0c2e2d] sm:text-3xl lg:text-4xl">
-              Enterprise experience, delivered with the responsiveness of a
-              dedicated partner.
+              Enterprise experience, delivered with the responsiveness of a dedicated
+              partner.
             </h3>
 
             <p className="font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
               “With 17+ years of experience in enterprise finance and accounting
-              operations, Jensi, a Certified Management Accountant (CMA), has
-              led month-end close processes across entire global regions and
-              managed high-volume revenue operations for fast-growing companies.
-              That experience — spanning complex reconciliations, financial
-              reporting, and cross-functional collaboration — shapes how Haggai
-              Business Solutions approaches every client engagement: with the
-              discipline of an enterprise team and the responsiveness of a
-              dedicated partner.”
+              operations, Jensi, a Certified Management Accountant (CMA), has led
+              month-end close processes across entire global regions and managed
+              high-volume revenue operations for fast-growing companies. That experience —
+              spanning complex reconciliations, financial reporting, and cross-functional
+              collaboration — shapes how Haggai Business Solutions approaches every client
+              engagement: with the discipline of an enterprise team and the responsiveness
+              of a dedicated partner.”
             </p>
           </div>
         </div>
@@ -373,10 +366,7 @@ export default function FounderSection() {
 
                 <div className="flex items-center justify-center gap-3.5">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-105">
-                    <Icon
-                      aria-hidden="true"
-                      className="h-5.5 w-5.5 stroke-[1.8]"
-                    />
+                    <Icon aria-hidden="true" className="h-5.5 w-5.5 stroke-[1.8]" />
                   </div>
 
                   <div>
@@ -416,15 +406,15 @@ export default function FounderSection() {
           </h3>
 
           <p className="team-intro-text mt-3 font-manrope text-base leading-7 text-slate-600 sm:text-lg">
-            A multidisciplinary team handling the financial operations,
-            compliance, and day-to-day support that keep your business moving.
+            A multidisciplinary team handling the financial operations, compliance, and
+            day-to-day support that keep your business moving.
           </p>
         </div>
 
         {/* 6. Five Team Role Cards (2 Centered Rows on Desktop: 3 top + 2 bottom) */}
         <div className="mt-8 sm:mt-10 space-y-4 lg:space-y-5">
           {/* Top Row: 3 Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
             {teamRoles.slice(0, 3).map((role) => {
               const Icon = role.icon;
               return (
@@ -438,13 +428,54 @@ export default function FounderSection() {
                   />
 
                   <div>
+                    <div className="flex items-center justify-between gap-2 mb-4">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:rotate-3">
+                        <Icon aria-hidden="true" className="h-5 w-5 stroke-[1.8]" />
+                      </div>
+
+                      <span className="inline-flex items-center rounded-full bg-soft/70 px-2.5 py-0.5 font-manrope text-[11px] font-extrabold tracking-wider text-primary border border-secondary/20">
+                        {role.countText}
+                      </span>
+                    </div>
+
+                    <h4 className="font-cormorant text-xl font-semibold leading-snug text-[#0c2e2d] group-hover:text-primary transition-colors">
+                      {role.title}
+                    </h4>
+
+                    <p className="mt-2 font-manrope text-xs leading-5 text-slate-600">
+                      “{role.description}”
+                    </p>
+                  </div>
+
+                  <div className="mt-5 border-t border-slate-100 pt-2.5 flex items-center justify-between text-[11px] text-primary font-semibold">
+                    <span>Functional Team</span>
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                  </div>
+                </article>
+              );
+            })}
+          </div> */}
+
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 place-items-center"> */}
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-5">
+            {teamRoles.map((role) => {
+              const Icon = role.icon;
+              return (
+                <article
+                  key={role.id}
+                  // className="team-role-card group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:border-secondary/40 hover:shadow-xl hover:shadow-primary/5"
+                  className="team-role-card group relative flex w-full flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:border-secondary/40 hover:shadow-xl hover:shadow-primary/5 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.9rem)]"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-500 group-hover:w-full"
+                  />
+
+                  <div>
                     {/* Icon + Member Count Pill */}
                     <div className="flex items-center justify-between gap-2 mb-4">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:rotate-3">
-                        <Icon
-                          aria-hidden="true"
-                          className="h-5 w-5 stroke-[1.8]"
-                        />
+                        <Icon aria-hidden="true" className="h-5 w-5 stroke-[1.8]" />
                       </div>
 
                       <span className="inline-flex items-center rounded-full bg-soft/70 px-2.5 py-0.5 font-manrope text-[11px] font-extrabold tracking-wider text-primary border border-secondary/20">
@@ -473,7 +504,7 @@ export default function FounderSection() {
           </div>
 
           {/* Bottom Row: 2 Cards (Centered) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-5 max-w-3xl mx-auto">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-5 max-w-3xl mx-auto">
             {teamRoles.slice(3, 5).map((role) => {
               const Icon = role.icon;
               return (
@@ -487,13 +518,9 @@ export default function FounderSection() {
                   />
 
                   <div>
-                    {/* Icon + Member Count Pill */}
                     <div className="flex items-center justify-between gap-2 mb-4">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:rotate-3">
-                        <Icon
-                          aria-hidden="true"
-                          className="h-5 w-5 stroke-[1.8]"
-                        />
+                        <Icon aria-hidden="true" className="h-5 w-5 stroke-[1.8]" />
                       </div>
 
                       <span className="inline-flex items-center rounded-full bg-soft/70 px-2.5 py-0.5 font-manrope text-[11px] font-extrabold tracking-wider text-primary border border-secondary/20">
@@ -501,12 +528,10 @@ export default function FounderSection() {
                       </span>
                     </div>
 
-                    {/* Role Title */}
                     <h4 className="font-cormorant text-xl font-semibold leading-snug text-[#0c2e2d] group-hover:text-primary transition-colors">
                       {role.title}
                     </h4>
 
-                    {/* Description */}
                     <p className="mt-2 font-manrope text-xs leading-5 text-slate-600">
                       “{role.description}”
                     </p>
@@ -519,7 +544,7 @@ export default function FounderSection() {
                 </article>
               );
             })}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

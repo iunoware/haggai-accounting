@@ -21,8 +21,9 @@ export default function HeroSection() {
         <div className="max-w-2xl lg:max-w-3xl text-left">
           {/* Main Headline */}
           <h1 className="font-heading text-3xl leading-[1.08] font-bold tracking-tight text-white sm:text-5xl  animate-in fade-in slide-in-from-bottom-4 duration-700">
-            Transforming Business Operations Through Finance, Payroll &amp;
-            Supply Chain Solutions
+            {/* Transforming Business Operations Through Finance, Payroll &amp;
+            Supply Chain Solutions */}
+            Transforming Business Operations Through Finance &amp; Payroll services
           </h1>
 
           {/* Supporting Statement */}
@@ -33,10 +34,9 @@ export default function HeroSection() {
 
           {/* Description */}
           <p className="mt-6 max-w-2xl font-body leading-relaxed text-slate-300/90 text-sm md:text-md animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300">
-            We help medium and large enterprises streamline finance, payroll,
-            and supply chain operations through scalable outsourcing solutions
-            that reduce costs, improve efficiency, and support sustainable
-            growth.
+            We help medium and large enterprises streamline finance and payroll, through
+            scalable outsourcing solutions that reduce costs, improve efficiency, and
+            support sustainable growth.
           </p>
         </div>
         {/* CTA Buttons */}

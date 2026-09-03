@@ -275,10 +275,13 @@ export default function MissionSection() {
                 <blockquote className="-mt-5 font-heading font-medium leading-snug tracking-tight text-white text-xl sm:text-2xl lg:text-3xl">
                   {/* To give every growing business the financial clarity and dependable
                   support it needs to move forward with confidence. */}
-                  To provide enterprise-grade finance, accounting, payroll, and supply
+                  {/* To provide enterprise-grade finance, accounting, payroll, and supply
                   chain solutions that help growing businesses operate like large
                   enterprises - through experienced professionals, proven processes, and
-                  the right technology.
+                  the right technology. */}
+                  To provide enterprise-grade finance, accounting, and payroll solutions
+                  that help growing businesses operate like large enterprises - through
+                  experienced professionals, proven processes, and the right technology.
                 </blockquote>
               </div>
 

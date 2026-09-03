@@ -35,15 +35,15 @@ const services = [
     href: "/services/payroll",
     icon: UsersIcon,
   },
-  {
-    key: "supply-chain",
-    title: "Supply Chain",
-    description:
-      "Procurement, vendor management, and logistics coordination that keeps operations moving as you scale.",
-    cta: "Explore Supply Chain Services",
-    href: "/services/supply-chain",
-    icon: TruckIcon,
-  },
+  // {
+  //   key: "supply-chain",
+  //   title: "Supply Chain",
+  //   description:
+  //     "Procurement, vendor management, and logistics coordination that keeps operations moving as you scale.",
+  //   cta: "Explore Supply Chain Services",
+  //   href: "/services/supply-chain",
+  //   icon: TruckIcon,
+  // },
 ];
 
 export default function ServicesHub() {
@@ -51,9 +51,7 @@ export default function ServicesHub() {
 
   useGSAP(
     () => {
-      const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       if (reduceMotion) {
         gsap.set(
@@ -199,9 +197,7 @@ export default function ServicesHub() {
 
           <h2 className="font-cormorant font-medium leading-[0.95] tracking-tighter text-[#0c2e2d] text-4xl sm:text-5xl">
             <span className="block overflow-hidden pb-2">
-              <span className="haggai-hub-line block">
-                Enterprise-Grade Operations,
-              </span>
+              <span className="haggai-hub-line block">Enterprise-Grade Operations,</span>
             </span>
 
             <span className="block overflow-hidden pb-3">
@@ -212,9 +208,11 @@ export default function ServicesHub() {
           </h2>
 
           <p className="haggai-hub-description mt-6 font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-            Whether it&apos;s your books, your people, or your supply chain, we
+            {/* Whether it&apos;s your books, your people, or your supply chain, we
             help you run it with the accuracy and structure of a much larger
-            company - without the overhead.
+            company - without the overhead. */}
+            Whether it&apos;s your books or your people, we help you run it with the
+            accuracy and structure of a much larger company - without the overhead.
           </p>
         </div>
 
@@ -233,13 +231,14 @@ export default function ServicesHub() {
 
           <div className="pointer-events-none absolute inset-x-0 top-12 flex justify-between px-[16.5%]">
             <span className="haggai-hub-spoke block h-8 w-px bg-primary/20" />
-            <span className="haggai-hub-spoke block h-8 w-px bg-primary/20" />
+            {/* <span className="haggai-hub-spoke block h-8 w-px bg-primary/20" /> */}
             <span className="haggai-hub-spoke block h-8 w-px bg-primary/20" />
           </div>
         </div>
 
         {/* Service cards */}
-        <div className="mt-8 grid gap-6 lg:mt-6 lg:grid-cols-3">
+        {/* <div className="mt-8 grid gap-6 lg:mt-6 lg:grid-cols-3"> */}
+        <div className="mt-8 grid gap-6 lg:mt-6 lg:grid-cols-2">
           {services.map((service) => {
             const Icon = service.icon;
 

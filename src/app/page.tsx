@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { constructMetadata } from "@/src/lib/seo";
 import HeroSection from "./(components)/Hero";
 import WhoWeWorkWith from "./(components)/WhoWeWorkWith";

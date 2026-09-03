@@ -85,9 +85,7 @@ export default function WhiteLabelServices() {
 
   useGSAP(
     () => {
-      const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       if (reduceMotion) {
         gsap.set(
@@ -291,9 +289,9 @@ export default function WhiteLabelServices() {
           {/* Left content */}
           <div>
             <div className="white-label-eyebrow mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#E29E21]" />
+              <span className="h-px w-10 bg-accent" />
 
-              <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-[#00598A]">
+              <span className="font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-primary">
                 White-Label Accounting
               </span>
             </div>
@@ -306,22 +304,21 @@ export default function WhiteLabelServices() {
               </span>
 
               <span className="block overflow-hidden pb-3">
-                <span className="white-label-title-line block italic text-[#00598A]">
+                <span className="white-label-title-line block italic text-primary">
                   Your brand.
                 </span>
               </span>
             </h2>
 
             <p className="white-label-description mt-7 max-w-xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-              Expand your firm&apos;s accounting capacity without increasing
-              internal overhead. Haggai works behind the scenes to support your
-              clients while preserving your brand, standards, and relationships.
+              Expand your firm&apos;s accounting capacity without increasing internal
+              overhead. Haggai works behind the scenes to support your clients while
+              preserving your brand, standards, and relationships.
             </p>
 
             <p className="white-label-description mt-4 max-w-xl font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-              Our white-label services give CPA and accounting firms access to
-              dependable back-office support that can scale with changing
-              workloads.
+              Our white-label services give CPA and accounting firms access to dependable
+              back-office support that can scale with changing workloads.
             </p>
 
             {/* Trust points */}
@@ -334,7 +331,7 @@ export default function WhiteLabelServices() {
                     key={point.title}
                     className="white-label-trust-point group flex items-start gap-4"
                   >
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#D7F3FF] text-[#00598A] transition-all duration-300 group-hover:bg-[#00598A] group-hover:text-white">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-soft text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
                       <Icon aria-hidden="true" className="h-5 w-5" />
                     </div>
 
@@ -355,7 +352,7 @@ export default function WhiteLabelServices() {
             <div className="white-label-action mt-10">
               <Link
                 href="/contact"
-                className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#00598A] px-7 py-3.5 font-manrope text-sm font-semibold text-white shadow-lg shadow-[#00598A]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#004b74] hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00598A] focus-visible:ring-offset-2"
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-primary px-7 py-3.5 font-manrope text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#004b74] hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 Partner With Us
                 <ArrowRightIcon
@@ -370,14 +367,14 @@ export default function WhiteLabelServices() {
           <div className="white-label-visual relative mx-auto w-full max-w-152 lg:mx-0 lg:ml-auto">
             <div className="relative px-4 py-12 sm:px-10 sm:py-16">
               {/* Main back-office panel */}
-              <div className="relative overflow-hidden rounded-[2.25rem] bg-[#00598A] p-6 text-white shadow-[0_40px_100px_-45px_rgba(0,89,138,0.75)] sm:p-8 lg:p-10">
+              <div className="relative overflow-hidden rounded-[2.25rem] bg-primary p-6 text-white shadow-[0_40px_100px_-45px_rgba(0,89,138,0.75)] sm:p-8 lg:p-10">
                 {/* Orbit */}
                 <div
                   aria-hidden="true"
                   className="pointer-events-none absolute -right-28 -top-28 h-72 w-72"
                 >
                   <div className="white-label-orbit absolute inset-0 rounded-full border border-white/20">
-                    <span className="absolute left-1/2 top-0 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E29E21] shadow-[0_0_0_6px_rgba(226,158,33,0.18)]" />
+                    <span className="absolute left-1/2 top-0 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_0_6px_rgba(226,158,33,0.18)]" />
                   </div>
 
                   <div className="absolute inset-10 rounded-full border border-white/10" />
@@ -387,48 +384,43 @@ export default function WhiteLabelServices() {
 
                 <div
                   aria-hidden="true"
-                  className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-[#508BC0]/35 blur-3xl"
+                  className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-secondary/35 blur-3xl"
                 />
 
                 <div className="relative z-10">
                   {/* Panel header */}
                   <div className="flex items-start justify-between gap-5">
                     <div>
-                      <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-[#D7F3FF]">
+                      <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.2em] text-soft">
                         Confidential Back-Office Support
                       </p>
 
                       <h3 className="mt-4 max-w-md font-cormorant text-4xl font-medium leading-none tracking-[-0.035em] sm:text-5xl">
                         The team behind
-                        <span className="block italic text-[#D7F3FF]">
-                          your firm.
-                        </span>
+                        <span className="block italic text-soft">your firm.</span>
                       </h3>
                     </div>
 
-                    <div className="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#E29E21] text-white shadow-xl shadow-black/15 sm:flex">
+                    <div className="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-accent text-white shadow-xl shadow-black/15 sm:flex">
                       <ShieldCheckIcon aria-hidden="true" className="h-7 w-7" />
                     </div>
                   </div>
 
-                  <p className="mt-6 max-w-lg font-manrope text-sm leading-7 text-[#D7F3FF]/80">
-                    We manage essential accounting processes while your firm
-                    remains the trusted face of every client relationship.
+                  <p className="mt-6 max-w-lg font-manrope text-sm leading-7 text-soft/80">
+                    We manage essential accounting processes while your firm remains the
+                    trusted face of every client relationship.
                   </p>
 
                   {/* Brand status */}
                   <div className="mt-8 grid gap-3 sm:grid-cols-2">
                     <div className="rounded-2xl border border-white/10 bg-white/8 p-4 backdrop-blur-sm">
                       <div className="flex items-center gap-3">
-                        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#E29E21]/15 text-[#E29E21] ring-1 ring-[#E29E21]/25">
-                          <EyeSlashIcon
-                            aria-hidden="true"
-                            className="h-5 w-5"
-                          />
+                        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent/15 text-accent ring-1 ring-accent/25">
+                          <EyeSlashIcon aria-hidden="true" className="h-5 w-5" />
                         </span>
 
                         <div>
-                          <p className="font-manrope text-[10px] uppercase tracking-[0.16em] text-[#D7F3FF]/65">
+                          <p className="font-manrope text-[10px] uppercase tracking-[0.16em] text-soft/65">
                             Visibility
                           </p>
 
@@ -441,15 +433,12 @@ export default function WhiteLabelServices() {
 
                     <div className="rounded-2xl border border-white/10 bg-white/8 p-4 backdrop-blur-sm">
                       <div className="flex items-center gap-3">
-                        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#E29E21]/15 text-[#E29E21] ring-1 ring-[#E29E21]/25">
-                          <LockClosedIcon
-                            aria-hidden="true"
-                            className="h-5 w-5"
-                          />
+                        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent/15 text-accent ring-1 ring-accent/25">
+                          <LockClosedIcon aria-hidden="true" className="h-5 w-5" />
                         </span>
 
                         <div>
-                          <p className="font-manrope text-[10px] uppercase tracking-[0.16em] text-[#D7F3FF]/65">
+                          <p className="font-manrope text-[10px] uppercase tracking-[0.16em] text-soft/65">
                             Confidentiality
                           </p>
 
@@ -463,7 +452,7 @@ export default function WhiteLabelServices() {
 
                   {/* Capabilities */}
                   <div className="mt-8 border-t border-white/15 pt-7">
-                    <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.18em] text-[#D7F3FF]/70">
+                    <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.18em] text-soft/70">
                       Accounting operations we support
                     </p>
 
@@ -475,7 +464,7 @@ export default function WhiteLabelServices() {
                         >
                           <CheckCircleIcon
                             aria-hidden="true"
-                            className="h-5 w-5 shrink-0 text-[#E29E21]"
+                            className="h-5 w-5 shrink-0 text-accent"
                           />
 
                           <span className="font-manrope text-xs font-medium text-white sm:text-sm">
@@ -489,7 +478,7 @@ export default function WhiteLabelServices() {
                   {/* Footer */}
                   <div className="mt-8 flex items-center justify-between gap-5 rounded-2xl bg-white/10 p-5 ring-1 ring-white/15">
                     <div>
-                      <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.16em] text-[#D7F3FF]/65">
+                      <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.16em] text-soft/65">
                         Delivered under
                       </p>
 
@@ -500,7 +489,7 @@ export default function WhiteLabelServices() {
 
                     <BuildingOffice2Icon
                       aria-hidden="true"
-                      className="h-8 w-8 shrink-0 text-[#E29E21]"
+                      className="h-8 w-8 shrink-0 text-accent"
                     />
                   </div>
                 </div>
@@ -513,10 +502,10 @@ export default function WhiteLabelServices() {
                 return (
                   <div
                     key={item.title}
-                    className={`white-label-floating-card ${item.animationClass} absolute ${item.position} z-20 hidden min-w-46 rounded-2xl border border-[#00598A]/10 bg-white p-4 shadow-[0_20px_55px_-25px_rgba(0,89,138,0.5)] sm:block`}
+                    className={`white-label-floating-card ${item.animationClass} absolute ${item.position} z-20 hidden min-w-46 rounded-2xl border border-primary/10 bg-white p-4 shadow-[0_20px_55px_-25px_rgba(0,89,138,0.5)] sm:block`}
                   >
                     <div className="flex items-center gap-3">
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#D7F3FF] text-[#00598A]">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-soft text-primary">
                         <Icon aria-hidden="true" className="h-5 w-5" />
                       </span>
 
@@ -537,7 +526,7 @@ export default function WhiteLabelServices() {
 
             <div
               aria-hidden="true"
-              className="absolute bottom-8 right-0 -z-10 h-[calc(100%-4rem)] w-[calc(100%-2rem)] rounded-[2.5rem] border border-[#508BC0]/25"
+              className="absolute bottom-8 right-0 -z-10 h-[calc(100%-4rem)] w-[calc(100%-2rem)] rounded-[2.5rem] border border-secondary/25"
             />
           </div>
         </div>

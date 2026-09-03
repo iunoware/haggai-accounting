@@ -263,7 +263,7 @@ export default function IndustriesHero() {
                 className="pointer-events-none absolute -right-12 -top-12 h-64 w-64 rounded-full bg-soft/70 blur-2xl"
               />
 
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-white border border-slate-100 shadow-xs flex items-center justify-center">
+              <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl bg-white border border-slate-100 shadow-xs flex items-center justify-center">
                 <Image
                   src="/images/industries-hero.png"
                   alt="A modern accounting advisor collaborating with business owners around a shared financial dashboard"

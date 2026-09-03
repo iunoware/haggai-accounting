@@ -156,11 +156,11 @@ export default function WhiteLabelPartnership() {
       {/* Background ambient radial glow using theme colors */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-36 top-1/4 h-[500px] w-[500px] rounded-full bg-soft/50 blur-3xl"
+        className="pointer-events-none absolute -right-36 top-1/4 h-125 w-125 rounded-full bg-soft/50 blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-36 bottom-1/4 h-[500px] w-[500px] rounded-full bg-secondary/10 blur-3xl"
+        className="pointer-events-none absolute -left-36 bottom-1/4 h-125 w-125 rounded-full bg-secondary/10 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -272,7 +272,7 @@ export default function WhiteLabelPartnership() {
                   className="flex flex-col md:flex-row items-center md:items-start gap-3.5 p-4 rounded-xl bg-soft/40 border border-secondary/20"
                 >
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-soft text-primary font-bold">
-                    <CheckIcon className="h-4 w-4 stroke-[3] text-primary" />
+                    <CheckIcon className="h-4 w-4 stroke-3 text-primary" />
                   </div>
                   <p className="font-manrope text-sm font-semibold text-slate-900 leading-snug">
                     {statement}

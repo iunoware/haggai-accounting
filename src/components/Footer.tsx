@@ -141,10 +141,10 @@ export default function Footer() {
                 { name: "Services Hub", href: "/services/" },
                 { name: "Accounting Services", href: "/services/accounting" },
                 { name: "Payroll Services", href: "/services/payroll" },
-                {
-                  name: "Supply Chain Services",
-                  href: "/services/supply-chain",
-                },
+                // {
+                //   name: "Supply Chain Services",
+                //   href: "/services/supply-chain",
+                // },
               ].map((service) => (
                 <li key={service.name}>
                   <Link
