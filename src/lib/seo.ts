@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const SITE_NAME = "Haggai Business Solutions";
-export const SITE_URL = "https://www.haggaiabs.com";
+export const SITE_URL = "https://www.haggaibs.com/";
 export const DEFAULT_OG_IMAGE = "/images/home-hero.png";
 
 export interface ConstructMetadataParams {
