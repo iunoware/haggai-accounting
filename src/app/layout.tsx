@@ -7,29 +7,46 @@ import Footer from "@/src/components/Footer";
 import { SITE_NAME, SITE_URL, DEFAULT_OG_IMAGE } from "@/src/lib/seo";
 
 export const metadata: Metadata = {
+  // canonical tag
   metadataBase: new URL(SITE_URL),
+
   title: {
     default: "Offshore Accounting Services | Haggai Business Solutions",
     template: `%s | ${SITE_NAME}`,
   },
+
   description:
     "Scale your business with offshore accounting, bookkeeping, payroll, and financial reporting services from Haggai Business Solutions. Trusted accounting support tailored to your business.",
+
+  // google search console verification
+  verification: {
+    google: "XIU8sJYal6IknhRG03Yb5gqN06_XEchViFjpWZ6sqXQ",
+  },
+
   applicationName: SITE_NAME,
+
   authors: [{ name: SITE_NAME, url: SITE_URL }],
+
   generator: "Next.js",
+
   referrer: "origin-when-cross-origin",
+
   creator: SITE_NAME,
+
   publisher: SITE_NAME,
+
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
+
   icons: {
     icon: "/images/haggai_fav_icon.png",
     shortcut: "/images/haggai_fav_icon.png",
     apple: "/images/haggai_fav_icon.png",
   },
+
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -47,6 +64,7 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Offshore Accounting Services | Haggai Business Solutions",
@@ -55,6 +73,7 @@ export const metadata: Metadata = {
     images: [DEFAULT_OG_IMAGE],
     creator: "@HaggaiAccounting",
   },
+
   robots: {
     index: true,
     follow: true,
