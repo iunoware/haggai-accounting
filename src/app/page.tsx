@@ -17,9 +17,9 @@ import FinancialDashboardCTA from "../components/FinancialDashboardCTA";
 import Technology from "./(components)/Technology";
 
 export const metadata = constructMetadata({
-  title: "Home | Haggai Business Solutions",
+  title: "Home | Accounting, Payroll & Business Solutions | Haggai Business Solutions",
   description:
-    "Scale your business with offshore accounting, bookkeeping, payroll, and financial reporting services from Haggai Business Solutions. Trusted accounting support tailored to your business.",
+    "Scale your business with professional accounting, bookkeeping, payroll, financial reporting, and business support services from Haggai Business Solutions. Reliable solutions tailored to your business needs.",
   path: "/",
 });
 

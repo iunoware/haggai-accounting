@@ -6,11 +6,10 @@ import OffshoreHero from "./(components)/OffshoreHero";
 // import TraditionalHiringComparison from "./(components)/TraditionalHiringComparison";
 
 export const metadata = constructMetadata({
-  title:
-    "Why Offshore Accounting? Benefits for Growing Businesses | Haggai Business Solutions",
+  title: "Why Haggai | Reliable Accounting & Business Support Solutions",
   description:
-    "Discover how offshore accounting helps businesses reduce costs, access experienced accounting professionals, improve efficiency, and scale confidently with Haggai Business Solutions.",
-  path: "/why-offshore",
+    "Discover the Haggai difference with accurate accounting, dependable payroll, financial reporting, and business support solutions designed to improve efficiency and simplify operations.",
+  path: "/why-haggai",
 });
 
 export default function WhyOffshorePage() {

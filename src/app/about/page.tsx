@@ -8,9 +8,9 @@ import WhyChooseUsSection from "./(components)/WhyChooseUs";
 import FinancialDashboardCTA from "@/src/components/FinancialDashboardCTA";
 
 export const metadata = constructMetadata({
-  title: "About Haggai Business solutions | Trusted Offshore Accounting Partner",
+  title: "About Us | Accounting & Business Solutions | Haggai Business Solutions",
   description:
-    "Learn how Haggai Business solutions helps businesses grow through dedicated offshore accounting teams, financial expertise, and long-term client partnerships.",
+    "Learn about Haggai Business Solutions and our approach to delivering reliable accounting, bookkeeping, payroll, financial reporting, and business support services for growing businesses.",
   path: "/about",
 });
 

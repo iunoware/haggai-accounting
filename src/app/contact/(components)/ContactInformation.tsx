@@ -51,9 +51,7 @@ export default function ContactInformation() {
 
   useGSAP(
     () => {
-      const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       if (reduceMotion) {
         gsap.set(
@@ -197,9 +195,7 @@ export default function ContactInformation() {
 
             <h2 className="font-cormorant font-medium leading-[0.94] tracking-tighter text-[#0c2e2d] text-4xl sm:text-6xl lg:text-[3rem]">
               <span className="block overflow-hidden pb-2">
-                <span className="contact-info-title-line block">
-                  We&apos;re here
-                </span>
+                <span className="contact-info-title-line block">We&apos;re here</span>
               </span>
 
               <span className="block overflow-hidden pb-3">
@@ -210,9 +206,8 @@ export default function ContactInformation() {
             </h2>
 
             <p className="contact-info-description mt-7 max-w-lg font-manrope text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-              Reach out by email, phone, or through our contact form. Our team
-              will help you understand the right accounting support for your
-              business.
+              Reach out by email, phone, or through our contact form. Our team will help
+              you understand the right accounting support for your business.
             </p>
 
             <div className="contact-info-note mt-8 rounded-2xl border border-primary/10 bg-soft/55 p-5">
