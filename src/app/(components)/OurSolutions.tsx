@@ -149,8 +149,7 @@ export default function OurSolutions() {
       }
 
       if (illustrationRef.current) {
-        const floatingEl =
-          illustrationRef.current.querySelector(".floating-wrapper");
+        const floatingEl = illustrationRef.current.querySelector(".floating-wrapper");
         if (floatingEl) {
           gsap.to(floatingEl, {
             y: -12,
@@ -217,9 +216,8 @@ export default function OurSolutions() {
             ref={paragraphRef}
             className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-md"
           >
-            Haggai becomes a seamless extension of your finance department,
-            removing accounting complexity so you can operate with total clarity
-            and confidence.
+            Haggai becomes a seamless extension of your finance department, removing
+            accounting complexity so you can operate with total clarity and confidence.
           </p>
         </div>
 
@@ -260,7 +258,7 @@ export default function OurSolutions() {
               ref={benefitsContainerRef}
               className="flex flex-col space-y-3.5 sm:space-y-4"
               role="list"
-              aria-label="Haggai Accounting Benefits"
+              aria-label="Haggai business solutions"
             >
               {benefits.map((benefit) => {
                 const Icon = benefit.icon;

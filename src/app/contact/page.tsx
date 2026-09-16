@@ -4,9 +4,9 @@ import ContactHero from "./(components)/ContactHero";
 import ContactInformation from "./(components)/ContactInformation";
 
 export const metadata = constructMetadata({
-  title: "Contact Haggai Business Solutions | Speak with Our Accounting Experts",
+  title: "Contact Us | Haggai Business Solutions",
   description:
-    "Get in touch with Haggai Business Solutions to discuss bookkeeping, offshore accounting, payroll, financial reporting, or a customized accounting solution for your business.",
+    "Get in touch with Haggai Business Solutions for professional accounting, bookkeeping, payroll, financial reporting, and business support services tailored to your organization's needs.",
   path: "/contact",
 });
 

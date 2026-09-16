@@ -4,9 +4,9 @@ import WhoWeServe from "./(components)/WhoWeServe";
 import FinancialDashboardCTA from "@/src/components/FinancialDashboardCTA";
 
 export const metadata = constructMetadata({
-  title: "Industries We Serve | Industry-Specific Accounting Solutions",
+  title: "Industries We Serve | Accounting & Business Solutions | Haggai",
   description:
-    "Discover accounting solutions tailored for CPA firms, accounting firms, startups, SaaS companies, Fractional CFO firms, and e-commerce businesses.",
+    "Discover tailored accounting, payroll, financial reporting, and business support solutions from Haggai Business Solutions, designed to meet the unique needs of businesses across industries.",
   path: "/industries",
 });
 

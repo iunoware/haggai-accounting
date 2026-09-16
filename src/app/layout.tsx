@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   // canonical tag
   metadataBase: new URL(SITE_URL),
 
-  title: {
-    default: "Offshore Accounting Services | Haggai Business Solutions",
-    template: `%s | ${SITE_NAME}`,
-  },
+  // title: {
+  //   default: "Offshore Accounting Services | Haggai Business Solutions",
+  //   template: `%s | ${SITE_NAME}`,
+  // },
 
   description:
     "Scale your business with offshore accounting, bookkeeping, payroll, and financial reporting services from Haggai Business Solutions. Trusted accounting support tailored to your business.",

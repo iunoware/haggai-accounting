@@ -46,9 +46,9 @@ export default function Footer() {
               </Link>
 
               <p className="text-xs sm:text-sm font-manrope text-soft/80 leading-relaxed max-w-sm">
-                Haggai delivers transparent business solutions and dedicated
-                offshore teams, empowering growing businesses with complete
-                financial clarity and trusted long-term partnerships.
+                Haggai delivers transparent business solutions and dedicated offshore
+                teams, empowering growing businesses with complete financial clarity and
+                trusted long-term partnerships.
               </p>
 
               {/* Brand Pillars Highlights */}
@@ -111,7 +111,7 @@ export default function Footer() {
                 { name: "Services", href: "/services" },
                 { name: "Industries", href: "/industries" },
                 { name: "Why Haggai", href: "/why-offshore" },
-                { name: "Pricing", href: "/pricing" },
+                // { name: "Pricing", href: "/pricing" },
                 { name: "Contact Us", href: "/contact" },
               ].map((link) => (
                 <li key={link.name}>
@@ -191,7 +191,7 @@ export default function Footer() {
                 <EnvelopeIcon className="h-4 w-4 text-secondary shrink-0 transition-colors duration-300 group-hover:text-accent" />
                 <a
                   target="_blank"
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=info@haggaiaccounting.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=info@haggaibs.com"
                   className="hover:text-secondary transition-colors"
                 >
                   info@haggaibs.com
