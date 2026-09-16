@@ -207,23 +207,23 @@ type NavLink = {
 
 const navLinks: NavLink[] = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
+  { name: "About", href: "/about/" },
   {
     name: "Services",
-    href: "/services",
+    href: "/services/",
     dropdown: [
       { name: "Services Hub", href: "/services/" },
       // { name: "Services Hub", href: "/services/services-hub" },
-      { name: "Accounting Services", href: "/services/accounting" },
-      { name: "Payroll Services", href: "/services/payroll" },
+      { name: "Accounting Services", href: "/services/accounting/" },
+      { name: "Payroll Services", href: "/services/payroll/" },
       // { name: "Supply Chain Services", href: "/services/supply-chain" },
     ],
   },
-  { name: "Industries", href: "/industries" },
-  { name: "Why Haggai", href: "/why-offshore" },
+  { name: "Industries", href: "/industries/" },
+  { name: "Why Haggai", href: "/why-offshore/" },
   // { name: "Careers", href: "/careers" },
   // { name: "Pricing", href: "/pricing" },
-  { name: "Contact", href: "/contact" },
+  { name: "Contact", href: "/contact/" },
 ];
 
 const Navbar = () => {
